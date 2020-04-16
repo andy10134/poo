@@ -20,7 +20,7 @@ def punto1(lista):
 
 def busqueda(lista,idBusqueda):
     for viajero in lista:
-        if (viajero.cantidadTotaldeMillas() == idBusqueda):
+        if (viajero.getIdViajero() == idBusqueda):
             return viajero
     return None
 
@@ -29,8 +29,16 @@ if __name__ == "__main__":
     lista   = []
     
     punto1(lista)
-    Viajero = busqueda(lista, int(input("Ingrese el id del viajero a buscar: ")))
+    Viajero = busqueda(lista, input("Ingrese el id del viajero a buscar: "))
 
+    print(Viajero)
+    
     if( Viajero != None ):
-        print()
+        print(Viajero)
+        millas = format(Viajero.cantidadTotaldeMillas())
+        aux    = float(input("Ingrese la cantidad de millas a Acumular (", millas,") :"))
+        Viajero.acumularMillas(aux)
+        aux    = float(input("Ingrese la cantidad de millas a canjear :"))
+        Viajero.canjearMillas(aux)
+
     #test()

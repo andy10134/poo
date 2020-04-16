@@ -7,7 +7,7 @@ class ViajeroFrecuente:
         self.__DNI              = DNI
         self.__nombre           = re.sub("[^a-zA-Z\n\.]", '', nombre)
         self.__apellido         = re.sub("[^a-zA-Z\n\.]", '', apellido)
-        self.__millasAcumuladas = millasAcumuladas
+        self.__millasAcumuladas = float(millasAcumuladas)
     
     def __str__(self):
         cadena = "El id del viajero {0} tiene por nombre {1} {2} con DNI:{3} y millas acumuladas {4}"
