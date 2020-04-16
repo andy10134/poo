@@ -1,10 +1,12 @@
+import re
+
 class ViajeroFrecuente:
 
     def __init__(self, idViajero = "" , DNI=None, nombre=None, apellido=None, millasAcumuladas=None):
         self.__idViajero        = idViajero 
         self.__DNI              = DNI
-        self.__nombre           = nombre
-        self.__apellido         = apellido
+        self.__nombre           = re.sub("[^a-zA-Z\n\.]", '', nombre)
+        self.__apellido         = re.sub("[^a-zA-Z\n\.]", '', apellido)
         self.__millasAcumuladas = millasAcumuladas
 
     def cantidadTotaldeMillas(self):
