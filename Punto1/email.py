@@ -1,6 +1,6 @@
 from validar import is_valid_email
 
-class Email():
+class Email:
     __idCuenta    = ''
     __dominio     = ''
     __extension   = ''
