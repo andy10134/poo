@@ -27,3 +27,6 @@ class ViajeroFrecuente:
             self.__millasAcumuladas-= millasCanje
         else:
             print("Error en la operacion")
+
+    def getIdViajero(self):
+        return self.__idViajero
