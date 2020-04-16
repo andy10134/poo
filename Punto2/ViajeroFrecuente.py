@@ -9,10 +9,9 @@ class ViajeroFrecuente:
         self.__apellido         = re.sub("[^a-zA-Z\n\.]", '', apellido)
         self.__millasAcumuladas = millasAcumuladas
     
-    def __str__(self){
+    def __str__(self):
         cadena = "El id del viajero {0} tiene por nombre {1} {2} con DNI:{3} y millas acumuladas {4}"
-        print(cadena.format(self.__idViajero, self.__DNI, self.__nombre, self.__apellido, self.__millasAcumuladas,))
-    }
+        print(cadena.format(self.__idViajero, self.__DNI, self.__nombre, self.__apellido, self.__millasAcumuladas))
 
     def cantidadTotaldeMillas(self):
         return self.__millasAcumuladas
