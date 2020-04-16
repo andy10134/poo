@@ -35,7 +35,7 @@ if __name__ == "__main__":
     
     if( Viajero != None ):
         print(Viajero)
-        millas = format(Viajero.cantidadTotaldeMillas())
+        millas = Viajero.cantidadTotaldeMillas()
         aux    = float(input("Ingrese la cantidad de millas a Acumular (", millas,") :"))
         Viajero.acumularMillas(aux)
         aux    = float(input("Ingrese la cantidad de millas a canjear :"))
