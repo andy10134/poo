@@ -1,5 +1,5 @@
 import ViajeroFrecuente as V
-
+import csv
 def punto1():
     archivo=    open('./Punto2/archivopasajeros.csv') 
     reader=     csv.reader(archivo, delimiter=';')
