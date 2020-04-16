@@ -40,9 +40,11 @@ class Email:
     #Crear Cuenta
     def crearCuenta(self, direccion, contrasenia = None):
         if(is_valid_email(direccion)):
-            idCuenta, extension          = direccion.split('@')
+            IDcuenta, extension          = direccion.split('@')
             dominio, extension           = extension.split('.',1)
-            self.__init__(idCuenta, dominio, extension)
+            self.__idCuenta     =IDcuenta
+            self.__dominio      =dominio
+            self.__extension    =extension
             if ( contrasenia != None ):
                 self.__setContrasenia(contrasenia)
             else:
