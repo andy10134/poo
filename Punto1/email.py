@@ -42,7 +42,9 @@ class Email:
         if(is_valid_email(direccion)):
             idCuenta, extension          = direccion.split('@')
             dominio, extension           = extension.split('.',1)
-            self.__init__(idCuenta, dominio, extension)
+            self.__idCuenta              = idCuenta
+            self.__dominio               = dominio
+            self.__extension             = extension
             if ( contrasenia != None ):
                 self.__setContrasenia(contrasenia)
             else:

@@ -2,7 +2,7 @@ import csv
 import email as E
 
 def test():
-    archivo     = open('C:/Users/User/Desktop/GIT/poo/Punto1/testemail.csv')
+    archivo     = open('./Punto1/testemail.csv')
     reader      = csv.reader(archivo, delimiter = ';')
     for fila in reader:
         emailtest= E.Email()
@@ -11,19 +11,15 @@ def test():
             emailtest.cambiarContrasenia(fila[1])
 
 def punto4(lista):
-    archivo     = open('/home/andy/Escritorio/git/poo/Punto1/direccionesgmail.csv')
+    archivo     = open('./Punto1/direccionesgmail.csv')
     reader      = csv.reader(archivo, delimiter = ';')
-    auxiliar    = E.Email()
     i           = 0
 
     for fila in reader :
 
-        if (auxiliar.crearCuenta(fila[0],fila[1])):
-            lista.append(E.Email())
-            lista[i].crearCuenta(fila[0],fila[1])
-            i+=1
-        else:
-            print("Email invalido")
+        lista.append(E.Email())
+        lista[i].crearCuenta(fila[0],fila[1])
+        i+=1
 
     archivo.close()
     dominio     = input("Ingrese el dominio a buscar:")
