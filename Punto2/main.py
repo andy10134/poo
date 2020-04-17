@@ -73,4 +73,4 @@ if __name__ == "__main__":
         menu(Viajero)
     else:
         print('viajero no encontrado')
-    #test()
+    test()
