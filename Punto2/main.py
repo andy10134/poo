@@ -41,7 +41,6 @@ def menu(Viajero):
     bandera = True
     while (bandera):
         opcion= int(imprimir())
-        print('opcion: {}'.format(opcion))
         if opcion in range(4):
             if opcion == 0:
                 print('Adios! Vuelva pronto')
