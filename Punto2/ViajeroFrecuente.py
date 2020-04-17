@@ -19,12 +19,14 @@ class ViajeroFrecuente:
     def acumularMillas(self, millasUltimoViaje):
         if(type(millasUltimoViaje) is float and millasUltimoViaje > 0):
             self.__millasAcumuladas += millasUltimoViaje
+            print('Operacion realizada correctamente.')
         else:
             print("Millas invalidas")            
     
     def canjearMillas(self, millasCanje):
         if(type(millasCanje) is float and millasCanje <= self.__millasAcumuladas):
             self.__millasAcumuladas-= millasCanje
+            print('Operacion realizada correctamente.')
         else:
             print("Error en la operacion")
 
