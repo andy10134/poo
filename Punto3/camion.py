@@ -1,4 +1,4 @@
-class camion:
+class Camion:
     
     def __init__(self, idcamion=None, nombre=None, patente=None, marca= None, tara= None):
         self.__id       = idcamion
