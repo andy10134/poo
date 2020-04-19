@@ -13,15 +13,13 @@ def punto1(camiones):
     archivo= open('./Punto3/MOCK_DATA.csv')
     reader= csv.reader(archivo, delimiter=';')
     for fila in reader:
-        camiones.append(Ca.Camion())
-        
+        camiones.append(Ca.Camion(fila[0], fila[1], fila[2], fila[3], fila[4]))
+    archivo.close()
         
 
 if __name__ == "__main__":
-    camiones = []
+    camiones    = []
+    cosecha     = Co.Cosecha()
     punto1(camiones)
-    #for i in range(20):
-    #    lista.append([])
-    #    for j in range(45):
-    #        lista[i].append(None)
+    #punto2(cosecha)
     #buscarcamion(lista, camiones)

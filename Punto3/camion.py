@@ -1,6 +1,6 @@
 class Camion:
     
-    def __init__(self, idcamion=None, nombre=None, patente=None, marca= None, tara= None):
+    def __init__(self, idcamion=None, patente=None, nombre=None, marca= None, tara= None):
         self.__id       = idcamion
         self.__nombre   = nombre
         self.__patente  = patente
