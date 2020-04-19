@@ -9,5 +9,6 @@ class Cosecha:
             for j in range(45):
                 self.__lista[i].append(None)
     
-    #def cargarlista(self, archivo):
+    def getlista(self):
+        return self.__lista
 

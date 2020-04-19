@@ -2,13 +2,22 @@ import camion as Ca
 import cosecha as Co
 import csv
 
-#def buscarcamion(lista, camiones):
-#    for cosecha in lista:
-#        idBuscar= cosecha.getIdcamion()
-#        for camion in camiones:
-#            if(camion.getID() == idBuscar):
-#                tara =camion.getTara()
-#                cosecha.calcularKilos(tara)
+def buscarcamion(camiones, idBuscar):
+    for camion in camiones:
+        if(camion.getID() == idBuscar):
+            tara =int(camion.getTara())
+            return tara
+
+
+def punto2(cosecha, camiones):
+    archivo= open('./Punto3/dias.csv')
+    reader= csv.reader(archivo, delimiter=';')
+    lista= cosecha.getlista()
+    for fila in reader:
+        tara= buscarcamion(camiones,fila[0])
+        lista[int(fila[0])-1][int(fila[1])-1]= int(fila[2])-tara
+    print(lista)
+
 def punto1(camiones):
     archivo= open('./Punto3/MOCK_DATA.csv')
     reader= csv.reader(archivo, delimiter=';')
@@ -21,5 +30,4 @@ if __name__ == "__main__":
     camiones    = []
     cosecha     = Co.Cosecha()
     punto1(camiones)
-    #punto2(cosecha)
-    #buscarcamion(lista, camiones)
+    punto2(cosecha, camiones)
