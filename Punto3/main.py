@@ -11,7 +11,7 @@ def buscarcamion(camiones, idBuscar):
 
 def punto2(cosecha, camiones):
     archivo= open('./Punto3/dias.csv')
-    reader= csv.reader(archivo, delimiter=';')
+    reader= csv.reader(archivo, delimiter=',')
     lista= cosecha.getlista()
     for fila in reader:
         tara= buscarcamion(camiones,fila[0])
