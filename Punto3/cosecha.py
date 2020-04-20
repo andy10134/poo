@@ -11,4 +11,4 @@ class Cosecha:
     
     def getlista(self):
         return self.__lista
-
+    
