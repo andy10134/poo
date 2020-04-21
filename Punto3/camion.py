@@ -7,6 +7,11 @@ class Camion:
         self.__marca    = marca
         self.__tara     = tara
     
+    def getPatente(self):
+        return self.__patente
+
+    def getNombre(self):
+        return self.__nombre
 
     def getID(self):
         return self.__id

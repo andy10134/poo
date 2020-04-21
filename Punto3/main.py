@@ -41,7 +41,20 @@ def opcion1():
 
 
 def opcion2():
-    print("Código de la opción 2")
+    
+    dia =  int(input("Ingrese el numero del dia:"))
+    if ( dia > 0 and dia <=45 ):
+        dia -= 1
+        cosecha_del_dia = cosecha.getDiaCosecha(dia)
+
+        a = "Patente"
+        b = "Conductor"
+        c = "Cantidad de Kilos"   
+
+        print(a.rjust(33, ' '), b.rjust(33, ' '), c.rjust(33, ' '))
+        for i in range(len(cosecha_del_dia)):
+            print(camiones[i].getPatente().rjust(33, ' '), camiones[i].getNombre().rjust(33, ' '), str(cosecha_del_dia[i]).rjust(33, ' '))
+    else : print("Dia invalido")
 
 
 switcher = {
@@ -68,3 +81,4 @@ if __name__ == "__main__":
         opcion= int(input("Ingrese una opción: "))
         switch(opcion)
         bandera = int(opcion)==0 
+    

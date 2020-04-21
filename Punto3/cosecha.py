@@ -12,3 +12,8 @@ class Cosecha:
     def getlista(self):
         return self.__lista
     
+    def getDiaCosecha(self, nrodia):
+        dias = []
+        for i in range(len(self.__lista)) :
+            dias.append(self.__lista[i][nrodia])
+        return dias
