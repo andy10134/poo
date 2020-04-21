@@ -2,6 +2,20 @@ import camion as Ca
 import cosecha as Co
 import csv
 
+def test():
+    print("TEST")
+    archivo  = open('./Punto3/test.csv')
+    reader   = csv.reader(archivo, delimiter=';')
+    camiones = []
+    for fila in reader:
+        camiones.append(Ca.Camion(fila[0], fila[1], fila[2], fila[3], fila[4]))
+    archivo.close()
+    print(camiones[0])
+    print(camiones[1])
+    print(camiones[2])
+    print("TEST FINALIZADO")    
+
+
 def buscarcamion(camiones, idBuscar):
     for camion in camiones:
         if(camion.getID() == idBuscar):
@@ -10,11 +24,11 @@ def buscarcamion(camiones, idBuscar):
 
 
 def punto2(cosecha, camiones):
-    archivo= open('./Punto3/dias.csv')
-    reader= csv.reader(archivo, delimiter=',')
-    lista= cosecha.getlista()
+    archivo  = open('./Punto3/dias.csv')
+    reader   = csv.reader(archivo, delimiter=',')
+    lista    = cosecha.getlista()
     for fila in reader:
-        tara= buscarcamion(camiones,fila[0])
+        tara = buscarcamion(camiones,fila[0])
         lista[int(fila[0])-1][int(fila[1])-1]= int(fila[2])-tara
 
 def punto1(camiones):
@@ -68,6 +82,7 @@ def switch(argument):
     func()
 
 if __name__ == "__main__":
+    test()
     camiones    = []
     cosecha     = Co.Cosecha()
     punto1(camiones)
