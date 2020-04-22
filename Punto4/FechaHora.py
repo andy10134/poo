@@ -1,5 +1,7 @@
 class FechaHora:
     
+    #definimos los atributos en el constructor por que la documentacion o al menos varios libros recomiendan
+    #que aquellos atributos definidos fuera del constructor sean variables de clase
     def __init__(self, dia = 1, mes = 1, anio = 2020, hora = 0, minutos = 0 ,segundos = 0):
         self.__dia      = dia
         self.__mes      = mes
