@@ -21,3 +21,4 @@ class Alumno:
     @classmethod
     def setNombreCantidadMaximaDeInasistencias(cls, cantidadDeInasistencias):
         cls.cantidadMaximaDeInasistencias = cantidadDeInasistencias
+ 

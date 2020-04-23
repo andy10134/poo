@@ -107,4 +107,7 @@ class FechaHora:
                     return 31
 
     def __add__(self,otraHora):
-        print()
+        self.AdelantarHora(otraHora):
+
+    def __sub__(self, otraHora):
+        
