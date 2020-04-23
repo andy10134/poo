@@ -6,11 +6,11 @@ def opcion0():
 
 def opcion2():
     inasistencias = int(input("Ingrese la nueva cantidad maxima de inasistencias: "))
-    Alumno.cantidadMaximaDeInasistencias(inasistencias)
-    
+    Alumno.setNombreCantidadMaximaDeInasistencias(inasistencias)
+ 
 switcher = {
     0: opcion0,
-    1: opcion1,
+ #   1: opcion1,
     2: opcion2
 }
 
