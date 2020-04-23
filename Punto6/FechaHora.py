@@ -151,4 +151,4 @@ class FechaHora:
                 else:
                     return False
             else:
-                return False
+                return True
