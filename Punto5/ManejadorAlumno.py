@@ -11,10 +11,14 @@ class ManejadorAlumno:
         reader   = csv.reader(archivo, delimiter=',')
         alumnos  = []
         for fila in reader:
-            alumnos.append=(Alumno(fila[0], fila[1], fila[2], fila[3]))
+            alumnos.append(Alumno(fila[0], fila[1], fila[2], fila[3]))
         archivo.close()
         return alumnos
 
     def cambiarInasistencias(self,inasistencias):
         Alumno.setNombreCantidadMaximaDeInasistencias(inasistencias)
+    
+    def obtenermaximo(self):
+        maximo = Alumno.getNombreCantidadMaximaDeInasistencias()
+        return maximo
   
