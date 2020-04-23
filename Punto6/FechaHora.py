@@ -75,7 +75,7 @@ class FechaHora:
         if(self.__hora > 24):
             dias = self.__hora//24
             self.setFecha(dias)
-    
+
     def setFecha(self, dia=0):
         self.__dia += dia
         if(self.__dia > self.finMes()):
@@ -119,14 +119,14 @@ class FechaHora:
     def getAnio(self):
         return self.__anio
 
-    def __add__(self,otraHora):
+    def __add__(self, otraHora):
         self.AdelantarHora(otraHora)
 
     def __sub__(self, otraHora):
-        self.__hora -= otraHora #-45
+        self.__hora -= otraHora  # -45
 
         if(self.__hora < 0):
-            if( self.__hora < -24):
+            if(self.__hora < -24):
                 dias = self.__hora//(-24)
                 self.__dia -= dias
                 self.__hora = self.__hora % (24)
@@ -134,18 +134,18 @@ class FechaHora:
                 self.__dia -= 1
                 self.__hora *= -1
             if(self.__dia <= 0):
-                self.__dia += self.finMes() 
+                self.__dia += self.finMes()
                 self.__mes -= 1
                 if(self.__mes == 0):
                     self.__mes = 12
                     self.__anio -= 1
 
     def __gt__(self, otraHora):
-        
-        if(type(otraHora) is int ):
+
+        if(type(otraHora) is int):
             return self.__hora > otraHora
         else:
-            if( self.__anio >= otraHora.getAnio() and self.__mes >= otraHora.getMes and self.__dia >= otraHora.getDia):
+            if(self.__anio >= otraHora.getAnio() and self.__mes >= otraHora.getMes and self.__dia >= otraHora.getDia):
                 if(self.__hora > otraHora.getHora):
                     return True
                 else:
