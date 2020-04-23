@@ -1,5 +1,4 @@
 import csv
-from Alumno import Alumno
 from ManejadorAlumno import ManejadorAlumno
 
 def opcion0():

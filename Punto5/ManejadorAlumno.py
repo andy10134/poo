@@ -23,4 +23,4 @@ class ManejadorAlumno:
             if(Alumno.getAnio() == anio):
                 if(Alumno.getDivision() == division):
                     if(Alumno.getInasistencias() > self.obtenerMaximo()):
-                        print("{}           {}%".format(Alumno.getNombre(), Alumno.porcentaje()))
+                        print("{}           {}%".format(Alumno.getNombre(), Alumno.porcentaje())) 
