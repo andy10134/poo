@@ -3,12 +3,29 @@ class FechaHora:
     #definimos los atributos en el constructor por que la documentacion o al menos varios libros recomiendan
     #que aquellos atributos definidos fuera del constructor sean variables de clase
     def __init__(self, dia = 1, mes = 1, anio = 2020, hora = 0, minutos = 0 ,segundos = 0):
-        self.__dia      = dia
-        self.__mes      = mes
-        self.__anio     = anio
-        self.__hora     = hora
-        self.__minutos  = minutos
-        self.__segundos = segundos
+        if( mes <= 12 and mes > 0):
+            self.__mes      = mes
+        else : print("Dato invalido") 
+
+        if( self.finMes() >= dia ):
+            self.__dia      = dia
+        else : print("Dato invalido") 
+
+        if( anio > 999 ):
+            self.__anio     = anio
+        else : print("Dato invalido") 
+
+        if( hora <= 24 and hora >= 0):    
+            self.__hora     = hora
+        else : print("Dato invalido") 
+
+        if( minutos <= 60 and minutos >= 0):
+            self.__minutos  = minutos
+        else : print("Dato invalido") 
+
+        if( segundos <= 60 and segundos >= 0):
+            self.__segundos = segundos
+        else : print("Dato invalido") 
 
     def PonerEnHora(self, hora , minutos = 0, segundos = 0):
         if ( hora <= 24 and hora > 0 ):
