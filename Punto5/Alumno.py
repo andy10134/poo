@@ -17,3 +17,7 @@ class Alumno:
     @classmethod
     def getNombreCantidadTotalDeClases(cls):
         return cls.cantidadTotalDeClases
+
+    @classmethod
+    def setNombreCantidadMaximaDeInasistencias(cls, cantidadDeInasistencias):
+        cls.cantidadMaximaDeInasistencias = cantidadDeInasistencias
