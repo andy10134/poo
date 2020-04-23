@@ -10,31 +10,31 @@ class Alumno:
         self.__anio = anio
         self.__cantidadDeInasistencias = cantidadDeInasistencias
     
-    def getanio(self):
+    def getAnio(self):
         return self.__anio
     
-    def getdivision(self):
+    def getDivision(self):
         return self.__division
     
-    def getnombre(self):
+    def getNombre(self):
         return self.__nombre
     
-    def getinasistencias(self):
+    def getInasistencias(self):
         return self.__cantidadDeInasistencias
     
     def porcentajei(self):
-        porc =(self.__cantidadDeInasistencias*100)/self.cantidadMaximaDeInasistencias
+        porc =(self.__cantidadDeInasistencias*100)/self.getCantidadMaximaDeInasistencias()
         return porc
 
     @classmethod
-    def getNombreCantidadMaximaDeInasistencias(cls):
+    def getCantidadMaximaDeInasistencias(cls):
         return cls.cantidadMaximaDeInasistencias
     
     @classmethod
-    def getNombreCantidadTotalDeClases(cls):
+    def getCantidadTotalDeClases(cls):
         return cls.cantidadTotalDeClases
 
     @classmethod
-    def setNombreCantidadMaximaDeInasistencias(cls, cantidadDeInasistencias):
+    def setCantidadMaximaDeInasistencias(cls, cantidadDeInasistencias):
         cls.cantidadMaximaDeInasistencias = cantidadDeInasistencias
  

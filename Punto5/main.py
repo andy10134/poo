@@ -13,13 +13,7 @@ def opcion2():
 def opcion1():
     anio        = int(input("Ingrese año: "))
     division    = int(input("Ingrese division: "))
-    maximo      = x.obtenermaximo()
-    print("Alumno           Porcentaje")
-    for Alumno in alumnos:
-        if(Alumno.getanio() == anio):
-            if(Alumno.getdivision() == division):
-                if(Alumno.getinasistencias() > maximo):
-                    print("{}           {}%".format(Alumno.getnombre(), Alumno.porcentaje()))
+    x.punto2(anio, division)
 
 switcher = {
     0: opcion0, 
@@ -34,7 +28,6 @@ def switch(argument):
 if __name__ == "__main__":
     bandera = False
     x = ManejadorAlumno()
-    alumnos = x.obtenerAlumnos()
 
     while not bandera:
         print("")
