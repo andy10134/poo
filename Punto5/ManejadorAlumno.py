@@ -15,3 +15,6 @@ class ManejadorAlumno:
         archivo.close()
         return alumnos
 
+    def cambiarInasistencias(self,inasistencias):
+        Alumno.setNombreCantidadMaximaDeInasistencias(inasistencias)
+ 

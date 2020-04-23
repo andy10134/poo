@@ -1,16 +1,21 @@
 import csv
 from Alumno import Alumno
+from ManejadorAlumno import ManejadorAlumno
 
 def opcion0():
     print("Adiós")
 
 def opcion2():
     inasistencias = int(input("Ingrese la nueva cantidad maxima de inasistencias: "))
-    Alumno.setNombreCantidadMaximaDeInasistencias(inasistencias)
+    x.cambiarInasistencias(inasistencias)
  
+
+def opcion1():
+    pass
+
 switcher = {
     0: opcion0,
- #   1: opcion1,
+    1: opcion1,
     2: opcion2
 }
 
@@ -20,6 +25,9 @@ def switch(argument):
 
 if __name__ == "__main__":
     bandera = False
+    x = ManejadorAlumno()
+    alumnos = x.obtenerAlumnos()
+
     while not bandera:
         print("")
         print("0 Salir")
