@@ -17,4 +17,4 @@ class ManejadorAlumno:
 
     def cambiarInasistencias(self,inasistencias):
         Alumno.setNombreCantidadMaximaDeInasistencias(inasistencias)
- 
+  

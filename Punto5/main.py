@@ -16,7 +16,7 @@ def opcion1():
 switcher = {
     0: opcion0,
     1: opcion1,
-    2: opcion2
+    2: opcion2 
 }
 
 def switch(argument):
