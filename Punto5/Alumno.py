@@ -1,14 +1,14 @@
 
 class Alumno:
 
-    cantidadMaximaDeInasistencias = 20
+    cantidadMaximaDeInasistencias = 10
     cantidadTotalDeClases = 100
 
     def __init__(self, nombre, anio, division, cantidadDeInasistencias):
         self.__nombre = nombre
-        self.__division = division
-        self.__anio = anio
-        self.__cantidadDeInasistencias = cantidadDeInasistencias
+        self.__division = int(division)
+        self.__anio = int(anio)
+        self.__cantidadDeInasistencias = int(cantidadDeInasistencias)
     
     def getAnio(self):
         return self.__anio
@@ -23,8 +23,11 @@ class Alumno:
         return self.__cantidadDeInasistencias
     
     def porcentajei(self):
-        porc =(self.__cantidadDeInasistencias*100)/self.getCantidadMaximaDeInasistencias()
+        porc =(self.__cantidadDeInasistencias*100)/self.getCantidadTotalDeClases()
         return porc
+    
+    def __str__(self):
+        return (self.getNombre() + ' ' +  self.getAnio()  +  ' ' +  self.getDivision()  +  ' ' +  self.getInasistencias())
 
     @classmethod
     def getCantidadMaximaDeInasistencias(cls):
