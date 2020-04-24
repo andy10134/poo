@@ -108,16 +108,16 @@ class FechaHora:
                     else:
                         return 31
         else:
-            if(self.__mes == 2):
+            if(self.getMes() == 2):
                 return self.bisiesto()
             else:
-                if(self.__mes > 8):
-                    if(self.__mes % 2 == 0):
+                if(self.getMes() > 8):
+                    if(self.getMes() % 2 == 0):
                         return 30
                     else:
                         return 31
                 else:
-                    if(self.__mes % 2 != 0):
+                    if(self.getMes() % 2 != 0):
                         return 30
                     else:
                         return 31
