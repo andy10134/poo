@@ -201,13 +201,13 @@ class FechaHora:
         if(hora < 0):
             hora += 24
             dia -= 1
-            if( dia > 0):
+            if( dia <= 0):
                 mes -= 1
                 dia = self.finMes(True, mes)
                 if(mes < 0):
                     print("-Tuve una terrible pesadilla. Soñé que viajaba atrás en el tiempo. Era terrible. -Marty.")
-                    mes = 1
-                    anio += 1            
+                    mes = 12
+                    anio -= 1            
         return FechaHora(dia,mes,anio,hora,minutos, segundos)
 
     def __gt__(self, otraHora):

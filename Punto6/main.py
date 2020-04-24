@@ -47,5 +47,5 @@ if __name__ == '__main__':
     r4.Mostrar()
 
     input()
-    r5= r4-4
+    r5= r1-4
     r5.Mostrar()
