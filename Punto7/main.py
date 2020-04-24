@@ -32,5 +32,5 @@ if __name__ == '__main__':
     f4 = f3 - 1  # Al restar un número entero a un objeto FechaHora se debe restar la cantidad de
     # días indicada por el número entero
     f4.Mostrar()
-    f4 = 1 + f2  # suma un día a un objeto FechaHora
+    #f4 = 1 + f2  # suma un día a un objeto FechaHora
     input()
