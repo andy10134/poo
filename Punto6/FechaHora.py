@@ -14,35 +14,43 @@ class FechaHora:
     # que aquellos atributos definidos fuera del constructor sean variables de clase
 
     def __init__(self, dia=1, mes=1, anio=2020, hora=0, minutos=0, segundos=0):
+        if(anio > 999):
+            self.__anio = anio
+        else:
+            print("Dato invalido año")
+            self.__anio = 2020
+            
         if(mes <= 12 and mes > 0):
             self.__mes = mes
         else:
-            print("Dato invalido")
+            print("Dato invalido mes")
+            self.__mes = 1
 
         if(self.finMes() >= dia):
             self.__dia = dia
         else:
-            print("Dato invalido")
+            print("Dato invalido dia")
+            self.__dia = 1
 
-        if(anio > 999):
-            self.__anio = anio
-        else:
-            print("Dato invalido")
+        
 
         if(hora <= 24 and hora >= 0):
             self.__hora = hora
         else:
-            print("Dato invalido")
+            print("Dato invalido hora")
+            self.__hora = 0
 
         if(minutos <= 60 and minutos >= 0):
             self.__minutos = minutos
         else:
-            print("Dato invalido")
+            print("Dato invalido minutos")
+            self.__minutos = 0
 
         if(segundos <= 60 and segundos >= 0):
             self.__segundos = segundos
         else:
-            print("Dato invalido")
+            print("Dato invalido segundos")
+            self.__segundos = 0
 
     def PonerEnHora(self, hora, minutos=0, segundos=0):
         if (hora <= 24 and hora > 0):
@@ -111,7 +119,7 @@ class FechaHora:
             if(self.getMes() == 2):
                 return self.bisiesto()
             else:
-                if(self.getMes() > 8):
+                if(self.getMes() < 8):
                     if(self.getMes() % 2 == 0):
                         return 30
                     else:
@@ -204,7 +212,7 @@ class FechaHora:
             if( dia <= 0):
                 mes -= 1
                 dia = self.finMes(True, mes)
-                if(mes < 0):
+                if(mes <= 0):
                     print("-Tuve una terrible pesadilla. Soñé que viajaba atrás en el tiempo. Era terrible. -Marty.")
                     mes = 12
                     anio -= 1            
