@@ -176,6 +176,7 @@ class FechaHora:
             if(hora > 24):
                 dias = hora//24
                 dia += dias
+                hora -= 24
                 if( dia > self.finMes()):
                     dia = 1
                     mes += 1
