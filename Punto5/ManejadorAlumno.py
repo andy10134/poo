@@ -2,7 +2,7 @@ import csv
 from Alumno import Alumno
 
 class ManejadorAlumno:
-    
+
     def __init__(self):
         self.__listaAlumnos = []
         archivo  = open('./Punto5/alumnos.csv')
@@ -17,10 +17,16 @@ class ManejadorAlumno:
     def obtenerMaximo(self):
         return Alumno.getCantidadMaximaDeInasistencias()
     
+    def getLista(self):
+        return self.__listaAlumnos
+
+    def __str__ (self):
+        return (self.getLista())
+        
+
     def punto2(self, anio, division):
-        print("Alumno           Porcentaje")
         for Alumno in self.__listaAlumnos :
             if(Alumno.getAnio() == anio):
                 if(Alumno.getDivision() == division):
                     if(Alumno.getInasistencias() > self.obtenerMaximo()):
-                        print("{}           {}%".format(Alumno.getNombre(), Alumno.porcentaje())) 
+                        print(Alumno.getNombre().rjust(33,' '), Alumno.porcentajei())
