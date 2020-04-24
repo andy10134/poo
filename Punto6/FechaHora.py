@@ -92,20 +92,35 @@ class FechaHora:
         else:
             return 28
 
-    def finMes(self):
-        if(self.__mes == 2):
-            return self.bisiesto()
-        else:
-            if(self.__mes > 8):
-                if(self.__mes % 2 == 0):
-                    return 30
-                else:
-                    return 31
+    def finMes(self, bandera = False, mes = 0):
+        if(bandera):    
+            if( mes == 2):
+                return self.bisiesto()
             else:
-                if(self.__mes % 2 != 0):
-                    return 30
+                if( mes > 8):
+                    if( mes % 2 == 0):
+                        return 30
+                    else:
+                        return 31
                 else:
-                    return 31
+                    if( mes % 2 != 0):
+                        return 30
+                    else:
+                        return 31
+        else:
+            if(self.__mes == 2):
+                return self.bisiesto()
+            else:
+                if(self.__mes > 8):
+                    if(self.__mes % 2 == 0):
+                        return 30
+                    else:
+                        return 31
+                else:
+                    if(self.__mes % 2 != 0):
+                        return 30
+                    else:
+                        return 31
 
     def getHora(self):
         return self.__hora
@@ -137,17 +152,19 @@ class FechaHora:
             nuevaHora.AdelantarHora(otraHora)
             return nuevaHora
         else:
-            hora = self.__hora + otraHora.getHora()
-            minutos = self.__minutos + otraHora.getMinutos()
-            segundos = self.__segundos + otraHora.getSegundos()
-            mes = self.__mes
-            dia = self.__dia
-            anio = self.__anio
-
+            hora = self.getHora + otraHora.getHora()
+            minutos = self.getMinutos + otraHora.getMinutos()
+            segundos = self.getSegundos + otraHora.getSegundos()
+            mes = self.getMes
+            dia = self.getDia
+            anio = self.getAnio
+            
+            if( segundos > 60 ):
+                segundos = 0
+                minutos += 1
             if((minutos > 60) or (minutos == 60 and segundos > 0)):
                 minutos = 0
                 hora += 1
-
             if(hora > 24):
                 dias = hora//24
                 dia += dias
@@ -160,28 +177,38 @@ class FechaHora:
                         anio += 1            
             return FechaHora(dia, mes, anio, hora, minutos, segundos)
 
-
     def __sub__(self, otraHora):
-        hora = self.__hora - otraHora  # -45
-        dia = self.__dia
-        mes = self.__mes
-        anio = self.__anio
+        dia = self.getDia()
+        mes = self.getMes()
+        anio = self.getAnio()
+        minutos = self.getMinutos + otraHora.getMinutos()
+        segundos = self.getSegundos + otraHora.getSegundos()
+        hora = self.getHora()
+        
+        if(type(otraHora) is int): 
+            hora -= otraHora
+        else:
+            hora -= otraHora.getHora()
+            minutos -= otraHora.getMinutos()
+            segundos -= otraHora.getSegundos()
 
+            if( segundos < 0 ):
+                segundos -= 60
+                minutos -= 1
+            if((minutos < 0)):
+                minutos -= 60
+                hora -= 1
         if(hora < 0):
-            if(hora < -24):
-                dias = hora//(-24)
-                dia = self.__dia - dias
-                hora = hora % (24)
-            else:
-                dia = self.__dia  - 1
-                hora = self.__hora * (-1)
-            if(self.__dia <= 0):
-                dia = self.__dia + self.finMes()
-                mes = self.__mes - 1
-                if(mes == 0):
-                    mes = 12
-                    anio = self.__anio - 1
-        return FechaHora(dia,mes,anio,hora)
+            hora += 24
+            dia -= 1
+            if( dia > 0):
+                mes -= 1
+                dia = self.finMes(True, mes)
+                if(mes < 0):
+                    print("-Tuve una terrible pesadilla. Soñé que viajaba atrás en el tiempo. Era terrible. -Marty.")
+                    mes = 1
+                    anio += 1            
+        return FechaHora(dia,mes,anio,hora,minutos, segundos)
 
     def __gt__(self, otraHora):
 
