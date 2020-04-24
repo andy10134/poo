@@ -152,12 +152,12 @@ class FechaHora:
             nuevaHora.AdelantarHora(otraHora)
             return nuevaHora
         else:
-            hora = self.getHora + otraHora.getHora()
-            minutos = self.getMinutos + otraHora.getMinutos()
-            segundos = self.getSegundos + otraHora.getSegundos()
-            mes = self.getMes
-            dia = self.getDia
-            anio = self.getAnio
+            hora = self.getHora() + otraHora.getHora()
+            minutos = self.getMinutos() + otraHora.getMinutos()
+            segundos = self.getSegundos() + otraHora.getSegundos()
+            mes = self.getMes()
+            dia = self.getDia()
+            anio = self.getAnio()
             
             if( segundos > 60 ):
                 segundos = 0
@@ -181,8 +181,8 @@ class FechaHora:
         dia = self.getDia()
         mes = self.getMes()
         anio = self.getAnio()
-        minutos = self.getMinutos + otraHora.getMinutos()
-        segundos = self.getSegundos + otraHora.getSegundos()
+        minutos = self.getMinutos() + otraHora.getMinutos()
+        segundos = self.getSegundos() + otraHora.getSegundos()
         hora = self.getHora()
         
         if(type(otraHora) is int): 
@@ -213,10 +213,10 @@ class FechaHora:
     def __gt__(self, otraHora):
 
         if(type(otraHora) is int):
-            return self.__hora > otraHora
+            return self.getHora() > otraHora
         else:
-            if(self.__anio >= otraHora.getAnio() and self.__mes >= otraHora.getMes and self.__dia >= otraHora.getDia):
-                if(self.__hora > otraHora.getHora):
+            if(self.getAnio() >= otraHora.getAnio() and self.getMes() >= otraHora.getMes() and self.getDia() >= otraHora.getDia()):
+                if(self.getHora() > otraHora.getHora()):
                     return True
                 else:
                     return False
