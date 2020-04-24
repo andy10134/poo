@@ -181,8 +181,8 @@ class FechaHora:
         dia = self.getDia()
         mes = self.getMes()
         anio = self.getAnio()
-        minutos = self.getMinutos() + otraHora.getMinutos()
-        segundos = self.getSegundos() + otraHora.getSegundos()
+        minutos = self.getMinutos()
+        segundos = self.getSegundos()
         hora = self.getHora()
         
         if(type(otraHora) is int): 
