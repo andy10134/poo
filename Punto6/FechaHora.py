@@ -61,8 +61,7 @@ class FechaHora:
             print("Segundos invalidos")
 
     def Mostrar(self):
-        print("El dia es ", self.__dia, "/", self.__mes, "/", self.__anio,
-              " y la hora es : ", self.__hora, ":", self.__minutos, ":", self.__segundos, ".")
+        print("El dia es ", self.__dia, "/", self.__mes, "/", self.__anio," y la hora es : ", self.__hora, ":", self.__minutos, ":", self.__segundos, ".")
 
     def AdelantarHora(self, horas=0, minutos=0):
         self.__hora += horas
@@ -120,8 +119,47 @@ class FechaHora:
     def getAnio(self):
         return self.__anio
 
+    def getMinutos(self):
+        return self.__minutos
+    
+    def getSegundos(self):
+        return self.__segundos
+
+    def setHora(self, hora):
+        self.__hora = hora
+
+    def setMinutos(self, minutos):
+        self.__minutos = minutos
+    
     def __add__(self, otraHora):
-        self.AdelantarHora(otraHora)
+        if(type(otraHora) is int):
+            nuevaHora = FechaHora(self.getDia(),self.getMes(),self.getAnio(),self.getHora(),self.getMinutos(),self.getSegundos())
+            nuevaHora.AdelantarHora(otraHora)
+            return nuevaHora
+        else:
+            hora = self.__hora + otraHora.getHoras()
+            minutos = self.__minutos + otraHora.getMinutos()
+            segundos = self.__segundos + otraHora.getSegundos()
+            mes = self.__mes
+            dia = self.__dia
+            anio = self.__anio
+
+            if((minutos > 60) or (minutos == 60 and segundos > 0)):
+                minutos = 0
+                hora += 1
+
+            if(hora() > 24):
+                dias = hora//24
+                dia += dias
+                if( dia > self.finMes()):
+                    dia = 1
+                    mes += 1
+                    if(mes > 12):
+                        print("Feliz año nuevo ;)")
+                        mes = 1
+                        anio += 1            
+            return FechaHora(dia, mes, anio, hora, minutos, segundos)
+
 
     def __sub__(self, otraHora):
         hora = self.__hora - otraHora  # -45
