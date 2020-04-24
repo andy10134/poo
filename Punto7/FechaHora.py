@@ -1,3 +1,6 @@
+from Hora import Hora
+
+
 class FechaHora:
 
     # Sobrecarga de operadores
@@ -61,13 +64,16 @@ class FechaHora:
             print("Segundos invalidos")
 
     def Mostrar(self):
-        print("El dia es ", self.__dia, "/", self.__mes, "/", self.__anio,
-              " y la hora es : ", self.__hora, ":", self.__minutos, ":", self.__segundos, ".")
+        print("El dia es ", self.__dia, "/", self.__mes, "/", self.__anio," y la hora es : ", self.__hora, ":", self.__minutos, ":", self.__segundos, ".")
 
-    def AdelantarHora(self, horas=0, minutos=0):
+    def AdelantarHora(self, horas=0, minutos=0, segundos=0):
         self.__hora += horas
         self.__minutos += minutos
+        self.__segundos +=segundos
 
+        if(self.__segundos > 60):
+            self.__segundos = 0
+            self.__minutos += 1
         if((self.__minutos > 60) or (self.__minutos == 60 and self.__segundos > 0)):
             self.__minutos = 0
             self.__hora += 1
@@ -120,30 +126,30 @@ class FechaHora:
     def getAnio(self):
         return self.__anio
 
-    def __add__(self, otraHora):
-        self.AdelantarHora(otraHora)
+    def __radd__(self, hora):
+
+        if(type(hora) is Hora):
+            self.AdelantarHora(hora.getHora(),hora.getMinutos(), hora.getSegundos())
+        else:
+            self.AdelantarHora(Hora)
 
     def __sub__(self, otraHora):
-        hora = self.__hora - otraHora  # -45
-        dia = self.__dia
-        mes = self.__mes
-        anio = self.__anio
+        self.__hora -= otraHora  # -45
 
-        if(hora < 0):
-            if(hora < -24):
-                dias = hora//(-24)
-                dia = self.__dia - dias
-                hora = hora % (24)
+        if(self.__hora < 0):
+            if(self.__hora < -24):
+                dias = self.__hora//(-24)
+                self.__dia -= dias
+                self.__hora = self.__hora % (24)
             else:
-                dia = self.__dia  - 1
-                hora = self.__hora * (-1)
+                self.__dia -= 1
+                self.__hora *= -1
             if(self.__dia <= 0):
-                dia = self.__dia + self.finMes()
-                mes = self.__mes - 1
-                if(mes == 0):
-                    mes = 12
-                    anio = self.__anio - 1
-        return FechaHora(dia,mes,anio,hora)
+                self.__dia += self.finMes()
+                self.__mes -= 1
+                if(self.__mes == 0):
+                    self.__mes = 12
+                    self.__anio -= 1
 
     def __gt__(self, otraHora):
 
