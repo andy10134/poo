@@ -137,7 +137,7 @@ class FechaHora:
             nuevaHora.AdelantarHora(otraHora)
             return nuevaHora
         else:
-            hora = self.__hora + otraHora.getHoras()
+            hora = self.__hora + otraHora.getHora()
             minutos = self.__minutos + otraHora.getMinutos()
             segundos = self.__segundos + otraHora.getSegundos()
             mes = self.__mes
@@ -148,7 +148,7 @@ class FechaHora:
                 minutos = 0
                 hora += 1
 
-            if(hora() > 24):
+            if(hora > 24):
                 dias = hora//24
                 dia += dias
                 if( dia > self.finMes()):
