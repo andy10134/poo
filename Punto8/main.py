@@ -11,7 +11,7 @@ def opcion2():
     interseccion= conjunto1 - conjunto2
 
 def opcion3():
-    igualdad= conjunto1 == conjunto2
+    conjunto1 == conjunto2
 
 switcher = {
     0: opcion0,
