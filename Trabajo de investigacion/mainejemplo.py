@@ -28,9 +28,17 @@ if __name__ == '__main__':
     lista.remove(Persona('Mariana','45666743'))
     print("Lista sin Mariana =",lista)
 
+    lista.append(Persona('Ignacio','42564855'))
+
     lista.reverse()
     print('Lista invertida: ')
     print(lista)
+
+    print("Lista sin orden =",lista)
+    lista.sort()
+    print("Lista orden Ascendente =",lista)
+    lista.sort(reverse=True)
+    print("Lista orden Descendente =",lista)
 
     lista2=lista.copy()
     print(lista2)

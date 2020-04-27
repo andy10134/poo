@@ -31,5 +31,5 @@ class Persona:
         return (self.__nombre == otraPersona.getNombre() and self.__dni == otraPersona.getDni())
 
     def __lt__(self, otraPersona):
-         return self.__nombre < otraPersona.getNombre
+         return self.__nombre < otraPersona.getNombre()
         
