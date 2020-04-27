@@ -24,16 +24,17 @@ if __name__ == '__main__':
     lista.pop(2)
     print(lista)
 
+    print("Lista con Mariana =", lista)
+    lista.remove(Persona('Mariana','45666743'))
+    print("Lista sin Mariana =",lista)
+
     lista.reverse()
     print('Lista invertida: ')
     print(lista)
 
-    lista.sort()
-    print('Lista en orden ascendente')
-    print(lista)
-    lista.sort(reverse=True)
-    print('Lista en orden descendente')
-    print(lista)
+    lista2=lista.copy()
+    print(lista2)
 
-    
+    lista2.clear()
+    print(lista2)
 
