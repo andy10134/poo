@@ -19,7 +19,7 @@ class Persona:
         self.__dni = dni
 
     def __str__(self):
-        return "\nNombre: {} DNI: {}".format(self.__nombre, self.__dni)
+        return "Nombre: {} DNI: {}".format(self.__nombre, self.__dni)
     
     def __repr__(self):
         return str(self)
@@ -27,9 +27,9 @@ class Persona:
     def __del__(self):
         print("Chau {}".format(self.__nombre))
     
-
     def __eq__(self, otraPersona):
-        if(self.__nombre == otraPersona.getNombre() and self.__dni == otraPersona.getDni()):
-            return True
-        else:
-            return False
+        return (self.__nombre == otraPersona.getNombre() and self.__dni == otraPersona.getDni())
+
+    def __lt__(self, otraPersona):
+         return self.__nombre < otraPersona.getNombre
+        
