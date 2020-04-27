@@ -17,7 +17,10 @@ class Persona:
     
     def setDni(self, dni):
         self.__dni = dni
+
+    def __str__(self):
+        return "\nNombre: {} DNI: {}".format(self.__nombre, self.__dni)
     
-    def repr(self):
+    def __repr__(self):
         return str(self)
         
