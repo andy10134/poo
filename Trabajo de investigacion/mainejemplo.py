@@ -24,3 +24,16 @@ if __name__ == '__main__':
     lista.pop(2)
     print(lista)
 
+    lista.reverse()
+    print('Lista invertida: ')
+    print(lista)
+
+    lista.sort()
+    print('Lista en orden ascendente')
+    print(lista)
+    lista.sort(reverse=True)
+    print('Lista en orden descendente')
+    print(lista)
+
+    
+
