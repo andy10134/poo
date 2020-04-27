@@ -19,8 +19,11 @@ class Persona:
         self.__dni = dni
 
     def __str__(self):
-        return "Nombre: {} DNI: {}".format(self.__nombre, self.__dni)
+        return "\nNombre: {} DNI: {}".format(self.__nombre, self.__dni)
     
     def __repr__(self):
         return str(self)
+
+    def __del__(self):
+        print("Chau {}".format(self.__nombre))
         

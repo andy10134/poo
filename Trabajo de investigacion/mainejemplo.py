@@ -21,4 +21,6 @@ if __name__ == '__main__':
     lista.insert(2, Persona('Mario', '21345627'))
     print(lista)
 
+    lista.pop(2)
+    print(lista)
 
