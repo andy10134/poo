@@ -40,6 +40,11 @@ if __name__ == '__main__':
     lista.sort(reverse=True)
     print("Lista orden Descendente =",lista)
 
+    lista.append(Persona('Jorge','42356255'))
+    print('La cantidad de Jorges es igual a',lista.count(Persona('Jorge','42356255')))
+    lista.remove(Persona('Jorge','42356255')) #eliminamos a un jorge
+    print('La cantidad de Jorges es igual a',lista.count(Persona('Jorge','42356255')))
+
     lista2=lista.copy()
     print(lista2)
 
