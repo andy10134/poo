@@ -15,10 +15,7 @@ class Conjunto:
         union= []
         union.extend(self.__lista)
         for entero in otroConjunto.__lista:
-            try:
-                i =self.__lista.index(entero)
-            except:
-                i = -1
+            i = self.__lista.index(entero) if entero in self.__lista else -1
             if(i == -1):
                 union.append(entero)
         return Conjunto(union)
@@ -26,10 +23,7 @@ class Conjunto:
     def __sub__(self, otroConjunto):
         interseccion= []
         for entero in otroConjunto.__lista:
-            try:
-                i =self.__lista.index(entero)
-            except:
-                i = -1
+            i = self.__lista.index(entero) if entero in self.__lista else -1
             if(i != -1):
                 interseccion.append(entero)
         return Conjunto(interseccion)
@@ -39,11 +33,11 @@ class Conjunto:
         if(len(self.__lista) == len(otroConjunto.__lista)):
             i =0
             while(bandera == True and len(otroConjunto.__lista) != i):
-                try:
-                    indice =self.__lista.index(otroConjunto.__lista[i])
-                    bandera= True
-                except:
-                    bandera= False
+                indice = self.__lista.index(otroConjunto.__lista[i]) if otroConjunto.__lista[i] in self.__lista else -1
+                if(indice == -1):
+                    bandera = False
+                else:
+                    bandera = True
                 i += 1
             if(bandera == True):
                 print("Los conjuntos son iguales :D")
