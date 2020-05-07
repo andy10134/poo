@@ -1,11 +1,13 @@
+from manejalibro import ManejadorLibro
+
 def opcion0():
     print("Hasta la proximaaaaa *dubstep de fondo*")
 
 def opcion2():
-
+    pass
 
 def opcion1():
-
+    pass
 
 switcher = {
     0: opcion0, 
@@ -19,7 +21,9 @@ def switch(argument):
 
 if __name__ == "__main__":
     bandera = False
-    x = ManejadorAlumno()
+    manejadorLibro = ManejadorLibro()
+    
+    carga(manejadorLibro)
 
     while not bandera:
         print("")
