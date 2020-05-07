@@ -20,3 +20,24 @@ class Libro:
     
     def agregarcapitulo(self, capitulo):
         self.__capitulos.append(Capitulo(capitulo[0], capitulo[1]))
+
+    def getId(self):
+        return self.__idLibro
+    
+    def getTitulo(self):
+        return self.__titulo
+
+    def getAutor(self):
+        return self.__autor
+
+    def getEditorial(self):
+        return self.__editorial
+
+    def getIsbn(self):
+        return self.__isbn
+    
+    def getCantidadC(self):
+        return self.__cantidadCapitulos
+
+    def getCapitulos(self):
+        return self.__capitulos

@@ -21,4 +21,16 @@ class ManejadorLibro:
 
     def getLibro(self, indice):
         return self.__arreglo[indice]
+    
+    def buscarLibro(self, id):
+        i= 0
+        bandera= True
+        while(bandera and i != self.__cantidad):
+            if(id == self.__arreglo[i].getId()):
+                bandera=False
+            else:
+                i+=1
+        if(bandera == False):
+            print('Título: {}'.format(self.__arreglo[i].getTitulo()))
+            print()
         
