@@ -1,3 +1,4 @@
+from Capitulo import Capitulo
 
 class Libro: 
     __idLibro            = 0
