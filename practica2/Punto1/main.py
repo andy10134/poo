@@ -8,9 +8,11 @@ def carga(manejadorLibro):
     i = 0
     for fila in reader:
         if(fila.length() > 2):
-            manejadorLibro.agregarlibro(Libro(fila[0], fila[1], fila[2]))
+            manejadorLibro.agregarlibro(fila)
+            libro = manejadorLibro.getLibro(i)
             i+=1
-        
+        else:
+            libro.agregarcapitulo(fila)
     archivo.close()
 
 
