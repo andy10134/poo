@@ -1,0 +1,15 @@
+Registro;codigo_materia;Nombre_mat;Codigo_corr;Nombre_corr;Estado
+1;9;programacion OO;5;Programacion procedural;Adeuda
+1;10;Matematica discreta;2;Matematica basica;Adeuda
+1;11;Analisis matematico;6;Algebra Lineal;Adeuda
+2;9;programacion OO;5;Programacion procedural;Adeuda
+2;10;Matematica discreta;2;Matematica basica;Adeuda
+2;11;Analisis matematico;6;Algebra Lineal;Aprobada
+3;9;programacion OO;5;Programacion procedural;Adeuda
+3;10;Matematica discreta;2;Matematica basica;Aprobada
+3;11;Analisis matematico;6;Algebra Lineal;Adeuda
+4;9;programacion OO;5;Programacion procedural;Adeuda
+4;10;Matematica discreta;2;Matematica basica;Aprobada
+4;11;Analisis matematico;6;Algebra Lineal;Adeuda
+5;9;programacion OO;5;Programacion procedural;Aprobada
+5;10;Matematica discreta;2;Matematica basica;Aprobada
