@@ -8,15 +8,17 @@ class Libro:
     __isbn               = 0
     __cantidadCapitulos  = 0
     __capitulos          = []
-    def __init__(self, idLibro, titulo, autor, editorial, isbn, capitulos):
+
+    def __init__(self, idLibro, titulo, autor, editorial, isbn, capitulos, lista):
         self.__idLibro= idLibro
         self.__titulo= titulo
         self.__autor= autor
         self.__editorial= editorial
         self.__isbn = isbn
         self.__cantidadCapitulos= capitulos
-        for index in self.__cantidadCapitulos:
-            
+        for capitulo in lista:
+            self.__capitulos.append(Capitulo(capitulo[0], capitulo[1]))
+        
     
     def agregarcapitulo(self, capitulo):
-        self.__capitulos.append()
+        self.__capitulos.append(Capitulo(capitulo[0], capitulo[1]))
