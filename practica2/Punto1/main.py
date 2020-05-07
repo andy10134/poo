@@ -1,4 +1,18 @@
-from manejalibro import ManejadorLibro
+from manejarlibro import ManejadorLibro
+from libro import Libro
+import csv
+
+def carga(manejadorLibro):
+    archivo  = open('./Punto1/libros.csv')
+    reader   = csv.reader(archivo, delimiter=',')
+    i = 0
+    for fila in reader:
+        if(fila.length() > 2):
+            manejadorLibro.agregarlibro(Libro(fila[0], fila[1], fila[2]))
+            i+=1
+        
+    archivo.close()
+
 
 def opcion0():
     print("Hasta la proximaaaaa *dubstep de fondo*")
