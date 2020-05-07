@@ -17,7 +17,7 @@ class Libro:
         self.__isbn = isbn
         self.__cantidadCapitulos= capitulos
         for capitulo in lista:
-            self.__capitulos.append(Capitulo(capitulo[0], capitulo[1]))
+            self.agregarcapitulo(capitulo)
         
     
     def agregarcapitulo(self, capitulo):
