@@ -13,5 +13,8 @@ class ManejadorLibro:
         if(self.__cantidad== self.__dimension):
             self.__dimension+= self.__incremento
             self.__arreglo.resize(self.__dimension)
-        self.__arreglo[self.__cantidad]= Libro(libro[0], libro[1], libro[2], libro[3], libro[4], libro[5], libro[6])
+        self.__arreglo[self.__cantidad]= Libro(libro[0], libro[1], libro[2], libro[3], libro[4], libro[5])
         self.__cantidad+= 1
+
+    def getArreglo(self):
+        return self.__arreglo
