@@ -18,11 +18,11 @@ class Libro:
         self.__cantidadCapitulos= capitulos
         
     
-    def agregarcapitulo(self, capitulo):
+    def agregarCapitulo(self, capitulo):
         self.__capitulos.append(Capitulo(capitulo[0], capitulo[1]))
 
     def getId(self):
-        return self.__idLibro
+        return int(self.__idLibro)
     
     def getTitulo(self):
         return self.__titulo
@@ -37,7 +37,15 @@ class Libro:
         return self.__isbn
     
     def getCantidadC(self):
-        return self.__cantidadCapitulos
+        return int(self.__cantidadCapitulos)
 
-    def getCapitulos(self):
-        return self.__capitulos
+
+    def listarCapitulos(self):
+        for capitulo in self.__capitulos:
+            print(' -{}'.format(capitulo.getTitulo()))
+    
+    def calcularTotalPaginas(self):
+        total= 0
+        for capitulo in self.__capitulos:
+            total+= capitulo.getCantidadPaginas()
+        return total

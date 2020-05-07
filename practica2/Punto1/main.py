@@ -7,11 +7,14 @@ def carga(manejadorLibro):
     reader   = csv.reader(archivo, delimiter=',')
     i = 0
     for fila in reader:
+        print(len(fila))
         if(len(fila) > 2):
             manejadorLibro.agregarlibro(fila)
             i+=1
+            print("i dentro del if: ", i)
         else:
-            aux = manejadorLibro.getLibro(i)
+            print("i dentro del else: ", i)
+            aux = manejadorLibro.getLibro(i-1)
             aux.agregarCapitulo(fila)
     archivo.close()
 
@@ -23,7 +26,8 @@ def opcion2():
     pass
 
 def opcion1():
-    pass
+    idlibro=int(input('Ingrese id del libro: '))
+    manejadorLibro.buscarLibro(idlibro)
 
 switcher = {
     0: opcion0, 

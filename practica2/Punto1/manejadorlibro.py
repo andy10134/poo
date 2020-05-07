@@ -5,7 +5,7 @@ class ManejadorLibro:
     __dimension= 0
     __incremento= 3
 
-    def __init__(self, cantidad= 10):
+    def __init__(self, cantidad= 5):
         self.__dimension= cantidad
         self.__arreglo= np.empty(self.__dimension, dtype= Libro)
 
@@ -15,12 +15,16 @@ class ManejadorLibro:
             self.__arreglo.resize(self.__dimension)
         self.__arreglo[self.__cantidad]= Libro(libro[0], libro[1], libro[2], libro[3], libro[4], libro[5])
         self.__cantidad+= 1
+        
 
     def getArreglo(self):
         return self.__arreglo
 
     def getLibro(self, indice):
         return self.__arreglo[indice]
+
+    def mostrarArreglo(self):
+        print(self.__arreglo)
     
     def buscarLibro(self, id):
         i= 0
@@ -32,5 +36,9 @@ class ManejadorLibro:
                 i+=1
         if(bandera == False):
             print('Título: {}'.format(self.__arreglo[i].getTitulo()))
-            print()
+            print('Capitulos: ')
+            self.__arreglo[i].listarCapitulos()
+            print('Total Páginas: {}'.format(self.__arreglo[i].calcularTotalPaginas()))
+        else:
+            print('No se encontro libro con ese id, vuelva a intentarlo')
         
