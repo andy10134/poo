@@ -15,6 +15,8 @@ class Libro:
         self.__editorial= editorial
         self.__isbn = isbn
         self.__cantidadCapitulos= capitulos
+        for index in self.__cantidadCapitulos:
+            
     
     def agregarcapitulo(self, capitulo):
         self.__capitulos.append()
