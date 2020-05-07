@@ -3,14 +3,16 @@ from libro import Libro
 import csv
 
 def carga(manejadorLibro):
-    archivo  = open('./Punto1/libros.csv')
+    archivo  = open('./practica2/Punto1/libros.csv')
     reader   = csv.reader(archivo, delimiter=',')
     i = 0
     for fila in reader:
-        if(fila.length() > 2):
-            manejadorLibro.agregarlibro(Libro(fila[0], fila[1], fila[2]))
+        if(len(fila) > 2):
+            manejadorLibro.agregarlibro(fila)
             i+=1
-        
+        else:
+            aux = manejadorLibro.getLibro(i)
+            aux.agregarCapitulo(fila)
     archivo.close()
 
 
