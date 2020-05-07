@@ -18,3 +18,7 @@ class ManejadorLibro:
 
     def getArreglo(self):
         return self.__arreglo
+
+    def getLibro(self, indice):
+        return self.__arreglo[indice]
+        
