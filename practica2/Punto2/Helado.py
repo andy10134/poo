@@ -2,7 +2,6 @@ from Sabor import Sabor
 import numpy as np
 
 class Helado:
-    cantidadSabores = 4
     __gramos = 0
     
     #Arreglo
@@ -16,5 +15,14 @@ class Helado:
     def getGramos(self):
         return self.__gramos
     
+    def agregarSabor(self,sabor):
+        if(type(sabor) is Sabor):
+            if(self.__cantidad <= self.__dimension):
+                self.__sabores[self.__cantidad] = sabor
+            else:
+                print("")
+        else:
+            print("Sabor Invalido")
+
     def setGramos(self, gramos):
         self.__gramos = gramos
