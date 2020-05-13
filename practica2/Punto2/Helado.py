@@ -20,7 +20,7 @@ class Helado:
             if(self.__cantidad <= self.__dimension):
                 self.__sabores[self.__cantidad] = sabor
             else:
-                print("")
+                print("No se pueden tener mas sabores :c")
         else:
             print("Sabor Invalido")
 
