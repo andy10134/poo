@@ -2,7 +2,6 @@ from ManejaSabores import ManejaSabores
 from ManejaHelados import ManejaHelados
 from Helados import Helado
 
-
 def opcion1():
     print("BUENASSSS")
     aux = 1
@@ -23,7 +22,7 @@ def opcion1():
 
     heladoAux = Helado(aux)
     s = "hagame el favor de elegir un sabor porfa,"
-    s = "0 para salir de la seleccion"
+    s += " 0 para salir de la seleccion"
     print(s)
     sabores.mostrarSabores()
 
@@ -33,22 +32,21 @@ def opcion1():
         if(type(saborAux) is not None):
             heladoAux.agregarSabor(saborAux)
             s = saborAux.getNombre() + " ha sido seleccionado te quedan"
-            s = str(4 - heladoAux.getCantidadSabores()) + "sabores"
+            s += str(4 - heladoAux.getCantidadSabores()) + "sabores"
             print(s)
         else:
             print("Sabor invalido")
 
+    sabores.setVenta(heladoAux.getSabores(), heladoAux.getCantidadSabores(), heladoAux.getGramos())
     helados.ventaHelado(heladoAux)
     print("venta realizada")
 
 
 def opcion2():
-    top1 = 0
-    top2 = 0
-    top3 = 0
-    top4 = 0
-    top5 = 0
-    
+    print("Los helados mas vendidos son: ")
+    lista = sabores.topVentas()
+    print(lista)
+
 
 def opcion4():
     aux = 1
@@ -69,13 +67,19 @@ def opcion4():
     
     
 def opcion3():
-    pass
+    numero = int(input("Ingrese el numero a buscar"))
+
+    if(numero > 0 and numero <= len(sabores.getSabores())):
+        sabores.getGramos(numero)
+    else:
+        print("numero invalido")
+
 
 def opcion0():
     print("Hasta la proximaaaaa *dubstep de fondo*")
 
 
-switcher = {0: opcion0, 1: opcion1, 2: opcion2, 3: opcion3, 4:opcion4}
+switcher = {0: opcion0, 1: opcion1, 2: opcion2, 3: opcion3, 4: opcion4}
 
 
 def switch(argument):
