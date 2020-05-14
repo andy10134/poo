@@ -38,7 +38,7 @@ class Helado:
         nombres = []
         for i in range(self.__cantidad):
             nombres.append(self.__sabores[i].getNombre())
-        s = str("Gramos: "  + str(self.getGramos())
-        s += "\nCantidad de sabores: " + str(self.getCantidadSabores())
-        s += "\nSabores: " + str(nombres)
+        s = "Gramos: " + str(self.getGramos())
+        s = s + "\nCantidad de sabores: " + str(self.getCantidadSabores())
+        s = s + "\nSabores: " + str(nombres)
         return s
