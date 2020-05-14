@@ -48,8 +48,9 @@ class ManejaSabores:
     def topVentas(self):
         lista = []
         for i in len(5):
+            aux = self.__saboresPedidos[i][0]
             saborAux = self.getSabor(self.__saboresPedidos[i][2]) # se invoca con parametro del numero del sabor
-            lista.append(saborAux.getNombre())
+            lista.append(str(saborAux.getNombre(), " con ", aux))
         return lista
 
     def cantidadVendida(self):
