@@ -23,7 +23,7 @@ def opcion1():
 
     heladoAux = Helado(aux)
     s = "hagame el favor de elegir un sabor porfa,"
-    s = "0 para salir de la seleccion"
+    s += " 0 para salir de la seleccion"
     print(s)
     sabores.mostrarSabores()
 
@@ -33,22 +33,20 @@ def opcion1():
         if(type(saborAux) is not None):
             heladoAux.agregarSabor(saborAux)
             s = saborAux.getNombre() + " ha sido seleccionado te quedan"
-            s = str(4 - heladoAux.getCantidadSabores()) + "sabores"
+            s += str(4 - heladoAux.getCantidadSabores()) + "sabores"
             print(s)
         else:
             print("Sabor invalido")
 
+    sabores.setVenta(heladoAux.getSabores(), heladoAux.getCantidadSabores(), heladoAux.getGramos())
     helados.ventaHelado(heladoAux)
     print("venta realizada")
 
 
 def opcion2():
-    top1 = 0
-    top2 = 0
-    top3 = 0
-    top4 = 0
-    top5 = 0
-    
+    print("Los helados mas vendidos son: ")
+    lista = sabores.topVentas()
+    print(lista)
 
 
 def opcion0():
