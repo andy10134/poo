@@ -42,3 +42,14 @@ class ManejadorLibro:
         else:
             print('No se encontro libro con ese id, vuelva a intentarlo')
         
+    def buscarPalabra(self, palabra):
+        bandera= True
+        for i in range(self.__cantidad):
+            titulo= self.__arreglo[i].getTitulo()
+            if(titulo.find(palabra)> -1):
+                bandera= False
+                print('Título: {}'.format(self.__arreglo[i].getTitulo()), '   Autor:{}'.format(self.__arreglo[i].getAutor()))
+            else:
+                bandera2= self.__arreglo[i].buscarEnCapitulo(palabra) 
+        if(bandera and bandera2):
+            print('no se encontro la palabra')

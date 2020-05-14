@@ -49,3 +49,14 @@ class Libro:
         for capitulo in self.__capitulos:
             total+= capitulo.getCantidadPaginas()
         return total
+
+    def buscarEnCapitulo(self, palabra):
+        bandera= True
+        i=0
+        while(bandera and i < self.getCantidadC()):
+            titulo= self.__capitulos[i].getTitulo()
+            if(titulo.find(palabra) > -1):
+                bandera= False
+                print('Título: {}'.format(self.getTitulo()), 'Autor: {}'.format(self.getAutor()))
+            i+= 1
+        return bandera
