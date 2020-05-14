@@ -45,13 +45,19 @@ class ManejaSabores:
             self.__saboresPedidos[sabores[i].getNumero()][1] += tipo/cantidad
         np.sort(self.__saboresPedidos, axis=0)
 
-    def topVentas(self):
+    def topVentas(self): # devuelve el top de sabores vendidos
         lista = []
         for i in len(5):
             aux = self.__saboresPedidos[i][0]
             saborAux = self.getSabor(self.__saboresPedidos[i][2]) # se invoca con parametro del numero del sabor
-            lista.append(str(saborAux.getNombre(), " con ", aux))
+            lista.append(str(saborAux.getNombre(), " con ", aux, " descripcion ", saborAux.getDescripcion))
         return lista
+
+    def gramosVendidos(self, numero):
+        i = 0
+        while(self.__saboresPedidos[i][2] != numero):
+            i += 1
+        return self.__saboresPedidos[i][1]
 
     def cantidadVendida(self):
         return self.__saboresPedidos
