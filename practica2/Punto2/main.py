@@ -1,6 +1,6 @@
 from ManejaSabores import ManejaSabores
 from ManejaHelados import ManejaHelados
-from Helado import Helado
+from Helados import Helado
 
 
 def opcion1():
@@ -64,9 +64,8 @@ def opcion4():
         if(aux < 0 and aux > 6):
             print("Dato no valido, ingrese otra vez")
         else:
-            tipo= aux
-            aux= -1
-    helados.buscarTipoHelado(tipo)
+            aux= listaSabores[aux-1]
+    helados.buscarTipoHelado(aux)
     
     
 def opcion3():
@@ -101,4 +100,3 @@ if __name__ == "__main__":
         opcion = int(input("Ingrese una opción: "))
         switch(opcion)
         bandera = int(opcion) == 0
-        helados.mostrarHelados()
