@@ -1,4 +1,4 @@
-#B.    Definir una clase ManejaSabores que permita manejar los n sabores
+# B.    Definir una clase ManejaSabores que permita manejar los n sabores
 #  que la heladería presenta a la venta.
 
 class Sabor:
@@ -10,7 +10,7 @@ class Sabor:
         self.__numeroSabor = numero
         self.__nombre = nombre
         self.__descripcion = descripcion
-    
+
     def getNombre(self):
         return self.__nombre
 

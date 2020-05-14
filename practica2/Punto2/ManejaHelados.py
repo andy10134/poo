@@ -20,3 +20,15 @@ class ManejaHelados:
             self.__cantidad += 1
         else:
             print("Helado Invalido")
+
+    def getHelado(self):
+        return self.__helados[self.__cantidad - 1]
+
+    def getCantidad(self):
+        return self.__cantidad
+
+    def mostrarHelados(self):
+        for i in range(self.__dimension):
+            if(type(self.__helados[i]) is Helado):
+                print("=================")
+                print(self.__helados[i])

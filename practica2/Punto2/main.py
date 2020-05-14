@@ -1,17 +1,43 @@
 from ManejaSabores import ManejaSabores
 from ManejaHelados import ManejaHelados
+from Helado import Helado
 
 
-def opcion0():
-    pass
+def opcion1():
+    print("BUENASSSS")
+    aux = 1
+
+    while(aux != 100 and aux != 150 and aux != 250 and aux != 500 and aux != 1000 ):
+        print("Por favor seleccione un tipo de helado")
+        print("100g")
+        print("150g")
+        print("250g")
+        print("500g")
+        print("1000g")
+        aux = int(input())
+
+    heladoAux = Helado(aux)
+    print("hagame el favor de elegir un sabor porfa, 0 para salir de la seleccion")
+    sabores.mostrarSabores()
+
+    while(aux != 0 and heladoAux.getCantidadSabores() < 4):
+        aux = int(input())
+        saborAux = sabores.getSabor(aux)
+        if(type(saborAux) is not None):
+            heladoAux.agregarSabor(saborAux)
+            print(saborAux.getNombre(), " ha sido seleccionado te quedan ", str(4 - heladoAux.getCantidadSabores()), "sabores")
+        else:
+            print("Sabor invalido")
+
+    helados.ventaHelado(heladoAux)
 
 
 def opcion2():
     pass
 
 
-def opcion1():
-    pass
+def opcion0():
+    print("Hasta la proximaaaaa *dubstep de fondo*")
 
 
 switcher = {0: opcion0, 1: opcion1, 2: opcion2}
@@ -22,11 +48,13 @@ def switch(argument):
     func()
 
 
+sabores = ManejaSabores()
+helados = ManejaHelados()
+
 if __name__ == "__main__":
     bandera = False
-    sabores = ManejaSabores()
-    helados = ManejaHelados()
 
+    print("Bienvenido al conito")
     while not bandera:
         print("")
         print("0 Salir")
@@ -36,3 +64,4 @@ if __name__ == "__main__":
         opcion = int(input("Ingrese una opción: "))
         switch(opcion)
         bandera = int(opcion) == 0
+        helados.mostrarHelados()
