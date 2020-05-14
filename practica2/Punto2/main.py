@@ -48,6 +48,7 @@ def opcion2():
     top3 = 0
     top4 = 0
     top5 = 0
+    
 
 
 def opcion0():
