@@ -1,6 +1,4 @@
 from Sabor import Sabor
-
-
 import numpy as np
 
 
@@ -40,5 +38,7 @@ class Helado:
         nombres = []
         for i in range(self.__cantidad):
             nombres.append(self.__sabores[i].getNombre())
-        return str("Gramos: "  + str(self.getGramos()) + "\nCantidad de sabores: " + str(self.getCantidadSabores()) + "\nSabores: " + str(nombres))
-
+        s = str("Gramos: "  + str(self.getGramos())
+        s += "\nCantidad de sabores: " + str(self.getCantidadSabores())
+        s += "\nSabores: " + str(nombres)
+        return s

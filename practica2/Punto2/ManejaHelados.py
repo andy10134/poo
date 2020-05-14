@@ -27,6 +27,9 @@ class ManejaHelados:
     def getCantidad(self):
         return self.__cantidad
 
+    def CantidadVecesPedido(self):
+        
+
     def mostrarHelados(self):
         for i in range(self.__dimension):
             if(type(self.__helados[i]) is Helado):

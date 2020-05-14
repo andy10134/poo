@@ -21,4 +21,7 @@ class Sabor:
         return self.__numeroSabor
 
     def __str__(self):
-        return str("Nombre: "  + self.getNombre() + "\nDescripcion: " + self.getDescripcion() + "\nNumero: " + str(self.getNumero()))
+        s = "Nombre: " + self.getNombre()
+        s += "\nDescripcion: " + self.getDescripcion()
+        s += "\nNumero: " + str(self.getNumero())
+        return str(s)

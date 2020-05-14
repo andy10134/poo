@@ -6,18 +6,25 @@ from Helado import Helado
 def opcion1():
     print("BUENASSSS")
     aux = 1
+    listaSabores = [100, 150, 250, 500, 1000]
 
-    while(aux != 100 and aux != 150 and aux != 250 and aux != 500 and aux != 1000 ):
+    while(aux > 0 and aux < 6):
         print("Por favor seleccione un tipo de helado")
-        print("100g")
-        print("150g")
-        print("250g")
-        print("500g")
-        print("1000g")
+        print("1 - 100g")
+        print("2 - 150g")
+        print("3 - 250g")
+        print("4 - 500g")
+        print("5 - 1000g")
         aux = int(input())
+        if(aux > 0 and aux < 6):
+            aux = listaSabores[aux]
+        else:
+            print("Dato no valido")
 
     heladoAux = Helado(aux)
-    print("hagame el favor de elegir un sabor porfa, 0 para salir de la seleccion")
+    s = "hagame el favor de elegir un sabor porfa,"
+    s = "0 para salir de la seleccion"
+    print(s)
     sabores.mostrarSabores()
 
     while(aux != 0 and heladoAux.getCantidadSabores() < 4):
@@ -25,15 +32,22 @@ def opcion1():
         saborAux = sabores.getSabor(aux)
         if(type(saborAux) is not None):
             heladoAux.agregarSabor(saborAux)
-            print(saborAux.getNombre(), " ha sido seleccionado te quedan ", str(4 - heladoAux.getCantidadSabores()), "sabores")
+            s = saborAux.getNombre() + " ha sido seleccionado te quedan"
+            s = str(4 - heladoAux.getCantidadSabores()) + "sabores"
+            print(s)
         else:
             print("Sabor invalido")
 
     helados.ventaHelado(heladoAux)
+    print("venta realizada")
 
 
 def opcion2():
-    pass
+    top1 = 0
+    top2 = 0
+    top3 = 0
+    top4 = 0
+    top5 = 0
 
 
 def opcion0():
