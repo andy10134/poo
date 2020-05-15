@@ -98,6 +98,7 @@ def opcion2():
 
 def opcion4():
     aux = 1
+    listaSabores = [100, 150, 250, 500, 1000]
     while(aux > 0 and aux < 6):
         print("Por favor seleccione un tipo de helado")
         print("1 - 100g")
@@ -109,11 +110,10 @@ def opcion4():
         if(aux < 0 and aux > 6):
             print("Dato no valido, ingrese otra vez")
         else:
-            tipo = aux
-            aux = -1
-    helados.buscarTipoHelado(tipo)
-
-
+            aux= listaSabores[aux-1]
+    helados.buscarTipoHelado(aux)
+    
+    
 def opcion3():
     numero = int(input("Ingrese el numero a buscar: "))
 

@@ -1,6 +1,6 @@
 import numpy as np
 
-from Helado import Helado
+from Helados import Helado
 
 
 class ManejaHelados:
