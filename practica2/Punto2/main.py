@@ -1,45 +1,7 @@
 from ManejaSabores import ManejaSabores
 from ManejaHelados import ManejaHelados
-from Helado import Helado
+from Helados import Helado
 
-
-# def opcion1():
-#    print("BUENASSSS")
-#    aux = 1
-#    listaSabores = [100, 150, 250, 500, 1000]
-#
-#    while(aux > 0 and aux < 6):
-#        print("Por favor seleccione un tipo de helado")
-#        print("1 - 100g")
-#        print("2 - 150g")
-#        print("3 - 250g")
-#        print("4 - 500g")
-#        print("5 - 1000g")
-#        aux = int(input())
-#        if(aux > 0 and aux < 6):
-#            aux = listaSabores[aux-1]
-#        else:
-#            print("Dato no valido")
-#
-#    heladoAux = Helado(aux)
-#    s = "hagame el favor de elegir un sabor porfa,"
-#    s = "0 para salir de la seleccion"
-#    print(s)
-#    sabores.mostrarSabores()
-#
-#    while(aux != 0 and heladoAux.getCantidadSabores() < 4):
-#        aux = int(input())
-#        saborAux = sabores.getSabor(aux)
-#        if(type(saborAux) is not None):
-#            heladoAux.agregarSabor(saborAux)
-#            s = saborAux.getNombre() + " ha sido seleccionado te quedan"
-#            s = str(4 - heladoAux.getCantidadSabores()) + "sabores"
-#            print(s)
-#        else:
-#            print("Sabor invalido")
-#
-#    helados.ventaHelado(heladoAux)
-#    print("venta realizada")
 
 def opcion1():
     print("BUENASSSS")
