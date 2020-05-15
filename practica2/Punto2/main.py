@@ -3,7 +3,7 @@ from ManejaHelados import ManejaHelados
 from Helado import Helado
 
 
-#def opcion1():
+# def opcion1():
 #    print("BUENASSSS")
 #    aux = 1
 #    listaSabores = [100, 150, 250, 500, 1000]
@@ -55,7 +55,7 @@ def opcion1():
         print("5 - 1000g")
         aux = int(input())
         if(aux > 0 and aux < 6):
-            aux = listaSabores[aux]
+            aux = listaSabores[aux-1]
         else:
             print("Dato no valido")
 
@@ -67,16 +67,17 @@ def opcion1():
 
     while(aux != 0 and heladoAux.getCantidadSabores() < 4):
         aux = int(input())
-        saborAux = sabores.getSabor(aux)
-        if(type(saborAux) is not None):
+        if(aux > 0 and aux <= sabores.getCantidad()):
+            saborAux = sabores.getSabor(aux)
             heladoAux.agregarSabor(saborAux)
-            s = saborAux.getNombre() + " ha sido seleccionado te quedan"
-            s += str(4 - heladoAux.getCantidadSabores()) + "sabores"
+            s = saborAux.getNombre() + " ha sido seleccionado te quedan "
+            s += str(4 - heladoAux.getCantidadSabores()) + " sabores"
             print(s)
         else:
             print("Sabor invalido")
 
-    sabores.setVenta(heladoAux.getSabores(), heladoAux.getCantidadSabores(), heladoAux.getGramos())
+    sabores.setVenta(heladoAux.getSabores(), heladoAux.getCantidadSabores(),
+                     heladoAux.getGramos())
     helados.ventaHelado(heladoAux)
     print("venta realizada")
 
@@ -84,7 +85,15 @@ def opcion1():
 def opcion2():
     print("Los helados mas vendidos son: ")
     lista = sabores.topVentas()
-    print(lista)
+    for sabor in enumerate(lista):
+        if(sabor[1][1] > 0):
+            print("========================================")
+            saborAux = sabores.getSabor(sabor[1][0])
+            print(saborAux.getNombre(),
+                  "\nDescripcion : ", saborAux.getDescripcion(),
+                  "\nNumero: ", saborAux.getNumero(),
+                  '\nPedido: ', sabor[1][1], " veces")
+            print("=========================================")
 
 
 def opcion4():
@@ -106,10 +115,11 @@ def opcion4():
 
 
 def opcion3():
-    numero = int(input("Ingrese el numero a buscar"))
+    numero = int(input("Ingrese el numero a buscar: "))
 
     if(numero > 0 and numero <= len(sabores.getSabores())):
-        sabores.getGramos(numero)
+        print("Se han vendido", sabores.gramosVendidos(numero),
+              "gramos")
     else:
         print("numero invalido")
 
@@ -139,8 +149,8 @@ if __name__ == "__main__":
         print("1.Registrar un helado vendido (instancia de la clase helado).")
         print("2.Mostrar el nombre de los 5 sabores de helado más pedidos.")
         print("3.Estimar el total de gramos vendidos.")
-        print("4.Ingresar un tipo de helado para mostrar los sabores vendidos en ese tamaño")
+        print("4.Ingresar un tipo de helado para mostrar los " +
+              " sabores vendidos en ese tamaño")
         opcion = int(input("Ingrese una opción: "))
         switch(opcion)
         bandera = int(opcion) == 0
-        helados.mostrarHelados()

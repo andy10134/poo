@@ -15,7 +15,7 @@ class ManejaHelados:
     def ventaHelado(self, helado):
         if (type(helado) is Helado):
             if(self.__cantidad == self.__dimension):
-                self.__dimension+= self.__incremento
+                self.__dimension += self.__incremento
                 self.__helados.resize(self.__dimension)
             self.__helados[self.__cantidad] = helado
             self.__cantidad += 1
@@ -36,17 +36,17 @@ class ManejaHelados:
             if(type(self.__helados[i]) is Helado):
                 print("=================")
                 print(self.__helados[i])
-    
+
     def buscarTipoHelado(self, tipo):
-        listaSabores= []
+        listaSabores = []
         for i in range(self.__dimension):
             if(type(self.__helados[i]) is Helado):
                 if(self.__helados[i].getGramos == tipo):
-                    sabores= self.__helados[i].getSabores()
+                    sabores = self.__helados[i].getSabores()
                     for j in range(self.__helados[i].getCantidadSabores()):
                         if(listaSabores.index(sabores[j]) == -1):
                             print(sabores[j])
                             listaSabores.append(sabores[j])
         print('SABORES VENDIDOS: ')
         for sabor in listaSabores:
-            print('-'+ sabor)
+            print('-' + sabor)
