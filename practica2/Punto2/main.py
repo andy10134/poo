@@ -110,10 +110,10 @@ def opcion4():
         if(aux < 0 and aux > 6):
             print("Dato no valido, ingrese otra vez")
         else:
-            aux= listaSabores[aux-1]
+            aux = listaSabores[aux-1]
     helados.buscarTipoHelado(aux)
-    
-    
+
+
 def opcion3():
     numero = int(input("Ingrese el numero a buscar: "))
 
