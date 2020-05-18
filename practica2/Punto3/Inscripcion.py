@@ -27,4 +27,3 @@ class Inscripcion:
 
     def getTaller(self):
         return self.__taller
-
