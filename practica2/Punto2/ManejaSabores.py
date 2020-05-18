@@ -10,24 +10,18 @@ class ManejaSabores:
     # Arreglo
     __cantidad = 0
     __dimension = 5
-    __incremento = 1
 
     def __init__(self, cantidad=5):
         self.__dimension = cantidad
-        self.__sabores = np.empty(self.__dimension, dtype=Sabor)
         self.__saboresPedidos = {}
         self.__gramosPedidos = {}
         i = 1
 
         archivo = open('./practica2/Punto2/sabores.csv')
         reader = csv.reader(archivo, delimiter=',')
+        self.__dimension = sum(1 for row in reader)
+        self.__sabores = np.empty(self.__dimension, dtype=Sabor)
         for fila in reader:
-            if(self.__cantidad == self.__dimension):    # verifica la cantidad
-                # de elementos y la dimension
-                self.__dimension += self.__incremento   # en caso de que sea
-                # igual se
-                self.__sabores.resize(self.__dimension)  # aumenta el largo
-                # del arreglo
             self.__sabores[self.__cantidad] = Sabor(fila[0], fila[1], i)
             self.__saboresPedidos[i] = 0
             self.__gramosPedidos[i] = 0
@@ -75,3 +69,5 @@ class ManejaSabores:
         else:
             print("Sabor invalido")
             return None
+
+ManejaSabores()

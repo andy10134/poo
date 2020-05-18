@@ -20,7 +20,7 @@ class ManejaHelados:
     def mostrarHelados(self):
         for helado in self.__helados:
             print("=================")
-            print(self.__helados[i])
+            print(self.__helados)
 
     def buscarTipoHelado(self, tipo):
         listaSabores= []
