@@ -20,15 +20,15 @@ class ManejaHelados:
     def mostrarHelados(self):
         for helado in self.__helados:
             print("=================")
-            print(self.__helados[i])
+            print(helado)
 
     def buscarTipoHelado(self, tipo):
         listaSabores= []
-        for i in range(self.__dimension):
-            if(type(self.__helados[i]) is Helado):
-                if(self.__helados[i].getGramos() == tipo):   
-                    sabores= self.__helados[i].getSabores()
-                    for j in range(self.__helados[i].getCantidadSabores()):
+        for helado in self.__helados:
+            if(type(helado) is Helado):
+                if(helado.getGramos() == tipo):   
+                    sabores= helado.getSabores()
+                    for j in range(helado.getCantidadSabores()):
                         indice = listaSabores.index(sabores[j].getNombre()) if sabores[j].getNombre() in listaSabores else -1
                         if(indice == -1):
                             listaSabores.append(sabores[j].getNombre())
