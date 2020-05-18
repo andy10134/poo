@@ -9,3 +9,16 @@ class Inscripcion:
         self.__persona = persona
         self.__taller = taller
         self.__pago = pago
+    
+    def getFechaInscripcion(self):
+        return self.__fechaInscripcion
+
+    def getPago(self):
+        return self.__pago
+    
+    def getPersona(self):
+        return self.__persona
+
+    def getTaller(self):
+        return self.__taller
+        
