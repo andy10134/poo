@@ -1,3 +1,7 @@
+from Inscripcion import Inscripcion
+import numpy as np
+
+
 class TallerCapacitacion:
 
     __idTaller = 0
@@ -6,15 +10,26 @@ class TallerCapacitacion:
     __montoInscripcion = 0
     __inscripciones = None
 
-    def __init__(self, id, nombre, vacantes, montoInscripcion):
-        self.__idTaller = id
+    __cantidad = 0
+    __dimension = 0
+    __incremento = 1
+
+    def __init__(self, idTaller, nombre, vacantes, montoInscripcion):
+        self.__idTaller = idTaller
         self.__nombre = nombre
         self.__vacantes = vacantes
         self.__montoInscripcion = montoInscripcion
+<<<<<<< HEAD
+        self.__dimension = self.__vacantes
+        self.__inscripciones = np.empty(
+            self.__dimension, dtype=Inscripcion
+        )
+=======
         self.__inscripciones = []
     
     def agregarInscripcion(self, inscripcion):
         self.__inscripciones.append(inscripcion)
+>>>>>>> b4a6c38a3413601953abe7da198e05d9470c18da
 
     def getId(self):
         return self.__idTaller
@@ -25,6 +40,21 @@ class TallerCapacitacion:
     def getVacantes(self):
         return self.__vacantes
 
+<<<<<<< HEAD
+    def getMontoInstcripcion(self):
+        return self.__montoInstcripcion
+
+    def agregarInscripcion(self, inscripcion):
+        if(type(inscripcion) is Inscripcion):
+            if(self.__cantidad == self.__vacantes):
+                print("Inscripciones cerradas")
+            self.__inscripciones[self.__cantidad] = inscripcion
+
+    def mostrarInscripciones(self):
+        for inscripcion in self.__inscripciones:
+            if(type(inscripcion) is Inscripcion):
+                print(inscripcion)
+=======
     def getMonto(self):
         return self.__montoInscripcion
 
@@ -36,3 +66,4 @@ class TallerCapacitacion:
 
     
 
+>>>>>>> b4a6c38a3413601953abe7da198e05d9470c18da
