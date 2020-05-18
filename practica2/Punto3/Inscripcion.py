@@ -9,5 +9,3 @@ class Inscripcion:
         self.__persona = persona
         self.__taller = taller
         self.__pago = pago
-
-    

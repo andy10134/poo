@@ -12,5 +12,3 @@ class TallerCapacitacion:
         self.__vacantes = vacantes
         self.__montoInscripcion = montoInscripcion
         self.__inscripciones = []
-
-    
