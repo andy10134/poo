@@ -1,41 +1,26 @@
-import numpy as np
-
 from Helados import Helado
 
 
 class ManejaHelados:
-    # Arreglo
-    __dimension = 1
-    __cantidad = 0
-    __incremento = 1
+
+    __helados = None
 
     def __init__(self):
-        self.__helados = np.empty(self.__dimension, dtype=Helado)
+        self.__helados = []
 
     def ventaHelado(self, helado):
         if (type(helado) is Helado):
-            if(self.__cantidad == self.__dimension):
-                self.__dimension += self.__incremento
-                self.__helados.resize(self.__dimension)
-            self.__helados[self.__cantidad] = helado
-            self.__cantidad += 1
+            self.__helados.append(helado)
         else:
             print("Helado Invalido")
 
-    def getHelado(self):
-        return self.__helados[self.__cantidad - 1]
-
     def getCantidad(self):
-        return self.__cantidad
-
-    def CantidadVecesPedido(self):
-        pass
+        return len(self.__helados)
 
     def mostrarHelados(self):
-        for i in range(self.__dimension):
-            if(type(self.__helados[i]) is Helado):
-                print("=================")
-                print(self.__helados[i])
+        for helado in self.__helados:
+            print("=================")
+            print(self.__helados[i])
 
     def buscarTipoHelado(self, tipo):
         listaSabores= []
