@@ -19,17 +19,10 @@ class TallerCapacitacion:
         self.__nombre = nombre
         self.__vacantes = vacantes
         self.__montoInscripcion = montoInscripcion
-<<<<<<< HEAD
         self.__dimension = self.__vacantes
         self.__inscripciones = np.empty(
             self.__dimension, dtype=Inscripcion
         )
-=======
-        self.__inscripciones = []
-    
-    def agregarInscripcion(self, inscripcion):
-        self.__inscripciones.append(inscripcion)
->>>>>>> b4a6c38a3413601953abe7da198e05d9470c18da
 
     def getId(self):
         return self.__idTaller
@@ -40,7 +33,6 @@ class TallerCapacitacion:
     def getVacantes(self):
         return self.__vacantes
 
-<<<<<<< HEAD
     def getMontoInstcripcion(self):
         return self.__montoInstcripcion
 
@@ -54,7 +46,6 @@ class TallerCapacitacion:
         for inscripcion in self.__inscripciones:
             if(type(inscripcion) is Inscripcion):
                 print(inscripcion)
-=======
     def getMonto(self):
         return self.__montoInscripcion
 
@@ -66,4 +57,3 @@ class TallerCapacitacion:
 
     
 
->>>>>>> b4a6c38a3413601953abe7da198e05d9470c18da
