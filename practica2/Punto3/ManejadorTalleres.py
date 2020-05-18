@@ -9,12 +9,16 @@ class ManejadorTalleres:
     __incremeto = 1
 
     def __init__(self, cantidad=5):
-        self.__dimension = cantidad
-
         archivo = open('./practica2/Punto3/Talleres.csv')
         reader = csv.reader(archivo, delimiter=',')
         for fila in reader:
-            if(len(fila) > 1):
+            if(len(fila) < 1):
+                self.__dimension = fila[0]
+                self.__talleres = np.empty(
+                    self.__dimension,
+                    dtype=TallerCapacitacion
+                )
+            else:
                 if(self.__cantidad == self.__dimension):
                     self.__dimension += self.__incremeto
                     self.__talleres.resize(self.__dimension)
@@ -22,11 +26,6 @@ class ManejadorTalleres:
                     fila[0], fila[1], fila[2], fila[3]
                 )
                 self.__cantidad += 1
-            else:
-                self.__talleres = np.empty(
-                    self.__dimension,
-                    dtype=TallerCapacitacion
-                )
 
     def listarTalleres(self):
         print("=====================")
