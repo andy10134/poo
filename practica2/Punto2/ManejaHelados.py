@@ -23,11 +23,11 @@ class ManejaHelados:
             print(helado)
 
     def buscarTipoHelado(self, tipo):
-        listaSabores= []
+        listaSabores = []
         for helado in self.__helados:
             if(type(helado) is Helado):
                 if(helado.getGramos() == tipo):   
-                    sabores= helado.getSabores()
+                    sabores = helado.getSabores()
                     for j in range(helado.getCantidadSabores()):
                         indice = listaSabores.index(sabores[j].getNombre()) if sabores[j].getNombre() in listaSabores else -1
                         if(indice == -1):
