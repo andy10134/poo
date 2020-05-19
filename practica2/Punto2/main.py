@@ -1,12 +1,8 @@
-from ManejaSabores import ManejaSabores
-from ManejaHelados import ManejaHelados
 from Menu import Menu
 
 if __name__ == "__main__":
     salir = False
-    helados = ManejaHelados()
-    sabores = ManejaSabores()
-    menu = Menu(sabores, helados)
+    menu = Menu()
 
     print("Bienvenido al conito")
     while not salir:

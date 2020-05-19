@@ -9,7 +9,7 @@ class Menu:
     __helados = None
     __sabores = None
 
-    def __init__(self, helados, sabores):
+    def __init__(self):
         self.__switcher = {
             1: self.opcion1,
             2: self.opcion2,
