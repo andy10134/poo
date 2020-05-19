@@ -12,18 +12,15 @@ class ManejadorTalleres:
         archivo = open('./practica2/Punto3/Talleres.csv')
         reader = csv.reader(archivo, delimiter=',')
         for fila in reader:
-            if(len(fila) < 1):
-                self.__dimension = fila[0]
+            if(len(fila) == 1):
+                self.__dimension = int(fila[0])
                 self.__talleres = np.empty(
                     self.__dimension,
                     dtype=TallerCapacitacion
                 )
             else:
-                if(self.__cantidad == self.__dimension):
-                    self.__dimension += self.__incremeto
-                    self.__talleres.resize(self.__dimension)
                 self.__talleres[self.__cantidad] = TallerCapacitacion(
-                    fila[0], fila[1], fila[2], fila[3]
+                    int(fila[0]), fila[1], int(fila[2]), float(fila[3])
                 )
                 self.__cantidad += 1
 

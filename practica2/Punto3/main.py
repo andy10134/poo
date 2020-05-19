@@ -27,3 +27,36 @@
 # 6.Guardar inscripciones: Generar un nuevo archivo que contenga los
 # siguientes datos de las inscripciones: DNI de la persona, idTaller,
 # fechaInscripcion y pago.
+from Menu import Menu
+
+
+if __name__ == "__main__":
+    salir = False
+    menu = Menu()
+
+    print("Talleres App")
+    while not salir:
+        print("")
+        print("0 Salir")
+        print("1.Inscribir una persona en un taller.")
+        print(
+            "2.Consultar inscripción: Ingresar el DNI de una persona, si ",
+            "está inscripta mostrar el nombre del taller en el que se",
+            " inscribió y el monto que adeuda."
+        )
+        print(
+            "3.Consultar inscriptos: Ingresar el identificador de un taller",
+            " y listar los datos de los alumnos que se inscribieron en él."
+        )
+        print(
+            "4.Registrar pago: Ingresar el DNI de una persona ",
+            "y registrar el pago (dar al atributo pago el valor True)."
+        )
+        print(
+            "6.Guardar inscripciones: Generar un nuevo archivo que contenga ",
+            "los siguientes datos de las inscripciones:",
+            " DNI de la persona, idTaller, fechaInscripcion y pago."
+        )
+        opcion = int(input("Ingrese una opción: "))
+        menu.opcion(opcion)
+        salir = int(opcion) == 0
