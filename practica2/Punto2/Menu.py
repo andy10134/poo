@@ -63,7 +63,11 @@ class Menu:
                 s += str(4 - heladoAux.getCantidadSabores()) + " sabores"
                 print(s)
             else:
-                print("Sabor invalido")
+                if(aux == 0):
+                    print("Saliendo...")
+                else:
+                    print("Sabor invalido")
+                    print("reintente")
 
         self.__sabores.setVenta(
             heladoAux.getSabores(),
