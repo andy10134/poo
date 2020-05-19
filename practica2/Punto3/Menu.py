@@ -16,7 +16,7 @@ class Menu:
             2: self.opcion2,
             3: self.opcion3,
             4: self.opcion4,
-            5: self.salir
+            0: self.salir
         }
         self.__talleres = ManejadorTalleres()
         self.__personas = ManejadorPersona()
@@ -30,7 +30,7 @@ class Menu:
         func()
 
     def salir(self):
-        print('Salir')
+        print('Adios!')
 
     def opcion1(self):
         pass
@@ -39,7 +39,8 @@ class Menu:
         pass
 
     def opcion3(self):
-        pass
-
+        dni = input('Ingrese DNI: ')
+        self.__personas.buscarPersona(dni)
+        
     def opcion4(self):
         pass

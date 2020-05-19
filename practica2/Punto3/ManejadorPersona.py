@@ -5,8 +5,8 @@ import numpy as np
 
 class ManejadorPersona:
     __cantidad = 0
-    __dimension = 1
-    __incremeto = 0
+    __dimension = 0
+    __incremeto = 5
 
     def __init__(self, cantidad=5):
         self.__dimension = cantidad
@@ -22,3 +22,15 @@ class ManejadorPersona:
                 fila[0], fila[1], fila[2]
             )
             self.__cantidad += 1
+        
+    def buscarPersona(self, dni):
+        bandera = True
+        i = 0
+        while(bandera and i < self.__cantidad):
+            if(type(self.__personas[i]) is Persona):
+                if(self.__personas[i].getDni() == dni):
+                    bandera = False
+                else:
+                    i += 1
+        if(bandera == False):
+            return 
