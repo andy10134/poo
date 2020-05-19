@@ -33,27 +33,28 @@ class TallerCapacitacion:
     def getVacantes(self):
         return self.__vacantes
 
-    def getVacantesRestantes(self):
-        return self.__vacantes - self.__cantidad
-
     def getMontoInstcripcion(self):
         return self.__montoInstcripcion
 
     def agregarInscripcion(self, inscripcion):
         if(type(inscripcion) is Inscripcion):
-            if(not(self.__cantidad - self.__vacantes)):
+            if(self.__vacantes == 0):
                 print("Inscripciones cerradas")
             else:
                 self.__inscripciones[self.__cantidad] = inscripcion
                 self.__cantidad += 1
+                self.__vacantes -= 1
                 print("Quedan ", str(
-                    self.__vacantes - self.__cantidad
+                    self.__vacantes
                 ), " disponibles")
 
     def mostrarInscripciones(self):
-        for inscripcion in self.__inscripciones:
-            if(type(inscripcion) is Inscripcion):
-                print(inscripcion)
+        if(self.__cantidad != 0):
+            for inscripcion in self.__inscripciones:
+                if(type(inscripcion) is Inscripcion):
+                    print(inscripcion)
+        else:
+            print("No hay inscriptos")
 
     def getMonto(self):
         return self.__montoInscripcion

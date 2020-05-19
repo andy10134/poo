@@ -36,7 +36,7 @@ if __name__ == "__main__":
 
     print("Talleres App")
     while not salir:
-        print("")
+        print("=====================================")
         print("0 Salir")
         print("1.Inscribir una persona en un taller.")
         print(

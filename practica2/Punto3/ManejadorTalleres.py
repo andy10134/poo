@@ -25,10 +25,21 @@ class ManejadorTalleres:
                 self.__cantidad += 1
 
     def listarTalleres(self):
-        print("=====================")
         for taller in self.__talleres:
             if(type(taller) is TallerCapacitacion):
+                print("=====================")
                 print("Id Taller: ", str(taller.getId()))
                 print("Taller: ", taller.getNombre())
                 print("Vacantes: ", taller.getVacantes())
-                print("Inscriptos: ", taller.mostrarInscripciones())
+                print("Inscriptos: ")
+                taller.mostrarInscripciones()
+
+    def getTallerById(self, idTaller):
+        i = 0
+        while(self.__talleres[i].getId() != idTaller):
+            i += 1
+
+        if(i <= self.__dimension):
+            return self.__talleres[i]
+        else:
+            return None

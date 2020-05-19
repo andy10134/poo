@@ -5,10 +5,10 @@ class Inscripcion:
     __persona = None
     __taller = None
 
-    def __init__(self, pago, persona, taller):
+    def __init__(self, persona, taller):
         self.__persona = persona
         self.__taller = taller
-        self.__pago = pago
+        self.__pago = False
 
     def __str__(self):
         return (

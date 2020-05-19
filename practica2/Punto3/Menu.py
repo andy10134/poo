@@ -1,6 +1,7 @@
 from ManejadorTalleres import ManejadorTalleres
 from ManejadorPersona import ManejadorPersona
 from ManejadorInscripciones import ManejadorInscripciones
+import os
 
 
 class Menu:
@@ -16,7 +17,7 @@ class Menu:
             2: self.opcion2,
             3: self.opcion3,
             4: self.opcion4,
-            5: self.salir
+            0: self.salir
         }
         self.__talleres = ManejadorTalleres()
         self.__personas = ManejadorPersona()
@@ -31,9 +32,19 @@ class Menu:
 
     def salir(self):
         print('Salir')
+# 2.Inscribir una persona en un taller: Se registra la inscripción
+# (con el atributo pago en False) y la cantidad de vacantes del taller debe
+# ser actualizada.
 
     def opcion1(self):
-        pass
+        os.system("cls")
+        print("============================")
+        print("Agregar Inscripcion")
+        print("Seleccione el id del curso: ")
+        self.__talleres.listarTalleres()
+        aux = int(input("Ingrese el id del curso"))
+        auxTaller = self.__talleres.getTallerById(aux)
+                
 
     def opcion2(self):
         pass
