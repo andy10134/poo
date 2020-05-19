@@ -22,15 +22,3 @@ class ManejadorPersona:
                 fila[0], fila[1], fila[2]
             )
             self.__cantidad += 1
-        
-    def buscarPersona(self, dni):
-        bandera = True
-        i = 0
-        while(bandera and i < self.__cantidad):
-            if(type(self.__personas[i]) is Persona):
-                if(self.__personas[i].getDni() == dni):
-                    bandera = False
-                else:
-                    i += 1
-        if(bandera == False):
-            return 
