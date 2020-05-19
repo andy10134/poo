@@ -50,7 +50,8 @@ class Menu:
         pass
 
     def opcion3(self):
-        pass
-
+        dni = input('Ingrese DNI: ')
+        self.__personas.buscarPersona(dni)
+        
     def opcion4(self):
         pass
