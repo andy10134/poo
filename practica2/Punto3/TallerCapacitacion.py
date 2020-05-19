@@ -33,9 +33,6 @@ class TallerCapacitacion:
     def getVacantes(self):
         return self.__vacantes
 
-    def getMontoInstcripcion(self):
-        return self.__montoInstcripcion
-
     def agregarInscripcion(self, inscripcion):
         if(type(inscripcion) is Inscripcion):
             if(self.__vacantes == 0):

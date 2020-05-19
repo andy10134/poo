@@ -51,7 +51,7 @@ class Menu:
 
     def opcion3(self):
         dni = input('Ingrese DNI: ')
-        self.__personas.buscarPersona(dni)
+        self.__inscripciones.buscarPersona(dni)
         
     def opcion4(self):
         pass

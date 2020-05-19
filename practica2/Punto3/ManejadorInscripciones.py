@@ -15,5 +15,25 @@ class ManejadorInscripciones:
         if(self.__dimension == self.__cantidad):
             self.__dimension += self.__incremento
             self.__inscripciones.resize(self.__dimension)
-        self.__inscripciones[self.__cantidad] = Inscripcion(persona, taller, pago)
+        self.__inscripciones[self.__cantidad] = Inscripcion(persona, taller)
         self.__cantidad += 1
+    
+    def buscarPersona(self, dni):
+        bandera = True
+        i = 0
+        while(bandera and i < self.__cantidad):
+            if(type(self.__inscripciones[i]) is Inscripcion):
+                persona = self.__inscripciones[i].getPersona()
+                if(persona.getDni() == dni):
+                    bandera = False
+                else:
+                    i += 1
+        if(bandera == False):
+            taller = self.__inscripciones[i].getTaller()
+            print('Esta persona se inscribió en el taller ' + taller.getNombre())
+            if(self.__inscripciones[i].getPago() == False):
+                print('Adeuda: ' + taller.getMonto())
+            else:
+                print('No adeuda el pago del taller')
+        else:
+            print('No se inscribió en ningún taller')
