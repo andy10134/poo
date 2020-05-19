@@ -15,7 +15,7 @@ class Menu:
             2: self.opcion2,
             3: self.opcion3,
             4: self.opcion4,
-            5: self.salir
+            0: self.salir
         }
         self.__helados = ManejaHelados()
         self.__sabores = ManejaSabores()
@@ -28,7 +28,7 @@ class Menu:
         func()
 
     def salir(self):
-        print('Salir')
+        print('Adios!')
 
     def opcion1(self):
         print("BUENASSSS")
