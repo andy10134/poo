@@ -1,4 +1,4 @@
-from Persona import Persona
+from ..Models.Persona import Persona
 import csv
 import numpy as np
 
@@ -22,3 +22,13 @@ class ManejadorPersona:
                 fila[0], fila[1], fila[2]
             )
             self.__cantidad += 1
+
+    def getPersonaByDni(self, dni):
+        i = 0
+        while (self.__personas[i].getDni() != dni):
+            i += 1
+
+        if(i <= self.__dimension):
+            return self.__personas[i]
+        else:
+            return None

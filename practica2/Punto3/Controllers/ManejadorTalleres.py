@@ -1,6 +1,6 @@
 import numpy as np
 import csv
-from TallerCapacitacion import TallerCapacitacion
+from ..Models.TallerCapacitacion import TallerCapacitacion
 
 
 class ManejadorTalleres:

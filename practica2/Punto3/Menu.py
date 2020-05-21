@@ -1,15 +1,14 @@
-from ManejadorTalleres import ManejadorTalleres
-from ManejadorPersona import ManejadorPersona
-from ManejadorInscripciones import ManejadorInscripciones
+from .Controllers.ManejadorInscripciones import ManejadorInscripciones
+from .Controllers.ManejadorTalleres import ManejadorTalleres
+from .Controllers.ManejadorPersona import ManejadorPersona
+from .Models.TallerCapacitacion import TallerCapacitacion
+from .Models.Persona import Persona
 import os
 
 
 class Menu:
 
     __switcher = None
-    __talleres = None
-    __personas = None
-    __inscripciones = None
 
     def __init__(self):
         self.__switcher = {
@@ -40,11 +39,20 @@ class Menu:
         os.system("cls")
         print("============================")
         print("Agregar Inscripcion")
-        print("Seleccione el id del curso: ")
-        self.__talleres.listarTalleres()
-        aux = int(input("Ingrese el id del curso"))
-        auxTaller = self.__talleres.getTallerById(aux)
-                
+        print("Seleccione a usuario: ")
+        self.__personas.listarPersonas()
+        auxPersona = self.__personas.getPersonaByDni()
+
+        if(type(auxPersona) is Persona):
+            print("============================")
+            print("Seleccione el id del curso: ")
+            self.__talleres.listarTalleres()
+            aux = int(input("Ingrese el id del curso"))
+            auxTaller = self.__talleres.getTallerById(aux)
+            if(type(auxTaller) is TallerCapacitacion):
+                self.__inscripciones.agregarInscripcion(auxPersona, auxTaller)
+        else:
+            print("DNI invalido Cancelando inscripcion...")
 
     def opcion2(self):
         pass
@@ -52,6 +60,6 @@ class Menu:
     def opcion3(self):
         dni = input('Ingrese DNI: ')
         self.__inscripciones.buscarPersona(dni)
-        
+
     def opcion4(self):
         pass
