@@ -1,4 +1,4 @@
-from Inscripcion import Inscripcion
+from .Inscripcion import Inscripcion
 import numpy as np
 
 
