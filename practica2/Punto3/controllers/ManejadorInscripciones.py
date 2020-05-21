@@ -40,3 +40,11 @@ class ManejadorInscripciones:
                 print('No adeuda el pago del taller')
         else:
             print('No se inscribió en ningún taller')
+
+    def buscarTaller(self, id):
+        for inscripcion in self.__inscripciones:
+            if(type(inscripcion) is Inscripcion):
+                taller = inscripcion.getTaller()
+                if(taller.getId() == id):
+                    persona = inscripcion.getPersona()
+                    print(persona)

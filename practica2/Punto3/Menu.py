@@ -59,7 +59,8 @@ class Menu:
         self.__inscripciones.buscarPersona(dni)
 
     def opcion3(self):
-        pass
+        id= input('Ingrese ID: ')
+        self.__inscripciones.buscarTaller(id)
 
     def opcion4(self):
         pass
