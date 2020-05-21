@@ -1,4 +1,4 @@
-from ..models import TallerCapacitacion
+from ..models.TallerCapacitacion import TallerCapacitacion
 import numpy as np
 import csv
 

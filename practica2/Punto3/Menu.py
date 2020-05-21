@@ -1,8 +1,8 @@
-from practica2.Punto3.controllers.manejadorTalleres import ManejadorTalleres
-from controllers import manejadorInscripciones
-from controllers import manejadorPersona
-from models.TallerCapacitacion import TallerCapacitacion
-from models.Persona import Persona
+from .controllers.manejadorTalleres import ManejadorTalleres
+from .controllers.manejadorInscripciones import ManejadorInscripciones 
+from .controllers.manejadorPersona import ManejadorPersona
+from .models.TallerCapacitacion import TallerCapacitacion
+from .models.Persona import Persona
 import os
 
 
