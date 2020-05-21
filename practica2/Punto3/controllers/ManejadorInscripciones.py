@@ -11,7 +11,7 @@ class ManejadorInscripciones:
         self.__dimension = cantidadInscripciones
         self.__inscripciones = np.empty(self.__dimension, dtype=Inscripcion)
 
-    def agregarInscripcion(self, persona, taller, pago):
+    def agregarInscripcion(self, persona, taller):
         if(self.__dimension == self.__cantidad):
             self.__dimension += self.__incremento
             self.__inscripciones.resize(self.__dimension)
