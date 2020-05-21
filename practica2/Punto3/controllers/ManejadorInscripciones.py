@@ -1,4 +1,4 @@
-from ..Models.Inscripcion import Inscripcion
+from ..models.Inscripcion import Inscripcion
 import numpy as np
 
 

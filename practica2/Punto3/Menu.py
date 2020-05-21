@@ -1,8 +1,8 @@
-from .Controllers.ManejadorInscripciones import ManejadorInscripciones
-from .Controllers.ManejadorTalleres import ManejadorTalleres
-from .Controllers.ManejadorPersona import ManejadorPersona
-from .Models.TallerCapacitacion import TallerCapacitacion
-from .Models.Persona import Persona
+from .controllers.ManejadorTalleres import ManejadorTalleres
+from .controllers.ManejadorInscripciones import ManejadorInscripciones
+from .controllers.ManejadorPersona import ManejadorPersona
+from .models.TallerCapacitacion import TallerCapacitacion
+from .models.Persona import Persona
 import os
 
 

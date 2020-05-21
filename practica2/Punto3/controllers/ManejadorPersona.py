@@ -1,4 +1,4 @@
-from ..Models.Persona import Persona
+from ..models.Persona import Persona
 import csv
 import numpy as np
 
