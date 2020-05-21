@@ -1,3 +1,6 @@
+from datetime import datetime
+
+
 class Inscripcion:
 
     __fechaInscripcion = None
@@ -9,12 +12,13 @@ class Inscripcion:
         self.__persona = persona
         self.__taller = taller
         self.__pago = False
+        self.__fechaInscripcion = datetime.today()
 
     def __str__(self):
-        return (
-            self.__persona.__str__(),
-            "\nPago: ", str(self.__pago)
-        )
+        return (('Persona: {} \nPago : {} \nFecha: {}').format(
+            self.__persona.getNombre(), self.getPago(),
+            self.getFechaInscripcion()
+            ))
 
     def getFechaInscripcion(self):
         return self.__fechaInscripcion
@@ -24,6 +28,9 @@ class Inscripcion:
 
     def getPersona(self):
         return self.__persona
+
+    def getDni(self):
+        return self.__persona.getDni()
 
     def getTaller(self):
         return self.__taller

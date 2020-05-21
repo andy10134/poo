@@ -1,8 +1,8 @@
-from controllers.ManejadorTalleres import ManejadorTalleres
-from controllers.ManejadorInscripciones import ManejadorInscripciones 
-from controllers.ManejadorPersona import ManejadorPersona
-from models.TallerCapacitacion import TallerCapacitacion
-from models.Persona import Persona
+from ManejadorTalleres import ManejadorTalleres
+from ManejadorInscripciones import ManejadorInscripciones
+from ManejadorPersona import ManejadorPersona
+from TallerCapacitacion import TallerCapacitacion
+from Persona import Persona
 import os
 
 
@@ -16,6 +16,7 @@ class Menu:
             2: self.opcion2,
             3: self.opcion3,
             4: self.opcion4,
+            5: self.opcion5,
             0: self.salir
         }
         self.__talleres = ManejadorTalleres()
@@ -36,31 +37,38 @@ class Menu:
 # ser actualizada.
 
     def opcion1(self):
-        os.system("cls")
+        os.system("clear")
         print("============================")
         print("Agregar Inscripcion")
         print("Seleccione a usuario: ")
         self.__personas.listarPersonas()
-        auxPersona = self.__personas.getPersonaByDni()
+        aux = str(input("Ingrese el Dni de la persona: "))
+        auxPersona = self.__personas.getPersonaByDni(aux)
 
         if(type(auxPersona) is Persona):
+            os.system("clear")
+            print(auxPersona)
+            print("\n")
             print("============================")
             print("Seleccione el id del curso: ")
             self.__talleres.listarTalleres()
-            aux = int(input("Ingrese el id del curso"))
+            aux = int(input("Ingrese el id del curso: "))
             auxTaller = self.__talleres.getTallerById(aux)
             if(type(auxTaller) is TallerCapacitacion):
                 self.__inscripciones.agregarInscripcion(auxPersona, auxTaller)
         else:
-            print("DNI invalido Cancelando inscripcion...")
+            print("DNI no encontrado Cancelando inscripcion...")
 
     def opcion2(self):
         dni = input('Ingrese DNI: ')
         self.__inscripciones.buscarPersona(dni)
 
     def opcion3(self):
-        id= input('Ingrese ID: ')
+        id = input('Ingrese ID: ')
         self.__inscripciones.buscarTaller(id)
 
     def opcion4(self):
+        pass
+
+    def opcion5(self):
         pass

@@ -19,6 +19,6 @@ class Persona:
         return self.__dni
 
     def __str__(self):
-        return ('Nombre: ' + self.getNombre(),
-                'Dirección: ' + self.getDireccion(),
-                'Dni: ' + self.getDni())
+        return (('Nombre : {} \nDni: {} \nDireccion: {}').format(
+            self.getNombre(), self.getDni(), self.getDireccion()
+            ))
