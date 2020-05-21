@@ -27,7 +27,7 @@
 # 6.Guardar inscripciones: Generar un nuevo archivo que contenga los
 # siguientes datos de las inscripciones: DNI de la persona, idTaller,
 # fechaInscripcion y pago.
-from .Menu import Menu
+from Menu import Menu
 
 
 if __name__ == "__main__":

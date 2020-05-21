@@ -1,4 +1,4 @@
-from controllers import manejadorTalleres
+from practica2.Punto3.controllers.manejadorTalleres import ManejadorTalleres
 from controllers import manejadorInscripciones
 from controllers import manejadorPersona
 from models.TallerCapacitacion import TallerCapacitacion
