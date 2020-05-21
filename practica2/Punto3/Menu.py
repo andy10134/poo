@@ -55,11 +55,11 @@ class Menu:
             print("DNI invalido Cancelando inscripcion...")
 
     def opcion2(self):
-        pass
-
-    def opcion3(self):
         dni = input('Ingrese DNI: ')
         self.__inscripciones.buscarPersona(dni)
+
+    def opcion3(self):
+        pass
 
     def opcion4(self):
         pass

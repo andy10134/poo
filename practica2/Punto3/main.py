@@ -53,7 +53,7 @@ if __name__ == "__main__":
             "y registrar el pago (dar al atributo pago el valor True)."
         )
         print(
-            "6.Guardar inscripciones: Generar un nuevo archivo que contenga ",
+            "5.Guardar inscripciones: Generar un nuevo archivo que contenga ",
             "los siguientes datos de las inscripciones:",
             " DNI de la persona, idTaller, fechaInscripcion y pago."
         )
