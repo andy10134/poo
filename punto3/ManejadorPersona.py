@@ -12,7 +12,7 @@ class ManejadorPersona:
         self.__dimension = cantidad
         self.__personas = np.empty(self.__dimension, dtype=Persona)
 
-        archivo = open('./csv/Persona.csv')
+        archivo = open('./punto3/csv/Persona.csv')
         reader = csv.reader(archivo, delimiter=',')
         for fila in reader:
             if(self.__cantidad == self.__dimension):

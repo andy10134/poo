@@ -22,6 +22,9 @@ class ManejadorInscripciones:
                 Inscripcion(persona, taller)
                 )
             self.__cantidad += 1
+            print('se inscribio una persona')
+        else: 
+            print('no se logro inscribir la persona')
 
     def buscarPersona(self, dni):
         bandera = True
@@ -33,6 +36,8 @@ class ManejadorInscripciones:
                     bandera = False
                 else:
                     i += 1
+            else: 
+                i+=1
         if(not bandera):
             taller = self.__inscripciones[i].getTaller()
             print(
@@ -40,7 +45,7 @@ class ManejadorInscripciones:
                 taller.getNombre()
             )
             if(not self.__inscripciones[i].getPago()):
-                print('Adeuda: ' + taller.getMonto())
+                print('Adeuda: {}'.format(taller.getMonto()))
             else:
                 print('No adeuda el pago del taller')
         else:
@@ -52,4 +57,23 @@ class ManejadorInscripciones:
                 taller = inscripcion.getTaller()
                 if(taller.getId() == id):
                     persona = inscripcion.getPersona()
+                    print('=====================')
                     print(persona)
+    
+    def cambiarPago(self, dni):
+        bandera = True
+        i = 0
+        while(bandera and i < self.__cantidad):
+            if(type(self.__inscripciones[i]) is Inscripcion):
+                persona = self.__inscripciones[i].getPersona()
+                if(persona.getDni() == dni):
+                    bandera = False
+                else:
+                    i += 1
+            else: 
+                i+=1
+        if(not bandera):
+            self.__inscripciones[i].setPago(True)
+            print('Se registro el pago')
+        else:
+            print('No se inscribió en ningún taller')

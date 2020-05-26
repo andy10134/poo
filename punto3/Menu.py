@@ -64,11 +64,12 @@ class Menu:
         self.__inscripciones.buscarPersona(dni)
 
     def opcion3(self):
-        id = input('Ingrese ID: ')
+        id = int(input('Ingrese ID: '))
         self.__inscripciones.buscarTaller(id)
 
     def opcion4(self):
-        pass
+        dni = input('Ingrese DNI: ')
+        self.__inscripciones.cambiarPago(dni)
 
     def opcion5(self):
         pass

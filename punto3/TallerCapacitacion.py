@@ -44,6 +44,7 @@ class TallerCapacitacion:
                 print("Quedan ", str(
                     self.__vacantes
                 ), " disponibles")
+        return inscripcion
 
     def mostrarInscripciones(self):
         if(self.__cantidad != 0):

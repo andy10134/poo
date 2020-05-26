@@ -34,3 +34,6 @@ class Inscripcion:
 
     def getTaller(self):
         return self.__taller
+
+    def setPago(self, pago):
+        self.__pago = pago

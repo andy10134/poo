@@ -9,7 +9,7 @@ class ManejadorTalleres:
     __incremeto = 1
 
     def __init__(self, cantidad=5):
-        archivo = open('./csv/Talleres.csv')
+        archivo = open('./punto3/csv/Talleres.csv')
         reader = csv.reader(archivo, delimiter=',')
         for fila in reader:
             if(len(fila) == 1):
