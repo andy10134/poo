@@ -73,6 +73,5 @@ class Menu:
         self.__inscripciones.cambiarPago(dni)
 
     def opcion5(self):
-        self.__inscripciones.mostrar()
         json = ObjectEncoder()
         json.guardarJSONArchivo(self.__inscripciones.toJSON(), 'ins.json')
