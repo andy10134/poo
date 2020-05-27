@@ -1,0 +1,23 @@
+{
+    "__class__": "ManejadorInscripciones",
+    "inscripciones": [
+        {
+            "__class__": "Inscripcion",
+            "__atributos__": {
+                "dniPersona": "42356255",
+                "idTaller": 1,
+                "fechaInscripcion": "2020-05-26 21:03:20.840237",
+                "pago": false
+            }
+        },
+        {
+            "__class__": "Inscripcion",
+            "__atributos__": {
+                "dniPersona": "42356255",
+                "idTaller": 2,
+                "fechaInscripcion": "2020-05-26 21:03:39.189882",
+                "pago": false
+            }
+        }
+    ]
+}

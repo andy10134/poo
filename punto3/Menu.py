@@ -3,6 +3,7 @@ from ManejadorInscripciones import ManejadorInscripciones
 from ManejadorPersona import ManejadorPersona
 from TallerCapacitacion import TallerCapacitacion
 from Persona import Persona
+from objectEncoder import ObjectEncoder
 import os
 
 
@@ -72,4 +73,6 @@ class Menu:
         self.__inscripciones.cambiarPago(dni)
 
     def opcion5(self):
-        pass
+        self.__inscripciones.mostrar()
+        json = ObjectEncoder()
+        json.guardarJSONArchivo(self.__inscripciones.toJSON(), 'ins.json')

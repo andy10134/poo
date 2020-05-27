@@ -14,6 +14,18 @@ class Inscripcion:
         self.__pago = False
         self.__fechaInscripcion = datetime.today()
 
+    def toJSON(self):
+        d = dict(
+            __class__=self.__class__.__name__,
+            __atributos__=dict(
+                dniPersona=self.__persona.getDni(),
+                idTaller=self.__taller.getId(),
+                fechaInscripcion=str(self.__fechaInscripcion),
+                pago=self.__pago
+                )
+        )
+        return d
+
     def __str__(self):
         return (('Persona: {} \nPago : {} \nFecha: {}').format(
             self.__persona.getNombre(), self.getPago(),
