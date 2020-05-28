@@ -53,15 +53,6 @@ class ManejadorInscripciones:
         else:
             print('No se inscribió en ningún taller')
 
-    def buscarTaller(self, id):
-        for inscripcion in self.__inscripciones:
-            if(type(inscripcion) is Inscripcion):
-                taller = inscripcion.getTaller()
-                if(taller.getId() == id):
-                    persona = inscripcion.getPersona()
-                    print('=====================')
-                    print(persona)
-
     def toJSON(self):
         inscripciones = []
         for ins in self.__inscripciones:

@@ -48,7 +48,9 @@ class TallerCapacitacion:
         if(self.__cantidad != 0):
             for inscripcion in self.__inscripciones:
                 if(type(inscripcion) is Inscripcion):
-                    print(inscripcion)
+                    persona = inscripcion.getPersona()
+                    print('=====================')
+                    print(persona)
         else:
             print("No hay inscriptos")
 
