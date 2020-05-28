@@ -1,5 +1,6 @@
 from empleado import Empleado
 
+
 class EmpleadoPlanta(Empleado):
 
     __sueldoBasico = 0
