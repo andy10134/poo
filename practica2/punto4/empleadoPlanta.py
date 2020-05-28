@@ -1,14 +1,14 @@
-from empleado import Empleado
-
+from .empleado import Empleado
 
 class EmpleadoPlanta(Empleado):
 
     __sueldoBasico = 0
     __antiguedad = 0
 
-    def __init__(self, sueldo, antiguedad):
+    def __init__(self, dni, nombre, direccion, telefono, sueldo, antiguedad):
         self.__sueldoBasico = sueldo
         self.__antiguedad = antiguedad
+        super().__init__(dni, nombre, direccion, telefono)
 
     def getSueldo(self):
         return self.__sueldoBasico
