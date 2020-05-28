@@ -15,3 +15,4 @@ class EmpleadosExternos(EmpleadoTercero):
         self.__viaticos = viaticos
         self.__trabajo = trabajo
         super().__init__(dni, nombre, direccion, telefono, fecha_inicio, fecha_fin)
+
