@@ -6,10 +6,13 @@ class Contratado(EmpleadoTercero):
     __cantHoras = 0
     __valorHora = 50
 
-    def __init__(self, dni, nombre, direccion, telefono, fecha_inicio, fecha_fin, cantidad):
+    def __init__(self, dni, nombre, direccion, telefono,
+                 fecha_inicio, fecha_fin, cantidad):
         self.__cantHoras = cantidad
-        super().__init__(dni, nombre, direccion,
-                 telefono, fecha_inicio, fecha_fin)
+        super().__init__(
+            dni, nombre, direccion,
+            telefono, fecha_inicio, fecha_fin
+        )
 
     def getCantidad(self):
         return self.__cantHoras

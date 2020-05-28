@@ -1,5 +1,6 @@
 from .empleado import Empleado
 
+
 class EmpleadoPlanta(Empleado):
 
     __sueldoBasico = 0
@@ -15,6 +16,10 @@ class EmpleadoPlanta(Empleado):
 
     def getAntiguedad(self):
         return self.__antiguedad
-    
+
     def __str__(self):
-        return ('Sueldo: {} \nAntiguedad: {}'.format(self.getSueldo(), self.getAntiguedad))
+        return (
+            'Sueldo: {} \nAntiguedad: {}'.format(
+                self.getSueldo(), self.getAntiguedad
+            )
+        )
