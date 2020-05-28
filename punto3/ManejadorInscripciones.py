@@ -15,18 +15,21 @@ class ManejadorInscripciones:
 
     def agregarInscripcion(self, persona, taller):
         if (type(taller) is TallerCapacitacion and type(persona) is Persona):
-            if(self.__dimension == self.__cantidad):
-                self.__dimension += self.__incremento
-                self.__inscripciones.resize(self.__dimension)
-            self.__inscripciones[self.__cantidad] = taller.agregarInscripcion(
-                Inscripcion(persona, taller)
-                )
-            self.__cantidad += 1
-            print('se inscribio una persona')
-        else:
-            print('no se logro inscribir la persona')
+            if(self.buscarPersona):
+                print("Se ha detectado una inscripcion en otro curso")
+            else:
+                if(self.__dimension == self.__cantidad):
+                    self.__dimension += self.__incremento
+                    self.__inscripciones.resize(self.__dimension)
+                self.__inscripciones[self.__cantidad] = taller.agregarInscripcion(
+                    Inscripcion(persona, taller)
+                    )
+                self.__cantidad += 1
+                print('se inscribio una persona')
+            else:
+                print('no se logro inscribir la persona')
 
-    def buscarPersona(self, dni):
+    def buscarPersona(self, dni, op=0):
         bandera = True
         i = 0
         while(bandera and i < self.__cantidad):
@@ -38,6 +41,8 @@ class ManejadorInscripciones:
                     i += 1
             else:
                 i += 1
+        if(op):
+            return (not bandera)
         if(not bandera):
             taller = self.__inscripciones[i].getTaller()
             print(

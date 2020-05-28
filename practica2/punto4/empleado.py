@@ -1,5 +1,6 @@
 import abc
 
+
 class Empleado():
 
     __dni = 0

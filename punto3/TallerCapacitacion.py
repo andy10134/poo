@@ -11,17 +11,15 @@ class TallerCapacitacion:
     __inscripciones = None
 
     __cantidad = 0
-    __dimension = 0
-    __incremento = 1
 
     def __init__(self, idTaller, nombre, vacantes, montoInscripcion):
         self.__idTaller = idTaller
         self.__nombre = nombre
         self.__vacantes = vacantes
         self.__montoInscripcion = montoInscripcion
-        self.__dimension = self.__vacantes
+        self.__vacantes = vacantes
         self.__inscripciones = np.empty(
-            self.__dimension, dtype=Inscripcion
+            self.__vacantes, dtype=Inscripcion
         )
 
     def getId(self):
@@ -35,7 +33,7 @@ class TallerCapacitacion:
 
     def agregarInscripcion(self, inscripcion):
         if(type(inscripcion) is Inscripcion):
-            if(self.__vacantes == 0):
+            if(self.__vacantes - self.__cantidad == 0):
                 print("Inscripciones cerradas")
             else:
                 self.__inscripciones[self.__cantidad] = inscripcion
