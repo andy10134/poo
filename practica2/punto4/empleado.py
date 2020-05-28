@@ -11,10 +11,10 @@ class Empleado():
         self.__nombre = nombre
         self.__direccion = direccion
         self.__telefono = telefono
-    
+
     def getDni(self):
         return self.__dni
-    
+
     def getNombre(self):
         return self.__nombre
 
@@ -24,8 +24,12 @@ class Empleado():
     def getTelefono(self):
         return self.__telefono
 
+    def calcularSueldo(self):
+        pass
+
     def __str__(self):
-        return (('DNI: {} \nNombre: {} \nDireccion: {} \nTelefono: {}').format(
+        return ((
+            'DNI: {} \nNombre: {} \nDireccion: {} \nTelefono: {}').format(
             self.getDni(), self.getNombre(), self.getDireccion(),
             self.getTelefono()
-            ))
+        ))
