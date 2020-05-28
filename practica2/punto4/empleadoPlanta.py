@@ -14,3 +14,6 @@ class EmpleadoPlanta(Empleado):
 
     def getAntiguedad(self):
         return self.__antiguedad
+    
+    def __str__(self):
+        return ('Sueldo: {} \nAntiguedad: {}'.format(self.getSueldo(), self.getAntiguedad))
