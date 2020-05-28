@@ -1,3 +1,4 @@
+import abc
 
 class Empleado():
 
@@ -24,6 +25,7 @@ class Empleado():
     def getTelefono(self):
         return self.__telefono
 
+    @abc.abstractclassmethod
     def calcularSueldo(self):
         pass
 
