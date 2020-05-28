@@ -27,12 +27,10 @@ class ManejadorTalleres:
     def listarTalleres(self):
         for taller in self.__talleres:
             if(type(taller) is TallerCapacitacion):
-                print("=====================")
-                print("Id Taller: ", str(taller.getId()))
-                print("Taller: ", taller.getNombre())
-                print("Vacantes: ", taller.getVacantes())
-                print("Inscriptos: ")
-                taller.mostrarInscripciones()
+                if(taller.getVacantes() > 0):
+                    print("=====================")
+                    print("Id Taller: ", str(taller.getId()))
+                    print("Taller: ", taller.getNombre())
         print('++++++++++++++++++++++')
 
     def getTallerById(self, idTaller):
