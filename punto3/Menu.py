@@ -47,16 +47,23 @@ class Menu:
         auxPersona = self.__personas.getPersonaByDni(aux)
 
         if(type(auxPersona) is Persona):
-            os.system("clear")
-            print(auxPersona)
-            print("\n")
-            print("============================")
-            print("Seleccione el id del curso: ")
-            self.__talleres.listarTalleres()
-            aux = int(input("Ingrese el id del curso: "))
-            auxTaller = self.__talleres.getTallerById(aux)
-            if(type(auxTaller) is TallerCapacitacion):
-                self.__inscripciones.agregarInscripcion(auxPersona, auxTaller)
+            if(self.__inscripciones.buscarPersona(aux, True)):
+                os.system("clear")
+                print(auxPersona)
+                print("\n")
+                print("============================")
+                print("Seleccione el id del curso: ")
+                self.__talleres.listarTalleres()
+                aux = int(input("Ingrese el id del curso: "))
+                auxTaller = self.__talleres.getTallerById(aux)
+                if(type(auxTaller) is TallerCapacitacion):
+                    self.__inscripciones.agregarInscripcion(
+                        auxPersona, auxTaller
+                    )
+                else:
+                    print("Id invalido...")
+            else:
+                print("Se ha detectado una inscripcion en otro curso")
         else:
             print("DNI no encontrado Cancelando inscripcion...")
 
