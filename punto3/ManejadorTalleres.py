@@ -33,6 +33,18 @@ class ManejadorTalleres:
                     print("Taller: ", taller.getNombre())
         print('++++++++++++++++++++++')
 
+    def buscarTaller(self, id):
+        bandera = True
+        i = 0
+        while(bandera and i < self.__cantidad):
+            taller = self.__talleres[i]
+            if(type(taller) is TallerCapacitacion):
+                if(taller.getId() == id):
+                    bandera = False
+                    taller.mostrarInscripciones()
+                else:
+                    i += 1
+
     def getTallerById(self, idTaller):
         i = 0
         while(self.__talleres[i].getId() != idTaller):

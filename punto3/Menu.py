@@ -66,7 +66,7 @@ class Menu:
 
     def opcion3(self):
         id = int(input('Ingrese ID: '))
-        self.__inscripciones.buscarTaller(id)
+        self.__talleres.buscarTaller(id)
 
     def opcion4(self):
         dni = input('Ingrese DNI: ')
