@@ -67,7 +67,7 @@ class ManejadorEmpleado:
         while(i < self.__dimension and self.__arreglo[i].getDni() != dni):
             print(dni)
             print("==============", i)
-            print(self.__arreglo.getDni())
+            print(self.__arreglo[i].getDni())
             i += 1
                 
         if(i == self.__dimension):
