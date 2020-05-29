@@ -5,7 +5,7 @@ if __name__ == "__main__":
     menu = Menu()
     salir = False
 
-    print("Talleres App")
+    print("Trabajadores App")
     while not salir:
         print("=====================================")
         print("0 Salir")
