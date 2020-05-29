@@ -1,7 +1,7 @@
-from empleado import Empleado
-from empleadoPlanta import EmpleadoPlanta
-from empleadosExternos import EmpleadosExternos
-from empleadoContratado import EmpleadoContratado
+from practica2.punto4.empleado import Empleado
+from practica2.punto4.empleadoPlanta import EmpleadoPlanta
+from practica2.punto4.empleadosExternos import EmpleadosExternos
+from practica2.punto4.empleadoContratado import EmpleadoContratado
 import numpy as np
 import csv
 

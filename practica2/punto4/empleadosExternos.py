@@ -1,4 +1,4 @@
-from empleadosTerceros import EmpleadoTercero
+from practica2.punto4.empleadosTerceros import EmpleadoTercero
 
 
 class EmpleadosExternos(EmpleadoTercero):
