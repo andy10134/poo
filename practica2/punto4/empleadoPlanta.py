@@ -1,4 +1,4 @@
-from practica2.punto4.empleado import Empleado
+from .empleado import Empleado
 
 
 class EmpleadoPlanta(Empleado):

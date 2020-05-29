@@ -9,7 +9,7 @@ if __name__ == "__main__":
     while not salir:
         print("=====================================")
         print("0 Salir")
-        print("1- Ingresar cantidad de empleados ")
+        print("1- Cargar empleados")
         print(
             "2- Registrar horas: Ingresar el DNI de un empleado y la cantidad",
             " de horas trabajadas hoy e incrementar la cantidad de las horas",
