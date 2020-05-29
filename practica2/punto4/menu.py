@@ -1,4 +1,5 @@
 import os
+from manejadorEmpleado import ManejadorEmpleado
 
 
 class Menu:
@@ -24,7 +25,8 @@ class Menu:
         func()
 
     def opcion1(self):
-        pass
+        cant = int(input('Ingrese cantidad de empleados: '))
+        self.__empleados = ManejadorEmpleado(cant)
 
     def opcion2(self):
         pass
