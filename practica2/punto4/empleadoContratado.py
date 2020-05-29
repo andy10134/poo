@@ -27,4 +27,10 @@ class EmpleadoContratado(EmpleadoTercero):
         return cls.valorHora
 
     def __str__(self):
-        return ('Cantidad de horas trabajadas: {}'.format(self.getCantidad()))
+        return ((
+            '{} \nCantidad de horas trabajadas: {}'
+            ).format(
+                super().__str__(),
+                self.getCantidad()
+            )
+        )
