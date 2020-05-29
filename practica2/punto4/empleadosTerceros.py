@@ -11,14 +11,14 @@ class EmpleadoTercero(Empleado):
     def __init__(self, dni, nombre, direccion,
                  telefono, fecha_inicio, fecha_fin):
         aux = fecha_inicio.split('/')
-        dia = aux[0]
-        mes = aux[1]
-        año = aux[2]
+        mes = int(aux[0])
+        dia = int(aux[1])
+        año = int(aux[2])
         self.__fechaInicio = date(año, mes, dia)
         aux = fecha_fin.split('/')
-        dia = aux[0]
-        mes = aux[1]
-        año = aux[2]
+        mes = int(aux[0])
+        dia = int(aux[1])
+        año = int(aux[2])
         self.__fechaFinalizacion = date(año, mes, dia)
         super().__init__(dni, nombre, direccion, telefono)
 

@@ -18,13 +18,13 @@ class EmpleadosExternos(EmpleadoTercero):
                          telefono, fecha_inicio, fecha_fin)
 
     def getCostoObra(self):
-        return self.__obra
+        return float(self.__obra)
 
     def getSeguroVida(self):
-        return self.__seguro_vida
+        return float(self.__seguro_vida)
 
     def getViaticos(self):
-        return self.__viaticos
+        return float(self.__viaticos)
 
     def getTrabajo(self):
         return self.__trabajo
