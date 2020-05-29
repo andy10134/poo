@@ -1,7 +1,7 @@
-from .empleadosTerceros import EmpleadoTercero
+from empleadosTerceros import EmpleadoTercero
 
 
-class Contratado(EmpleadoTercero):
+class EmpleadoContratado(EmpleadoTercero):
 
     __cantHoras = 0
     valorHora = 50

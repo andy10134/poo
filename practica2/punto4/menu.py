@@ -7,6 +7,7 @@ class Menu:
     __switcher = None
 
     def __init__(self):
+        os.system("cls")
         self.__switcher = {
             1: self.opcion1,
             2: self.opcion2,
@@ -20,18 +21,20 @@ class Menu:
         return self.__switcher
 
     def opcion(self, op):
-        os.system("clear")
+        os.system("cls")
         func = self.__switcher.get(op, lambda: print("Opción no válida"))
         func()
 
     def opcion1(self):
         cant = int(input('Ingrese cantidad de empleados: '))
         self.__empleados = ManejadorEmpleado(cant)
+        self.__empleados.mostrar()
 
     def opcion2(self):
-        aux = int(input("Ingrese el DNI del trabajador:"))
-        if(self):
-        
+        aux = str(input("Ingrese el DNI del trabajador:"))
+        aux = self.__empleados.buscarDni(aux)
+        if(aux != -1):
+            print("ola")
         else:
             print("DNI invalido...")
 

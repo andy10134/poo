@@ -1,4 +1,4 @@
-from .empleadosTerceros import EmpleadoTercero
+from empleadosTerceros import EmpleadoTercero
 
 
 class EmpleadosExternos(EmpleadoTercero):
@@ -32,3 +32,16 @@ class EmpleadosExternos(EmpleadoTercero):
     def calcularSueldo(self):
         sueldo = self.__obra - self.__viaticos - self.__seguro_vida
         return sueldo
+
+    def __str__(self):
+        return (
+            (
+                "{} \nCosto de Obra:{} \nSeguro de Vida: {} \nViaticos: {} \nPuesto de Trabajo:{}"
+            ).format(
+                    super().__str__(),
+                    self.getCostoObra(),
+                    self.getSeguroVida(),
+                    self.getViaticos(),
+                    self.getTrabajo()
+                )
+        )

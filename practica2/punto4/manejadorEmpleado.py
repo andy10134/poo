@@ -1,7 +1,7 @@
-from practica2.punto4.empleado import Empleado
-from practica2.punto4.empleadoPlanta import EmpleadoPlanta
-from practica2.punto4.empleadosExternos import EmpleadosExternos
-from practica2.punto4.empleadoContratado import EmpleadoContratado
+from empleado import Empleado
+from empleadoPlanta import EmpleadoPlanta
+from empleadosExternos import EmpleadosExternos
+from empleadoContratado import EmpleadoContratado
 import numpy as np
 import csv
 from datetime import date
@@ -60,3 +60,19 @@ class ManejadorEmpleado:
                     if(empleado.getFechaFinal() > fechaActual):
                         total += empleado.getCostoObra()
         print('Monto total a pagar por la tarea {}: {}'.format(tarea, total))
+
+    def mostrar(self):
+        print(self.__arreglo[0])
+
+    def buscarDni(self, dni):
+        i = 0
+        while(i < self.__dimension and self.__arreglo[i].getDni() != dni):
+            print(dni)
+            print("==============", i)
+            print(self.__arreglo.getDni())
+            i += 1
+                
+        if(i == self.__dimension):
+            return -1
+        else:
+            return i
