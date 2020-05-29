@@ -1,6 +1,6 @@
-dni,nombre,direccion,telefono,fecha_inicio,fecha_fin,obra,sefguro_vida,viaticos,trabajo
-fd6a1066-c533-4fcd-bdcd-cd8c5172403d,Alfi Iacobini,244 Arizona Drive,+502 612 609 2558,11/17/2019,4/14/2020,15802.63,2573.87,742.07,Programmer I
-8eb83847-89fa-4ce3-ad12-d806c9d107f8,Chevy Semerad,9 Ruskin Trail,+33 781 861 0762,8/27/2019,3/28/2020,66275.42,3635.17,5733.44,VP Sales
-9fe99a30-ff79-44aa-83a7-33a46f8c6ee6,Phyllis Denyer,952 Esker Park,+86 241 486 2373,9/15/2019,1/20/2020,17584.91,3409.27,3895.99,Geologist III
-a8605a8f-17be-4b2b-9d6d-44f013e66b71,Shandy Jiroudek,41 Heffernan Terrace,+64 164 325 0962,10/23/2019,2/3/2020,145816.29,6935.8,4774.81,Nurse
-7918feb1-16b7-487f-b4ae-c96f609b2efe,Malena Mcettrick,18 Lake View Point,+351 429 605 5610,8/20/2019,3/18/2020,54311.14,2000.82,5128.4,Cost Accountant
+dni,nombe,direccion,telefono,inicio,fin,horas trabajadas
+24220400,Dagny Clinnick,4767 Glendale Parkway,+234 532 297 5026,4/26/2019,5/19/2020,16
+23227971,Nikolia Brockley,9 Rigney Court,+353 240 162 7090,4/24/2019,4/30/2020,50
+30557422,Bobinette Delmage,008 Bunker Hill Park,+33 271 943 0043,10/30/2019,3/28/2020,25
+21836868,Jobina Emmins,3 Sundown Lane,+591 211 437 4130,12/13/2019,1/5/2020,44
+10833055,Sherie Goulder,60 Mandrake Crossing,+598 529 569 0496,9/1/2019,2/11/2020,41
