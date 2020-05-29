@@ -1,5 +1,5 @@
 import os
-from manejadorEmpleado import ManejadorEmpleado
+from practica2.punto4.manejadorEmpleado import ManejadorEmpleado
 
 
 class Menu:
@@ -32,7 +32,8 @@ class Menu:
         pass
 
     def opcion3(self):
-        pass
+        tarea = input('Ingrese tarea: ')
+        self.__empleados.buscarTarea(tarea)
 
     def opcion4(self):
         pass

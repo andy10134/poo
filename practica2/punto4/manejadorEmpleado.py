@@ -4,6 +4,7 @@ from practica2.punto4.empleadosExternos import EmpleadosExternos
 from practica2.punto4.empleadoContratado import EmpleadoContratado
 import numpy as np
 import csv
+from datetime import date
 
 
 class ManejadorEmpleado:
@@ -48,3 +49,14 @@ class ManejadorEmpleado:
             )
             self.__cantidad += 1
         archivo.close()
+    
+    def buscarTarea(self, tarea):
+        total = 0
+        for empleado in self.__arreglo:
+            if(type(empleado) is EmpleadosExternos):
+                trabajo = empleado.getTrabajo()
+                if(trabajo == tarea):
+                    fechaActual = date.today()
+                    if(empleado.getFechaFinal() > fechaActual):
+                        total += empleado.getCostoObra()
+        print('Monto total a pagar por la tarea {}: {}'.format(tarea, total))
