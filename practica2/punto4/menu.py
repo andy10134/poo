@@ -11,7 +11,6 @@ class Menu:
             2: self.opcion2,
             3: self.opcion3,
             4: self.opcion4,
-            5: self.opcion5,
             0: self.salir
         }
         self.__empleados = None
@@ -23,6 +22,18 @@ class Menu:
         os.system("clear")
         func = self.__switcher.get(op, lambda: print("Opción no válida"))
         func()
+
+    def opcion1(self):
+        pass
+
+    def opcion2(self):
+        pass
+
+    def opcion3(self):
+        pass
+
+    def opcion4(self):
+        pass
 
     def salir(self):
         print('Salir')
