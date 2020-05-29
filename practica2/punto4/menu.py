@@ -27,7 +27,11 @@ class Menu:
         pass
 
     def opcion2(self):
-        pass
+        aux = int(input("Ingrese el DNI del trabajador:"))
+        if(self):
+        
+        else:
+            print("DNI invalido...")
 
     def opcion3(self):
         pass

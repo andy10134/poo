@@ -48,3 +48,10 @@ class ManejadorEmpleado:
             )
             self.__cantidad += 1
         archivo.close()
+
+    def buscarDni(self, dni):
+        i = 0
+        while(i <= self.__dimension and self.__arreglo[i].getDni() != dni):
+            i += 1
+        print(self.__arreglo[i].getDni())
+        return self.__arreglo[i]
