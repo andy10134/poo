@@ -1,3 +1,4 @@
+from empleado import Empleado
 from datetime import date
 from empleado import Empleado
 
