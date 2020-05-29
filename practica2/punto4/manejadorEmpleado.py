@@ -53,12 +53,10 @@ class ManejadorEmpleado:
     def buscarTarea(self, tarea):
         total = 0
         for empleado in self.__arreglo:
-            if(type(empleado) is EmpleadosExternos):
-                trabajo = empleado.getTrabajo()
-                if(trabajo == tarea):
-                    fechaActual = date.today()
-                    if(empleado.getFechaFinal() > fechaActual):
-                        total += empleado.getCostoObra()
+            if(type(empleado) is EmpleadosExternos and empleado.getTrabajo() == tarea):
+                fechaActual = date.today()
+                if(empleado.getFechaFinal() > fechaActual):
+                    total += empleado.getCostoObra()
         print('Monto total a pagar por la tarea {}: {}'.format(tarea, total))
 
     def mostrar(self):
