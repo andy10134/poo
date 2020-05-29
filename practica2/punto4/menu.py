@@ -1,5 +1,5 @@
 import os
-from practica2.punto4.manejadorEmpleado import ManejadorEmpleado
+from manejadorEmpleado import ManejadorEmpleado
 
 
 class Menu:
