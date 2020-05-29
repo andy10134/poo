@@ -1,4 +1,4 @@
-from .empleado import Empleado
+from empleado import Empleado
 
 
 class EmpleadoTercero(Empleado):

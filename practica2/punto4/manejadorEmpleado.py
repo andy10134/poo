@@ -1,7 +1,7 @@
-from practica2.punto4.empleado import Empleado
-from practica2.punto4.empleadoPlanta import EmpleadoPlanta
-from practica2.punto4.empleadosExternos import EmpleadosExternos
-from practica2.punto4.empleadoContratado import EmpleadoContratado
+from empleado import Empleado
+from empleadoPlanta import EmpleadoPlanta
+from empleadosExternos import EmpleadosExternos
+from empleadoContratado import EmpleadoContratado
 import numpy as np
 import csv
 
@@ -49,9 +49,18 @@ class ManejadorEmpleado:
             self.__cantidad += 1
         archivo.close()
 
+    def mostrar(self):
+        print(self.__arreglo[0])
+
     def buscarDni(self, dni):
         i = 0
-        while(i <= self.__dimension and self.__arreglo[i].getDni() != dni):
+        while(i < self.__dimension and self.__arreglo[i].getDni() != dni):
+            print(dni)
+            print("==============", i)
+            print(self.__arreglo.getDni())
             i += 1
-        print(self.__arreglo[i].getDni())
-        return self.__arreglo[i]
+                
+        if(i == self.__dimension):
+            return -1
+        else:
+            return i

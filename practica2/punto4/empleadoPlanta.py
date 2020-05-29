@@ -1,4 +1,4 @@
-from .empleado import Empleado
+from empleado import Empleado
 
 
 class EmpleadoPlanta(Empleado):
@@ -26,8 +26,9 @@ class EmpleadoPlanta(Empleado):
 
     def __str__(self):
         return (
-            super().__str__,
-            'Sueldo: {} \nAntiguedad: {}'.format(
-                self.getSueldo(), self.getAntiguedad
+            '{} \nSueldo: {} \nAntiguedad: {}'.format(
+                super().__str__(),
+                self.getSueldoBasico(),
+                self.getAntiguedad()
             )
         )

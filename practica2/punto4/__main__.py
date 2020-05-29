@@ -1,10 +1,8 @@
-from practica2.punto4.menu import Menu
-
+from menu import Menu
 
 if __name__ == "__main__":
     menu = Menu()
     salir = False
-
     print("Trabajadores App")
     while not salir:
         print("=====================================")

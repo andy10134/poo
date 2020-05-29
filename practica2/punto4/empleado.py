@@ -35,4 +35,5 @@ class Empleado():
             'DNI: {} \nNombre: {} \nDireccion: {} \nTelefono: {}').format(
             self.getDni(), self.getNombre(), self.getDireccion(),
             self.getTelefono()
-        ))
+            )
+        )
