@@ -5,8 +5,8 @@ from empleado import Empleado
 
 class EmpleadoTercero(Empleado):
 
-    __fechaInicio = ""
-    __fechaFinalizacion = ""
+    __fechaInicio = None
+    __fechaFinalizacion = None
 
     def __init__(self, dni, nombre, direccion,
                  telefono, fecha_inicio, fecha_fin):
@@ -27,3 +27,12 @@ class EmpleadoTercero(Empleado):
     
     def getFechaFinal(self):
         return self.__fechaFinalizacion
+
+    def __str__(self):
+        return (
+            ("{} \nFecha Inicio: {} \nFecha Fin: {}").format(
+                super().__str__(),
+                self.getFechaInicio(),
+                self.getFechaFinal()
+                )
+        )
