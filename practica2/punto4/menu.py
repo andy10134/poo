@@ -1,5 +1,6 @@
 import os
 from manejadorEmpleado import ManejadorEmpleado
+from empleadoContratado import EmpleadoContratado
 
 
 class Menu:
@@ -13,6 +14,7 @@ class Menu:
             2: self.opcion2,
             3: self.opcion3,
             4: self.opcion4,
+            5: self.opcion5,
             0: self.salir
         }
         self.__empleados = None
@@ -32,8 +34,11 @@ class Menu:
     def opcion2(self):
         aux = str(input("Ingrese el DNI del trabajador:"))
         aux = self.__empleados.buscarDni(aux)
-        if(aux != -1):
-            print("ola")
+        emplAux = self.__empleados[aux]
+
+        if(aux != -1 and type(emplAux) is EmpleadoContratado):
+            horas = int(input("Ingrese la cantidad de horas a agregar: "))
+            emplAux.agregarHoras()
         else:
             print("DNI invalido...")
 
@@ -43,6 +48,9 @@ class Menu:
 
     def opcion4(self):
         self.__empleados.ayuda()
+
+    def opcion5(self):
+        self.__empleados.mostrarEmpleados()
 
     def salir(self):
         print('Salir')

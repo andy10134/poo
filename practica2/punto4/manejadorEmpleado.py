@@ -25,7 +25,7 @@ class ManejadorEmpleado:
         for fila in reader:
             if(self.__cantidad < self.__dimension):
                 self.__arreglo[self.__cantidad] = EmpleadoPlanta(
-                    fila[0], fila[1], fila[2], fila[3], fila[4], fila[5]
+                    fila[0], fila[1], fila[2], fila[3], float(fila[4]), int(fila[5])
                 )
                 self.__cantidad += 1
         archivo.close()
@@ -36,7 +36,7 @@ class ManejadorEmpleado:
         for fila in reader:
             if(self.__cantidad < self.__dimension):
                 self.__arreglo[self.__cantidad] = EmpleadoContratado(
-                    fila[0], fila[1], fila[2], fila[3], fila[4], fila[5], fila[6]
+                    fila[0], fila[1], fila[2], fila[3], fila[4], fila[5], int(fila[6])
                 )
                 self.__cantidad += 1
         archivo.close()
@@ -48,7 +48,7 @@ class ManejadorEmpleado:
             if(self.__cantidad < self.__dimension):
                 self.__arreglo[self.__cantidad] = EmpleadosExternos(
                     fila[0], fila[1], fila[2], fila[3], fila[4],
-                    fila[5], fila[6], fila[7], fila[8], fila[9]
+                    fila[5], float(fila[6]), float(fila[7]), float(fila[8]), fila[9]
                 )
                 self.__cantidad += 1
         archivo.close()
@@ -64,13 +64,16 @@ class ManejadorEmpleado:
 
     def mostrar(self):
         print(self.__arreglo)
+    def mostrarEmpleados(self):
+        for empleado in self.__arreglo:
+            if(type(empleado) is not None):
+                empleado.mostrar()
+                print("Sueldo: {}".format(empleado.calcularSueldo()))
+                print("=================================")
 
     def buscarDni(self, dni):
         i = 0
         while(i < self.__dimension and self.__arreglo[i].getDni() != dni):
-            print(dni)
-            print("==============", i)
-            print(self.__arreglo[i].getDni())
             i += 1
                 
         if(i == self.__dimension):

@@ -26,6 +26,12 @@ class EmpleadoContratado(EmpleadoTercero):
     def getValor(cls):
         return cls.valorHora
 
+    def agregarHoras(self, horas):
+        if(horas > 0):
+            self.__cantHoras += horas
+        else:
+            print("Hora invalida...")
+
     def __str__(self):
         return ((
             '{} \nCantidad de horas trabajadas: {}'
