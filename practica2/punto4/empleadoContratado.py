@@ -8,7 +8,7 @@ class EmpleadoContratado(EmpleadoTercero):
 
     def __init__(self, dni, nombre, direccion, telefono,
                  fecha_inicio, fecha_fin, cantidad):
-        self.__cantHoras = cantidad
+        self.__cantHoras = int(cantidad)
         super().__init__(
             dni, nombre, direccion,
             telefono, fecha_inicio, fecha_fin

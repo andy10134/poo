@@ -7,8 +7,8 @@ class EmpleadoPlanta(Empleado):
     __antiguedad = 0
 
     def __init__(self, dni, nombre, direccion, telefono, sueldo, antiguedad):
-        self.__sueldoBasico = sueldo
-        self.__antiguedad = antiguedad
+        self.__sueldoBasico = float(sueldo)
+        self.__antiguedad = int(antiguedad)
         super().__init__(dni, nombre, direccion, telefono)
 
     def getSueldoBasico(self):

@@ -10,21 +10,21 @@ class EmpleadosExternos(EmpleadoTercero):
 
     def __init__(self, dni, nombre, direccion, telefono, fecha_inicio,
                  fecha_fin, obra, seguro_vida, viaticos, trabajo):
-        self.__obra = obra
-        self.__seguro_vida = seguro_vida
-        self.__viaticos = viaticos
+        self.__obra = float(obra)
+        self.__seguro_vida = float(seguro_vida)
+        self.__viaticos = float(viaticos)
         self.__trabajo = trabajo
         super().__init__(dni, nombre, direccion,
                          telefono, fecha_inicio, fecha_fin)
 
     def getCostoObra(self):
-        return float(self.__obra)
+        return self.__obra
 
     def getSeguroVida(self):
-        return float(self.__seguro_vida)
+        return self.__seguro_vida
 
     def getViaticos(self):
-        return float(self.__viaticos)
+        return self.__viaticos
 
     def getTrabajo(self):
         return self.__trabajo

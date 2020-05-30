@@ -63,7 +63,7 @@ class ManejadorEmpleado:
         print('Monto total a pagar por la tarea {}: {}'.format(tarea, total))
 
     def mostrar(self):
-        print(self.__arreglo[0])
+        print(self.__arreglo)
 
     def buscarDni(self, dni):
         i = 0
@@ -77,3 +77,10 @@ class ManejadorEmpleado:
             return -1
         else:
             return i
+
+    def ayuda(self):
+        for empleado in self.__arreglo:
+            if(float(empleado.calcularSueldo()) < 25000):
+                print('DNI: {} Nombre: {} Direccion: {}'.format(
+                    empleado.getDni(), empleado.getNombre(), 
+                    empleado.getDireccion()))

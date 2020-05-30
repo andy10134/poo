@@ -28,7 +28,6 @@ class Menu:
     def opcion1(self):
         cant = int(input('Ingrese cantidad de empleados: '))
         self.__empleados = ManejadorEmpleado(cant)
-        self.__empleados.mostrar()
 
     def opcion2(self):
         aux = str(input("Ingrese el DNI del trabajador:"))
@@ -43,7 +42,7 @@ class Menu:
         self.__empleados.buscarTarea(tarea)
 
     def opcion4(self):
-        pass
+        self.__empleados.ayuda()
 
     def salir(self):
         print('Salir')
