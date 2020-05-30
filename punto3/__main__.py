@@ -5,7 +5,7 @@
 # a- Defina las clases involucradas en el siguiente diagrama.
 # a-Defina una clase con un atributo arreglo para almacenar instancias de la
 # clase
-# TallerCapacitacion. El archivo “Talleres.csv” contiene en la primera línea
+# TallerCapacitacion.   El archivo “Talleres.csv” contiene en la primera línea
 # la cantidad de talleres
 # , y a continuación los datos de cada uno de ellos.
 # b-Defina una clase colección (manejador), tipo lista para almacenar las
