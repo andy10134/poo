@@ -30,6 +30,10 @@ class Empleado():
     def calcularSueldo(self):
         pass
 
+    def mostrar(self):
+        print("Nombre: {}".format(self.__nombre))
+        print("Telefono: ".format(self.__telefono))
+
     def __str__(self):
         return ((
             'DNI: {} \nNombre: {} \nDireccion: {} \nTelefono: {}').format(
