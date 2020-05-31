@@ -38,7 +38,7 @@ class Menu:
 
         if(aux != -1 and type(emplAux) is EmpleadoContratado):
             horas = int(input("Ingrese la cantidad de horas a agregar: "))
-            emplAux.agregarHoras()
+            emplAux.agregarHoras(horas)
         else:
             print("DNI invalido...")
 
