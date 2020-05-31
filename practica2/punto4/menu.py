@@ -1,4 +1,5 @@
 import os
+import numpy
 from manejadorEmpleado import ManejadorEmpleado
 from empleadoContratado import EmpleadoContratado
 
@@ -33,14 +34,7 @@ class Menu:
 
     def opcion2(self):
         aux = str(input("Ingrese el DNI del trabajador:"))
-        aux = self.__empleados.buscarDni(aux)
-        emplAux = self.__empleados[aux]
-
-        if(aux != -1 and type(emplAux) is EmpleadoContratado):
-            horas = int(input("Ingrese la cantidad de horas a agregar: "))
-            emplAux.agregarHoras(horas)
-        else:
-            print("DNI invalido...")
+        self.__empleados.agregarHoras(aux)
 
     def opcion3(self):
         tarea = input('Ingrese tarea: ')

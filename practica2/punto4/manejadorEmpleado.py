@@ -64,6 +64,7 @@ class ManejadorEmpleado:
 
     def mostrar(self):
         print(self.__arreglo)
+
     def mostrarEmpleados(self):
         for empleado in self.__arreglo:
             if(type(empleado) is not None):
@@ -71,6 +72,7 @@ class ManejadorEmpleado:
                 print("Sueldo: {}".format(empleado.calcularSueldo()))
                 print("=================================")
 
+    #Retorna el indice del dni en caso de necesitarse
     def buscarDni(self, dni):
         i = 0
         while(i < self.__dimension and self.__arreglo[i].getDni() != dni):
@@ -87,3 +89,13 @@ class ManejadorEmpleado:
                 print('DNI: {} Nombre: {} Direccion: {}'.format(
                     empleado.getDni(), empleado.getNombre(), 
                     empleado.getDireccion()))
+
+    def agregarHoras(self, dni):
+        aux = self.buscarDni(dni)
+
+        if(aux != -1 and type(self.__arreglo[aux]) is EmpleadoContratado):
+            emplAux = self.__arreglo[aux]
+            horas = int(input("Ingrese la cantidad de horas a agregar: "))
+            emplAux.agregarHoras(horas)
+        else:
+            print("DNI invalido...")
