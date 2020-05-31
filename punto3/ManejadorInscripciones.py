@@ -24,7 +24,7 @@ class ManejadorInscripciones:
             self.__cantidad += 1
             print('se inscribio una persona')
         else:
-            print('no se logro inscribir la persona')
+            print('No se logro inscribir la persona')
 
     def buscarPersona(self, dni, op=False):
         bandera = True
