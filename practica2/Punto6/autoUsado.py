@@ -9,7 +9,7 @@ class AutoUsado(Auto):
     __patente = ""
 
     def __init__(self, anio, patente, kilometraje, modelo, puertas, color, precio):
-        self.__anio = anio
+        self.__anio = int(anio)
         self.__patente = patente
         self.__kilometraje = kilometraje
 
@@ -23,6 +23,15 @@ class AutoUsado(Auto):
 
     def getKilometraje(self):
         return self.__kilometraje
+
+    def calcularAntiguedad(self):
+        return (2020 - self.getAnio())
+
+    def calcularPrecio(self):
+        precio = super().getPrecioBase() - (super().getPrecioBase() * self.calcularAntiguedad())/100
+        if(self.__kilometraje > 100000):
+            precio += (super().getPrecioBase()*2)/100
+        return precio
 
 
     def __str__(self):
