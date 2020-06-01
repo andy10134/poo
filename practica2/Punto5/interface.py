@@ -8,5 +8,5 @@ class IInterface(zope.interface.Interface):
     def agregarElemento(self, elemento):
         pass
 
-    def mostrarElemento(self, elemento):
+    def mostrarElemento(self, indice):
         pass
