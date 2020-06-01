@@ -1,7 +1,6 @@
-from zope.interface import Interface
-from zope.interface import implementer
+import zope.interface
 
-class Iinterface(Interface):
+class IInterface(zope.interface.interface.InterfaceClass):
 
     def insertarElemento(self, elemento, indice):
         pass
