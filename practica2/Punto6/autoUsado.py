@@ -14,3 +14,18 @@ class AutoUsado(Auto):
         self.__kilometraje = kilometraje
 
         super().__init__(modelo, puertas, color, precio)
+    
+    def getAnio(self):
+        return self.__anio
+
+    def getPatente(self):
+        return self.__patente
+
+    def getKilometraje(self):
+        return self.__kilometraje
+
+
+    def __str__(self):
+        return((
+            'Año: {} \nPatente: {} \nKilometraje: {}'.format(self.getAnio(), self.getPatente(), self.getKilometraje())
+            ))
