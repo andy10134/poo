@@ -12,6 +12,14 @@ class autoNuevo(Auto):
     def getVersion(self):
         return self.__version
 
+    def calcularPrecio(self):
+        precio = super().getPrecioBase() + (10*super().getPrecioBase())/100
+
+        if(self.getVersion == "full"):
+            precio += (2*super().getPrecioBase())/100
+
+        return precio
+
     def __str__(self):
         return ("{} \nVersion: {}".format(
             super().__str__(), self.getVersion()
