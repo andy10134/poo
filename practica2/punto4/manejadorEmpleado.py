@@ -59,7 +59,7 @@ class ManejadorEmpleado:
             if(type(empleado) is EmpleadosExternos and empleado.getTrabajo() == tarea):
                 fechaActual = date.today()
                 if(empleado.getFechaFinal() > fechaActual):
-                    total += empleado.getCostoObra()
+                    total += empleado.calcularSueldo()
         print('Monto total a pagar por la tarea {}: {}'.format(tarea, total))
 
     def mostrar(self):
