@@ -11,7 +11,7 @@ class Auto():
         self.__cantidadPuertas = int(puertas)
         self.__color = color
         self.__precioBase = precio
-    
+
     def getModelo(self):
         return self.__modelo
 
