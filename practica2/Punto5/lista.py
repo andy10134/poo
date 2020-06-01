@@ -1,9 +1,10 @@
 from zope.interface import implementer
 from interface import IInterface
 from nodo import Nodo
+
 @implementer(IInterface)
 
-class Lista():
+class Lista:
     
     __comienzo = None
     __actual = None
@@ -34,3 +35,9 @@ class Lista():
         self.__comienzo = nodo 
         self.__actual= nodo
         self.__tope += 1
+
+    def insertarElemento(self, elemento, indice):
+        pass
+
+    def mostrarElemento(self, elemento):
+        pass

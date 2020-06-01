@@ -10,3 +10,6 @@ class Nodo():
 
     def getsiguiente(self):
         return self.__siguiente
+    
+    def getDato(self):
+        return self
