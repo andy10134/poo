@@ -11,3 +11,8 @@ class autoNuevo(Auto):
     
     def getVersion(self):
         return self.__version
+
+    def __str__(self):
+        return ("{} \nVersion: {}".format(
+            super().__str__(), self.getVersion()
+            ))
