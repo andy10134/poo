@@ -39,5 +39,15 @@ class Lista:
     def insertarElemento(self, elemento, indice):
         pass
 
-    def mostrarElemento(self, elemento):
-        pass
+    def mostrarElemento(self, posicion):
+        aux = self.__comienzo
+        while(aux !=  None and aux.getDato() == elemento):
+            aux = aux.getsiguiente()
+        if(aux == None):
+            
+
+    #def mostrar(self):
+    #    aux = self.__comienzo
+    #    while(aux !=  None):
+    #        print(aux.getDato())
+    #        aux = aux.getsiguiente()
