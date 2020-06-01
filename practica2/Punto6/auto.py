@@ -1,3 +1,5 @@
+import abc
+
 class Auto():
     __modelo = None
     __cantidadPuertas = 0
@@ -11,13 +13,22 @@ class Auto():
         self.__precioBase = precio
 
     def getModelo(self):
-        pass
+        return self.__modelo
 
     def getCantidadPuertas(self):
-        pass
+        return self.__cantidadPuertas
 
     def getColor(self):
-        pass
+        return self.__color
 
     def getPrecioBase(self):
+        return self.__precioBase
+
+    @abc.abstractclassmethod
+    def calcularPrecio(self):
         pass
+
+    def __str__(self):
+        return((
+            'Modelo: {} \nCantidad de puertas: {} \nColor: {} \nPrecio Base: {}'.format(self.getModelo(), self.getCantidadPuertas(), self.getColor(), self.getPrecioBase())
+        ))
