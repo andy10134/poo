@@ -1,4 +1,3 @@
-
 class Auto():
     __modelo = None
     __cantidadPuertas = 0
@@ -10,7 +9,7 @@ class Auto():
         self.__cantidadPuertas = int(puertas)
         self.__color = color
         self.__precioBase = precio
-    
+
     def getModelo(self):
         pass
 
