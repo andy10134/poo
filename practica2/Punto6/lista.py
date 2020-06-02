@@ -41,7 +41,19 @@ class Lista:
         self.__tope += 1
 
     def insertarElemento(self, elemento, indice):
-        pass
+        if(indice >= 0 and indice < self.__tope):
+            anterior = self.__comienzo
+            sig = anterior.getSiguiente() 
+            for i in range(indice - 1):
+                anterior = anterior.getSiguiente()
+                sig = anterior.getSiguiente()
+            anterior.setSiguiente(elemento)
+            elemento.setSiguiente(sig)
+        else:
+            if(indice == self.__tope):
+                pass
+            else:
+                raise Exception('Indice invalido')
 
     #def mostrarElemento(self, posicion):
     #    aux = self.__comienzo
