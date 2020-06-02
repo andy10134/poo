@@ -23,6 +23,28 @@ class Menu:
         self.__jsonF = ObjectEncoder()
         self.__lista = Lista()
 
+    def ingresarDatos(self):
+        print('-----Ingrese datos del vehiculo-----')
+        tipo = input('Ingrese tipo de auto(Nuevo o Usado): ')
+        modelo = input('Ingrese modelo: ')
+        cantPuertas = input('Ingrese cantidad de puertas: ')
+        color = input('Ingrese color: ')
+        precioBase = input('Ingrese precio base: ')
+        if(tipo == 'Nuevo'):
+            version = input('Ingrese version: ')
+        elif(tipo == 'Usado'):
+            marca = input('Ingrese marca: ')
+            patente = input('Ingrese patente: ')
+            anio = input('Ingrese año: ')
+            kilometraje = input('Ingrese kilometraje: ')
+        else:
+             print('Tipo de vehiculo invalido')
+        datos= [modelo, cantPuertas, color, precioBase, version, marca, patente, anio, kilometraje]
+        print(datos)
+        return datos
+
+
+
     def getSwitcher(self):
         return self.__switcher
 
@@ -35,7 +57,8 @@ class Menu:
         pass
 
     def opcion2(self):
-        pass
+        datos = self.ingresarDatos()
+        #self.__lista.agregarVehiculo(datos[0], dato)
 
     def opcion3(self):
         pass
