@@ -33,8 +33,8 @@ class Lista:
             self.__actual = self.__actual.getSiguiente()
             return dato
 
-    def agregarElemento(self, profesor):
-        nodo = Nodo(profesor)
+    def agregarElemento(self, elemento):
+        nodo = Nodo(elemento)
         nodo.setSiguiente(self.__comienzo)
         self.__comienzo = nodo 
         self.__actual= nodo
