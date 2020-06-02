@@ -1,4 +1,5 @@
 from auto import Auto
+import json
 # Además, para los usados se registrará la patente, el año y el kilometraje.
 
 
@@ -7,11 +8,13 @@ class AutoUsado(Auto):
     __anio = 0
     __kilometraje = 0
     __patente = ""
+    __marca = ""
 
-    def __init__(self, anio, patente, kilometraje, modelo, puertas, color, precio):
+    def __init__(self, anio, patente, kilometraje, marca, modelo, puertas, color, precio):
         self.__anio = int(anio)
         self.__patente = patente
         self.__kilometraje = kilometraje
+        self.__marca = marca
 
         super().__init__(modelo, puertas, color, precio)
     
@@ -23,6 +26,9 @@ class AutoUsado(Auto):
 
     def getKilometraje(self):
         return self.__kilometraje
+
+    def getMarca(self):
+        return self.__marca
 
     def calcularAntiguedad(self):
         return (2020 - self.getAnio())
@@ -36,5 +42,21 @@ class AutoUsado(Auto):
 
     def __str__(self):
         return((
-            'Año: {} \nPatente: {} \nKilometraje: {}'.format(self.getAnio(), self.getPatente(), self.getKilometraje())
+            'Año: {} \nPatente: {} \nKilometraje: {} \nMarca: {}'.format(self.getAnio(), self.getPatente(), self.getKilometraje(), self.getMarca())
             ))
+    
+    def toJSON(self):
+        d = dict(
+            __class__ = self.__class__.__name__,
+            __atributos__ = dict(
+                        modelo = super().getModelo(),
+                        cantPuertas = super().getCantidadPuertas(),
+                        color = super().getColor(),
+                        precioBase = super().getPrecioBase(),
+                        anio = self.__anio,
+                        patente =  self.__patente,
+                        kilometraje = self.__kilometraje,
+                        marca = self.__marca
+                    )
+        )
+        return d

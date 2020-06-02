@@ -1,6 +1,9 @@
 from zope.interface import implementer
 from interface import IInterface
 from nodo import Nodo
+from auto import Auto
+from autoNuevo import AutoNuevo
+from autoUsado import AutoUsado
 
 @implementer(IInterface)
 
@@ -10,6 +13,7 @@ class Lista:
     __actual = None
     __indice = 0
     __tope = 0
+    __vehiculos = []
 
     def __init__(self):
         self.__comienzo = None
@@ -51,3 +55,10 @@ class Lista:
     #    while(aux !=  None):
     #        print(aux.getDato())
     #        aux = aux.getsiguiente()
+
+    def toJSON(self):
+        d = dict(
+            __class__ = self.__class__.__name__,
+            vehiculos = [vehiculo.toJSON() for vehiculo in self.__vehiculos]
+        )
+        return d

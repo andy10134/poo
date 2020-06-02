@@ -28,6 +28,10 @@ class Auto():
     def calcularPrecio(self):
         pass
 
+    @abc.abstractclassmethod
+    def toJSON(self):
+        pass
+
     def __str__(self):
         return((
             'Modelo: {} \nCantidad de puertas: {} \nColor: {} \nPrecio Base: {}'.format(self.getModelo(), self.getCantidadPuertas(), self.getColor(), self.getPrecioBase())

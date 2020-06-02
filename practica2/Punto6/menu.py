@@ -1,4 +1,7 @@
 import os
+from objectEncoder import ObjectEncoder
+from lista import Lista
+
 
 
 class Menu:
@@ -17,7 +20,8 @@ class Menu:
             7: self.opcion7,
             0: self.salir
         }
-        self.__empleados = None
+        self.__jsonF = ObjectEncoder()
+        self.__lista = Lista()
 
     def getSwitcher(self):
         return self.__switcher
@@ -26,6 +30,28 @@ class Menu:
         os.system("cls")
         func = self.__switcher.get(op, lambda: print("Opción no válida"))
         func()
+
+    def opcion1(self):
+        pass
+
+    def opcion2(self):
+        pass
+
+    def opcion3(self):
+        pass
+
+    def opcion4(self):
+        pass
+
+    def opcion5(self):
+        pass
+
+    def opcion6(self):
+        pass
+
+    def opcion7(self):
+        d = self.__lista.toJSON()
+        self.__jsonF.guardarJSONArchivo(d, 'vehiculos.json')
 
     def salir(self):
         print('Salir')
