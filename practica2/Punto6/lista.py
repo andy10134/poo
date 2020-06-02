@@ -43,12 +43,11 @@ class Lista:
     def insertarElemento(self, elemento, indice):
         pass
 
-    #def mostrarElemento(self, posicion):
-    #    aux = self.__comienzo
-    #    while(aux !=  None and aux.getDato() == elemento):
-    #        aux = aux.getsiguiente()
-    #    if(aux == None):
-            
+    def mostrarElemento(self, posicion):
+        if(posicion <= self.__tope):
+            print(self.__vehiculos[posicion])
+        else:
+            raise Exception('Posición no valida, ingrese un valor menor a {}'.format(self.__tope))       
 
     def mostrar(self):
         for vehiculo in self.__vehiculos:
