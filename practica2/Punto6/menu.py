@@ -25,25 +25,24 @@ class Menu:
 
     def ingresarDatos(self):
         print('-----Ingrese datos del vehiculo-----')
-        tipo = input('Ingrese tipo de auto(Nuevo o Usado): ')
+        tipo = input('Ingrese tipo de auto(nuevo o usado): ')
         modelo = input('Ingrese modelo: ')
         cantPuertas = input('Ingrese cantidad de puertas: ')
         color = input('Ingrese color: ')
         precioBase = input('Ingrese precio base: ')
-        if(tipo == 'Nuevo'):
+        if(tipo == 'nuevo'):
             version = input('Ingrese version: ')
-        elif(tipo == 'Usado'):
+            datos = [modelo, cantPuertas, color, precioBase, version]
+            return datos
+        elif(tipo == 'usado'):
             marca = input('Ingrese marca: ')
             patente = input('Ingrese patente: ')
             anio = input('Ingrese año: ')
             kilometraje = input('Ingrese kilometraje: ')
+            datos = [modelo, cantPuertas, color, precioBase, anio, patente, kilometraje, marca]
+            return datos
         else:
              print('Tipo de vehiculo invalido')
-        datos= [modelo, cantPuertas, color, precioBase, version, marca, patente, anio, kilometraje]
-        print(datos)
-        return datos
-
-
 
     def getSwitcher(self):
         return self.__switcher
@@ -54,11 +53,15 @@ class Menu:
         func()
 
     def opcion1(self):
-        pass
+        datos = self.ingresarDatos()
+        posicion = int(input('Ingrese la posición en la cual quiere insertar el vehiculo: '))
+        self.__lista.agregarVehiculo(datos, posicion)
+        self.__lista.mostrar()
 
     def opcion2(self):
         datos = self.ingresarDatos()
-        #self.__lista.agregarVehiculo(datos[0], dato)
+        self.__lista.agregarVehiculo(datos)
+        self.__lista.mostrar()
 
     def opcion3(self):
         pass

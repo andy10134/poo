@@ -9,7 +9,7 @@ class AutoUsado(Auto):
     __patente = ""
     __marca = ""
 
-    def __init__(self, anio, patente, kilometraje, marca, modelo, puertas, color, precio):
+    def __init__(self, modelo, puertas, color, precio, anio, patente, kilometraje, marca):
         self.__anio = int(anio)
         self.__patente = patente
         self.__kilometraje = kilometraje

@@ -41,19 +41,30 @@ class Lista:
         self.__tope += 1
 
     def insertarElemento(self, elemento, indice):
+        nodo = Nodo(elemento)
         if(indice >= 0 and indice < self.__tope):
             anterior = self.__comienzo
             sig = anterior.getSiguiente() 
             for i in range(indice - 1):
                 anterior = anterior.getSiguiente()
                 sig = anterior.getSiguiente()
-            anterior.setSiguiente(elemento)
-            elemento.setSiguiente(sig)
+            anterior.setSiguiente(nodo)
+            nodo.setSiguiente(sig)
         else:
             if(indice == self.__tope):
                 pass
             else:
                 raise Exception('Indice invalido')
+
+    def agregarVehiculo(self, datos, posicion = None):
+        if(len(datos) > 5):
+            vehiculo = AutoUsado(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7])
+        else:
+            vehiculo = AutoNuevo(datos[0], datos[1], datos[2], datos[3], datos[4])
+        if(posicion == None):
+            self.agregarElemento(vehiculo)
+        else:
+            self.insertarElemento(vehiculo, posicion)
 
     def mostrarElemento(self, posicion):
         if(posicion <= self.__tope):
@@ -62,7 +73,7 @@ class Lista:
             raise Exception('Posición no valida, ingrese un valor menor a {}'.format(self.__tope))       
 
     def mostrar(self):
-        for vehiculo in self.__vehiculos:
+        for vehiculo in self.__:
             print(vehiculo)
 
     def toJSON(self):
