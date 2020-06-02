@@ -1,6 +1,5 @@
 from auto import Auto
 import json
-# Además, para los usados se registrará la patente, el año y el kilometraje.
 
 
 class AutoUsado(Auto):

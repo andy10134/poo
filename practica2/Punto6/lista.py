@@ -50,11 +50,9 @@ class Lista:
     #    if(aux == None):
             
 
-    #def mostrar(self):
-    #    aux = self.__comienzo
-    #    while(aux !=  None):
-    #        print(aux.getDato())
-    #        aux = aux.getsiguiente()
+    def mostrar(self):
+        for vehiculo in self.__vehiculos:
+            print(vehiculo)
 
     def toJSON(self):
         d = dict(
