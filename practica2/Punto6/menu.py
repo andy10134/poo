@@ -92,7 +92,7 @@ cual quiere insertar el vehiculo: """))
                 "Vehiculo con la patente {}".format(patente))
 
     def opcion5(self):
-        pass
+        self.__lista.vehiculoEconomico()
 
     def opcion6(self):
         pass
