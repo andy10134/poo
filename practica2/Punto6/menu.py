@@ -2,7 +2,7 @@ import os
 from objectEncoder import ObjectEncoder
 from lista import Lista
 from auto import Auto
-
+from autoUsado import AutoUsado
 
 
 class Menu:
@@ -40,10 +40,12 @@ class Menu:
             patente = input('Ingrese patente: ')
             anio = input('Ingrese año: ')
             kilometraje = input('Ingrese kilometraje: ')
-            datos = [modelo, cantPuertas, color, precioBase, anio, patente, kilometraje, marca]
+            datos = [
+                modelo, cantPuertas, color, precioBase,
+                anio, patente, kilometraje, marca]
             return datos
         else:
-             print('Tipo de vehiculo invalido')
+            print('Tipo de vehiculo invalido')
 
     def getSwitcher(self):
         return self.__switcher
@@ -55,12 +57,13 @@ class Menu:
 
     def opcion1(self):
         datos = self.ingresarDatos()
-        posicion = int(input('Ingrese la posición en la cual quiere insertar el vehiculo: '))
+        posicion = int(input(
+                "Ingrese la posición en la ",
+                "cual quiere insertar el vehiculo: "))
         self.__lista.agregarVehiculo(datos, posicion)
         for auto in self.__lista:
             print("xs")
             print(auto)
-
 
     def opcion2(self):
         datos = self.ingresarDatos()
@@ -74,7 +77,14 @@ class Menu:
         self.__lista.mostrarElemento(posicion-1)
 
     def opcion4(self):
-        pass
+        patente = str(input("Ingrese la patente: "))
+        auxAuto = self.__lista.busquedaPatente(patente)
+
+        if(auxAuto is AutoUsado):
+            nuevoPrecio = int(input("Ingrese el nuevo precio base: "))
+            auxAuto.set
+        else:
+            print("No se ha encontrado el Vehiculo con la patente {}".format(patente))
 
     def opcion5(self):
         pass

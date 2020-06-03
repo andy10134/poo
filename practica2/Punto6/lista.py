@@ -88,7 +88,28 @@ class Lista:
             else:
                 print('El vehiculo que se encuentra en la posicion {} es del tipo Nuevo'.format(posicion+1))
         else:
-            raise Exception('Posición no valida, ingrese un valor menor o igual a {}'.format(self.__tope))       
+            raise Exception(
+                'Posición no valida, ingrese un valor menor a {}'.format(
+                    self.__tope
+                )
+            )
+# "4-Dada la patente de un vehículo usado, modificar el precio ",
+# "base, y luego mostrar el precio de venta."
+
+    def busquedaPatente(self, patente):
+        aux = self.__comienzo
+        elemento = self.__comienzo.getDato()
+        bandera = False
+        while(aux is not None and not bandera):
+            if(elemento is AutoUsado and elemento.getPatente() == patente):
+                bandera = True
+            else:
+                aux = aux.getSiguiente()
+                elemento = aux.getDato()
+        if(bandera):
+            return elemento
+        else:
+            return None
 
     def toJSON(self):
         d = dict(
