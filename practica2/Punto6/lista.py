@@ -1,14 +1,13 @@
 from zope.interface import implementer
 from interface import IInterface
 from nodo import Nodo
-from auto import Auto
 from autoNuevo import AutoNuevo
 from autoUsado import AutoUsado
 
-@implementer(IInterface)
 
+@implementer(IInterface)
 class Lista:
-    
+
     __comienzo = None
     __actual = None
     __indice = 0
@@ -18,7 +17,7 @@ class Lista:
     def __init__(self):
         self.__comienzo = None
         self.__actual = None
-    
+
     def __iter__(self):
         return self
 
@@ -36,8 +35,8 @@ class Lista:
     def agregarElemento(self, elemento):
         nodo = Nodo(elemento)
         nodo.setSiguiente(self.__comienzo)
-        self.__comienzo = nodo 
-        self.__actual= nodo
+        self.__comienzo = nodo
+        self.__actual = nodo
         self.__tope += 1
 
     def insertarElemento(self, elemento, indice):
@@ -47,23 +46,28 @@ class Lista:
             else:
                 nodo = Nodo(elemento)
                 anterior = self.__comienzo
-                sig = anterior.getSiguiente()
-                if(indice != 1):
-                    i = 0
-                    while(i < indice and sig is not None):
-                        anterior = sig
-                        sig = sig.getSiguiente()
-                        i += 1
+                sig = self.__comienzo
+                i = 0
+                while(i < indice and sig is not None):
+                    anterior = sig
+                    sig = sig.getSiguiente()
+                    i += 1
                 anterior.setSiguiente(nodo)
                 nodo.setSiguiente(sig)
+                self.__tope += 1
         else:
             raise Exception('Indice invalido')
 
-    def agregarVehiculo(self, datos, posicion = None):
+    def agregarVehiculo(self, datos, posicion=None):
         if(len(datos) > 5):
-            vehiculo = AutoUsado(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7])
+            vehiculo = AutoUsado(
+                datos[0], datos[1], datos[2], datos[3],
+                datos[4], datos[5], datos[6], datos[7]
+            )
         else:
-            vehiculo = AutoNuevo(datos[0], datos[1], datos[2], datos[3], datos[4])
+            vehiculo = AutoNuevo(
+                datos[0], datos[1], datos[2], datos[3], datos[4]
+            )
         if(posicion is None):
             self.agregarElemento(vehiculo)
         else:
@@ -88,7 +92,7 @@ class Lista:
 
     def toJSON(self):
         d = dict(
-            __class__ = self.__class__.__name__,
-            vehiculos = [vehiculo.toJSON() for vehiculo in self.__vehiculos]
+            __class__=self.__class__.__name__,
+            vehiculos=[vehiculo.toJSON() for vehiculo in self.__vehiculos]
         )
         return d

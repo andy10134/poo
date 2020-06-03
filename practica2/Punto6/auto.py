@@ -1,5 +1,6 @@
 import abc
 
+
 class Auto():
     __modelo = None
     __cantidadPuertas = 0
@@ -33,6 +34,16 @@ class Auto():
         pass
 
     def __str__(self):
-        return((
-            'Modelo: {} \nCantidad de puertas: {} \nColor: {} \nPrecio Base: {}'.format(self.getModelo(), self.getCantidadPuertas(), self.getColor(), self.getPrecioBase())
-        ))
+        return(
+            (
+                "Modelo: {} ",
+                "\nCantidad de puertas: {} ",
+                "\nColor: {} ",
+                "\nPrecio Base: {}"
+            ).format(
+                self.getModelo(),
+                self.getCantidadPuertas(),
+                self.getColor(),
+                self.getPrecioBase()
+            )
+        )
