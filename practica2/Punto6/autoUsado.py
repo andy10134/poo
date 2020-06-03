@@ -1,5 +1,4 @@
 from auto import Auto
-import json
 
 
 class AutoUsado(Auto):
@@ -37,7 +36,7 @@ class AutoUsado(Auto):
         precio = super().getPrecioBase() - (
             super().getPrecioBase() * self.calcularAntiguedad())/100
         if(self.__kilometraje > 100000):
-            precio += (super().getPrecioBase()*2)/100
+            precio -= (super().getPrecioBase()*2)/100
         return precio
 
     def __str__(self):
