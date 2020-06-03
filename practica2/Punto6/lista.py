@@ -123,7 +123,8 @@ class Lista:
                 min = elemento.calcularPrecio()
                 auxAuto = elemento
             aux = aux.getSiguiente()
-            elemento = aux.getDato()
+            if(aux is not None):
+                elemento = aux.getDato()
         print(auxAuto)
         print('Importe de venta: {}'.format(auxAuto.calcularPrecio()))
 
