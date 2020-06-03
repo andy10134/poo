@@ -1,6 +1,7 @@
 import os
 from objectEncoder import ObjectEncoder
 from lista import Lista
+from auto import Auto
 
 
 
@@ -48,7 +49,7 @@ class Menu:
         return self.__switcher
 
     def opcion(self, op):
-        os.system("cls")
+        os.system("clear")
         func = self.__switcher.get(op, lambda: print("Opción no válida"))
         func()
 
@@ -56,12 +57,17 @@ class Menu:
         datos = self.ingresarDatos()
         posicion = int(input('Ingrese la posición en la cual quiere insertar el vehiculo: '))
         self.__lista.agregarVehiculo(datos, posicion)
-        self.__lista.mostrar()
+        for auto in self.__lista:
+            print("xs")
+            print(auto)
+
 
     def opcion2(self):
         datos = self.ingresarDatos()
         self.__lista.agregarVehiculo(datos)
-        self.__lista.mostrar()
+        for auto in self.__lista:
+            print("xd")
+            print(auto)
 
     def opcion3(self):
         pass

@@ -41,29 +41,35 @@ class Lista:
         self.__tope += 1
 
     def insertarElemento(self, elemento, indice):
-        nodo = Nodo(elemento)
-        if(indice >= 0 and indice < self.__tope):
-            anterior = self.__comienzo
-            sig = anterior.getSiguiente() 
-            for i in range(indice - 1):
-                anterior = anterior.getSiguiente()
-                sig = anterior.getSiguiente()
-            anterior.setSiguiente(nodo)
-            nodo.setSiguiente(sig)
-        else:
-            if(indice == self.__tope):
-                pass
+        if(indice >= 0 and indice <= self.__tope):
+            if(self.__comienzo is None or indice == 0):
+                self.agregarElemento(elemento)
             else:
-                raise Exception('Indice invalido')
+                nodo = Nodo(elemento)
+                print("se creo el nodo mas perron")
+                anterior = self.__comienzo
+                print(anterior.getDato())
+                sig = anterior.getSiguiente()
+                i = 0
+                while(i < indice):
+                    print(i)
+                    anterior = anterior.getSiguiente()
+                    sig = anterior.getSiguiente()
+                    i += 1
+                anterior.setSiguiente(nodo)
+                nodo.setSiguiente(sig)
+        else:
+            raise Exception('Indice invalido')
 
     def agregarVehiculo(self, datos, posicion = None):
         if(len(datos) > 5):
             vehiculo = AutoUsado(datos[0], datos[1], datos[2], datos[3], datos[4], datos[5], datos[6], datos[7])
         else:
             vehiculo = AutoNuevo(datos[0], datos[1], datos[2], datos[3], datos[4])
-        if(posicion == None):
+        if(posicion is None):
             self.agregarElemento(vehiculo)
         else:
+            print("pos {}".format(posicion))
             self.insertarElemento(vehiculo, posicion)
 
     def mostrarElemento(self, posicion):

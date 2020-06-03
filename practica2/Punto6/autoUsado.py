@@ -41,7 +41,7 @@ class AutoUsado(Auto):
 
     def __str__(self):
         return((
-            'Año: {} \nPatente: {} \nKilometraje: {} \nMarca: {}'.format(self.getAnio(), self.getPatente(), self.getKilometraje(), self.getMarca())
+            '{} \nAño: {} \nPatente: {} \nKilometraje: {} \nMarca: {}'.format(super().__str__(), self.getAnio(), self.getPatente(), self.getKilometraje(), self.getMarca())
             ))
     
     def toJSON(self):
