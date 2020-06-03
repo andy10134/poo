@@ -58,8 +58,8 @@ class Menu:
     def opcion1(self):
         datos = self.ingresarDatos()
         posicion = int(input(
-                "Ingrese la posición en la ",
-                "cual quiere insertar el vehiculo: "))
+                """Ingrese la posición en la
+cual quiere insertar el vehiculo: """))
         self.__lista.agregarVehiculo(datos, posicion)
         for auto in self.__lista:
             print("xs")

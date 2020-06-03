@@ -34,12 +34,12 @@ class Auto():
         pass
 
     def __str__(self):
-        return(
+        return str(
             str(
-                "Modelo: {} ",
-                "\nCantidad de puertas: {} ",
-                "\nColor: {} ",
-                "\nPrecio Base: {}"
+                """Modelo: {}
+Cantidad de puertas: {}
+Color: {}
+Precio Base: {}"""
             ).format(
                 self.getModelo(),
                 self.getCantidadPuertas(),
