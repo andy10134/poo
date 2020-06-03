@@ -87,6 +87,23 @@ class Lista:
                     self.__tope
                 )
             )
+# "4-Dada la patente de un vehículo usado, modificar el precio ",
+# "base, y luego mostrar el precio de venta."
+
+    def busquedaPatente(self, patente):
+        aux = self.__comienzo
+        elemento = self.__comienzo.getDato()
+        bandera = False
+        while(aux is not None and not bandera):
+            if(elemento is AutoUsado and elemento.getPatente() == patente):
+                bandera = True
+            else:
+                aux = aux.getSiguiente()
+                elemento = aux.getDato()
+        if(bandera):
+            return elemento
+        else:
+            return None
 
     def toJSON(self):
         d = dict(
