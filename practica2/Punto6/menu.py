@@ -96,7 +96,7 @@ class Menu:
                 "Vehiculo con la patente {}".format(patente))
 
     def opcion5(self):
-        pass
+        self.__lista.vehiculoEconomico()
 
     def opcion6(self):
         pass

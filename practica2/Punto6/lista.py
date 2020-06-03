@@ -113,6 +113,20 @@ class Lista:
         else:
             return None
 
+    def vehiculoEconomico(self):
+        aux = self.__comienzo
+        elemento = self.__comienzo.getDato()
+        min = 100000000000000000
+        auxAuto = None
+        while(aux is not None):
+            if(elemento.calcularPrecio() < min):
+                min = elemento.calcularPrecio()
+                auxAuto = elemento
+            aux = aux.getSiguiente()
+            elemento = aux.getDato()
+        print(auxAuto)
+        print('Importe de venta: {}'.format(auxAuto.calcularPrecio()))
+
     def toJSON(self):
         d = dict(
             __class__=self.__class__.__name__,
