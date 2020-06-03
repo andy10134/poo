@@ -70,7 +70,8 @@ class Menu:
             print(auto)
 
     def opcion3(self):
-        pass
+        posicion = int(input('Ingrese posicion: '))
+        self.__lista.mostrarElemento(posicion)
 
     def opcion4(self):
         pass

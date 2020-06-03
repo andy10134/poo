@@ -74,13 +74,13 @@ class Lista:
 
     def mostrarElemento(self, posicion):
         if(posicion <= self.__tope):
-            print(self.__vehiculos[posicion])
+            if(self.__indice == posicion):
+                print(type(self.__actual))
+            else:
+                self.__indice += 1
+                print(self.__indice)
         else:
             raise Exception('Posición no valida, ingrese un valor menor a {}'.format(self.__tope))       
-
-    def mostrar(self):
-        for vehiculo in self.__:
-            print(vehiculo)
 
     def toJSON(self):
         d = dict(
