@@ -60,7 +60,7 @@ class Menu:
 
     def opcion1(self):
         datos = self.ingresarDatos()
-        if(type(datos) is not None):
+        if(type(datos) is Auto):
             posicion = int(input("Ingrese la posición en la "
                                  "cual quiere insertar el vehiculo: "))
             self.__lista.agregarVehiculo(datos, posicion)
@@ -70,7 +70,7 @@ class Menu:
 
     def opcion2(self):
         datos = self.ingresarDatos()
-        if(type(datos) is not None):
+        if(type(datos) is Auto):
             self.__lista.agregarVehiculo(datos)
             for auto in self.__lista:
                 print("================================")
