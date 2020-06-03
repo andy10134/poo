@@ -76,11 +76,17 @@ class Lista:
 
     def mostrarElemento(self, posicion):
         self.__indice = 0
-        if(posicion <= self.__tope):
-            while(self.__indice != posicion):
-                self.__indice += 1
-                print(self.__indice)
-            print(type(self.__actual.getDato()))
+        anterior = self.__comienzo
+        sig = anterior.getSiguiente()
+        while(self.__indice != posicion and sig is not None):
+            anterior = sig
+            sig = anterior.getSiguiente()
+            self.__indice += 1
+        if(self.__indice == posicion):
+            if(type(anterior.getDato()) is AutoUsado):
+                print('El vehiculo que se encuentra en la posicion {} es del tipo Usado'.format(posicion+1))
+            else:
+                print('El vehiculo que se encuentra en la posicion {} es del tipo Nuevo'.format(posicion+1))
         else:
             raise Exception(
                 'Posición no valida, ingrese un valor menor a {}'.format(
