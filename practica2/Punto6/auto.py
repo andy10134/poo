@@ -38,10 +38,10 @@ class Auto():
 
     def __str__(self):
         return(
-            str(
-                "Modelo: {} ",
-                "\nCantidad de puertas: {} ",
-                "\nColor: {} ",
+            (
+                "Modelo: {}"
+                "\nCantidad de puertas: {}"
+                "\nColor: {} "
                 "\nPrecio Base: {}"
             ).format(
                 self.getModelo(),
