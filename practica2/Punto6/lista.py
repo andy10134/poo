@@ -46,16 +46,14 @@ class Lista:
                 self.agregarElemento(elemento)
             else:
                 nodo = Nodo(elemento)
-                print("se creo el nodo mas perron")
                 anterior = self.__comienzo
-                print(anterior.getDato())
                 sig = anterior.getSiguiente()
-                i = 0
-                while(i < indice):
-                    print(i)
-                    anterior = anterior.getSiguiente()
-                    sig = anterior.getSiguiente()
-                    i += 1
+                if(indice != 1):
+                    i = 0
+                    while(i < indice and sig is not None):
+                        anterior = sig
+                        sig = sig.getSiguiente()
+                        i += 1
                 anterior.setSiguiente(nodo)
                 nodo.setSiguiente(sig)
         else:
