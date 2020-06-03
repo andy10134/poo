@@ -47,15 +47,15 @@ class Lista:
             else:
                 nodo = Nodo(elemento)
                 anterior = self.__comienzo
-                sig = anterior.getSiguiente()
-                if(indice != 1):
-                    i = 0
-                    while(i < indice and sig is not None):
-                        anterior = sig
-                        sig = sig.getSiguiente()
-                        i += 1
+                sig = self.__comienzo
+                i = 0
+                while(i < indice and sig is not None):
+                    anterior = sig
+                    sig = sig.getSiguiente()
+                    i += 1
                 anterior.setSiguiente(nodo)
                 nodo.setSiguiente(sig)
+                self.__tope += 1
         else:
             raise Exception('Indice invalido')
 
