@@ -37,7 +37,7 @@ class Menu:
             return datos
         elif(tipo == 'usado'):
             marca = input('Ingrese marca: ')
-            patente = input('Ingrese patente: ')
+            patente = str(input('Ingrese patente: '))
             anio = input('Ingrese año: ')
             kilometraje = input('Ingrese kilometraje: ')
             datos = [
@@ -57,9 +57,9 @@ class Menu:
 
     def opcion1(self):
         datos = self.ingresarDatos()
-        posicion = int(input(
-                """Ingrese la posición en la
-cual quiere insertar el vehiculo: """))
+        posicion = int(
+                input("Ingrese la posición en la "
+                      "cual quiere insertar el vehiculo: "))
         self.__lista.agregarVehiculo(datos, posicion)
         for auto in self.__lista:
             print("xs")
@@ -80,7 +80,7 @@ cual quiere insertar el vehiculo: """))
         patente = str(input("Ingrese la patente: "))
         auxAuto = self.__lista.busquedaPatente(patente)
 
-        if(auxAuto is AutoUsado):
+        if(type(auxAuto) is AutoUsado):
             nuevoPrecio = int(input("Ingrese el nuevo precio base: "))
             auxAuto.setPrecioBase(nuevoPrecio)
             print(
@@ -88,7 +88,7 @@ cual quiere insertar el vehiculo: """))
                     auxAuto.calcularPrecio()))
         else:
             print(
-                "No se ha encontrado el ",
+                "No se ha encontrado el "
                 "Vehiculo con la patente {}".format(patente))
 
     def opcion5(self):

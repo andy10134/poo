@@ -1,5 +1,6 @@
 from auto import Auto
 
+
 class AutoNuevo(Auto):
 
     __version = ""
@@ -9,7 +10,7 @@ class AutoNuevo(Auto):
         self.__version = version
 
         super().__init__(modelo, puertas, color, precio)
-    
+
     def getVersion(self):
         return self.__version
 
@@ -31,13 +32,13 @@ class AutoNuevo(Auto):
 
     def toJSON(self):
         d = dict(
-            __class__ = self.__class__.__name__,
-            __atributos__ = dict(
-                        modelo = super().getModelo(),
-                        cantPuertas = super().getCantidadPuertas(),
-                        color = super().getColor(),
-                        precioBase = super().getPrecioBase(),
-                        version = self.__version
+            __class__=self.__class__.__name__,
+            __atributos__=dict(
+                        modelo=super().getModelo(),
+                        cantPuertas=super().getCantidadPuertas(),
+                        color=super().getColor(),
+                        precioBase=super().getPrecioBase(),
+                        version=self.__version
                     )
         )
         return d
