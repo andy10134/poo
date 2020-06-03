@@ -27,25 +27,28 @@ class Menu:
     def ingresarDatos(self):
         print('-----Ingrese datos del vehiculo-----')
         tipo = input('Ingrese tipo de auto(nuevo o usado): ')
-        modelo = input('Ingrese modelo: ')
-        cantPuertas = input('Ingrese cantidad de puertas: ')
-        color = input('Ingrese color: ')
-        precioBase = input('Ingrese precio base: ')
-        if(tipo == 'nuevo'):
-            version = input('Ingrese version: ')
-            datos = [modelo, cantPuertas, color, precioBase, version]
-            return datos
-        elif(tipo == 'usado'):
-            marca = input('Ingrese marca: ')
-            patente = str(input('Ingrese patente: '))
-            anio = input('Ingrese año: ')
-            kilometraje = input('Ingrese kilometraje: ')
-            datos = [
-                modelo, cantPuertas, color, precioBase,
-                anio, patente, kilometraje, marca]
-            return datos
+        tipo = tipo.lower()
+        if(tipo == "usado" or tipo == "nuevo"):
+            modelo = str(input('Ingrese modelo: '))
+            cantPuertas = int(input('Ingrese cantidad de puertas: '))
+            color = str(input('Ingrese color: '))
+            precioBase = float(input('Ingrese precio base: '))
+            if(tipo == 'nuevo'):
+                version = str(input('Ingrese version: '))
+                datos = [modelo, cantPuertas, color, precioBase, version]
+                return datos
+            elif(tipo == 'usado'):
+                marca = str(input('Ingrese marca: '))
+                patente = str(input('Ingrese patente: '))
+                anio = int(input('Ingrese año: '))
+                kilometraje = float(input('Ingrese kilometraje: '))
+                datos = [
+                    modelo, cantPuertas, color, precioBase,
+                    anio, patente, kilometraje, marca]
+                return datos
         else:
             print('Tipo de vehiculo invalido')
+            return None
 
     def getSwitcher(self):
         return self.__switcher
@@ -57,20 +60,21 @@ class Menu:
 
     def opcion1(self):
         datos = self.ingresarDatos()
-        posicion = int(
-                input("Ingrese la posición en la "
-                      "cual quiere insertar el vehiculo: "))
-        self.__lista.agregarVehiculo(datos, posicion)
-        for auto in self.__lista:
-            print("xs")
-            print(auto)
+        if(type(datos) is not None):
+            posicion = int(input("Ingrese la posición en la "
+                                 "cual quiere insertar el vehiculo: "))
+            self.__lista.agregarVehiculo(datos, posicion)
+            for auto in self.__lista:
+                print("================================")
+                print(auto)
 
     def opcion2(self):
         datos = self.ingresarDatos()
-        self.__lista.agregarVehiculo(datos)
-        for auto in self.__lista:
-            print("xd")
-            print(auto)
+        if(type(datos) is not None):
+            self.__lista.agregarVehiculo(datos)
+            for auto in self.__lista:
+                print("================================")
+                print(auto)
 
     def opcion3(self):
         posicion = int(input('Ingrese posicion: '))
