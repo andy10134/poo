@@ -82,9 +82,14 @@ cual quiere insertar el vehiculo: """))
 
         if(auxAuto is AutoUsado):
             nuevoPrecio = int(input("Ingrese el nuevo precio base: "))
-            auxAuto.set
+            auxAuto.setPrecioBase(nuevoPrecio)
+            print(
+                "El nuevo precio del vehiculo es: {}".format(
+                    auxAuto.calcularPrecio()))
         else:
-            print("No se ha encontrado el Vehiculo con la patente {}".format(patente))
+            print(
+                "No se ha encontrado el ",
+                "Vehiculo con la patente {}".format(patente))
 
     def opcion5(self):
         pass

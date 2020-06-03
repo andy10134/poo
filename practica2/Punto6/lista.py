@@ -84,9 +84,13 @@ class Lista:
             self.__indice += 1
         if(self.__indice == posicion):
             if(type(anterior.getDato()) is AutoUsado):
-                print('El vehiculo que se encuentra en la posicion {} es del tipo Usado'.format(posicion+1))
+                print(
+                    'El vehiculo que se encuentra en la',
+                    ' posicion {} es del tipo Usado'.format(posicion+1))
             else:
-                print('El vehiculo que se encuentra en la posicion {} es del tipo Nuevo'.format(posicion+1))
+                print(
+                    'El vehiculo que se encuentra en la',
+                    ' posicion {} es del tipo Nuevo'.format(posicion+1))
         else:
             raise Exception(
                 'Posición no valida, ingrese un valor menor a {}'.format(

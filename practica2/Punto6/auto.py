@@ -13,6 +13,9 @@ class Auto():
         self.__color = color
         self.__precioBase = precio
 
+    def setPrecioBase(self, precioBase):
+        self.__precioBase = precioBase
+
     def getModelo(self):
         return self.__modelo
 
