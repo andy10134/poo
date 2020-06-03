@@ -54,7 +54,7 @@ class Menu:
         return self.__switcher
 
     def opcion(self, op):
-        os.system("clear")
+        os.system("cls")
         func = self.__switcher.get(op, lambda: print("Opción no válida"))
         func()
 
@@ -64,17 +64,11 @@ class Menu:
             posicion = int(input("Ingrese la posición en la "
                                  "cual quiere insertar el vehiculo: "))
             self.__lista.agregarVehiculo(datos, posicion)
-            for auto in self.__lista:
-                print("================================")
-                print(auto)
 
     def opcion2(self):
         datos = self.ingresarDatos()
         if(type(datos) is Auto):
             self.__lista.agregarVehiculo(datos)
-            for auto in self.__lista:
-                print("================================")
-                print(auto)
 
     def opcion3(self):
         posicion = int(input('Ingrese posicion: '))
@@ -99,7 +93,18 @@ class Menu:
         self.__lista.vehiculoEconomico()
 
     def opcion6(self):
-        pass
+        print("Autos en consesionaria: ")
+        for auto in self.__lista:
+            print("================{}================".format(type(auto)))
+            print((
+                "Modelo: {}"
+                "\nCantidad de puertas: {}"
+                "\nImporte de Venta: {}"
+            ).format(
+                auto.getModelo(),
+                auto.getCantidadPuertas(),
+                auto.calcularPrecio()
+            ))
 
     def opcion7(self):
         d = self.__lista.toJSON()
