@@ -71,12 +71,12 @@ class Lista:
             self.insertarElemento(vehiculo, posicion)
 
     def mostrarElemento(self, posicion):
+        self.__indice = 0
         if(posicion <= self.__tope):
-            if(self.__indice == posicion):
-                print(type(self.__actual))
-            else:
+            while(self.__indice != posicion):
                 self.__indice += 1
                 print(self.__indice)
+            print(type(self.__actual.getDato()))        
         else:
             raise Exception('Posición no valida, ingrese un valor menor a {}'.format(self.__tope))       
 

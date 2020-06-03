@@ -71,7 +71,7 @@ class Menu:
 
     def opcion3(self):
         posicion = int(input('Ingrese posicion: '))
-        self.__lista.mostrarElemento(posicion)
+        self.__lista.mostrarElemento(posicion-1)
 
     def opcion4(self):
         pass
