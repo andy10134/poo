@@ -12,7 +12,6 @@ class Lista:
     __actual = None
     __indice = 0
     __tope = 0
-    __vehiculos = []
 
     def __init__(self):
         self.__comienzo = None
@@ -71,7 +70,6 @@ class Lista:
         if(posicion is None):
             self.agregarElemento(vehiculo)
         else:
-            print("pos {}".format(posicion))
             self.insertarElemento(vehiculo, posicion)
 
     def mostrarElemento(self, posicion):
@@ -129,8 +127,15 @@ class Lista:
         print('Importe de venta: {}'.format(auxAuto.calcularPrecio()))
 
     def toJSON(self):
+        vehiculos = []
+        nodo = self.__comienzo
+        while(nodo is not None):
+            auto = nodo.getDato()
+            vehiculos.append(auto.toJSON())
+            nodo = nodo.getSiguiente()
+
         d = dict(
             __class__=self.__class__.__name__,
-            vehiculos=[vehiculo.toJSON() for vehiculo in self.__vehiculos]
+            vehiculos=vehiculos
         )
         return d

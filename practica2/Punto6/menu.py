@@ -60,14 +60,14 @@ class Menu:
 
     def opcion1(self):
         datos = self.ingresarDatos()
-        if(type(datos) is Auto):
+        if(type(datos) is not None):
             posicion = int(input("Ingrese la posición en la "
                                  "cual quiere insertar el vehiculo: "))
             self.__lista.agregarVehiculo(datos, posicion)
 
     def opcion2(self):
         datos = self.ingresarDatos()
-        if(type(datos) is Auto):
+        if(type(datos) is not None):
             self.__lista.agregarVehiculo(datos)
 
     def opcion3(self):
@@ -93,9 +93,9 @@ class Menu:
         self.__lista.vehiculoEconomico()
 
     def opcion6(self):
-        print("Autos en consesionaria: ")
+        print("                         Autos en consesionaria: ")
         for auto in self.__lista:
-            print("================{}================".format(type(auto)))
+            print("================{}================".format(auto.__class__.__name__))
             print((
                 "Modelo: {}"
                 "\nCantidad de puertas: {}"
