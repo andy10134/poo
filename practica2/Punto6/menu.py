@@ -93,7 +93,7 @@ class Menu:
         self.__lista.vehiculoEconomico()
 
     def opcion6(self):
-        print("                         Autos en consesionaria: ")
+        print("      Autos en consesionaria: ")
         for auto in self.__lista:
             print("================{}================".format(auto.__class__.__name__))
             print((
