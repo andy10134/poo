@@ -1,3 +1,6 @@
+import abc
+
+
 class Persona:
 
     __cuil = ""
@@ -38,3 +41,7 @@ class Persona:
                 self.getAntiguiedad()
                 )
             ))
+    
+    @abc.abstractclassmethod
+    def calcularSueldo(self):
+        pass
