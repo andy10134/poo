@@ -28,7 +28,7 @@ class Persona:
     def getSueldoBasico(self):
         return self.__sueldo
 
-    def getAntiguiedad(self):
+    def getAntiguedad(self):
         return self.__antiguiedad
 
     def __str__(self):
@@ -41,8 +41,8 @@ class Persona:
                 self.getNombre(),
                 self.getApellido(),
                 self.getCuil(),
-                self.getSueldo(),
-                self.getAntiguiedad()
+                self.getSueldoBasico(),
+                self.getAntiguedad()
                 )
             ))
 
