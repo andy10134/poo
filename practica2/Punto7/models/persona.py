@@ -41,7 +41,7 @@ class Persona:
                 self.getNombre(),
                 self.getApellido(),
                 self.getCuil(),
-                self.getSueldo(),
+                self.getSueldoBasico(),
                 self.getAntiguiedad()
                 )
             ))
