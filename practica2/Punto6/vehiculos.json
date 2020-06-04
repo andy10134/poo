@@ -1,4 +1,15 @@
 {
     "__class__": "Lista",
-    "vehiculos": []
+    "vehiculos": [
+        {
+            "__class__": "AutoNuevo",
+            "__atributos__": {
+                "modelo": "duster",
+                "cantPuertas": 5,
+                "color": "blanco",
+                "precioBase": 200000.0,
+                "version": "full"
+            }
+        }
+    ]
 }
