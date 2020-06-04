@@ -14,7 +14,7 @@ class Persona:
         self.__nombre = nombre
         self.__apellido = apellido
         self.__sueldo = sueldo
-        self.__antiguiedad = antiguiedad        
+        self.__antiguiedad = antiguiedad
 
     def getCuil(self):
         return self.__cuil
@@ -33,7 +33,11 @@ class Persona:
 
     def __str__(self):
         return((
-            'Nombre: {} \nApellido: {} \nCuil: {} \nSueldo: {} \nAntiguedad: {}'.format(
+            'Nombre: {}'
+            '\nApellido: {} '
+            '\nCuil: {} '
+            '\nSueldo: {} '
+            '\nAntiguedad: {}'.format(
                 self.getNombre(),
                 self.getApellido(),
                 self.getCuil(),
