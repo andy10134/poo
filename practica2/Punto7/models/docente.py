@@ -28,4 +28,13 @@ class Docente(Persona):
                 self.getCatedra()
                 )
             ))
-
+    
+    def calcularSueldo(self):
+        sueldo = super().getSueldoBasico() + super().getSueldoBasico()*super().getAntiguedad()/100
+        if(self.getCargo() == 'simple'):
+            sueldo += super().getSueldoBasico()*10/100
+        elif(self.getCargo() == 'semiexclusivo'):
+            sueldo += super().getSueldoBasico()*20/100
+        else:
+            sueldo += super().getSueldoBasico()*50/100
+        return sueldo
