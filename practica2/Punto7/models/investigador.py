@@ -2,7 +2,7 @@ from models.persona import Persona
 
 
 class Investigador(Persona):
-    
+
     __area = ""
     __tipo = 0
 
@@ -18,5 +18,7 @@ class Investigador(Persona):
         return self.__tipo
 
     def calcularSueldo(self):
-        sueldo = super().getSueldo()
-         Sueldo básico+% antigüedad
+        sueldoInvestigador = super().getSueldoBasico() + (
+            super().getSueldoBasico() * super().getAntiguiedad())/100
+
+        return sueldoInvestigador

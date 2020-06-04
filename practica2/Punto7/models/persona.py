@@ -18,16 +18,16 @@ class Persona:
 
     def getCuil(self):
         return self.__cuil
-    
+
     def getNombre(self):
         return self.__nombre
 
     def getApellido(self):
         return self.__apellido
-    
-    def getSueldo(self):
+
+    def getSueldoBasico(self):
         return self.__sueldo
-    
+
     def getAntiguiedad(self):
         return self.__antiguiedad
 
@@ -41,7 +41,7 @@ class Persona:
                 self.getAntiguiedad()
                 )
             ))
-    
+
     @abc.abstractclassmethod
     def calcularSueldo(self):
         pass
