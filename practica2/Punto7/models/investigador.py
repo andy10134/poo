@@ -22,3 +22,14 @@ class Investigador(Persona):
             super().getSueldoBasico() * super().getAntiguiedad())/100
 
         return sueldoInvestigador
+
+    def __str__(self):
+        return (
+            '{}'
+            'Area: {}'
+            'Tipo: {}'.format(
+                super().__str__(),
+                self.getArea(),
+                self.getTipo()
+            )
+        )
