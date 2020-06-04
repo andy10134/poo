@@ -27,3 +27,14 @@ class Persona:
     
     def getAntiguiedad(self):
         return self.__antiguiedad
+
+    def __str__(self):
+        return((
+            'Nombre: {} \nApellido: {} \nCuil: {} \nSueldo: {} \nAntiguedad: {}'.format(
+                self.getNombre(),
+                self.getApellido(),
+                self.getCuil(),
+                self.getSueldo(),
+                self.getAntiguiedad()
+                )
+            ))
