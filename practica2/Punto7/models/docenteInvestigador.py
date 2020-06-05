@@ -1,9 +1,8 @@
 from models.docente import Docente
 from models.investigador import Investigador
 from models.persona import Persona
-from models.personal import Personal
 
-class DocenteInvestigador(Docente, Investigador, Personal):
+class DocenteInvestigador(Docente, Investigador):
 
     __importeExtra = 0
 
