@@ -6,7 +6,7 @@ class Docente(Persona):
     __cargo = ''
     __catedra = ''
 
-    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera, cargo, catedra):
+    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra, area = '', tipo = ''):
         super().__init__(cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera, cargo, catedra)
         self.__carrera = carrera
         self.__cargo = cargo

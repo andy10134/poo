@@ -21,6 +21,36 @@ class Menu:
         }
         self.__jsonF = jsonF
         self.__lista = lista
+    
+    def ingresarDatos(self):
+        print('-----Ingrese datos del agente-----')
+        tipo = input('Ingrese tipo de agente(docente, investigador, personal de ayuda o docente investigador): ')
+        tipo = tipo.lower()
+        if(tipo == "docente" or tipo == "investigador" or tipo == "personal de ayuda" or tipo == "docente investigador"):
+            nombre = str(input('Ingrese nombre: '))
+            apellido = str(input('Ingrese apellido: '))
+            cuil = str(input('Ingrese cuil: '))
+            sueldo = float(input('Ingrese sueldo: '))
+            antiguedad = int(input('Ingrese antiguedad: '))
+            if(tipo == 'docente'):
+                carrera = str(input('Ingrese carrera: '))
+                cargo = str(input('Ingrese cargo: '))
+                catedra = str(input('Ingrese catedra: '))
+                datos = [cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra]
+                return datos
+            elif(tipo == 'investigador'):
+                area = str(input('Ingrese area: '))
+                tipo = str(input('Ingrese tipo de investigación: '))
+                datos = [cuil, nombre, apellido, sueldo, antiguedad, area, tipo]
+                return datos
+            elif(tipo == 'personal de ayuda'):
+                categoria = int(input('Ingrese categoría(del 1 al 22)'))
+                datos = [cuil, nombre, apellido, sueldo, antiguedad, categoria]
+            else:
+                pass
+        else:
+            print('Tipo de agente invalido')
+            return None
 
     def getSwitcher(self):
         return self.__switcher

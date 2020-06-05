@@ -7,7 +7,7 @@ class DocenteInvestigador(Docente, Investigador):
     __importeExtra = 0
     __categoria = ''
 
-    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera, cargo, catedra, importeExtra, categoria):
+    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra, area, tipo, importeExtra, categoria):
         super().__init__(cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera, cargo, catedra)
         self.__importeExtra = importeExtra
         self.__categoria = categoria
