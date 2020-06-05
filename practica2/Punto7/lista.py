@@ -87,8 +87,10 @@ class Lista:
             elemento = p.getDato()
             if(type(elemento) is DocenteInvestigador):
                 docentesInnvestigadores.append(elemento)
+
             p = p.getSiguiente()
 
+        docentesInnvestigadores.sort()
         return docentesInnvestigadores
 
     def toJSON(self):
