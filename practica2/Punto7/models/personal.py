@@ -1,4 +1,5 @@
-from persona import Persona
+from models.persona import Persona
+
 
 class Personal(Persona):
     __categoria = ''

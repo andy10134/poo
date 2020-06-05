@@ -56,19 +56,10 @@ class Lista:
             raise Exception('Indice invalido')
 
     def agregarVehiculo(self, datos, posicion=None):
-        if(len(datos) > 5):
-            vehiculo = AutoUsado(
-                datos[0], datos[1], datos[2], datos[3],
-                datos[4], datos[5], datos[6], datos[7]
-            )
-        else:
-            vehiculo = AutoNuevo(
-                datos[0], datos[1], datos[2], datos[3], datos[4]
-            )
         if(posicion is None):
-            self.agregarElemento(vehiculo)
+            self.agregarElemento(datos)
         else:
-            self.insertarElemento(vehiculo, posicion)
+            self.insertarElemento(datos, posicion)
 
     def mostrarElemento(self, posicion):
         self.__indice = 0
@@ -79,14 +70,7 @@ class Lista:
             sig = anterior.getSiguiente()
             self.__indice += 1
         if(self.__indice == posicion):
-            if(type(anterior.getDato()) is AutoUsado):
-                print(
-                    'El vehiculo que se encuentra en la',
-                    ' posicion {} es del tipo Usado'.format(posicion+1))
-            else:
-                print(
-                    'El vehiculo que se encuentra en la',
-                    ' posicion {} es del tipo Nuevo'.format(posicion+1))
+            pass #comentario re loco
         else:
             raise Exception(
                 'Posición no valida, ingrese un valor menor a {}'.format(
@@ -94,46 +78,16 @@ class Lista:
                 )
             )
 
-    def busquedaPatente(self, patente):
-        aux = self.__comienzo
-        elem = self.__comienzo.getDato()
-        bandera = False
-        while(aux is not None and not bandera):
-            elem = aux.getDato()
-            if(type(elem) is AutoUsado and elem.getPatente() == patente):
-                bandera = True
-            else:
-                aux = aux.getSiguiente()
-        if(bandera):
-            return elem
-        else:
-            return None
-
-    def vehiculoEconomico(self):
-        aux = self.__comienzo
-        elemento = self.__comienzo.getDato()
-        min = 100000000000000000
-        auxAuto = None
-        while(aux is not None):
-            if(elemento.calcularPrecio() < min):
-                min = elemento.calcularPrecio()
-                auxAuto = elemento
-            aux = aux.getSiguiente()
-            if(aux is not None):
-                elemento = aux.getDato()
-        print(auxAuto)
-        print('Importe de venta: {}'.format(auxAuto.calcularPrecio()))
-
     def toJSON(self):
-        vehiculos = []
+        personal = []
         nodo = self.__comienzo
         while(nodo is not None):
             auto = nodo.getDato()
-            vehiculos.append(auto.toJSON())
+            personal.append(auto.toJSON())
             nodo = nodo.getSiguiente()
 
         d = dict(
             __class__=self.__class__.__name__,
-            vehiculos=vehiculos
+            vehiculos=personal
         )
         return d
