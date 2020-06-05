@@ -64,7 +64,6 @@ class Menu:
                 importeExtra = float(input('Ingrese importe extra: '))
                 datos.append(categoria)
                 datos.append(importeExtra)
-            print (datos)
             return datos
         else:
             print('Tipo de agente invalido')
@@ -82,13 +81,13 @@ class Menu:
         datos = self.ingresarDatos()
         if(type(datos) is not None):
             posicion = int(input("Ingrese la posición en la "
-                                 "cual quiere insertar el vehiculo: "))
-            #self.__lista.agregarVehiculo(datos, posicion)
+                                 "cual quiere insertar al agente: "))
+            self.__lista.agregarAgente(datos, posicion)
 
     def opcion2(self):
         datos = self.ingresarDatos()
-    #    if(type(datos) is not None):
-    #        self.__lista.agregarVehiculo(datos)
+        if(type(datos) is not None):
+            self.__lista.agregarAgente(datos)
 
     def opcion3(self):
         posicion = int(input('Ingrese posicion: '))
@@ -105,9 +104,10 @@ class Menu:
 # " que se desempeñan como docentes investigadores.")
     def opcion4(self):
         carrera = str(input("Ingrese el nombre de la carrera: "))
-        docentesInvesticadores = self.__lista.listarDocentesInvestigadores()
+        docentesInvesticadores = self.__lista.listarDocentesInvestigadores(carrera)
         for docente in docentesInvesticadores:
             print(docente)
+            print('----------------------')
 
     def opcion5(self):
         pass

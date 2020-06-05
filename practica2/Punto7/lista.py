@@ -2,6 +2,10 @@ from zope.interface import implementer
 from interface import IInterface
 from nodo import Nodo
 from models.docenteInvestigador import DocenteInvestigador
+from models.personalAyuda import PersonalAyuda
+from models.docente import Docente
+from models.investigador import Investigador
+from models.persona import Persona
 
 
 @implementer(IInterface)
@@ -56,11 +60,11 @@ class Lista:
         else:
             raise Exception('Indice invalido')
 
-    def agregarPosicion(self, datos, posicion=None):
-        if(posicion is None):
-            self.agregarElemento(datos)
-        else:
-            self.insertarElemento(datos, posicion)
+    #def agregarPosicion(self, datos, posicion=None):
+    #    if(posicion is None):
+    #        self.agregarElemento(datos)
+    #    else:
+    #        self.insertarElemento(datos, posicion)
 
     def mostrarElemento(self, posicion):
         self.__indice = 0
@@ -79,6 +83,33 @@ class Lista:
                 )
             )
             return None
+
+    def agregarAgente(self, datos, posicion=None):
+        if(len(datos) == 6):
+            agente = PersonalAyuda(
+                datos[0], datos[1], datos[2], datos[3],
+                datos[4], datos[5]
+            )
+        elif(len(datos) == 7):
+            agente = Investigador(
+                datos[0], datos[1], datos[2], datos[3],
+                datos[4], datos[5], datos[6]
+            )
+        elif(len(datos) == 8):
+            agente = Docente(
+                datos[0], datos[1], datos[2], datos[3],
+                datos[4], datos[5], datos[6], Docente[7]
+            )
+        else:
+            agente = DocenteInvestigador(
+                datos[0], datos[1], datos[2], datos[3],
+                datos[4], datos[5], datos[6], Docente[7],
+                datos[8], datos[9], datos[10], datos[11]
+            )
+        if(posicion is None):
+            self.agregarElemento(agente)
+        else:
+            self.insertarElemento(agente, posicion)
 
     def listarDocentesInvestigadores(self, carrera):
         p = self.__comienzo

@@ -41,4 +41,4 @@ class ObjectEncoder(object):
                     print(unPersonal)
                     print('---------------------')
                     lista.agregarElemento(unPersonal)
-            return lista
+            return lista 
