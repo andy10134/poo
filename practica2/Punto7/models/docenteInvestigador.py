@@ -8,7 +8,7 @@ class DocenteInvestigador(Docente, Investigador):
     __categoria = ''
 
     def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra, area, tipo, importeExtra, categoria):
-        super().__init__(cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera, cargo, catedra)
+        super().__init__(cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra, area, tipo)
         self.__importeExtra = importeExtra
         self.__categoria = categoria
     
@@ -17,8 +17,8 @@ class DocenteInvestigador(Docente, Investigador):
 
     def __str__(self):
         return (
-            'Importe Extra: {}'.format(
-                self.__importeExtra
+            '{}\nImporte Extra: {}\nCategoría: {}'.format(
+                super().__str__(), self.__importeExtra, self.__categoria
             )
         )
     

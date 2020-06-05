@@ -21,6 +21,19 @@ class Menu:
         }
         self.__jsonF = jsonF
         self.__lista = lista
+
+    def docente(self):
+        carrera = str(input('Ingrese carrera: '))
+        cargo = str(input('Ingrese cargo: '))
+        catedra = str(input('Ingrese catedra: '))
+        datos = [carrera, cargo, catedra]
+        return datos
+
+    def investigador(self):
+        area = str(input('Ingrese area: '))
+        tipo = str(input('Ingrese tipo de investigación: '))
+        datos = [area, tipo]
+        return datos
     
     def ingresarDatos(self):
         print('-----Ingrese datos del agente-----')
@@ -32,22 +45,27 @@ class Menu:
             cuil = str(input('Ingrese cuil: '))
             sueldo = float(input('Ingrese sueldo: '))
             antiguedad = int(input('Ingrese antiguedad: '))
+            datos = [cuil, nombre, apellido, sueldo, antiguedad]
             if(tipo == 'docente'):
-                carrera = str(input('Ingrese carrera: '))
-                cargo = str(input('Ingrese cargo: '))
-                catedra = str(input('Ingrese catedra: '))
-                datos = [cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra]
-                return datos
+                docente = self.docente()
+                datos.extend(docente)
             elif(tipo == 'investigador'):
-                area = str(input('Ingrese area: '))
-                tipo = str(input('Ingrese tipo de investigación: '))
-                datos = [cuil, nombre, apellido, sueldo, antiguedad, area, tipo]
-                return datos
+                investigador = self.investigador()
+                datos.extend(investigador)
             elif(tipo == 'personal de ayuda'):
-                categoria = int(input('Ingrese categoría(del 1 al 22)'))
-                datos = [cuil, nombre, apellido, sueldo, antiguedad, categoria]
+                categoria = int(input('Ingrese categoría(del 1 al 22): '))
+                datos.append(categoria)
             else:
-                pass
+                docente = self.docente()
+                investigador = self.investigador()
+                datos.extend(docente)
+                datos.extend(investigador)
+                categoria = str(input('Ingrese categoría(I, II, III, IV o V): '))
+                importeExtra = float(input('Ingrese importe extra: '))
+                datos.append(categoria)
+                datos.append(importeExtra)
+            print (datos)
+            return datos
         else:
             print('Tipo de agente invalido')
             return None
@@ -61,16 +79,14 @@ class Menu:
         func()
 
     def opcion1(self):
-        pass
-    #    datos = self.ingresarDatos()
-    #    if(type(datos) is not None):
-    #        posicion = int(input("Ingrese la posición en la "
-    #                             "cual quiere insertar el vehiculo: "))
-    #        self.__lista.agregarVehiculo(datos, posicion)
+        datos = self.ingresarDatos()
+        if(type(datos) is not None):
+            posicion = int(input("Ingrese la posición en la "
+                                 "cual quiere insertar el vehiculo: "))
+            #self.__lista.agregarVehiculo(datos, posicion)
 
     def opcion2(self):
-        pass
-    #    datos = self.ingresarDatos()
+        datos = self.ingresarDatos()
     #    if(type(datos) is not None):
     #        self.__lista.agregarVehiculo(datos)
 

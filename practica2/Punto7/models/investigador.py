@@ -7,7 +7,7 @@ class Investigador(Persona):
     __tipo = 0
 
     def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera = '', cargo = '', catedra = ''):
-        super().__init__(cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera, cargo, catedra)
+        super().__init__(cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra, area, tipo)
         self.__area = area
         self.__tipo = tipo
 
@@ -25,8 +25,8 @@ class Investigador(Persona):
 
     def __str__(self):
         return (
-            '{}'
-            'Area: {}'
+            '{}\n'
+            'Area: {}\n'
             'Tipo: {}'.format(
                 super().__str__(),
                 self.getArea(),

@@ -202,13 +202,13 @@
                 "apellido": "Carayol",
                 "sueldo": 21867.43,
                 "antiguedad": 0,
-                "categoria": "I",
                 "carrera": "Geofisica",
+                "cargo": "Semiexclusivo",
                 "catedra": "Anti Money Laundering",
                 "area": "Informatica",
                 "tipo": 11,
-                "cargo": "Semiexclusivo",
-                "importeExtra": 3437.35
+                "importeExtra": 3437.35,
+                "categoria": "I"
             }
         },
         {
@@ -219,13 +219,13 @@
                 "apellido": "Leward",
                 "sueldo": 32958.54,
                 "antiguedad": 15,
-                "categoria": "II",
                 "carrera": "Informatica",
+                "cargo": "Semiexclusivo",
                 "catedra": "For Sale By Owner",
                 "area": "Informatica",
                 "tipo": 7,
-                "cargo": "Semiexclusivo",
-                "importeExtra": 1341.35
+                "importeExtra": 1341.35,
+                "categoria": "II"
             }
         },
         {
@@ -236,13 +236,13 @@
                 "apellido": "Wycliffe",
                 "sueldo": 38974.99,
                 "antiguedad": 15,
-                "categoria": "V",
                 "carrera": "Geologia",
+                "cargo": "Simple",
                 "catedra": "Executive Coaching",
                 "area": "Biologia",
                 "tipo": 14,
-                "cargo": "Simple",
-                "importeExtra": 1696.28
+                "importeExtra": 1696.28,
+                "categoria": "V"
             }
         },
         {
@@ -253,13 +253,13 @@
                 "apellido": "Ornillos",
                 "sueldo": 42309.11,
                 "antiguedad": 19,
-                "categoria": "III",
                 "carrera": "Biologia",
+                "cargo": "Simple",
                 "catedra": "Volleyball",
                 "area": "Geologia",
                 "tipo": 20,
-                "cargo": "Simple",
-                "importeExtra": 1005.91
+                "importeExtra": 1005.91,
+                "categoria": "III"
             }
         },
         {
@@ -270,13 +270,13 @@
                 "apellido": "Sheran",
                 "sueldo": 36635.64,
                 "antiguedad": 4,
-                "categoria": "IV",
                 "carrera": "Biologia",
+                "cargo": "Exclusivo",
                 "catedra": "IM",
                 "area": "Geofisica",
                 "tipo": 20,
-                "cargo": "Exclusivo",
-                "importeExtra": 2611.75
+                "importeExtra": 2611.75,
+                "categoria": "IV"
             }
         },
         {
@@ -287,13 +287,13 @@
                 "apellido": "Ahrend",
                 "sueldo": 7750.8,
                 "antiguedad": 14,
-                "categoria": "II",
                 "carrera": "Astronomia",
+                "cargo": "Exclusivo",
                 "catedra": "ERP Software",
                 "area": "Astronomia",
                 "tipo": 7,
-                "cargo": "Exclusivo",
-                "importeExtra": 1143.16
+                "importeExtra": 1143.16,
+                "categoria": "II"
             }
         },
         {
@@ -304,13 +304,13 @@
                 "apellido": "Lovart",
                 "sueldo": 49248.02,
                 "antiguedad": 4,
-                "categoria": "III",
                 "carrera": "Astronomia",
+                "cargo": "Semiexclusivo",
                 "catedra": "DNS",
                 "area": "Geologia",
                 "tipo": 19,
-                "cargo": "Semiexclusivo",
-                "importeExtra": 2392.2
+                "importeExtra": 2392.2,
+                "categoria": "III"
             }
         }
     ]
