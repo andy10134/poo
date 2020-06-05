@@ -156,6 +156,42 @@
                 "cargo": "Semiexclusivo",
                 "catedra": "Fashion Illustration"
             }
+        },
+        {
+            "__class__": "Investigador",
+            "atributos": {
+                "cuil": "61-82382657-33",
+                "nombre": "Laureen",
+                "apellido": "Labbey",
+                "sueldo": 48140.03,
+                "antiguiedad": 30,
+                "area": "Informatica",
+                "tipo": 3
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "atributos": {
+                "cuil": "29-00866657-85",
+                "nombre": "Tore",
+                "apellido": "Wermerling",
+                "sueldo": 10684.26,
+                "antiguiedad": 17,
+                "area": "Astronomia",
+                "tipo": 3
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "atributos": {
+                "cuil": "12-08351657-46",
+                "nombre": "Anissa",
+                "apellido": "Pinfold",
+                "sueldo": 5718.89,
+                "antiguiedad": 16,
+                "area": "Biologia",
+                "tipo": 3
+            }
         }
     ]
 }

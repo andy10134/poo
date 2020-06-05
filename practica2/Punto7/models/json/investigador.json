@@ -1,3 +1,37 @@
-[{"class":"Investigador","cuil":"618-23-8233","nombre":"Laureen","apellido":"Labbey","sueldo":48140.03,"antiguiedad":30,"area":"Informatica","tipo":3},
-{"class":"Investigador","cuil":"290-08-6685","nombre":"Tore","apellido":"Wermerling","sueldo":10684.26,"antiguiedad":17,"area":"Astronomia","tipo":3},
-{"class":"Investigador","cuil":"120-83-5146","nombre":"Anissa","apellido":"Pinfold","sueldo":5718.89,"antiguiedad":16,"area":"Informatica","tipo":3}]
+[{
+        "__class__": "Investigador",
+        "atributos": {
+            "cuil": "618-23-8233",
+            "nombre": "Laureen",
+            "apellido": "Labbey",
+            "sueldo": 48140.03,
+            "antiguiedad": 30,
+            "area": "Informatica",
+            "tipo": 3
+        }
+    },
+    {
+        "__class__": "Investigador",
+        "atributos": {
+            "cuil": "290-08-6685",
+            "nombre": "Tore",
+            "apellido": "Wermerling",
+            "sueldo": 10684.26,
+            "antiguiedad": 17,
+            "area": "Astronomia",
+            "tipo": 3
+        }
+    },
+    {
+        "__class__": "Investigador",
+        "atributos": {
+            "cuil": "120-83-5146",
+            "nombre": "Anissa",
+            "apellido": "Pinfold",
+            "sueldo": 5718.89,
+            "antiguiedad": 16,
+            "area": "Informatica",
+            "tipo": 3
+        }
+    }
+]
