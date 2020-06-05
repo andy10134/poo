@@ -1,0 +1,59 @@
+{
+    "__class__": "ManejadorPersonal",
+    "personal": [
+        {
+            "__class__": "Personal",
+            "cuil": "79-63563456-60",
+            "nombre": "Nedi",
+            "apellido": "Halligan",
+            "sueldo": 33933.31,
+            "antiguiedad": 1,
+            "categoria": 12
+        },
+        {
+            "__class__": "Personal",
+            "cuil": "13-17714456-33",
+            "nombre": "Pier",
+            "apellido": "Librey",
+            "sueldo": 22697.53,
+            "antiguiedad": 22,
+            "categoria": 13
+        },
+        {
+            "__class__": "Personal",
+            "cuil": "85-57048456-08",
+            "nombre": "Elenore",
+            "apellido": "Rzehor",
+            "sueldo": 26990.42,
+            "antiguiedad": 17,
+            "categoria": 11
+        },
+        {
+            "__class__": "Personal",
+            "cuil": "52-81137456-51",
+            "nombre": "Kata",
+            "apellido": "Medforth",
+            "sueldo": 39834.44,
+            "antiguiedad": 13,
+            "categoria": 14
+        },
+        {
+            "__class__": "Personal",
+            "cuil": "86-77782456-24",
+            "nombre": "Konrad",
+            "apellido": "Scamerdine",
+            "sueldo": 21096.82,
+            "antiguiedad": 29,
+            "categoria": 5
+        },
+        {
+            "__class__": "Personal",
+            "cuil": "48-15890456-04",
+            "nombre": "Rafaellle",
+            "apellido": "Mulkerrins",
+            "sueldo": 8628.53,
+            "antiguiedad": 22,
+            "categoria": 22
+        }
+    ]
+}
