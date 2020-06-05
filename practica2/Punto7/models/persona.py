@@ -9,7 +9,7 @@ class Persona:
     __sueldo = 0
     __antiguiedad = 0
 
-    def __init__(self, cuil, nombre, apellido, sueldo, antiguiedad):
+    def __init__(self, cuil, nombre, apellido, sueldo, antiguiedad, categoria = 0, area = '', tipo = '', carrera = '', cargo = '', catedra = ''):
         self.__cuil = cuil
         self.__nombre = nombre
         self.__apellido = apellido

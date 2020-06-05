@@ -4,7 +4,8 @@ class Personal(Persona):
     __categoria = ''
 
 
-    def __init__(self, categoria):
+    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, categoria, area, tipo, carrera, cargo, catedra):
+        super().__init__(cuil, nombre, apellido, sueldo, antiguedad, categoria, area, tipo, carrera, cargo, catedra)
         self.__categoria = categoria
 
     def getCategoria(self):
