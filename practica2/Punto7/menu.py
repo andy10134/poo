@@ -7,7 +7,7 @@ class Menu:
 
     __switcher = None
 
-    def __init__(self):
+    def __init__(self, jsonF, lista):
         os.system("cls")
         self.__switcher = {
             1: self.opcion1,
@@ -19,8 +19,8 @@ class Menu:
             7: self.opcion7,
             0: self.salir
         }
-        self.__jsonF = ObjectEncoder()
-        self.__lista = Lista()
+        self.__jsonF = jsonF
+        self.__lista = lista
 
     def getSwitcher(self):
         return self.__switcher
@@ -72,7 +72,7 @@ class Menu:
 
     def opcion8(self):
         d = self.__lista.toJSON()
-        self.__jsonF.guardarJSONArchivo(d, 'personal.json')
+        self.__jsonF.guardarJSONArchivo(d, './models/personal.json')
 
     def salir(self):
         print('Salir')

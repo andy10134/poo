@@ -1,6 +1,10 @@
 import json
 from pathlib import Path
-
+from lista import Lista
+from models.docente import Docente
+from models.docenteInvestigador import DocenteInvestigador
+from models.investigador import Investigador
+from models.personalAyuda import PersonalAyuda
 
 class ObjectEncoder(object):
 
@@ -25,14 +29,14 @@ class ObjectEncoder(object):
             class_name = d['__class__']
             class_ = eval(class_name)
             if(class_name == 'Lista'):
-                vehiculos = d['vehiculos']
-                dVehiculo = vehiculos[0]
+                personal = d['personal']
+                dPersonal = personal[0]
                 lista = class_()
-                for i in range(len(vehiculos)):
-                    dVehiculo = vehiculos[i]
-                    class_name = dVehiculo.pop('__class__')
+                for i in range(len(personal)):
+                    dPersonal = personal[i]
+                    class_name = dPersonal.pop('__class__')
                     class_ = eval(class_name)
-                    atributos = dVehiculo['__atributos__']
-                    unVehiculo = class_(**atributos)
-                    lista.agregarElemento(unVehiculo)
+                    atributos = dPersonal['atributos']
+                    unPersonal = class_(**atributos)
+                    lista.agregarElemento(unPersonal)
             return lista
