@@ -6,8 +6,8 @@ class Investigador(Persona):
     __area = ""
     __tipo = 0
 
-    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, categoria, area, tipo, carrera, cargo, catedra):
-        super().__init__(cuil, nombre, apellido, sueldo, antiguedad, categoria, area, tipo, carrera, cargo, catedra)
+    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera, cargo, catedra):
+        super().__init__(cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera, cargo, catedra)
         self.__area = area
         self.__tipo = tipo
 

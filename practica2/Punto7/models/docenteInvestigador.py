@@ -5,10 +5,12 @@ from models.persona import Persona
 class DocenteInvestigador(Docente, Investigador):
 
     __importeExtra = 0
+    __categoria = ''
 
-    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, categoria, area, tipo, carrera, cargo, catedra, importeExtra):
-        super().__init__(cuil, nombre, apellido, sueldo, antiguedad, categoria, area, tipo, carrera, cargo, catedra)
+    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera, cargo, catedra, importeExtra, categoria):
+        super().__init__(cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera, cargo, catedra)
         self.__importeExtra = importeExtra
+        self.__categoria = categoria
     
     def getImporte(self):
         return self.__importeExtra
