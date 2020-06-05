@@ -1,37 +1,121 @@
-[{
-        "__class__": "Investigador",
+[
+    {
+        "__class__": "DocenteInvestigador",
         "atributos": {
-            "cuil": "618-23-8233",
-            "nombre": "Laureen",
-            "apellido": "Labbey",
-            "sueldo": 48140.03,
-            "antiguiedad": 30,
+            "cuil": "30-08363742-4",
+            "nombre": "Erma",
+            "apellido": "Carayol",
+            "sueldo": 21867.43,
+            "antiguiedad": 0,
+            "categoria": "I",
+            "carrera": "Geofisica",
+            "catedra": "Anti Money Laundering",
             "area": "Informatica",
-            "tipo": 3
+            "tipo": 11,
+            "cargo": "Semiexclusivo",
+            "importeExtra": 3437.35
         }
     },
     {
-        "__class__": "Investigador",
+        "__class__": "DocenteInvestigador",
         "atributos": {
-            "cuil": "290-08-6685",
-            "nombre": "Tore",
-            "apellido": "Wermerling",
-            "sueldo": 10684.26,
-            "antiguiedad": 17,
+            "cuil": "27-49061239-4",
+            "nombre": "Buddy",
+            "apellido": "Leward",
+            "sueldo": 32958.54,
+            "antiguiedad": 15,
+            "categoria": "II",
+            "carrera": "Informatica",
+            "catedra": "For Sale By Owner",
+            "area": "Informatica",
+            "tipo": 7,
+            "cargo": "Semiexclusivo",
+            "importeExtra": 1341.35
+        }
+    },
+    {
+        "__class__": "DocenteInvestigador",
+        "atributos": {
+            "cuil": "27-35572190-2",
+            "nombre": "Evelyn",
+            "apellido": "Wycliffe",
+            "sueldo": 38974.99,
+            "antiguiedad": 15,
+            "categoria": "V",
+            "carrera": "Geologia",
+            "catedra": "Executive Coaching",
+            "area": "Biologia",
+            "tipo": 14,
+            "cargo": "Simple",
+            "importeExtra": 1696.28
+        }
+    },
+    {
+        "__class__": "DocenteInvestigador",
+        "atributos": {
+            "cuil": "22-83471458-5",
+            "nombre": "Consolata",
+            "apellido": "Ornillos",
+            "sueldo": 42309.11,
+            "antiguiedad": 19,
+            "categoria": "III",
+            "carrera": "Biologia",
+            "catedra": "Volleyball",
+            "area": "Geologia",
+            "tipo": 20,
+            "cargo": "Simple",
+            "importeExtra": 1005.91
+        }
+    },
+    {
+        "__class__": "DocenteInvestigador",
+        "atributos": {
+            "cuil": "28-69818086-7",
+            "nombre": "Gwendolen",
+            "apellido": "Sheran",
+            "sueldo": 36635.64,
+            "antiguiedad": 4,
+            "categoria": "IV",
+            "carrera": "Biologia",
+            "catedra": "IM",
+            "area": "Geofisica",
+            "tipo": 20,
+            "cargo": "Exclusivo",
+            "importeExtra": 2611.75
+        }
+    },
+    {
+        "__class__": "DocenteInvestigador",
+        "atributos": {
+            "cuil": "22-66861128-7",
+            "nombre": "Evey",
+            "apellido": "Ahrend",
+            "sueldo": 7750.8,
+            "antiguiedad": 14,
+            "categoria": "II",
+            "carrera": "Astronomia",
+            "catedra": "ERP Software",
             "area": "Astronomia",
-            "tipo": 3
+            "tipo": 7,
+            "cargo": "Exclusivo",
+            "importeExtra": 1143.16
         }
     },
     {
-        "__class__": "Investigador",
+        "__class__": "DocenteInvestigador",
         "atributos": {
-            "cuil": "120-83-5146",
-            "nombre": "Anissa",
-            "apellido": "Pinfold",
-            "sueldo": 5718.89,
-            "antiguiedad": 16,
-            "area": "Informatica",
-            "tipo": 3
+            "cuil": "21-79677337-4",
+            "nombre": "Winnifred",
+            "apellido": "Lovart",
+            "sueldo": 49248.02,
+            "antiguiedad": 4,
+            "categoria": "III",
+            "carrera": "Astronomia",
+            "catedra": "DNS",
+            "area": "Geologia",
+            "tipo": 19,
+            "cargo": "Semiexclusivo",
+            "importeExtra": 2392.2
         }
     }
 ]
