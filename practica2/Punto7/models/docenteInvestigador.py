@@ -1,6 +1,6 @@
 from models.docente import Docente
 from models.investigador import Investigador
-from models.persona import Persona
+
 
 class DocenteInvestigador(Docente, Investigador):
 
