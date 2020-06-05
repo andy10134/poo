@@ -90,6 +90,8 @@ class Menu:
     def opcion4(self):
         carrera = str(input("Ingrese el nombre de la carrera: "))
         docentesInvesticadores = self.__lista.listarDocentesInvestigadores()
+        for docente in docentesInvesticadores:
+            print(docente)
 
     def opcion5(self):
         pass
