@@ -1,6 +1,7 @@
 {
     "__class__": "ManejadorPersonal",
-    "personal": [{
+    "personal": [
+        {
             "__class__": "Personal",
             "atributos": {
                 "cuil": "79-63563456-60",
@@ -191,6 +192,111 @@
                 "antiguiedad": 16,
                 "area": "Biologia",
                 "tipo": 3
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "26-82924-008",
+                "nombre": "Jolynn",
+                "apellido": "Ivushkin",
+                "sueldo": 9244,
+                "antiguiedad": 19,
+                "categoria": "V",
+                "carrera": "Astronomia",
+                "catedra": "Keratin Treatment",
+                "cargo": "Simple",
+                "importeExtra": 7913.58
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "29-43750-196",
+                "nombre": "Prescott",
+                "apellido": "Sodory",
+                "sueldo": 29551,
+                "antiguiedad": 13,
+                "categoria": "III",
+                "carrera": "Biologia",
+                "catedra": "Publicity",
+                "cargo": "Exclusivo",
+                "importeExtra": 7553.74
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "21-61319-678",
+                "nombre": "Buiron",
+                "apellido": "Bertomeu",
+                "sueldo": 19105,
+                "antiguiedad": 17,
+                "categoria": "III",
+                "carrera": "Informatica",
+                "catedra": "TMON",
+                "cargo": "Exclusivo",
+                "importeExtra": 6149.67
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "22-44474-549",
+                "nombre": "Martie",
+                "apellido": "Grizard",
+                "sueldo": 26592,
+                "antiguiedad": 8,
+                "categoria": "IV",
+                "carrera": "Geologia",
+                "catedra": "Floor Plans",
+                "cargo": "Exclusivo",
+                "importeExtra": 1584.08
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "26-04702-701",
+                "nombre": "Corbett",
+                "apellido": "Jiru",
+                "sueldo": 26906,
+                "antiguiedad": 20,
+                "categoria": "IV",
+                "carrera": "Geofisica",
+                "catedra": "DTMF",
+                "cargo": "Semiexclusivo",
+                "importeExtra": 7604.33
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "27-89373-370",
+                "nombre": "Kipper",
+                "apellido": "Lambie",
+                "sueldo": 12755,
+                "antiguiedad": 12,
+                "categoria": "IV",
+                "carrera": "Informatica",
+                "catedra": "RDMA",
+                "cargo": "Simple",
+                "importeExtra": 3852.26
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "24-95999-231",
+                "nombre": "Boycie",
+                "apellido": "Viccars",
+                "sueldo": 19078,
+                "antiguiedad": 9,
+                "categoria": "III",
+                "carrera": "Geologia",
+                "catedra": "AHU",
+                "cargo": "Simple",
+                "importeExtra": 7670.14
             }
         }
     ]
