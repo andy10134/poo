@@ -89,7 +89,7 @@ class Lista:
                 docentesInnvestigadores.append(elemento)
             p = p.getSiguiente()
 
-        return doce
+        return docentesInnvestigadores
 
     def toJSON(self):
         personal = []

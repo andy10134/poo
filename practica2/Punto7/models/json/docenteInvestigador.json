@@ -1,107 +1,100 @@
 [
     {
         "__class__": "DocenteInvestigador",
-        "atributos": {
-            "cuil": "26-82924-008",
-            "nombre": "Jolynn",
-            "apellido": "Ivushkin",
-            "sueldo": 9244,
-            "antiguiedad": 19,
-            "categoria": "V",
-            "carrera": "Astronomia",
-            "catedra": "Keratin Treatment",
-            "cargo": "Simple",
-            "importeExtra": 7913.58
-        }
+        "nombre": "Camey",
+        "apellido": "Stallibrass",
+        "sueldo": 8918.91,
+        "antiguiedad": 13,
+        "categoria": "V",
+        "carrera": "Biologia",
+        "catedra": "UG",
+        "area": "Geologia",
+        "tipo": 17,
+        "cargo": "Exclusivo",
+        "importeExtra": 1852.34
     },
     {
         "__class__": "DocenteInvestigador",
-        "atributos": {
-            "cuil": "29-43750-196",
-            "nombre": "Prescott",
-            "apellido": "Sodory",
-            "sueldo": 29551,
-            "antiguiedad": 13,
-            "categoria": "III",
-            "carrera": "Biologia",
-            "catedra": "Publicity",
-            "cargo": "Exclusivo",
-            "importeExtra": 7553.74
-        }
+        "nombre": "Des",
+        "apellido": "Freed",
+        "sueldo": 5485.14,
+        "antiguiedad": 14,
+        "categoria": "I",
+        "carrera": "Geologia",
+        "catedra": "Working Capital Management",
+        "area": "Geofisica",
+        "tipo": 10,
+        "cargo": "Semiexclusivo",
+        "importeExtra": 1357.39
     },
     {
         "__class__": "DocenteInvestigador",
-        "atributos": {
-            "cuil": "21-61319-678",
-            "nombre": "Buiron",
-            "apellido": "Bertomeu",
-            "sueldo": 19105,
-            "antiguiedad": 17,
-            "categoria": "III",
-            "carrera": "Informatica",
-            "catedra": "TMON",
-            "cargo": "Exclusivo",
-            "importeExtra": 6149.67
-        }
+        "nombre": "Merrielle",
+        "apellido": "Trevna",
+        "sueldo": 47340.25,
+        "antiguiedad": 10,
+        "categoria": "V",
+        "carrera": "Geofisica",
+        "catedra": "NSIS",
+        "area": "Biologia",
+        "tipo": 7,
+        "cargo": "Simple",
+        "importeExtra": 4649.76
     },
     {
         "__class__": "DocenteInvestigador",
-        "atributos": {
-            "cuil": "22-44474-549",
-            "nombre": "Martie",
-            "apellido": "Grizard",
-            "sueldo": 26592,
-            "antiguiedad": 8,
-            "categoria": "IV",
-            "carrera": "Geologia",
-            "catedra": "Floor Plans",
-            "cargo": "Exclusivo",
-            "importeExtra": 1584.08
-        }
+        "nombre": "Joseph",
+        "apellido": "Cuberley",
+        "sueldo": 30881.02,
+        "antiguiedad": 2,
+        "categoria": "II",
+        "carrera": "Geologia",
+        "catedra": "TBMCS",
+        "area": "Biologia",
+        "tipo": 18,
+        "cargo": "Exclusivo",
+        "importeExtra": 1974.12
     },
     {
         "__class__": "DocenteInvestigador",
-        "atributos": {
-            "cuil": "26-04702-701",
-            "nombre": "Corbett",
-            "apellido": "Jiru",
-            "sueldo": 26906,
-            "antiguiedad": 20,
-            "categoria": "IV",
-            "carrera": "Geofisica",
-            "catedra": "DTMF",
-            "cargo": "Semiexclusivo",
-            "importeExtra": 7604.33
-        }
+        "nombre": "Inga",
+        "apellido": "Pellman",
+        "sueldo": 40528.2,
+        "antiguiedad": 4,
+        "categoria": "IV",
+        "carrera": "Astronomia",
+        "catedra": "IRS problem resolution",
+        "area": "Biologia",
+        "tipo": 8,
+        "cargo": "Semiexclusivo",
+        "importeExtra": 3461.34
     },
     {
         "__class__": "DocenteInvestigador",
-        "atributos": {
-            "cuil": "27-89373-370",
-            "nombre": "Kipper",
-            "apellido": "Lambie",
-            "sueldo": 12755,
-            "antiguiedad": 12,
-            "categoria": "IV",
-            "carrera": "Informatica",
-            "catedra": "RDMA",
-            "cargo": "Simple",
-            "importeExtra": 3852.26
-        }
+        "nombre": "Cayla",
+        "apellido": "Vannuchi",
+        "sueldo": 44735.54,
+        "antiguiedad": 15,
+        "categoria": "II",
+        "carrera": "Geofisica",
+        "catedra": "EZ Labor",
+        "area": "Geofisica",
+        "tipo": 19,
+        "cargo": "Semiexclusivo",
+        "importeExtra": 4795.37
     },
     {
         "__class__": "DocenteInvestigador",
-        "atributos": {
-            "cuil": "24-95999-231",
-            "nombre": "Boycie",
-            "apellido": "Viccars",
-            "sueldo": 19078,
-            "antiguiedad": 9,
-            "categoria": "III",
-            "carrera": "Geologia",
-            "catedra": "AHU",
-            "cargo": "Simple",
-            "importeExtra": 7670.14
-        }
+        "nombre": "Stevana",
+        "apellido": "Doy",
+        "sueldo": 18680.67,
+        "antiguiedad": 1,
+        "categoria": "II",
+        "carrera": "Astronomia",
+        "catedra": "TV Production",
+        "area": "Geologia",
+        "tipo": 16,
+        "cargo": "Semiexclusivo",
+        "importeExtra": 3389.13
     }
 ]
