@@ -1,59 +1,161 @@
 {
     "__class__": "ManejadorPersonal",
-    "personal": [
-        {
+    "personal": [{
             "__class__": "Personal",
-            "cuil": "79-63563456-60",
-            "nombre": "Nedi",
-            "apellido": "Halligan",
-            "sueldo": 33933.31,
-            "antiguiedad": 1,
-            "categoria": 12
+            "atributos": {
+                "cuil": "79-63563456-60",
+                "nombre": "Nedi",
+                "apellido": "Halligan",
+                "sueldo": 33933.31,
+                "antiguiedad": 1,
+                "categoria": 12
+            }
         },
         {
             "__class__": "Personal",
-            "cuil": "13-17714456-33",
-            "nombre": "Pier",
-            "apellido": "Librey",
-            "sueldo": 22697.53,
-            "antiguiedad": 22,
-            "categoria": 13
+            "atributos": {
+                "cuil": "13-17714456-33",
+                "nombre": "Pier",
+                "apellido": "Librey",
+                "sueldo": 22697.53,
+                "antiguiedad": 22,
+                "categoria": 13
+            }
         },
         {
             "__class__": "Personal",
-            "cuil": "85-57048456-08",
-            "nombre": "Elenore",
-            "apellido": "Rzehor",
-            "sueldo": 26990.42,
-            "antiguiedad": 17,
-            "categoria": 11
+            "atributos": {
+                "cuil": "85-57048456-08",
+                "nombre": "Elenore",
+                "apellido": "Rzehor",
+                "sueldo": 26990.42,
+                "antiguiedad": 17,
+                "categoria": 11
+            }
         },
         {
             "__class__": "Personal",
-            "cuil": "52-81137456-51",
-            "nombre": "Kata",
-            "apellido": "Medforth",
-            "sueldo": 39834.44,
-            "antiguiedad": 13,
-            "categoria": 14
+            "atributos": {
+                "cuil": "52-81137456-51",
+                "nombre": "Kata",
+                "apellido": "Medforth",
+                "sueldo": 39834.44,
+                "antiguiedad": 13,
+                "categoria": 14
+            }
         },
         {
             "__class__": "Personal",
-            "cuil": "86-77782456-24",
-            "nombre": "Konrad",
-            "apellido": "Scamerdine",
-            "sueldo": 21096.82,
-            "antiguiedad": 29,
-            "categoria": 5
+            "atributos": {
+                "cuil": "86-77782456-24",
+                "nombre": "Konrad",
+                "apellido": "Scamerdine",
+                "sueldo": 21096.82,
+                "antiguiedad": 29,
+                "categoria": 5
+            }
         },
         {
             "__class__": "Personal",
-            "cuil": "48-15890456-04",
-            "nombre": "Rafaellle",
-            "apellido": "Mulkerrins",
-            "sueldo": 8628.53,
-            "antiguiedad": 22,
-            "categoria": 22
+            "atributos": {
+                "cuil": "48-15890456-04",
+                "nombre": "Rafaellle",
+                "apellido": "Mulkerrins",
+                "sueldo": 8628.53,
+                "antiguiedad": 22,
+                "categoria": 22
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "17-70870759-97",
+                "nombre": "Bridget",
+                "apellido": "Kobierski",
+                "sueldo": 7864.77,
+                "antiguiedad": 7,
+                "carrera": "Informatica",
+                "cargo": "Semiexclusivo",
+                "catedra": "ProSystem fx Tax"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "63-03081759-95",
+                "nombre": "Gwendolin",
+                "apellido": "Wrenn",
+                "sueldo": 32086.05,
+                "antiguiedad": 4,
+                "carrera": "Geologia",
+                "cargo": "Exclusivo",
+                "catedra": "Psychometrics"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "58-15613759-51",
+                "nombre": "Klara",
+                "apellido": "Sieb",
+                "sueldo": 17171.9,
+                "antiguiedad": 4,
+                "carrera": "Biologia",
+                "cargo": "Simple",
+                "catedra": "RMADS"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "27-53199759-84",
+                "nombre": "Karel",
+                "apellido": "Pedrozzi",
+                "sueldo": 29839.55,
+                "antiguiedad": 23,
+                "carrera": "Geologia",
+                "cargo": "Simple",
+                "catedra": "Military Logistics"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "77-22496759-50",
+                "nombre": "Emmeline",
+                "apellido": "Widmoor",
+                "sueldo": 40504.73,
+                "antiguiedad": 6,
+                "carrera": "Informatica",
+                "cargo": "Simple",
+                "catedra": "HP Openview"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "28-27040759-57",
+                "nombre": "Guendolen",
+                "apellido": "Gilderoy",
+                "sueldo": 34701.54,
+                "antiguiedad": 17,
+                "carrera": "Geologia",
+                "cargo": "Simple",
+                "catedra": "Image Manipulation"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "88-90679759-10",
+                "nombre": "Jozef",
+                "apellido": "Meynell",
+                "sueldo": 14705.66,
+                "antiguiedad": 9,
+                "carrera": "Geologia",
+                "cargo": "Semiexclusivo",
+                "catedra": "Fashion Illustration"
+            }
         }
     ]
 }
