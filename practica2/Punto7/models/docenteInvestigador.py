@@ -25,3 +25,6 @@ class DocenteInvestigador(Docente, Investigador):
     def calcularSueldo(self):
         sueldo = Docente.calcularSueldo() + self.__importeExtra
         return sueldo
+
+    def __gt__(self, docente):
+        return self.getNombre() > docente.getNombre() 

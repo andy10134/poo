@@ -45,12 +45,21 @@ class Menu:
     #        self.__lista.agregarVehiculo(datos)
 
     def opcion3(self):
-        pass
-    #    posicion = int(input('Ingrese posicion: '))
-    #    self.__lista.mostrarElemento(posicion-1)
+        posicion = int(input('Ingrese posicion: '))
+        elemento = self.__lista.mostrarElemento(posicion-1)
 
+        if(elemento is not None):
+            print("Posicion {}: ".format(posicion))
+            print(elemento.__class__.__name__)
+        else:
+            print("Indice no valido")
+
+# "4-Ingresar por teclado el nombre de una carrera y generar un" 
+# "listado ordenado por nombre con todos los datos de los agentes"
+# " que se desempeñan como docentes investigadores.")
     def opcion4(self):
-        pass
+        carrera = str(input("Ingrese el nombre de la carrera: "))
+        docentesInvesticadores = self.__lista.listarDocentesInvestigadores()
 
     def opcion5(self):
         pass

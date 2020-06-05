@@ -1,6 +1,7 @@
 from zope.interface import implementer
 from interface import IInterface
 from nodo import Nodo
+from models.docenteInvestigador import DocenteInvestigador
 
 
 @implementer(IInterface)
@@ -70,13 +71,25 @@ class Lista:
             sig = anterior.getSiguiente()
             self.__indice += 1
         if(self.__indice == posicion):
-            pass #comentario re loco
+            return anterior.getDato()
         else:
             raise Exception(
                 'Posición no valida, ingrese un valor menor a {}'.format(
                     self.__tope
                 )
             )
+            return None
+
+    def listarDocentesInvestigadores(self, carrera):
+        p = self.__comienzo
+        docentesInnvestigadores = []
+        while(p is not None):
+            elemento = p.getDato()
+            if(type(elemento) is DocenteInvestigador):
+                docentesInnvestigadores.append(elemento)
+            p = p.getSiguiente()
+
+        return doce
 
     def toJSON(self):
         personal = []
