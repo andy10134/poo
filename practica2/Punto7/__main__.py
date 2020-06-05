@@ -1,7 +1,13 @@
 from menu import Menu
+from objectEncoder import ObjectEncoder
+from lista import Lista
 
 if __name__ == "__main__":
-    menu = Menu()
+    jsonF = ObjectEncoder()
+    lista = Lista()
+    diccionario = jsonF.leerJSONArchivo('./models/personal.json')
+    lista = jsonF.decodificarDiccionario(diccionario)
+    menu = Menu(jsonF, lista)
     salir = False
     print("App Centro de Cómputos UNSJ")
     while not salir:

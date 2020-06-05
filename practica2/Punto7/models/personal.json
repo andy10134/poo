@@ -1,69 +1,69 @@
 {
-    "__class__": "ManejadorPersonal",
+    "__class__": "Lista",
     "personal": [
         {
-            "__class__": "Personal",
+            "__class__": "PersonalAyuda",
             "atributos": {
                 "cuil": "79-63563456-60",
                 "nombre": "Nedi",
                 "apellido": "Halligan",
                 "sueldo": 33933.31,
-                "antiguiedad": 1,
+                "antiguedad": 1,
                 "categoria": 12
             }
         },
         {
-            "__class__": "Personal",
+            "__class__": "PersonalAyuda",
             "atributos": {
                 "cuil": "13-17714456-33",
                 "nombre": "Pier",
                 "apellido": "Librey",
                 "sueldo": 22697.53,
-                "antiguiedad": 22,
+                "antiguedad": 22,
                 "categoria": 13
             }
         },
         {
-            "__class__": "Personal",
+            "__class__": "PersonalAyuda",
             "atributos": {
                 "cuil": "85-57048456-08",
                 "nombre": "Elenore",
                 "apellido": "Rzehor",
                 "sueldo": 26990.42,
-                "antiguiedad": 17,
+                "antiguedad": 17,
                 "categoria": 11
             }
         },
         {
-            "__class__": "Personal",
+            "__class__": "PersonalAyuda",
             "atributos": {
                 "cuil": "52-81137456-51",
                 "nombre": "Kata",
                 "apellido": "Medforth",
                 "sueldo": 39834.44,
-                "antiguiedad": 13,
+                "antiguedad": 13,
                 "categoria": 14
             }
         },
         {
-            "__class__": "Personal",
+            "__class__": "PersonalAyuda",
             "atributos": {
                 "cuil": "86-77782456-24",
                 "nombre": "Konrad",
                 "apellido": "Scamerdine",
                 "sueldo": 21096.82,
-                "antiguiedad": 29,
+                "antiguedad": 29,
                 "categoria": 5
             }
         },
         {
-            "__class__": "Personal",
+            "__class__": "PersonalAyuda",
             "atributos": {
                 "cuil": "48-15890456-04",
                 "nombre": "Rafaellle",
                 "apellido": "Mulkerrins",
                 "sueldo": 8628.53,
-                "antiguiedad": 22,
+                "antiguedad": 22,
                 "categoria": 22
             }
         },
@@ -74,7 +74,7 @@
                 "nombre": "Bridget",
                 "apellido": "Kobierski",
                 "sueldo": 7864.77,
-                "antiguiedad": 7,
+                "antiguedad": 7,
                 "carrera": "Informatica",
                 "cargo": "Semiexclusivo",
                 "catedra": "ProSystem fx Tax"
@@ -87,7 +87,7 @@
                 "nombre": "Gwendolin",
                 "apellido": "Wrenn",
                 "sueldo": 32086.05,
-                "antiguiedad": 4,
+                "antiguedad": 4,
                 "carrera": "Geologia",
                 "cargo": "Exclusivo",
                 "catedra": "Psychometrics"
@@ -100,7 +100,7 @@
                 "nombre": "Klara",
                 "apellido": "Sieb",
                 "sueldo": 17171.9,
-                "antiguiedad": 4,
+                "antiguedad": 4,
                 "carrera": "Biologia",
                 "cargo": "Simple",
                 "catedra": "RMADS"
@@ -113,7 +113,7 @@
                 "nombre": "Karel",
                 "apellido": "Pedrozzi",
                 "sueldo": 29839.55,
-                "antiguiedad": 23,
+                "antiguedad": 23,
                 "carrera": "Geologia",
                 "cargo": "Simple",
                 "catedra": "Military Logistics"
@@ -126,7 +126,7 @@
                 "nombre": "Emmeline",
                 "apellido": "Widmoor",
                 "sueldo": 40504.73,
-                "antiguiedad": 6,
+                "antiguedad": 6,
                 "carrera": "Informatica",
                 "cargo": "Simple",
                 "catedra": "HP Openview"
@@ -139,7 +139,7 @@
                 "nombre": "Guendolen",
                 "apellido": "Gilderoy",
                 "sueldo": 34701.54,
-                "antiguiedad": 17,
+                "antiguedad": 17,
                 "carrera": "Geologia",
                 "cargo": "Simple",
                 "catedra": "Image Manipulation"
@@ -152,7 +152,7 @@
                 "nombre": "Jozef",
                 "apellido": "Meynell",
                 "sueldo": 14705.66,
-                "antiguiedad": 9,
+                "antiguedad": 9,
                 "carrera": "Geologia",
                 "cargo": "Semiexclusivo",
                 "catedra": "Fashion Illustration"
@@ -165,7 +165,7 @@
                 "nombre": "Laureen",
                 "apellido": "Labbey",
                 "sueldo": 48140.03,
-                "antiguiedad": 30,
+                "antiguedad": 30,
                 "area": "Informatica",
                 "tipo": 3
             }
@@ -177,7 +177,7 @@
                 "nombre": "Tore",
                 "apellido": "Wermerling",
                 "sueldo": 10684.26,
-                "antiguiedad": 17,
+                "antiguedad": 17,
                 "area": "Astronomia",
                 "tipo": 3
             }
@@ -189,7 +189,7 @@
                 "nombre": "Anissa",
                 "apellido": "Pinfold",
                 "sueldo": 5718.89,
-                "antiguiedad": 16,
+                "antiguedad": 16,
                 "area": "Biologia",
                 "tipo": 3
             }
@@ -201,7 +201,7 @@
                 "nombre": "Jolynn",
                 "apellido": "Ivushkin",
                 "sueldo": 9244,
-                "antiguiedad": 19,
+                "antiguedad": 19,
                 "categoria": "V",
                 "carrera": "Astronomia",
                 "catedra": "Keratin Treatment",
@@ -216,7 +216,7 @@
                 "nombre": "Prescott",
                 "apellido": "Sodory",
                 "sueldo": 29551,
-                "antiguiedad": 13,
+                "antiguedad": 13,
                 "categoria": "III",
                 "carrera": "Biologia",
                 "catedra": "Publicity",
@@ -231,7 +231,7 @@
                 "nombre": "Buiron",
                 "apellido": "Bertomeu",
                 "sueldo": 19105,
-                "antiguiedad": 17,
+                "antiguedad": 17,
                 "categoria": "III",
                 "carrera": "Informatica",
                 "catedra": "TMON",
@@ -246,7 +246,7 @@
                 "nombre": "Martie",
                 "apellido": "Grizard",
                 "sueldo": 26592,
-                "antiguiedad": 8,
+                "antiguedad": 8,
                 "categoria": "IV",
                 "carrera": "Geologia",
                 "catedra": "Floor Plans",
@@ -261,7 +261,7 @@
                 "nombre": "Corbett",
                 "apellido": "Jiru",
                 "sueldo": 26906,
-                "antiguiedad": 20,
+                "antiguedad": 20,
                 "categoria": "IV",
                 "carrera": "Geofisica",
                 "catedra": "DTMF",
@@ -276,7 +276,7 @@
                 "nombre": "Kipper",
                 "apellido": "Lambie",
                 "sueldo": 12755,
-                "antiguiedad": 12,
+                "antiguedad": 12,
                 "categoria": "IV",
                 "carrera": "Informatica",
                 "catedra": "RDMA",
@@ -291,7 +291,7 @@
                 "nombre": "Boycie",
                 "apellido": "Viccars",
                 "sueldo": 19078,
-                "antiguiedad": 9,
+                "antiguedad": 9,
                 "categoria": "III",
                 "carrera": "Geologia",
                 "catedra": "AHU",
