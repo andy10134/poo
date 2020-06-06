@@ -32,3 +32,24 @@ class Investigador(Persona):
                 self.getTipo()
             )
         )
+
+    def __lt__(self, persona): 
+        if(self.getApellido() < persona.getApellido() ):
+            return True
+        else: 
+            return False
+    
+    def toJSON(self):
+        d = dict(
+            __class__= self.__class__.__name__,
+            atributos = dict(
+                cuil = super().getCuil(),
+                nombre = super().getNombre(),
+                apellido = super().getApellido(),
+                sueldo = super().getSueldoBasico(),
+                antiguedad = super().getAntiguedad(),
+                area = self.__area,
+                tipo = self.__tipo
+            )
+        )
+        return d

@@ -1,5 +1,6 @@
 from models.docente import Docente
 from models.investigador import Investigador
+from models.persona import Persona
 
 
 class DocenteInvestigador(Docente, Investigador):
@@ -7,7 +8,7 @@ class DocenteInvestigador(Docente, Investigador):
     __importeExtra = 0
     __categoria = ''
 
-    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra, area, tipo, importeExtra, categoria):
+    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra, area, tipo, categoria, importeExtra):
         super().__init__(cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra, area, tipo)
         self.__importeExtra = importeExtra
         self.__categoria = categoria
@@ -31,4 +32,30 @@ class DocenteInvestigador(Docente, Investigador):
             return True
         else: 
             return False
-
+    
+    def __lt__(self, persona): 
+        if(self.getApellido() < persona.getApellido() ):
+            return True
+        else: 
+            return False
+    
+    def toJSON(self):
+        d = dict(
+            __class__= self.__class__.__name__,
+            atributos = dict(
+                cuil = super().getCuil(),
+                nombre = super().getNombre(),
+                apellido = super().getApellido(),
+                sueldo = super().getSueldoBasico(),
+                antiguedad = super().getAntiguedad(),
+                carrera = super().getCarrera(),
+                cargo = super().getCargo(),
+                catedra = super().getCatedra(),
+                area = super().getArea(),
+                tipo = super().getTipo(),
+                importeExtra = self.__importeExtra,
+                categoria = self.__categoria 
+            )
+        )
+        return d
+        

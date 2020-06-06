@@ -6,6 +6,7 @@ from models.personalAyuda import PersonalAyuda
 from models.docente import Docente
 from models.investigador import Investigador
 from models.persona import Persona
+from operator import attrgetter
 
 
 @implementer(IInterface)
@@ -97,12 +98,12 @@ class Lista:
         elif(len(datos) == 8):
             agente = Docente(
                 datos[0], datos[1], datos[2], datos[3],
-                datos[4], datos[5], datos[6], Docente[7]
+                datos[4], datos[5], datos[6], datos[7]
             )
         else:
             agente = DocenteInvestigador(
                 datos[0], datos[1], datos[2], datos[3],
-                datos[4], datos[5], datos[6], Docente[7],
+                datos[4], datos[5], datos[6], datos[7],
                 datos[8], datos[9], datos[10], datos[11]
             )
         if(posicion is None):
@@ -147,6 +148,7 @@ class Lista:
             listado.append(elemento)
             aux = aux.getSiguiente()
         listado.sort()
+        #sorted(listado, key=lambda elemento: elemento.getApellido())
         return listado
 
 
@@ -154,34 +156,35 @@ class Lista:
         personal = []
         nodo = self.__comienzo
         while(nodo is not None):
-            auto = nodo.getDato()
-            personal.append(auto.toJSON())
+            agente = nodo.getDato()
+            personal.append(agente.toJSON())
             nodo = nodo.getSiguiente()
 
         d = dict(
             __class__=self.__class__.__name__,
-            vehiculos=personal
+            personal=personal
         )
         return d
-void insertarAdentro (puntero &xp, int xnum)
-{ puntero p, nuevo, anterior;
-nuevo =(puntero) malloc(sizeof(struct nodo));
-nuevo->nro=xnum;
-if (xp == NULL)
-{ xp = nuevo;
-nuevo->sig = NULL;
-}
-else
-if (xp->nro == nuevo->nro)
-{ nuevo->sig = xp;
-xp=nuevo;
-}
-else
-{ p = xp;
-anterior=xp;
-}
-anterior->sig = nuevo;
-nuevo->sig = p;
-printf("\n El elemento ha sido insertado en el lugar que corresponde");
-}
-}
+
+#void insertarAdentro (puntero &xp, int xnum)
+#{ puntero p, nuevo, anterior;
+#nuevo =(puntero) malloc(sizeof(struct nodo));
+#nuevo->nro=xnum;
+#if (xp == NULL)
+#{ xp = nuevo;
+#nuevo->sig = NULL;
+#}
+#else
+#if (xp->nro == nuevo->nro)
+#{ nuevo->sig = xp;
+#xp=nuevo;
+#}
+#else
+#{ p = xp;
+#anterior=xp;
+#}
+#anterior->sig = nuevo;
+#nuevo->sig = p;
+#printf("\n El elemento ha sido insertado en el lugar que corresponde");
+#}
+#}

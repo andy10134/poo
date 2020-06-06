@@ -17,6 +17,7 @@ class Menu:
             5: self.opcion5,
             6: self.opcion6,
             7: self.opcion7,
+            8: self.opcion8,
             0: self.salir
         }
         self.__jsonF = jsonF

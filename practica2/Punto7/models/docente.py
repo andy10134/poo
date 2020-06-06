@@ -40,3 +40,25 @@ class Docente(Persona):
         else:
             sueldo += super().getSueldoBasico()*50/100
         return sueldo
+
+    def __lt__(self, persona): 
+        if(self.getApellido() < persona.getApellido() ):
+            return True
+        else: 
+            return False
+    
+    def toJSON(self):
+        d = dict(
+            __class__= self.__class__.__name__,
+            atributos = dict(
+                cuil = super().getCuil(),
+                nombre = super().getNombre(),
+                apellido = super().getApellido(),
+                sueldo = super().getSueldoBasico(),
+                antiguedad = super().getAntiguedad(),
+                carrera = self.__carrera,
+                cargo = self.__cargo,
+                catedra = self.__catedra
+            )
+        )
+        return d

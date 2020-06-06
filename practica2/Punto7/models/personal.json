@@ -2,281 +2,84 @@
     "__class__": "Lista",
     "personal": [
         {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "27-17924051-9",
+                "nombre": "Liliana",
+                "apellido": "Mereles",
+                "sueldo": 20000.0,
+                "antiguedad": 10,
+                "carrera": "Informatica",
+                "cargo": "exclusivo",
+                "catedra": "Informatica"
+            }
+        },
+        {
             "__class__": "PersonalAyuda",
             "atributos": {
-                "cuil": "79-63563456-60",
-                "nombre": "Nedi",
-                "apellido": "Halligan",
-                "sueldo": 33933.31,
+                "cuil": "27-45666888-9",
+                "nombre": "Sol",
+                "apellido": "Paez",
+                "sueldo": 3000.0,
                 "antiguedad": 1,
-                "categoria": 12
-            }
-        },
-        {
-            "__class__": "PersonalAyuda",
-            "atributos": {
-                "cuil": "13-17714456-33",
-                "nombre": "Pier",
-                "apellido": "Librey",
-                "sueldo": 22697.53,
-                "antiguedad": 22,
-                "categoria": 13
-            }
-        },
-        {
-            "__class__": "PersonalAyuda",
-            "atributos": {
-                "cuil": "85-57048456-08",
-                "nombre": "Elenore",
-                "apellido": "Rzehor",
-                "sueldo": 26990.42,
-                "antiguedad": 17,
-                "categoria": 11
-            }
-        },
-        {
-            "__class__": "PersonalAyuda",
-            "atributos": {
-                "cuil": "52-81137456-51",
-                "nombre": "Kata",
-                "apellido": "Medforth",
-                "sueldo": 39834.44,
-                "antiguedad": 13,
-                "categoria": 14
-            }
-        },
-        {
-            "__class__": "PersonalAyuda",
-            "atributos": {
-                "cuil": "86-77782456-24",
-                "nombre": "Konrad",
-                "apellido": "Scamerdine",
-                "sueldo": 21096.82,
-                "antiguedad": 29,
                 "categoria": 5
             }
         },
         {
-            "__class__": "PersonalAyuda",
+            "__class__": "DocenteInvestigador",
             "atributos": {
-                "cuil": "48-15890456-04",
-                "nombre": "Rafaellle",
-                "apellido": "Mulkerrins",
-                "sueldo": 8628.53,
-                "antiguedad": 22,
-                "categoria": 22
-            }
-        },
-        {
-            "__class__": "Docente",
-            "atributos": {
-                "cuil": "17-70870759-97",
-                "nombre": "Bridget",
-                "apellido": "Kobierski",
-                "sueldo": 7864.77,
-                "antiguedad": 7,
-                "carrera": "Informatica",
-                "cargo": "Semiexclusivo",
-                "catedra": "ProSystem fx Tax"
-            }
-        },
-        {
-            "__class__": "Docente",
-            "atributos": {
-                "cuil": "63-03081759-95",
-                "nombre": "Gwendolin",
-                "apellido": "Wrenn",
-                "sueldo": 32086.05,
-                "antiguedad": 4,
-                "carrera": "Geologia",
-                "cargo": "Exclusivo",
-                "catedra": "Psychometrics"
-            }
-        },
-        {
-            "__class__": "Docente",
-            "atributos": {
-                "cuil": "58-15613759-51",
-                "nombre": "Klara",
-                "apellido": "Sieb",
-                "sueldo": 17171.9,
-                "antiguedad": 4,
+                "cuil": "27-41888952-9",
+                "nombre": "Paola",
+                "apellido": "Torres",
+                "sueldo": 30000.0,
+                "antiguedad": 8,
                 "carrera": "Biologia",
-                "cargo": "Simple",
-                "catedra": "RMADS"
-            }
-        },
-        {
-            "__class__": "Docente",
-            "atributos": {
-                "cuil": "27-53199759-84",
-                "nombre": "Karel",
-                "apellido": "Pedrozzi",
-                "sueldo": 29839.55,
-                "antiguedad": 23,
-                "carrera": "Geologia",
-                "cargo": "Simple",
-                "catedra": "Military Logistics"
-            }
-        },
-        {
-            "__class__": "Docente",
-            "atributos": {
-                "cuil": "77-22496759-50",
-                "nombre": "Emmeline",
-                "apellido": "Widmoor",
-                "sueldo": 40504.73,
-                "antiguedad": 6,
-                "carrera": "Informatica",
-                "cargo": "Simple",
-                "catedra": "HP Openview"
-            }
-        },
-        {
-            "__class__": "Docente",
-            "atributos": {
-                "cuil": "28-27040759-57",
-                "nombre": "Guendolen",
-                "apellido": "Gilderoy",
-                "sueldo": 34701.54,
-                "antiguedad": 17,
-                "carrera": "Geologia",
-                "cargo": "Simple",
-                "catedra": "Image Manipulation"
-            }
-        },
-        {
-            "__class__": "Docente",
-            "atributos": {
-                "cuil": "88-90679759-10",
-                "nombre": "Jozef",
-                "apellido": "Meynell",
-                "sueldo": 14705.66,
-                "antiguedad": 9,
-                "carrera": "Geologia",
-                "cargo": "Semiexclusivo",
-                "catedra": "Fashion Illustration"
-            }
-        },
-        {
-            "__class__": "Investigador",
-            "atributos": {
-                "cuil": "61-82382657-33",
-                "nombre": "Laureen",
-                "apellido": "Labbey",
-                "sueldo": 48140.03,
-                "antiguedad": 30,
-                "area": "Informatica",
-                "tipo": 3
-            }
-        },
-        {
-            "__class__": "Investigador",
-            "atributos": {
-                "cuil": "29-00866657-85",
-                "nombre": "Tore",
-                "apellido": "Wermerling",
-                "sueldo": 10684.26,
-                "antiguedad": 17,
-                "area": "Astronomia",
-                "tipo": 3
-            }
-        },
-        {
-            "__class__": "Investigador",
-            "atributos": {
-                "cuil": "12-08351657-46",
-                "nombre": "Anissa",
-                "apellido": "Pinfold",
-                "sueldo": 5718.89,
-                "antiguedad": 16,
+                "cargo": "simple",
+                "catedra": "Biologia",
                 "area": "Biologia",
-                "tipo": 3
-            }
-        },
-        {
-            "__class__": "DocenteInvestigador",
-            "atributos": {
-                "cuil": "30-08363742-4",
-                "nombre": "Erma",
-                "apellido": "Carayol",
-                "sueldo": 21867.43,
-                "antiguedad": 0,
-                "carrera": "Geofisica",
-                "cargo": "Semiexclusivo",
-                "catedra": "Anti Money Laundering",
-                "area": "Informatica",
-                "tipo": 11,
-                "importeExtra": 3437.35,
-                "categoria": "I"
-            }
-        },
-        {
-            "__class__": "DocenteInvestigador",
-            "atributos": {
-                "cuil": "27-49061239-4",
-                "nombre": "Buddy",
-                "apellido": "Leward",
-                "sueldo": 32958.54,
-                "antiguedad": 15,
-                "carrera": "Informatica",
-                "cargo": "Semiexclusivo",
-                "catedra": "For Sale By Owner",
-                "area": "Informatica",
-                "tipo": 7,
-                "importeExtra": 1341.35,
-                "categoria": "II"
-            }
-        },
-        {
-            "__class__": "DocenteInvestigador",
-            "atributos": {
-                "cuil": "27-35572190-2",
-                "nombre": "Evelyn",
-                "apellido": "Wycliffe",
-                "sueldo": 38974.99,
-                "antiguedad": 15,
-                "carrera": "Geologia",
-                "cargo": "Simple",
-                "catedra": "Executive Coaching",
-                "area": "Biologia",
-                "tipo": 14,
-                "importeExtra": 1696.28,
-                "categoria": "V"
-            }
-        },
-        {
-            "__class__": "DocenteInvestigador",
-            "atributos": {
-                "cuil": "22-83471458-5",
-                "nombre": "Consolata",
-                "apellido": "Ornillos",
-                "sueldo": 42309.11,
-                "antiguedad": 19,
-                "carrera": "Biologia",
-                "cargo": "Simple",
-                "catedra": "Volleyball",
-                "area": "Geologia",
-                "tipo": 20,
-                "importeExtra": 1005.91,
+                "tipo": "5",
+                "importeExtra": 15000.0,
                 "categoria": "III"
             }
         },
         {
+            "__class__": "Investigador",
+            "atributos": {
+                "cuil": "21-44555999-3",
+                "nombre": "Pepe",
+                "apellido": "Lopez",
+                "sueldo": 5000.0,
+                "antiguedad": 4,
+                "area": "Informatica",
+                "tipo": "5"
+            }
+        },
+        {
+            "__class__": "PersonalAyuda",
+            "atributos": {
+                "cuil": "27-43488985-9",
+                "nombre": "Ana",
+                "apellido": "Carbajo",
+                "sueldo": 15000.0,
+                "antiguedad": 5,
+                "categoria": 5
+            }
+        },
+        {
             "__class__": "DocenteInvestigador",
             "atributos": {
-                "cuil": "28-69818086-7",
-                "nombre": "Gwendolen",
-                "apellido": "Sheran",
-                "sueldo": 36635.64,
+                "cuil": "21-79677337-4",
+                "nombre": "Winnifred",
+                "apellido": "Lovart",
+                "sueldo": 49248.02,
                 "antiguedad": 4,
-                "carrera": "Biologia",
-                "cargo": "Exclusivo",
-                "catedra": "IM",
-                "area": "Geofisica",
-                "tipo": 20,
-                "importeExtra": 2611.75,
-                "categoria": "IV"
+                "carrera": "Astronomia",
+                "cargo": "Semiexclusivo",
+                "catedra": "DNS",
+                "area": "Geologia",
+                "tipo": 19,
+                "importeExtra": 2392.2,
+                "categoria": "III"
             }
         },
         {
@@ -299,18 +102,292 @@
         {
             "__class__": "DocenteInvestigador",
             "atributos": {
-                "cuil": "21-79677337-4",
-                "nombre": "Winnifred",
-                "apellido": "Lovart",
-                "sueldo": 49248.02,
+                "cuil": "28-69818086-7",
+                "nombre": "Gwendolen",
+                "apellido": "Sheran",
+                "sueldo": 36635.64,
                 "antiguedad": 4,
-                "carrera": "Astronomia",
-                "cargo": "Semiexclusivo",
-                "catedra": "DNS",
+                "carrera": "Biologia",
+                "cargo": "Exclusivo",
+                "catedra": "IM",
+                "area": "Geofisica",
+                "tipo": 20,
+                "importeExtra": 2611.75,
+                "categoria": "IV"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "22-83471458-5",
+                "nombre": "Consolata",
+                "apellido": "Ornillos",
+                "sueldo": 42309.11,
+                "antiguedad": 19,
+                "carrera": "Biologia",
+                "cargo": "Simple",
+                "catedra": "Volleyball",
                 "area": "Geologia",
-                "tipo": 19,
-                "importeExtra": 2392.2,
+                "tipo": 20,
+                "importeExtra": 1005.91,
                 "categoria": "III"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "27-35572190-2",
+                "nombre": "Evelyn",
+                "apellido": "Wycliffe",
+                "sueldo": 38974.99,
+                "antiguedad": 15,
+                "carrera": "Geologia",
+                "cargo": "Simple",
+                "catedra": "Executive Coaching",
+                "area": "Biologia",
+                "tipo": 14,
+                "importeExtra": 1696.28,
+                "categoria": "V"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "27-49061239-4",
+                "nombre": "Buddy",
+                "apellido": "Leward",
+                "sueldo": 32958.54,
+                "antiguedad": 15,
+                "carrera": "Informatica",
+                "cargo": "Semiexclusivo",
+                "catedra": "For Sale By Owner",
+                "area": "Informatica",
+                "tipo": 7,
+                "importeExtra": 1341.35,
+                "categoria": "II"
+            }
+        },
+        {
+            "__class__": "DocenteInvestigador",
+            "atributos": {
+                "cuil": "30-08363742-4",
+                "nombre": "Erma",
+                "apellido": "Carayol",
+                "sueldo": 21867.43,
+                "antiguedad": 0,
+                "carrera": "Geofisica",
+                "cargo": "Semiexclusivo",
+                "catedra": "Anti Money Laundering",
+                "area": "Informatica",
+                "tipo": 11,
+                "importeExtra": 3437.35,
+                "categoria": "I"
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "atributos": {
+                "cuil": "12-08351657-46",
+                "nombre": "Anissa",
+                "apellido": "Pinfold",
+                "sueldo": 5718.89,
+                "antiguedad": 16,
+                "area": "Biologia",
+                "tipo": 3
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "atributos": {
+                "cuil": "29-00866657-85",
+                "nombre": "Tore",
+                "apellido": "Wermerling",
+                "sueldo": 10684.26,
+                "antiguedad": 17,
+                "area": "Astronomia",
+                "tipo": 3
+            }
+        },
+        {
+            "__class__": "Investigador",
+            "atributos": {
+                "cuil": "61-82382657-33",
+                "nombre": "Laureen",
+                "apellido": "Labbey",
+                "sueldo": 48140.03,
+                "antiguedad": 30,
+                "area": "Informatica",
+                "tipo": 3
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "88-90679759-10",
+                "nombre": "Jozef",
+                "apellido": "Meynell",
+                "sueldo": 14705.66,
+                "antiguedad": 9,
+                "carrera": "Geologia",
+                "cargo": "Semiexclusivo",
+                "catedra": "Fashion Illustration"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "28-27040759-57",
+                "nombre": "Guendolen",
+                "apellido": "Gilderoy",
+                "sueldo": 34701.54,
+                "antiguedad": 17,
+                "carrera": "Geologia",
+                "cargo": "Simple",
+                "catedra": "Image Manipulation"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "77-22496759-50",
+                "nombre": "Emmeline",
+                "apellido": "Widmoor",
+                "sueldo": 40504.73,
+                "antiguedad": 6,
+                "carrera": "Informatica",
+                "cargo": "Simple",
+                "catedra": "HP Openview"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "27-53199759-84",
+                "nombre": "Karel",
+                "apellido": "Pedrozzi",
+                "sueldo": 29839.55,
+                "antiguedad": 23,
+                "carrera": "Geologia",
+                "cargo": "Simple",
+                "catedra": "Military Logistics"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "58-15613759-51",
+                "nombre": "Klara",
+                "apellido": "Sieb",
+                "sueldo": 17171.9,
+                "antiguedad": 4,
+                "carrera": "Biologia",
+                "cargo": "Simple",
+                "catedra": "RMADS"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "63-03081759-95",
+                "nombre": "Gwendolin",
+                "apellido": "Wrenn",
+                "sueldo": 32086.05,
+                "antiguedad": 4,
+                "carrera": "Geologia",
+                "cargo": "Exclusivo",
+                "catedra": "Psychometrics"
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "17-70870759-97",
+                "nombre": "Bridget",
+                "apellido": "Kobierski",
+                "sueldo": 7864.77,
+                "antiguedad": 7,
+                "carrera": "Informatica",
+                "cargo": "Semiexclusivo",
+                "catedra": "ProSystem fx Tax"
+            }
+        },
+        {
+            "__class__": "PersonalAyuda",
+            "atributos": {
+                "cuil": "48-15890456-04",
+                "nombre": "Rafaellle",
+                "apellido": "Mulkerrins",
+                "sueldo": 8628.53,
+                "antiguedad": 22,
+                "categoria": 22
+            }
+        },
+        {
+            "__class__": "PersonalAyuda",
+            "atributos": {
+                "cuil": "86-77782456-24",
+                "nombre": "Konrad",
+                "apellido": "Scamerdine",
+                "sueldo": 21096.82,
+                "antiguedad": 29,
+                "categoria": 5
+            }
+        },
+        {
+            "__class__": "Docente",
+            "atributos": {
+                "cuil": "27-33222555-9",
+                "nombre": "Laura",
+                "apellido": "Flores",
+                "sueldo": 10000.0,
+                "antiguedad": 3,
+                "carrera": "LCC",
+                "cargo": "simple",
+                "catedra": "Informatica"
+            }
+        },
+        {
+            "__class__": "PersonalAyuda",
+            "atributos": {
+                "cuil": "52-81137456-51",
+                "nombre": "Kata",
+                "apellido": "Medforth",
+                "sueldo": 39834.44,
+                "antiguedad": 13,
+                "categoria": 14
+            }
+        },
+        {
+            "__class__": "PersonalAyuda",
+            "atributos": {
+                "cuil": "85-57048456-08",
+                "nombre": "Elenore",
+                "apellido": "Rzehor",
+                "sueldo": 26990.42,
+                "antiguedad": 17,
+                "categoria": 11
+            }
+        },
+        {
+            "__class__": "PersonalAyuda",
+            "atributos": {
+                "cuil": "13-17714456-33",
+                "nombre": "Pier",
+                "apellido": "Librey",
+                "sueldo": 22697.53,
+                "antiguedad": 22,
+                "categoria": 13
+            }
+        },
+        {
+            "__class__": "PersonalAyuda",
+            "atributos": {
+                "cuil": "79-63563456-60",
+                "nombre": "Nedi",
+                "apellido": "Halligan",
+                "sueldo": 33933.31,
+                "antiguedad": 1,
+                "categoria": 12
             }
         }
     ]

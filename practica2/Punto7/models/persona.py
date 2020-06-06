@@ -45,13 +45,23 @@ class Persona:
                 self.getAntiguedad()
                 )
             ))
+    
+    def toJSON(self):
+        d = dict(
+            __class__= self.__class__.__name__,
+            atributos = dict(
+                cuil = self.__cuil,
+                nombre = self.__nombre,
+                apellido = self.__apellido,
+                sueldo = self.__sueldo,
+                antiguedad = self.__antiguiedad
+            )
+        )
+        return d
 
     @abc.abstractclassmethod
     def calcularSueldo(self):
         pass
-
-    def __gt__(self, persona): 
-        if(self.getApellido() > persona.getApellido() ):
-            return True
-        else: 
-            return False
+    @abc.abstractclassmethod
+    def __lt__(self, persona): 
+        pass
