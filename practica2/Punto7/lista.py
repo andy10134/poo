@@ -82,7 +82,6 @@ class Lista:
                     self.__tope
                 )
             )
-            return None
 
     def agregarAgente(self, datos, posicion=None):
         if(len(datos) == 6):
@@ -116,7 +115,7 @@ class Lista:
         docentesInnvestigadores = []
         while(p is not None):
             elemento = p.getDato()
-            if(type(elemento) is DocenteInvestigador):
+            if(type(elemento) is DocenteInvestigador and elemento.getCarrera() == carrera):
                 docentesInnvestigadores.append(elemento)
 
             p = p.getSiguiente()
@@ -164,3 +163,25 @@ class Lista:
             vehiculos=personal
         )
         return d
+void insertarAdentro (puntero &xp, int xnum)
+{ puntero p, nuevo, anterior;
+nuevo =(puntero) malloc(sizeof(struct nodo));
+nuevo->nro=xnum;
+if (xp == NULL)
+{ xp = nuevo;
+nuevo->sig = NULL;
+}
+else
+if (xp->nro == nuevo->nro)
+{ nuevo->sig = xp;
+xp=nuevo;
+}
+else
+{ p = xp;
+anterior=xp;
+}
+anterior->sig = nuevo;
+nuevo->sig = p;
+printf("\n El elemento ha sido insertado en el lugar que corresponde");
+}
+}

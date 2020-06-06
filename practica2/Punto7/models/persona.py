@@ -50,5 +50,8 @@ class Persona:
     def calcularSueldo(self):
         pass
 
-    def __gt__(self, persona):
-        return self.getApellido() > persona.getApellido() 
+    def __gt__(self, persona): 
+        if(self.getApellido() > persona.getApellido() ):
+            return True
+        else: 
+            return False

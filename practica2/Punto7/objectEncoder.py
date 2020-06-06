@@ -38,7 +38,7 @@ class ObjectEncoder(object):
                     class_ = eval(class_name)
                     atributos = dPersonal['atributos']
                     unPersonal = class_(**atributos)
-                    print(unPersonal)
-                    print('---------------------')
+                    #print(unPersonal)
+                    #print('---------------------')
                     lista.agregarElemento(unPersonal)
             return lista 

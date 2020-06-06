@@ -106,8 +106,8 @@ class Menu:
         carrera = str(input("Ingrese el nombre de la carrera: "))
         docentesInvesticadores = self.__lista.listarDocentesInvestigadores(carrera)
         for docente in docentesInvesticadores:
-            print(docente)
             print('----------------------')
+            print(docente)
 
     def opcion5(self):
         area = str(input('Ingrese area: '))
@@ -118,9 +118,9 @@ class Menu:
         print('---------Listado---------')
         for agente in listado:
             print(
-                'Apellido: {}, Nombre: {}, Tipo de Agente: {}, Sueldo: {}'.format(
+                'Apellido: {} \nNombre: {} \nTipo de Agente: {} \nSueldo: {}'.format(
                     agente.getApellido(), agente.getNombre(),
-                    agente.__class__.__name__, agente.CalcularSueldo() 
+                    agente.__class__.__name__, agente.calcularSueldo() 
                 )
                 )
             print('-------------------------')
