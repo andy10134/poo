@@ -20,7 +20,6 @@ class Investigador(Persona):
     def calcularSueldo(self):
         sueldoInvestigador = super().getSueldoBasico() + (
             super().getSueldoBasico() * super().getAntiguiedad())/100
-
         return sueldoInvestigador
 
     def __str__(self):

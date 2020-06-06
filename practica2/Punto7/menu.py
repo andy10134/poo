@@ -110,10 +110,20 @@ class Menu:
             print('----------------------')
 
     def opcion5(self):
-        pass
+        area = str(input('Ingrese area: '))
+        self.__lista.contarAgentes(area)
 
     def opcion6(self):
-        pass
+        listado = self.__lista.generarListado()
+        print('---------Listado---------')
+        for agente in listado:
+            print(
+                'Apellido: {}, Nombre: {}, Tipo de Agente: {}, Sueldo: {}'.format(
+                    agente.getApellido(), agente.getNombre(),
+                    agente.__class__.__name__, agente.CalcularSueldo() 
+                )
+                )
+            print('-------------------------')
 
     def opcion7(self):
         pass

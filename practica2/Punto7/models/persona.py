@@ -49,3 +49,6 @@ class Persona:
     @abc.abstractclassmethod
     def calcularSueldo(self):
         pass
+
+    def __gt__(self, persona):
+        return self.getApellido() > persona.getApellido() 

@@ -124,6 +124,33 @@ class Lista:
         docentesInnvestigadores.sort()
         return docentesInnvestigadores
 
+    def contarAgentes(self, area):
+        aux = self.__comienzo
+        contI = 0
+        contDI = 0
+        while(aux is not None):
+            elemento = aux.getDato()
+            if(type(elemento) is Investigador):
+                if(elemento.getArea() == area):
+                    contI += 1
+            elif(type(elemento) is DocenteInvestigador):
+                if(elemento.getArea() == area):
+                    contDI += 1
+            aux = aux.getSiguiente()
+        print('Cantidad de Investigadores que trabajan en el area de {}: {}'.format(area, contI))
+        print('Cantidad de Docentes Investigadores que trabajan en el area de {}: {}'.format(area, contDI))
+
+    def generarListado(self):
+        aux = self.__comienzo
+        listado = []
+        while(aux is not None):
+            elemento = aux.getDato()
+            listado.append(elemento)
+            aux = aux.getSiguiente()
+        listado.sort()
+        return listado
+
+
     def toJSON(self):
         personal = []
         nodo = self.__comienzo
