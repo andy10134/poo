@@ -47,12 +47,12 @@ class Menu:
         self.__empleados.mostrarEmpleados()
 
     def opcion6(self):
-        usuario=input('Usuario (Admin/Cajero): ')
+        usuario=input('Usuario (Tesorero/Gerente): ')
         clave=input('Clave:')
-        if(usuario.lower() == 'Admin'.lower() and clave =='a54321'):
+        if(usuario.lower() == 'Tesorero'.lower() and clave =='uTesoreso/ag@74ck'):
             supervisor(ISupervisor(manejadorProductos))
         else:
-            if(usuario.lower() == 'Cajero'.lower() and clave == 'c12345'):
+            if(usuario.lower() == 'Gerente'.lower() and clave == 'uGerente/ufC77#!1'):
             cajero(ICajero(manejadorProductos))
     
     def salir(self):
