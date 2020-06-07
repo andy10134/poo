@@ -32,7 +32,7 @@ class Empleado():
 
     def mostrar(self):
         print("Nombre: {}".format(self.__nombre))
-        print("Telefono: ".format(self.__telefono))
+        print("Telefono: {}".format(self.__telefono))
 
     def __str__(self):
         return ((

@@ -4,6 +4,7 @@ from manejadorEmpleado import ManejadorEmpleado
 from modelos.empleadoContratado import EmpleadoContratado
 from interfaces.igerente import IGerente
 from interfaces.itesorero import ITesorero
+import zope.interface
 
 
 class Menu:
@@ -60,12 +61,25 @@ class Menu:
             print("Nombre y/o contraseña invalidas")
 
     def tesorero(self, manejaTesorero):
-        print(IGerente.providedBy(manejaTesorero))
         dni = input('Ingrese dni del empleado: ')
         manejaTesorero.gastosSueldoPorEmpleado(dni)
 
     def gerente(self, manejaGerente):
-        print("\n")
+        dni = str
+        valorNuevo = float
+        metodos = {
+            1: manejaGerente.modificarBasicoEPlanta,
+            2: manejaGerente.modificarViaticoEExterno,
+            3: manejaGerente.modificarValorEPorHora
+        }
+        opcion = int(input("Ingrese opcion: "))
+        if(opcion > 0 and opcion <= 3):
+            dni = str(input("Ingrese el dni: "))
+            valorNuevo = float(input("Ingrese el valor nuevo: "))
+            func = metodos[opcion]
+            func(dni, valorNuevo)
+        else:
+            raise("Opcion incorrecta")
 
     def salir(self):
         print('Salir')
