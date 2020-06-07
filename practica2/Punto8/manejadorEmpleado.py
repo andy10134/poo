@@ -111,10 +111,26 @@ class ManejadorEmpleado:
     
     #gerente
     def modificarBasicoEPlanta(self, dni, nuevoBasico):
-        pass
+        i = self.buscarDni(dni)
+
+        if(i != -1 and type(self.__arreglo[i]) is EmpleadoPlanta):
+            self.__arreglo[i].setBasico(nuevoBasico)
+        else:
+            print("Dni no encontrado")
+
 
     def modificarViaticoEExterno(self, dni, nuevoViatico):
-        pass
+        i = self.buscarDni(dni)
+
+        if(i != -1 and type(self.__arreglo[i]) is EmpleadosExternos):
+            self.__arreglo[i].setViaticos(nuevoViatico)
+        else:
+            print("Dni no encontrado")
+
 
     def modificarValorEPorHora(self, dni, nuevoValorHora):
-        pass
+        i = self.buscarDni(dni)
+        if(i != -1 and type(self.__arreglo[i]) is EmpleadoContratado):
+            self.__arreglo[i].setValor(nuevoValorHora)
+        else:
+            print("Dni no encontrado")

@@ -26,6 +26,10 @@ class EmpleadoContratado(EmpleadoTercero):
     def getValor(cls):
         return cls.valorHora
 
+    @classmethod
+    def setValor(cls, valor):
+        cls.valorHora = valor
+
     def agregarHoras(self, horas):
         if(horas > 0):
             self.__cantHoras += horas
