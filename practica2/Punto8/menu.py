@@ -60,6 +60,7 @@ class Menu:
             print("Nombre y/o contraseña invalidas")
 
     def tesorero(self, manejaTesorero):
+        print(IGerente.providedBy(manejaTesorero))
         dni = input('Ingrese dni del empleado: ')
         manejaTesorero.gastosSueldoPorEmpleado(dni)
 

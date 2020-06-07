@@ -83,7 +83,7 @@ class ManejadorEmpleado:
             i += 1
                 
         if(i == self.__dimension):
-            return -1
+            return None
         else:
             return i
 
@@ -96,7 +96,6 @@ class ManejadorEmpleado:
 
     def agregarHoras(self, dni):
         aux = self.buscarDni(dni)
-
         if(aux != -1 and type(self.__arreglo[aux]) is EmpleadoContratado):
             emplAux = self.__arreglo[aux]
             horas = int(input("Ingrese la cantidad de horas a agregar: "))
@@ -107,13 +106,16 @@ class ManejadorEmpleado:
     #tesorero
     def gastosSueldoPorEmpleado(self, dni):
         i = self.buscarDni(dni)
-        sueldo = self.__arreglo[i].calcularSueldo()
-        print('Gasto en sueldos para el empleado {}: {}'.format(self.__arreglo[i].getNombre(), sueldo))
+        if(i is not None):
+            print(self.__arreglo[i])
+            sueldo = self.__arreglo[i].calcularSueldo()
+            print('Gasto en sueldos para el empleado {}: {}'.format(self.__arreglo[i].getNombre(), sueldo))
+        else:
+            print('DNI no valido')
     
     #gerente
     def modificarBasicoEPlanta(self, dni, nuevoBasico):
         i = self.buscarDni(dni)
-
         if(i != -1 and type(self.__arreglo[i]) is EmpleadoPlanta):
             self.__arreglo[i].setBasico(nuevoBasico)
         else:
