@@ -61,11 +61,6 @@ class Lista:
         else:
             raise Exception('Indice invalido')
 
-    #def agregarPosicion(self, datos, posicion=None):
-    #    if(posicion is None):
-    #        self.agregarElemento(datos)
-    #    else:
-    #        self.insertarElemento(datos, posicion)
 
     def mostrarElemento(self, posicion):
         self.__indice = 0

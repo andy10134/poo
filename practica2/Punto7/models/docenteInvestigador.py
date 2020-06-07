@@ -29,11 +29,11 @@ class DocenteInvestigador(Docente, Investigador):
         sueldo = Docente.calcularSueldo(self) + self.__importeExtra
         return sueldo
 
-    def __gt__(self, docente):
-        if(self.getNombre() > docente.getNombre()):
-            return True
-        else:
-            return False
+    #def __gt__(self, docente):
+    #    if(self.getNombre() > docente.getNombre()):
+    #        return True
+    #    else:
+    #        return False
 
     def __lt__(self, persona):
         if(self.getApellido() < persona.getApellido()):
