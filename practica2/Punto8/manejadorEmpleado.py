@@ -9,8 +9,8 @@ import csv
 from datetime import date
 import zope.interface
 
-@zope.interface.provider(IGerente)
-@zope.interface.provider(ITesorero)
+@zope.interface.implementer(IGerente)
+@zope.interface.implementer(ITesorero)
 class ManejadorEmpleado:
 
     __cantidad = 0
