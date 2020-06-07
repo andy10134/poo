@@ -1,4 +1,4 @@
-from empleadosTerceros import EmpleadoTercero
+from modelos.empleadosTerceros import EmpleadoTercero
 
 
 class EmpleadoContratado(EmpleadoTercero):

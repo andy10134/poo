@@ -1,4 +1,4 @@
-from empleado import Empleado
+from modelos.empleado import Empleado
 
 
 class EmpleadoPlanta(Empleado):
