@@ -62,6 +62,3 @@ class Persona:
     @abc.abstractclassmethod
     def calcularSueldo(self):
         pass
-    @abc.abstractclassmethod
-    def __lt__(self, persona): 
-        pass
