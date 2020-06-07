@@ -2,6 +2,8 @@ import os
 import numpy
 from manejadorEmpleado import ManejadorEmpleado
 from modelos.empleadoContratado import EmpleadoContratado
+from interfaces.igerente import IGerente
+from interfaces.itesorero import ITesorero
 
 
 class Menu:
@@ -50,10 +52,17 @@ class Menu:
         usuario=input('Usuario (Admin/Cajero): ')
         clave=input('Clave:')
         if(usuario.lower() == 'Admin'.lower() and clave =='a54321'):
-            supervisor(ISupervisor(manejadorProductos))
+            tesorero(ITesorero(self.__empleados))
+        elif(usuario.lower() == 'Cajero'.lower() and clave == 'c12345'):
+            gerente(IGerente(self.__empleados))
         else:
-            if(usuario.lower() == 'Cajero'.lower() and clave == 'c12345'):
-            cajero(ICajero(manejadorProductos))
-    
+            print("Nombre y/o contraseña invalidas")
+
+    def tesorero(self, manejaTesorero):
+        pass
+
+    def gerente(self, manejaGerente):
+        print("\n")
+
     def salir(self):
         print('Salir')
