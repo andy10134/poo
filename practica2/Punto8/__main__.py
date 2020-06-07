@@ -28,6 +28,9 @@ if __name__ == "__main__":
             "5- Calcular sueldo: Mostrar nombre, teléfono y sueldo",
             " a cobrar de todos los empleados."
         )
+        print(
+            "6- Iniciar sesion"
+        )
         opcion = int(input("Ingrese una opción: "))
         menu.opcion(opcion)
         salir = int(opcion) == 0
