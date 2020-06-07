@@ -1,4 +1,4 @@
-from empleado import Empleado
+from modelos.empleado import Empleado
 
 
 class EmpleadoPlanta(Empleado):
@@ -10,6 +10,9 @@ class EmpleadoPlanta(Empleado):
         self.__sueldoBasico = float(sueldo)
         self.__antiguedad = int(antiguedad)
         super().__init__(dni, nombre, direccion, telefono)
+
+    def setBasico(self, nuevo):
+        self.__sueldoBasico = nuevo
 
     def getSueldoBasico(self):
         return self.__sueldoBasico

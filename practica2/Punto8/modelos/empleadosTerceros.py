@@ -1,6 +1,5 @@
-from empleado import Empleado
+from modelos.empleado import Empleado
 from datetime import date
-from empleado import Empleado
 
 
 class EmpleadoTercero(Empleado):
