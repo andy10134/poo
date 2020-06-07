@@ -7,11 +7,10 @@ from interfaces.itesorero import ITesorero
 import numpy as np
 import csv
 from datetime import date
-from zope.interface import implementer
+import zope.interface
 
-
-@implementer(ITesorero)
-@implementer(IGerente)
+@zope.interface.implementer(IGerente)
+@zope.interface.implementer(ITesorero)
 class ManejadorEmpleado:
 
     __cantidad = 0
