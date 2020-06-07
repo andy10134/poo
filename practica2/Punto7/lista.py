@@ -111,17 +111,21 @@ class Lista:
         else:
             self.insertarElemento(agente, posicion)
 
-    def listarDocentesInvestigadores(self, carrera):
+    def listarDocentesInvestigadores(self, dato, filtro):
         p = self.__comienzo
+        elemento = DocenteInvestigador
+        filtro = 'get' + filtro
+        func = getattr(DocenteInvestigador, filtro)
         docentesInnvestigadores = []
         while(p is not None):
             elemento = p.getDato()
-            if(type(elemento) is DocenteInvestigador and elemento.getCarrera() == carrera):
+            if(type(elemento) is DocenteInvestigador and func(elemento) == dato):
                 docentesInnvestigadores.append(elemento)
 
             p = p.getSiguiente()
 
-        docentesInnvestigadores.sort()
+        docentesInnvestigadores.sort() # Se ordenan las dos listas por igual !!
+
         return docentesInnvestigadores
 
     def contarAgentes(self, area):

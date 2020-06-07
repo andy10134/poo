@@ -35,7 +35,7 @@ class Menu:
         tipo = str(input('Ingrese tipo de investigación: '))
         datos = [area, tipo]
         return datos
-    
+
     def ingresarDatos(self):
         print('-----Ingrese datos del agente-----')
         tipo = input('Ingrese tipo de agente(docente, investigador, personal de ayuda o docente investigador): ')
@@ -105,7 +105,8 @@ class Menu:
 # " que se desempeñan como docentes investigadores.")
     def opcion4(self):
         carrera = str(input("Ingrese el nombre de la carrera: "))
-        docentesInvesticadores = self.__lista.listarDocentesInvestigadores(carrera)
+        docentesInvesticadores = self.__lista.listarDocentesInvestigadores(
+            carrera, 'Carrera')
         for docente in docentesInvesticadores:
             print('----------------------')
             print(docente)
@@ -119,7 +120,10 @@ class Menu:
         print('---------Listado---------')
         for agente in listado:
             print(
-                'Apellido: {} \nNombre: {} \nTipo de Agente: {} \nSueldo: {}'.format(
+                'Apellido: {} '
+                '\nNombre: {} '
+                '\nTipo de Agente: {} '
+                '\nSueldo: {}'.format(
                     agente.getApellido(), agente.getNombre(),
                     agente.__class__.__name__, agente.calcularSueldo() 
                 )
@@ -127,7 +131,21 @@ class Menu:
             print('-------------------------')
 
     def opcion7(self):
-        pass
+        categoria = str(input(
+            'Ingrese categoría de investigación (I, II, III, IV o V): '))
+        docentesInvesticadores = self.__lista.listarDocentesInvestigadores(
+            categoria, 'Categoria')
+        for docente in docentesInvesticadores:
+            print('----------------------')
+            print(
+                '\nNombre: {}'
+                '\nApellido: {}'
+                '\nImporte Extra: {}'.format(
+                    docente.getNombre(),
+                    docente.getApellido(),
+                    docente.getImporte()
+                )
+            )
 
     def opcion8(self):
         d = self.__lista.toJSON()

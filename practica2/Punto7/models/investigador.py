@@ -6,7 +6,7 @@ class Investigador(Persona):
     __area = ""
     __tipo = 0
 
-    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera = '', cargo = '', catedra = ''):
+    def __init__(self, cuil, nombre, apellido, sueldo, antiguedad, area, tipo, carrera='', cargo='', catedra=''):
         super().__init__(cuil, nombre, apellido, sueldo, antiguedad, carrera, cargo, catedra, area, tipo)
         self.__area = area
         self.__tipo = tipo
@@ -36,20 +36,20 @@ class Investigador(Persona):
     def __lt__(self, persona): 
         if(self.getApellido() < persona.getApellido() ):
             return True
-        else: 
+        else:
             return False
-    
+
     def toJSON(self):
         d = dict(
-            __class__= self.__class__.__name__,
-            atributos = dict(
-                cuil = super().getCuil(),
-                nombre = super().getNombre(),
-                apellido = super().getApellido(),
-                sueldo = super().getSueldoBasico(),
-                antiguedad = super().getAntiguedad(),
-                area = self.__area,
-                tipo = self.__tipo
+            __class__=self.__class__.__name__,
+            atributos=dict(
+                cuil=super().getCuil(),
+                nombre=super().getNombre(),
+                apellido=super().getApellido(),
+                sueldo=super().getSueldoBasico(),
+                antiguedad=super().getAntiguedad(),
+                area=self.__area,
+                tipo=self.__tipo
             )
         )
         return d
