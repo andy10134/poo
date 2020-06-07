@@ -1,12 +1,17 @@
-from empleado import Empleado
-from empleadoPlanta import EmpleadoPlanta
-from empleadosExternos import EmpleadosExternos
-from empleadoContratado import EmpleadoContratado
+from modelos.empleado import Empleado
+from modelos.empleadoPlanta import EmpleadoPlanta
+from modelos.empleadosExternos import EmpleadosExternos
+from modelos.empleadoContratado import EmpleadoContratado
+from interfaces.igerente import IGerente
+from interfaces.itesorero import ITesorero
 import numpy as np
 import csv
 from datetime import date
+from zope.interface import implementer
 
 
+@implementer(ITesorero)
+@implementer(IGerente)
 class ManejadorEmpleado:
 
     __cantidad = 0
@@ -99,3 +104,17 @@ class ManejadorEmpleado:
             emplAux.agregarHoras(horas)
         else:
             print("DNI invalido...")
+    
+    #tesorero
+    def gastosSueldoPorEmpleado(self, dni):
+        pass
+    
+    #gerente
+    def modificarBasicoEPlanta(self, dni, nuevoBasico):
+        pass
+
+    def modificarViaticoEExterno(self, dni, nuevoViatico):
+        pass
+
+    def modificarValorEPorHora(self, dni, nuevoValorHora):
+        pass

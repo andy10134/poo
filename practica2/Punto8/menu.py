@@ -1,7 +1,7 @@
 import os
 import numpy
 from manejadorEmpleado import ManejadorEmpleado
-from empleadoContratado import EmpleadoContratado
+from modelos.empleadoContratado import EmpleadoContratado
 
 
 class Menu:
