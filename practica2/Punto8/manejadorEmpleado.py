@@ -107,7 +107,9 @@ class ManejadorEmpleado:
     
     #tesorero
     def gastosSueldoPorEmpleado(self, dni):
-        pass
+        i = self.buscarDni(dni)
+        sueldo = self.__arreglo[i].calcularSueldo()
+        print('Gasto en sueldos para el empleado {}: {}'.format(self.__arreglo[i].getNombre(), sueldo))
     
     #gerente
     def modificarBasicoEPlanta(self, dni, nuevoBasico):
