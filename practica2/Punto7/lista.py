@@ -151,9 +151,8 @@ class Lista:
             elemento = aux.getDato()
             listado.append(elemento)
             aux = aux.getSiguiente()
-        listado.sort()
-        #sorted(listado, key=lambda elemento: elemento.getApellido())
-        return listado
+        #listado.sort()
+        return sorted(listado, key=lambda elemento: elemento.getApellido())
 
     def toJSON(self):
         personal = []
