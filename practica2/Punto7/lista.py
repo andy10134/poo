@@ -119,9 +119,9 @@ class Lista:
 
             p = p.getSiguiente()
 
-        docentesInnvestigadores.sort() # Se ordenan las dos listas por igual !!
-
-        return docentesInnvestigadores
+        #docentesInnvestigadores.sort() 
+        # Se ordenan las dos listas por igual !!
+        return sorted(docentesInnvestigadores, key=lambda DocenteInvestigador: DocenteInvestigador.getNombre())
 
     def contarAgentes(self, area):
         aux = self.__comienzo

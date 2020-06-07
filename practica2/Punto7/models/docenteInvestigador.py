@@ -29,18 +29,6 @@ class DocenteInvestigador(Docente, Investigador):
         sueldo = Docente.calcularSueldo(self) + self.__importeExtra
         return sueldo
 
-    #def __gt__(self, docente):
-    #    if(self.getNombre() > docente.getNombre()):
-    #        return True
-    #    else:
-    #        return False
-
-    def __lt__(self, persona):
-        if(self.getApellido() < persona.getApellido()):
-            return True
-        else:
-            return False
-
     def toJSON(self):
         d = dict(
             __class__=self.__class__.__name__,
