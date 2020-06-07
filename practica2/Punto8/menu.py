@@ -2,6 +2,8 @@ import os
 import numpy
 from manejadorEmpleado import ManejadorEmpleado
 from modelos.empleadoContratado import EmpleadoContratado
+from interfaces.igerente import IGerente
+from interfaces.itesorero import ITesorero
 
 
 class Menu:
@@ -16,6 +18,7 @@ class Menu:
             3: self.opcion3,
             4: self.opcion4,
             5: self.opcion5,
+            6: self.opcion6,
             0: self.salir
         }
         self.__empleados = None
@@ -50,10 +53,18 @@ class Menu:
         usuario=input('Usuario (Tesorero/Gerente): ')
         clave=input('Clave:')
         if(usuario.lower() == 'Tesorero'.lower() and clave =='uTesoreso/ag@74ck'):
-            supervisor(ISupervisor(manejadorProductos))
+            self.tesorero(ITesorero(self.__empleados))
+        elif(usuario.lower() == 'Gerente'.lower() and clave == 'uGerente/ufC77#!1'):
+            self.gerente(IGerente(self.__empleados))
         else:
-            if(usuario.lower() == 'Gerente'.lower() and clave == 'uGerente/ufC77#!1'):
-            cajero(ICajero(manejadorProductos))
-    
+            print("Nombre y/o contraseña invalidas")
+
+    def tesorero(self, manejaTesorero):
+        dni = input('Ingrese dni del empleado: ')
+        manejaTesorero.gastosSueldoPorEmpleado(dni)
+
+    def gerente(self, manejaGerente):
+        print("\n")
+
     def salir(self):
         print('Salir')

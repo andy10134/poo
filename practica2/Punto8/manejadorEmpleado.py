@@ -12,6 +12,7 @@ from zope.interface import implementer
 
 @implementer(ITesorero)
 @implementer(IGerente)
+
 class ManejadorEmpleado:
 
     __cantidad = 0
