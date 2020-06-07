@@ -46,5 +46,14 @@ class Menu:
     def opcion5(self):
         self.__empleados.mostrarEmpleados()
 
+    def opcion6(self):
+        usuario=input('Usuario (Admin/Cajero): ')
+        clave=input('Clave:')
+        if(usuario.lower() == 'Admin'.lower() and clave =='a54321'):
+            supervisor(ISupervisor(manejadorProductos))
+        else:
+            if(usuario.lower() == 'Cajero'.lower() and clave == 'c12345'):
+            cajero(ICajero(manejadorProductos))
+    
     def salir(self):
         print('Salir')
