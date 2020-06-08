@@ -72,14 +72,18 @@ class Menu:
             2: manejaGerente.modificarViaticoEExterno,
             3: manejaGerente.modificarValorEPorHora
         }
-        opcion = int(input("Ingrese opcion: "))
-        if(opcion > 0 and opcion <= 3):
-            dni = str(input("Ingrese el dni: "))
-            valorNuevo = float(input("Ingrese el valor nuevo: "))
-            func = metodos[opcion]
-            func(dni, valorNuevo)
-        else:
-            raise("Opcion incorrecta")
+        print('-----Menu del Gerente-----')
+        opcion = int(input("Ingrese opcion(Para salir ingrese 0): "))
+        while(opcion != 0):
+            if(opcion >= 0 and opcion <= 3):
+                dni = str(input("Ingrese el dni: "))
+                valorNuevo = float(input("Ingrese el valor nuevo: "))
+                func = metodos[opcion]
+                func(dni, valorNuevo)
+            else:
+                raise("Opcion incorrecta")
+            opcion = int(input("Ingrese opcion(Para salir ingrese 0): "))
+        print('-----Salió del menu del gerente-----')
 
     def salir(self):
         print('Salir')
