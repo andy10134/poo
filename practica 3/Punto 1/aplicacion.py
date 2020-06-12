@@ -1,4 +1,5 @@
-from tkinter import ttk
+from tkinter import Tk
+
 
 class Aplicacion():
     __ventana = None
@@ -9,8 +10,8 @@ class Aplicacion():
         self.__ventana = Tk()
         self.__ventana.geometry('290x115')
         self.__ventana.title('Calculadora de IMC')
+        self.__ventana.mainloop()
 
-    def calcular(self):
-        pass
-    #    try:
-    #        valor = float(self.__peso)
+
+if __name__ == '__main__':
+    mi_app = Aplicacion()
