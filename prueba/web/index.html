@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title Page-->
+    <title>Calculadora IMC</title>
+    <link rel=”shortcut icon” type=”image/png href=”Diet-icon.png”/>
+    <!-- Icons font CSS-->
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <script type="text/javascript" src="/eel.js"></script>
+    <!-- Main CSS-->
+    <link href="css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-green font-robo">
+        <div class="wrapper wrapper--w960">
+            <div class="card card-2">
+                <div class="card-heading"></div>
+                <div class="card-body">
+                    <h2 class="title">Calculadora IMC</h2>
+                    <form method="">
+                        <div class="input-group">
+                            <input class="input--style-2" type="text" placeholder="Altura" name="altura">
+                            <div class="input-group-prepend" style="display: inline;display: flex;align-items: center; width: 50px; justify-content: center;">
+                                <div class="input-group-text">cm</div>
+                              </div>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-2" type="text" placeholder="Peso" name="peso">
+                            <div class="input-group-prepend" style="display: inline;display: flex;align-items: center; width: 50px; justify-content: center;">
+                                <div class="input-group-text">Kg</div>
+                              </div>
+                        </div>
+                        <div style="display: flex;justify-content: space-around;">
+                            <input type="button" value="Calcular" onclick="CalcularIMC()" id="xd" class="btn btn--radius btn--green" >
+                            <input type="button" value="Limpiar" onclick="limpiar()" class="btn btn--radius btn--green" >
+                        </div>
+                    </form>
+                    <div class="alert alert-success" role="alert">
+                        Tu Indice de Masa Corporal (IMC) es : <span class="value"></span><br>
+                        <h1 class="peso">H</h1>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script src="js/main.js"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
+<!-- end document-->
