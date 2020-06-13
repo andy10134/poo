@@ -3,7 +3,7 @@ function CalcularIMC() {
     var altura = document.querySelector("input[name='altura']").value;
 
     eel.calculoICM(peso, altura)((ret) => {
-        document.querySelector(".value").innerHTML = ret[0] + "Kg/m2";
+        document.querySelector(".value").innerHTML = ret[0] + " Kg/m2";
         document.querySelector(".peso").innerHTML = ret[1];
 
         document.querySelector(".alert").style.visibility = "inherit";
