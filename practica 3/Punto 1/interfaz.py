@@ -134,7 +134,7 @@ class App(ttk.Frame):
                 self.__imcEstado.set("Obesidad")
                 self.setAlertColor('#f8d7da', '#721c24')
         except ValueError:
-            tk.messagebox.showerror(title='Error de tipo',
+            tk.messagebox.showerror(title='Error',
                                 message='Debe ingresar un valor numérico')
 
 
