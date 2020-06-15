@@ -1,21 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
 <interface version="1.0">
   <object class="ttk.Frame" id="mainwindows">
-    <property name="height">200</property>
-    <property name="width">200</property>
+    <property name="height">341</property>
+    <property name="width">580</property>
     <layout manager="grid">
       <property name="propagate">True</property>
     </layout>
     <child>
       <object class="tk.Canvas" id="canvas_2">
         <property name="background">#ffffff</property>
+        <property name="cursor">arrow</property>
+        <property name="height">341</property>
+        <property name="width">580</property>
         <layout manager="grid">
           <property name="propagate">False</property>
         </layout>
       </object>
     </child>
     <child>
-      <object class="ttk.Entry" id="entry_1">
+      <object class="ttk.Entry" id="pesoEntry">
         <property name="cursor">arrow</property>
         <property name="font">{roboto} 10 {}</property>
         <property name="justify">left</property>
@@ -34,10 +37,11 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Entry" id="entry_2">
+      <object class="ttk.Entry" id="alturaEntry">
         <property name="font">{roboto} 10 {}</property>
         <property name="takefocus">false</property>
         <property name="text" translatable="yes">Ej: 120</property>
+        <property name="textvariable">string:peso</property>
         <layout manager="place">
           <property name="anchor">nw</property>
           <property name="bordermode">inside</property>
@@ -51,7 +55,7 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Label" id="label_2">
+      <object class="ttk.Label" id="pesoLabel">
         <property name="background">#ffffff</property>
         <property name="compound">top</property>
         <property name="cursor">arrow</property>
@@ -68,7 +72,7 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Label" id="label_3">
+      <object class="ttk.Label" id="alturaLabel">
         <property name="anchor">w</property>
         <property name="background">#ffffff</property>
         <property name="font">{roboto} 9 {}</property>
@@ -84,7 +88,7 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Frame" id="frame_2">
+      <object class="ttk.Frame" id="tituloFrame">
         <property name="cursor">arrow</property>
         <property name="height">200</property>
         <property name="width">200</property>
@@ -97,14 +101,14 @@
           <property name="y">0</property>
         </layout>
         <child>
-          <object class="ttk.Label" id="label_4">
+          <object class="ttk.Label" id="tituloLabel">
             <property name="cursor">arrow</property>
             <property name="font">{roboto} 12 {bold}</property>
             <property name="takefocus">false</property>
             <property name="text" translatable="yes">Calculadora de IMC</property>
             <layout manager="place">
               <property name="anchor">nw</property>
-              <property name="relx">0.30</property>
+              <property name="relx">0.36</property>
               <property name="rely">0.30</property>
               <property name="x">0</property>
               <property name="y">0</property>
@@ -114,9 +118,10 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Button" id="button_7">
+      <object class="ttk.Button" id="pesobtn">
         <property name="state">disabled</property>
         <property name="text" translatable="yes">Kg</property>
+        <bind sequence="" handler="" add="" />
         <layout manager="place">
           <property name="anchor">nw</property>
           <property name="relheight">0.1</property>
@@ -129,7 +134,7 @@
       </object>
     </child>
     <child>
-      <object class="ttk.Button" id="button_8">
+      <object class="ttk.Button" id="cmbtn">
         <property name="state">disabled</property>
         <property name="text" translatable="yes">cm</property>
         <layout manager="place">
@@ -144,7 +149,7 @@
       </object>
     </child>
     <child>
-      <object class="tk.Frame" id="frame_2_3">
+      <object class="tk.Frame" id="alertFrame">
         <property name="background">#e0f0d9</property>
         <property name="height">200</property>
         <property name="width">200</property>
@@ -158,14 +163,13 @@
           <property name="y">0</property>
         </layout>
         <child>
-          <object class="tk.Label" id="label_1">
+          <object class="tk.Label" id="icmLabel">
             <property name="background">#E0F0D9</property>
             <property name="cursor">arrow</property>
             <property name="font">TkDefaultFont</property>
             <property name="foreground">#39773a</property>
             <property name="text" translatable="yes">Tu IMC (indice de masa corporal) es :</property>
             <layout manager="place">
-              <property name="anchor">nw</property>
               <property name="relx">0.05</property>
               <property name="rely">0.10</property>
               <property name="x">0</property>
@@ -174,15 +178,31 @@
           </object>
         </child>
         <child>
-          <object class="tk.Label" id="label_2_3">
+          <object class="tk.Label" id="estadoImc">
             <property name="background">#e0f0d9</property>
             <property name="font">{Arial} 20 {}</property>
             <property name="foreground">#39773a</property>
+            <property name="relief">flat</property>
             <property name="text" translatable="yes">Peso Normal</property>
             <layout manager="place">
               <property name="anchor">nw</property>
               <property name="relwidth">1.0</property>
               <property name="rely">0.35</property>
+              <property name="x">0</property>
+              <property name="y">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="tk.Label" id="label_1">
+            <property name="background">#e0f0d9</property>
+            <property name="font">{roboro} 10 {bold}</property>
+            <property name="foreground">#39773a</property>
+            <property name="text" translatable="yes">label_1</property>
+            <layout manager="place">
+              <property name="anchor">nw</property>
+              <property name="relx">0.67</property>
+              <property name="rely">0.10</property>
               <property name="x">0</property>
               <property name="y">0</property>
             </layout>
