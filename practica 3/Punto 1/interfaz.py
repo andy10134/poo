@@ -1,5 +1,6 @@
 import tkinter as tk
 import tkinter.ttk as ttk
+from tkinter import messagebox
 
 
 class App(ttk.Frame):
@@ -83,29 +84,29 @@ class App(ttk.Frame):
         self.__altura.set('')
 
     def calcularImc(self):
-        peso = float(self.__peso.get())
-        altura = float(self.__altura.get())
-        altura = altura**2
-        altura = altura/10000
-        imc = peso/(altura)
-        imc = round(imc, 2)
-
-        if(imc <= 18.5):
-            self.__imcEstado.set("Peso inferior al normal")
-            self.__imc.set(str(imc) + ' Kg/m2')
-            self.setAlertColor('#e2e3e5', '#383d41')
-        elif(imc <= 24.9):
-            self.__imcEstado.set("Peso normal")
-            self.__imc.set(str(imc) + ' Kg/m2')
-            self.setAlertColor('#d4edda', '#155724')
-        elif(imc < 29.9):
-            self.__imcEstado.set("Peso superior al normal")
-            self.__imc.set(str(imc) + ' Kg/m2')
-            self.setAlertColor('#fff3cd', '#856404')
-        else:
-            self.__imcEstado.set("Obesidad")
-            self.__imc.set(str(imc) + ' Kg/m2')
-            self.setAlertColor('#f8d7da', '#721c24')
+        try:
+            peso = float(self.__peso.get())
+            altura = float(self.__altura.get())
+            altura = altura**2
+            altura = altura/10000
+            imc = peso/(altura)
+            imc = round(imc, 2)
+            self.__imc.set(str(imc) + 'Kg/m2')
+            if(imc <= 18.5):
+                self.__imcEstado.set("Peso inferior al normal")
+                self.setAlertColor('#e2e3e5', '#383d41')
+            elif(imc <= 24.9):
+                self.__imcEstado.set("Peso normal")
+                self.setAlertColor('#d4edda', '#155724')
+            elif(imc < 29.9):
+                self.__imcEstado.set("Peso superior al normal")
+                self.setAlertColor('#fff3cd', '#856404')
+            else:
+                self.__imcEstado.set("Obesidad")
+                self.setAlertColor('#f8d7da', '#721c24')
+        except ValueError:
+            tk.messagebox.showerror(title='Error de tipo',
+                                message='Debe ingresar un valor numérico')
 
 
 if __name__ == '__main__':
