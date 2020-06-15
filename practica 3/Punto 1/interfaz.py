@@ -113,6 +113,7 @@ if __name__ == '__main__':
     widget = App(root)
     root.geometry('580x341')
     root.title('Calculadora de IMC')
+    root.resizable(0,0)
     root.config()
     widget.pack(expand=False, fill='both')
     root.mainloop()
