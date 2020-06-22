@@ -44,7 +44,7 @@ class Aplicacion():
     def calcular(self, *args):
         try:
             dolar = float(self.dolarEntry.get())
-            pesos = round(dolar / self.ventadolar, 2)
+            pesos = round(dolar * self.ventadolar, 2)
             self.__pesos.set(pesos)
         except ValueError:
             messagebox.showerror(title='Error', message='Ingrese un valor numérico')
