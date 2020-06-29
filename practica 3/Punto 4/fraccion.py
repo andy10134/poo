@@ -44,6 +44,8 @@ class Fraccion:
         self.setDenominador(round(self.getDenominador()/dividir))
         if(self.getDenominador() == self.getNumerador()):
             return 1
+        elif(self.__denominador == 1):
+            return self.getNumerador()
         else:
             return self
 
@@ -62,7 +64,7 @@ class Fraccion:
         denominador = (self.__denominador * f1.getDenominador())
         return Fraccion(numerador, denominador)
 
-    def __div__(self, f1):
+    def __truediv__(self, f1):
         f1 = self.ConvertirAFraccion(f1)
         numerador = (self.__numerador * f1.getDenominador())
         denominador = (self.__denominador * f1.getNumerador())
@@ -70,7 +72,7 @@ class Fraccion:
 
     def __mul__ (self, f1):
         f1 = self.ConvertirAFraccion(f1)
-        numerador = (self.__numerador * f1.getDenominador()) - (f1.getNumerador() * self.__denominador)
+        numerador = self.__numerador * f1.getNumerador()
         denominador = (self.__denominador * f1.getDenominador())
         return Fraccion(numerador, denominador)
 
@@ -86,7 +88,7 @@ class Fraccion:
         denominador = (self.__denominador * f1.getDenominador())
         return Fraccion(numerador, denominador)
 
-    def __rdiv__(self, f1):
+    def __rtruediv__(self, f1):
         f1 = self.ConvertirAFraccion(f1)
         numerador = (self.__denominador * f1.getNumerador())
         denominador = (self.__numerador * f1.getDenominador())
@@ -94,7 +96,7 @@ class Fraccion:
 
     def __rmul__ (self, f1):
         f1 = self.ConvertirAFraccion(f1)
-        numerador = (self.__numerador * f1.getDenominador()) - (f1.getNumerador() * self.__denominador)
+        numerador = self.__numerador * f1.getNumerador()
         denominador = (self.__denominador * f1.getDenominador())
         return Fraccion(numerador, denominador)
 
