@@ -1,10 +1,8 @@
 import json
 from pathlib import Path
-from lista import Lista
-from models.docente import Docente
-from models.docenteInvestigador import DocenteInvestigador
-from models.investigador import Investigador
-from models.personalAyuda import PersonalAyuda
+from paciente import Paciente
+from manejadorPaciente import ManejadorPaciente
+
 
 class ObjectEncoder(object):
 
@@ -28,17 +26,15 @@ class ObjectEncoder(object):
         else:
             class_name = d['__class__']
             class_ = eval(class_name)
-            if(class_name == 'Lista'):
-                personal = d['personal']
-                dPersonal = personal[0]
-                lista = class_()
-                for i in range(len(personal)):
-                    dPersonal = personal[i]
-                    class_name = dPersonal.pop('__class__')
+            if(class_name == 'ManejadorPaciente'):
+                pacientes = d['pacientes']
+                dPacientes = pacientes[0]
+                manejador = class_()
+                for i in range(len(pacientes)):
+                    dPacientes = pacientes[i]
+                    class_name = dPacientes.pop('__class__')
                     class_ = eval(class_name)
-                    atributos = dPersonal['atributos']
-                    unPersonal = class_(**atributos)
-                    #print(unPersonal)
-                    #print('---------------------')
-                    lista.agregarElemento(unPersonal)
-            return lista 
+                    atributos = dPacientes['__atributos__']
+                    unPaciente = class_(**atributos)
+                    manejador.agregarPaciente(unPaciente)
+            return manejador
