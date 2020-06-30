@@ -4,8 +4,8 @@ class Paciente():
     __nombre = ''
     __apellido = ''
     __telefono = 0
-    __altura = 0
     __peso = 0
+    __altura = 0
 
     def __init__(self, nombre, apellido, telefono, altura, peso):
         self.__nombre = self.requerido(nombre, 'Nombre es un valor requerido')
