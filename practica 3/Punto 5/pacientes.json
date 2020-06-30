@@ -1,52 +1,55 @@
-[
-    {
-        "__class__": "Paciente",
-        "atributos": {
-            "nombre": "Letisha",
-            "apellido": "Potter",
-            "telefono": "443 347 4796",
-            "peso": 135,
-            "altura": 189
+{
+    "__class__": "ManejadorPaciente",
+    "pacientes": [
+        {
+            "__class__": "Paciente",
+            "__atributos__": {
+                "nombre": "Letisha",
+                "apellido": "Potter",
+                "telefono": "443 347 4796",
+                "peso": 135,
+                "altura": 189
+            }
+        },
+        {
+            "__class__": "Paciente",
+            "__atributos__": {
+                "nombre": "Dean",
+                "apellido": "Finlayson",
+                "telefono": "407 807 8145",
+                "peso": 92,
+                "altura": 162
+            }
+        },
+        {
+            "__class__": "Paciente",
+            "__atributos__": {
+                "nombre": "Amie",
+                "apellido": "Eades",
+                "telefono": "521 152 9659",
+                "peso": 137,
+                "altura": 199
+            }
+        },
+        {
+            "__class__": "Paciente",
+            "__atributos__": {
+                "nombre": "Engelbert",
+                "apellido": "Greenrod",
+                "telefono": "551 295 4411",
+                "peso": 74,
+                "altura": 180
+            }
+        },
+        {
+            "__class__": "Paciente",
+            "__atributos__": {
+                "nombre": "Ana",
+                "apellido": "Carbajo",
+                "telefono": "486 922 6143",
+                "peso": 800,
+                "altura": 150
+            }
         }
-    },
-    {
-        "__class__": "Paciente",
-        "atributos": {
-            "nombre": "Dean",
-            "apellido": "Finlayson",
-            "telefono": "407 807 8145",
-            "peso": 92,
-            "altura": 162
-        }
-    },
-    {
-        "__class__": "Paciente",
-        "atributos": {
-            "nombre": "Amie",
-            "apellido": "Eades",
-            "telefono": "521 152 9659",
-            "peso": 137,
-            "altura": 199
-        }
-    },
-    {
-        "__class__": "Paciente",
-        "atributos": {
-            "nombre": "Engelbert",
-            "apellido": "Greenrod",
-            "telefono": "551 295 4411",
-            "peso": 74,
-            "altura": 180
-        }
-    },
-    {
-        "__class__": "Paciente",
-        "atributos": {
-            "nombre": "Orin",
-            "apellido": "Benza",
-            "telefono": "486 922 6143",
-            "peso": 80,
-            "altura": 158
-        }
-    }
-]
+    ]
+}
