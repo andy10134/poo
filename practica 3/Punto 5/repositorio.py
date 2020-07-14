@@ -6,10 +6,10 @@ class RespositorioPacientes:
     __conn=None
     __manejador=None
 
-    def __init__(self, conn):
-        self.__conn=conn
-        diccionario=self.__conn.leerJSONArchivo()
-        self.__manejador=self.__conn.decodificarDiccionario(diccionario)
+    def __init__(self, pac):
+        self.__pac = pac
+        diccionario = self.__pac.leerJSONArchivo()
+        self.__manejador = self.__pac.decodificarDiccionario(diccionario)
     
     def to_values(self, paciente):
         return paciente.getApellido(), paciente.getNombre(), paciente.getEmail(), paciente.getTelefono()

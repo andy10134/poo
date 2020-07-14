@@ -5,13 +5,20 @@ from manejadorPaciente import ManejadorPaciente
 
 
 class ObjectEncoder(object):
+    
+    __pathArchivo=None
+    
+    def __init__(self, pathArchivo):
+        self.__pathArchivo = pathArchivo
 
-    def guardarJSONArchivo(self, diccionario, archivo):
+    def guardarJSONArchivo(self, diccionario):
+        archivo = self.__pathArchivo
         with Path(archivo).open("w", encoding="UTF-8") as destino:
             json.dump(diccionario, destino, indent=4)
         destino.close()
 
-    def leerJSONArchivo(self, archivo):
+    def leerJSONArchivo(self):
+        archivo = self.__pathArchivo
         with Path(archivo).open(encoding="UTF-8") as fuente:
             diccionario = json.load(fuente)
             fuente.close()
