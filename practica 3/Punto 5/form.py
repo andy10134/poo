@@ -25,7 +25,7 @@ class PacienteForm(tk.LabelFrame):
         # a partir de un Paciente, obtiene el estado
         # y establece en los valores en el formulario de entrada
         values = (paciente.getApellido(), paciente.getNombre(),
-        paciente.getEmail(), paciente.getTelefono())
+        paciente.getTelefono(), paciente.getAltura(), paciente.getPeso())
         for entry, value in zip(self.entries, values):
             entry.delete(0, tk.END)
             entry.insert(0, value)
