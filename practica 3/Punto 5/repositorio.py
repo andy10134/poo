@@ -28,5 +28,9 @@ class RespositorioPacientes:
     def borrarPaciente(self, paciente):
         self.__manejador.eliminarPaciente(paciente)
     
+    def calcularIMC(self, paciente):
+        imc = self.__manejador.calcularIMC(paciente)
+        return imc
+
     def grabarDatos(self):
         self.__conn.guardarJSONArchivo(self.__manejador)

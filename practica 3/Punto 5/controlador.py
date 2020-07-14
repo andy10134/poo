@@ -40,6 +40,14 @@ class ControladorPacientes():
         self.vista.borrarPaciente(self.seleccion)
         self.seleccion=-1
     
+    def verIMC(self):
+        if self.seleccion==-1:
+            return
+        paciente = self.pacientes[self.seleccion]
+        imc = self.repo.calcularIMC(paciente)
+        self.vista.mostrarIMC(imc)
+        self.seleccion = -1
+
     def start(self):
         for p in self.pacientes:
             self.vista.agregarPaciente(p)
