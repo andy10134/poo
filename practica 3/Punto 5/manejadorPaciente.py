@@ -2,15 +2,12 @@ from paciente import Paciente
 
 class ManejadorPaciente():
 
-    indice = 0
     __pacientes = None
 
     def __init__(self):
         self.__pacientes = []
 
     def agregarPaciente(self, paciente):
-        paciente.rowid = ManejadorPaciente.indice
-        ManejadorPaciente.indice += 1
         self.__pacientes.append(paciente)
 
     def getLista(self):
