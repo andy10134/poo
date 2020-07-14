@@ -6,7 +6,7 @@ from form import UpdatePacienteForm
 from form import NewPaciente
 from pacienteList import PacienteList
 
-class ContactsView(tk.Tk):
+class PacienteView(tk.Tk):
 
     def __init__(self):
         super().__init__()
