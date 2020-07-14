@@ -42,7 +42,7 @@ class ControladorPacientes():
     
     def start(self):
         for p in self.pacientes:
-            self.vista.agregarContacto(p)
+            self.vista.agregarPaciente(p)
         self.vista.mainloop()
 
     def salirGrabarDatos(self):
