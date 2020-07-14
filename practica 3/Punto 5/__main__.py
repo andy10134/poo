@@ -1,13 +1,13 @@
 from repositorio import RespositorioPacientes
 from vista import PacienteView
 from objectEncoder import ObjectEncoder
-# from claseControladorContactos import ControladorContactos
+from controlador import ControladorPacientes
 
 def main():
     pac = ObjectEncoder('pacientes.json')
     repo = RespositorioPacientes(pac)
     vista = PacienteView()
-    ctrl = ControladorContactos(repo, vista)
+    ctrl = ControladorPacientes(repo, vista)
     vista.setControlador(ctrl)
     ctrl.start()
     ctrl.salirGrabarDatos()
