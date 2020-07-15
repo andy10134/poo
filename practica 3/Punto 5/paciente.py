@@ -1,13 +1,14 @@
 
 class Paciente():
 
+    rowid = None
     __nombre = ''
     __apellido = ''
     __telefono = 0
     __peso = 0
     __altura = 0
 
-    def __init__(self, nombre, apellido, telefono, altura, peso):
+    def __init__(self, nombre, apellido, telefono, peso, altura):
         self.__nombre = self.requerido(nombre, 'Nombre es un valor requerido')
         self.__apellido = self.requerido(apellido, 'Apellido es un valor requerido')
         self.__telefono = self.requerido(telefono, 'Teléfono es un valor requerido')
@@ -53,11 +54,11 @@ class Paciente():
         d = dict(
             __class__ = self.__class__.__name__,
             __atributos__ = dict(
-                apellido = self.__apellido,
                 nombre = self.__nombre,
+                apellido = self.__apellido,
                 telefono = self.__telefono,
-                altura = self.__altura,
-                peso = self.__peso
+                peso = self.__peso,
+                altura = self.__altura
             )
         )
         return d
