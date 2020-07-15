@@ -3,8 +3,8 @@ from manejadorPaciente import ManejadorPaciente
 from objectEncoder import ObjectEncoder
 
 class RespositorioPacientes:
-    __conn=None
-    __manejador=None
+    __pac = None
+    __manejador = None
 
     def __init__(self, pac):
         self.__pac = pac
@@ -33,4 +33,4 @@ class RespositorioPacientes:
         return imc
 
     def grabarDatos(self):
-        self.__conn.guardarJSONArchivo(self.__manejador)
+        self.__pac.guardarJSONArchivo(self.__manejador.toJSON())

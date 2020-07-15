@@ -4,7 +4,7 @@ from paciente import Paciente
 
 class PacienteForm(tk.LabelFrame):
 
-    fields = ("Nombre", "Apellido", "Teléfono", "Altura", "Peso")
+    fields = ("Nombre", "Apellido", "Teléfono", "Peso", "Altura")
     
     def __init__(self, master, **kwargs):
         super().__init__(master, text="Paciente", padx=10, pady=10,
@@ -24,8 +24,8 @@ class PacienteForm(tk.LabelFrame):
     def mostrarEstadoPacienteEnFormulario(self, paciente):
         # a partir de un Paciente, obtiene el estado
         # y establece en los valores en el formulario de entrada
-        values = (paciente.getApellido(), paciente.getNombre(),
-        paciente.getTelefono(), paciente.getAltura(), paciente.getPeso())
+        values = (paciente.getNombre(), paciente.getApellido(),
+        paciente.getTelefono(), paciente.getPeso(), paciente.getAltura())
         for entry, value in zip(self.entries, values):
             entry.delete(0, tk.END)
             entry.insert(0, value)
@@ -36,7 +36,7 @@ class PacienteForm(tk.LabelFrame):
         values = [e.get() for e in self.entries]
         paciente=None
         try:
-            paciente = paciente(*values)
+            paciente = Paciente(*values)
         except ValueError as e:
             messagebox.showerror("Error de Validación", str(e), parent=self)
         return paciente

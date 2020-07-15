@@ -1,6 +1,7 @@
 from manejadorPaciente import ManejadorPaciente
 from vista import PacienteView
 from form import NewPaciente
+from repositorio import RespositorioPacientes
 
 class ControladorPacientes():
     
@@ -25,7 +26,9 @@ class ControladorPacientes():
     def modificarPaciente(self):
         if self.seleccion == -1:
             return
+        rowid = self.pacientes[self.seleccion].rowid
         detallesPaciente = self.vista.obtenerDetalles()
+        detallesPaciente.rowid = rowid
         paciente = self.repo.modificarPaciente(detallesPaciente)
         self.pacientes[self.seleccion] = paciente
         self.vista.modificarPaciente(paciente, self.seleccion)
