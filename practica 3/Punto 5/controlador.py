@@ -1,6 +1,7 @@
 from manejadorPaciente import ManejadorPaciente
 from vista import PacienteView
 from form import NewPaciente
+from form import Imc
 from repositorio import RespositorioPacientes
 
 class ControladorPacientes():
@@ -48,7 +49,7 @@ class ControladorPacientes():
             return
         paciente = self.pacientes[self.seleccion]
         imc = self.repo.calcularIMC(paciente)
-        self.vista.mostrarIMC(imc)
+        Mostrar = Imc(self.vista, imc).show()
         self.seleccion = -1
 
     def start(self):

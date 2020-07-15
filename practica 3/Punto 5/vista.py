@@ -43,9 +43,5 @@ class PacienteView(tk.Tk):
         return self.form.crearPacienteDesdeFormulario()
         #Ver estado de Paciente en formulario de Paciente
     
-    def mostrarIMC(self, imc):
-        print('hola')
-        Mostrar = Imc(self.vista, imc).show()
-    
     def verPacienteEnForm(self, paciente):
         self.form.mostrarEstadoPacienteEnFormulario(paciente)

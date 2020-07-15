@@ -23,7 +23,8 @@ class ManejadorPaciente():
     def calcularIMC(self, paciente):
         indice = self.obtenerIndice(paciente)
         peso = float(self.__pacientes[indice].getPeso())
-        altura = float(self.__pacientes[indice].getPeso())
+        altura = float(self.__pacientes[indice].getAltura())
+        print('alt {}, peso {}'.format(altura, peso))
         altura = altura**2
         altura = altura/10000
         imc = peso/(altura)
