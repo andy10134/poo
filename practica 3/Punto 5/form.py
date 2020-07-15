@@ -24,7 +24,7 @@ class PacienteForm(tk.LabelFrame):
     def mostrarEstadoPacienteEnFormulario(self, paciente):
         # a partir de un Paciente, obtiene el estado
         # y establece en los valores en el formulario de entrada
-        values = (paciente.getApellido(), paciente.getNombre(),
+        values = (paciente.getNombre(), paciente.getApellido(),
         paciente.getTelefono(), paciente.getPeso(), paciente.getAltura())
         for entry, value in zip(self.entries, values):
             entry.delete(0, tk.END)
@@ -34,10 +34,6 @@ class PacienteForm(tk.LabelFrame):
         #obtiene los valores de los campos del formulario
         #para crear un nuevo Paciente
         values = [e.get() for e in self.entries]
-        print("==================")
-        print(values)
-        print("==================")
-
         paciente=None
         try:
             paciente = Paciente(*values)
