@@ -24,6 +24,7 @@ class PacienteView(tk.Tk):
         self.list.bind_doble_click(ctrl.seleccionarPaciente)
         self.form.bind_save(ctrl.modificarPaciente)
         self.form.bind_delete(ctrl.borrarPaciente)
+        self.form.bind_imc(ctrl.verIMC)
     
     def agregarPaciente(self, paciente):
         self.list.insertar(paciente)
@@ -39,6 +40,9 @@ class PacienteView(tk.Tk):
     def obtenerDetalles(self):
         return self.form.crearPacienteDesdeFormulario()
         #Ver estado de Paciente en formulario de Paciente
+    
+    def mostrarIMC(self, imc):
+        self.form.mostrarIMC(imc)
     
     def verPacienteEnForm(self, paciente):
         self.form.mostrarEstadoPacienteEnFormulario(paciente)

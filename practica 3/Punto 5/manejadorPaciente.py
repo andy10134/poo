@@ -20,6 +20,16 @@ class ManejadorPaciente():
         indice = self.obtenerIndice(paciente)
         self.__pacientes.pop(indice)
     
+    def calcularIMC(self, paciente):
+        indice = self.obtenerIndice(paciente)
+        peso = float(self.__pacientes[indice].getPeso())
+        altura = float(self.__pacientes[indice].getPeso())
+        altura = altura**2
+        altura = altura/10000
+        imc = peso/(altura)
+        imc = round(imc, 2)
+        return imc
+
     def actualizarPaciente(self, paciente):
         indice = self.obtenerIndice(paciente)
         self.__pacientes[indice] = paciente
