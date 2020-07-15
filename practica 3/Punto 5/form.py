@@ -66,6 +66,52 @@ class NewPaciente(tk.Toplevel):
         self.wait_window()
         return self.paciente
 
+
+class Imc(tk.Toplevel):
+    
+    def __init__(self, parent, imc):
+        super().__init__(parent)
+        self.paciente = None
+        self.frame = tk.Frame(self)
+        label = tk.Label(self.frame, text='IMC')
+        entryimc = tk.Entry(self.frame, width=25)
+        _text_ = imc
+        entryimc.delete('0', 'end')
+        entryimc.insert('0', _text_)
+        label = tk.Label(self.frame, text='Composicion Corporal')
+        entryCC = tk.Entry(self.frame, width=25)
+        if(imc <= 18.5):
+            text = "Peso inferior al normal"
+            entryCC.delete('0', 'end')
+            entryCC.insert('0', text)
+        elif(imc <= 24.9):
+            text = "Peso normal"
+            entryCC.delete('0', 'end')
+            entryCC.insert('0', text)
+        elif(imc < 29.9):
+            text = "Peso superior al normal"
+            entryCC.delete('0', 'end')
+            entryCC.insert('0', text)
+        else:
+            text = "Obesidad"
+            entryCC.delete('0', 'end')
+            entryCC.insert('0', text)
+        self.btn_add = tk.Button(self, text="Volver",
+        command=self.volver)
+        self.form.pack(padx=10, pady=10)
+        self.btn_add.pack(pady=10)
+    
+    def volver(self):
+       self.paciente = self.form.crearPacienteDesdeFormulario()
+       if self.paciente:
+           self.destroy()
+        
+    def show(self):
+        self.grab_set()
+        self.wait_window()
+        return self.paciente
+    
+
 class UpdatePacienteForm(PacienteForm):
 
     def __init__(self, master, **kwargs):

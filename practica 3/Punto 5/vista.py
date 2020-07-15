@@ -4,6 +4,7 @@ from paciente import Paciente
 from form import PacienteForm
 from form import UpdatePacienteForm
 from form import NewPaciente
+from form import Imc
 from pacienteList import PacienteList
 
 class PacienteView(tk.Tk):
@@ -11,6 +12,7 @@ class PacienteView(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Lista de Pacientes")
+        self.resizable(0, 0)
         self.list = PacienteList(self, height=15)
         self.form = UpdatePacienteForm(self)
         self.btn_new = tk.Button(self, text="Agregar Paciente")
@@ -42,7 +44,8 @@ class PacienteView(tk.Tk):
         #Ver estado de Paciente en formulario de Paciente
     
     def mostrarIMC(self, imc):
-        self.form.mostrarIMC(imc)
+        print('hola')
+        Mostrar = Imc(self.vista, imc).show()
     
     def verPacienteEnForm(self, paciente):
         self.form.mostrarEstadoPacienteEnFormulario(paciente)
