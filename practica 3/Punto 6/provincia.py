@@ -1,6 +1,7 @@
 
 class Provincia():
 
+    rowid = 0
     __nombre = ''
     __capital = ''
     __habitantes = 0
