@@ -40,7 +40,10 @@ class ProvinciaForm(tk.LabelFrame):
         values = [e.get() for e in self.entries]
         provincia=None
         try:
-            provincia = Provincia(*values)
+            try:
+                provincia = Provincia(*values)
+            except NameError as e:
+                messagebox.showerror(str(e), parent=self)
         except ValueError as e:
             messagebox.showerror("Error de Validación", str(e), parent=self)
         return provincia

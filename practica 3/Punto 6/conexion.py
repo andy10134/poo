@@ -16,6 +16,6 @@ class Conexion():
         response = request.json()
         
         if response["cod"] == '404':
-            raise ValueError('Provincia "{}" invalida.'.format(city))
+            raise NameError('Provincia "{}" invalida.'.format(city))
 
         return (response["main"]["temp"], response["main"]["feels_like"], response["main"]["humidity"])

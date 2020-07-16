@@ -1,7 +1,9 @@
 from manejadorProvincias import ManejadorProvincias
+from tkinter import messagebox
 from view import ProvinciaView
 from provinciaForm import NewProvincia
 from repositorio import RespositorioProvincias
+from conexion import Conexion
 
 class ControladorProvincias():
     
@@ -13,10 +15,14 @@ class ControladorProvincias():
     
     def crearProvincia(self):
         nuevoProvincia = NewProvincia(self.vista).show()
+        con = Conexion()
+        con.getClima(city=nuevoProvincia.getNombre())
         if nuevoProvincia:
             provincia = self.repo.agregarProvincia(nuevoProvincia)
             self.provincias.append(provincia)
             self.vista.agregarProvincia(provincia)
+
+
 
     def seleccionarProvincia(self, index):
         self.seleccion = index
