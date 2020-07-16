@@ -1,13 +1,13 @@
-from repositorio import RespositorioPacientes
-from vista import PacienteView
+from repositorio import RespositorioProvincias
+from view import ProvinciaView
 from objectEncoder import ObjectEncoder
-from controlador import ControladorPacientes
+from controlador import ControladorProvincias
 
 def main():
-    pac = ObjectEncoder('pacientes.json')
-    repo = RespositorioPacientes(pac)
-    vista = PacienteView()
-    ctrl = ControladorPacientes(repo, vista)
+    prov = ObjectEncoder('datos.json')
+    repo = RespositorioProvincias(prov)
+    vista = ProvinciaView()
+    ctrl = ControladorProvincias(repo, vista)
     vista.setControlador(ctrl)
     ctrl.start()
     ctrl.salirGrabarDatos()

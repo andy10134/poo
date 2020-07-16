@@ -1,15 +1,15 @@
 from provincia import Provincia
-from manejadorprovincias import ManejadorProvincias
+from manejadorProvincias import ManejadorProvincias
 from objectEncoder import ObjectEncoder
 
 class RespositorioProvincias:
-    __pac = None
+    __prov = None
     __manejador = None
 
-    def __init__(self, pac):
-        self.__pac = pac
-        diccionario = self.__pac.leerJSONArchivo()
-        self.__manejador = self.__pac.decodificarDiccionario(diccionario)
+    def __init__(self, prov):
+        self.__prov = prov
+        diccionario = self.__prov.leerJSONArchivo()
+        self.__manejador = self.__prov.decodificarDiccionario(diccionario)
     
     def to_values(self, provincia):
         return provincia.getNombre(), provincia.getCapital(), provincia.getHabitantes(), provincia.getDepartamentos()
@@ -22,4 +22,4 @@ class RespositorioProvincias:
         return provincia
 
     def grabarDatos(self):
-        self.__pac.guardarJSONArchivo(self.__manejador.toJSON())
+        self.__prov.guardarJSONArchivo(self.__manejador.toJSON())
