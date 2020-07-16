@@ -44,9 +44,6 @@ class ProvinciaForm(tk.LabelFrame):
         except ValueError as e:
             messagebox.showerror("Error de Validación", str(e), parent=self)
         return provincia
-        
-    def setFields(self, fields):
-        self.fields = fields
 
     def limpiar(self):
         for entry in self.entries:
