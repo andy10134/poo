@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
-from form import ProvinciaForm
-from form import StateProvinciaForm
-from form import NewProvincia
+from provinciaForm import ProvinciaForm
+from provinciaForm import StateProvinciaForm
+from provinciaForm import NewProvincia
 from provincia import Provincia
 from provinciaList import ProvinciaList
 
