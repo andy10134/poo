@@ -19,5 +19,3 @@ class Conexion():
             raise ValueError('Provincia "{}" invalida.'.format(city))
 
         return (response["main"]["temp"], response["main"]["feels_like"], response["main"]["humidity"])
-
-con = Conexion
