@@ -7,11 +7,11 @@ class ProvinciaForm(tk.LabelFrame):
 
     fields = ("Nombre", "Capital", "Cantidad de Habitantes", "Cantidad de departamentos/partidos", "Temperatura", "Sensación Térmica", "Humedad")
     
-    def __init__(self, master, **kwargs):
+    def __init__(self, master, campos=fields, **kwargs):
         super().__init__(master, text="Provincia", padx=10, pady=10,
         **kwargs)
         self.frame = tk.Frame(self)
-        self.entries = list(map(self.crearCampo, enumerate(self.fields)))
+        self.entries = list(map(self.crearCampo, enumerate(campos)))
         self.frame.pack()
 
     def crearCampo(self, field):
@@ -45,6 +45,9 @@ class ProvinciaForm(tk.LabelFrame):
             messagebox.showerror("Error de Validación", str(e), parent=self)
         return provincia
         
+    def setFields(self, fields):
+        self.fields = fields
+
     def limpiar(self):
         for entry in self.entries:
             entry.delete(0, tk.END)
@@ -54,8 +57,7 @@ class NewProvincia(tk.Toplevel):
     def __init__(self, parent):
         super().__init__(parent)
         self.provincia = None
-        self.form = ProvinciaForm(self)
-        self.form.fields = ("Nombre", "Capital", "Cantidad de Habitantes", "Cantidad de departamentos/partidos")
+        self.form = ProvinciaForm(self,campos=("Nombre", "Capital", "Cantidad de Habitantes", "Cantidad de departamentos/partidos"))
         self.btn_add = tk.Button(self, text="Confirmar",
         command=self.confirmar)
         self.form.pack(padx=10, pady=10)
