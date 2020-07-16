@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
 from provincia import Provincia
+from conexion import Conexion
 
 class ProvinciaForm(tk.LabelFrame):
 
@@ -24,8 +25,11 @@ class ProvinciaForm(tk.LabelFrame):
     def mostrarEstadoProvinciaEnFormulario(self, provincia):
         # a partir de un Provincia, obtiene el estado
         # y establece en los valores en el formulario de entrada
+        con = Conexion()
+        nombre = provincia.getNombre()
+        con = Conexion.getClima(self=con, city=nombre)
         values = (provincia.getNombre(), provincia.getCapital(),
-        provincia.getHabitantes(), provincia.getDepartamentos())
+        provincia.getHabitantes(), provincia.getDepartamentos(), *con)
         for entry, value in zip(self.entries, values):
             entry.delete(0, tk.END)
             entry.insert(0, value)
