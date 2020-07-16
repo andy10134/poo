@@ -1,6 +1,6 @@
 from requests import get
 
-class conexion():
+class Conexion():
 
     __api_id = ''
 
@@ -19,3 +19,5 @@ class conexion():
             raise ValueError('Provincia "{}" invalida.'.format(city))
 
         return (response["main"]["temp"], response["main"]["feels_like"], response["main"]["humidity"])
+
+con = Conexion
