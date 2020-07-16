@@ -29,14 +29,6 @@ class ProvinciaView(tk.Tk):
     def agregarProvincia(self, provincia):
         self.list.insertar(provincia)
     
-    def modificarProvincia(self, provincia, index):
-        self.list.modificar(provincia, index)
-    
-    def borrarProvincia(self, index):
-        self.form.limpiar()
-        self.list.borrar(index)
-        #obtiene los valores del formulario y crea un nuevo Provincia
-    
     def obtenerDetalles(self):
         return self.form.crearProvinciaDesdeFormulario()
         #Ver estado de Provincia en formulario de Provincia
