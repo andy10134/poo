@@ -1,46 +1,45 @@
 import tkinter as tk
 from tkinter import messagebox
-# from form import PacienteForm
-# from form import UpdatePacienteForm
-# from form import NewPaciente
+from form import ProvinciaForm
+from form import StateProvinciaForm
+from form import NewProvincia
 from provincia import Provincia
 from provinciaList import ProvinciaList
 
-class PacienteView(tk.Tk):
+class ProvinciaView(tk.Tk):
 
     def __init__(self):
         super().__init__()
-        self.title("Lista de Pacientes")
+        self.title("Lista de Provincias")
         self.resizable(0, 0)
-        self.list = PacienteList(self, height=15)
-        self.form = UpdatePacienteForm(self)
-        self.btn_new = tk.Button(self, text="Agregar Paciente")
+        self.list = ProvinciaList(self, height=15)
+        self.form = StateProvinciaForm(self)
+        self.btn_new = tk.Button(self, text="Agregar Provincia")
         self.list.pack(side=tk.LEFT, padx=10, pady=10)
         self.form.pack(padx=10, pady=10)
         self.btn_new.pack(side=tk.BOTTOM, pady=5)
     
     def setControlador(self, ctrl):
         #vincula la vista con el controlador
-        self.btn_new.config(command=ctrl.crearPaciente)
-        self.list.bind_doble_click(ctrl.seleccionarPaciente)
-        self.form.bind_save(ctrl.modificarPaciente)
-        self.form.bind_delete(ctrl.borrarPaciente)
-        self.form.bind_imc(ctrl.verIMC)
+        self.btn_new.config(command=ctrl.crearProvincia)
+        self.list.bind_doble_click(ctrl.seleccionarProvincia)
+        self.form.bind_save(ctrl.modificarProvincia)
+        self.form.bind_delete(ctrl.borrarProvincia)
     
-    def agregarPaciente(self, paciente):
-        self.list.insertar(paciente)
+    def agregarProvincia(self, provincia):
+        self.list.insertar(provincia)
     
-    def modificarPaciente(self, paciente, index):
-        self.list.modificar(paciente, index)
+    def modificarProvincia(self, provincia, index):
+        self.list.modificar(provincia, index)
     
-    def borrarPaciente(self, index):
+    def borrarProvincia(self, index):
         self.form.limpiar()
         self.list.borrar(index)
-        #obtiene los valores del formulario y crea un nuevo Paciente
+        #obtiene los valores del formulario y crea un nuevo Provincia
     
     def obtenerDetalles(self):
-        return self.form.crearPacienteDesdeFormulario()
-        #Ver estado de Paciente en formulario de Paciente
+        return self.form.crearProvinciaDesdeFormulario()
+        #Ver estado de Provincia en formulario de Provincia
     
-    def verPacienteEnForm(self, paciente):
-        self.form.mostrarEstadoPacienteEnFormulario(paciente)
+    def verProvinciaEnForm(self, provincia):
+        self.form.mostrarEstadoProvinciaEnFormulario(provincia)
