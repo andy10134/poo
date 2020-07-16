@@ -1,6 +1,6 @@
 from manejadorprovincias import ManejadorProvincias
-from vista import ProvinciaView
-from form import NewProvincia
+from view import ProvinciaView
+from provinciaForm import NewProvincia
 from repositorio import RespositorioProvincias
 
 class ControladorProvincias():
