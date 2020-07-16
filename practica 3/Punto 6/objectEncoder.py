@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 from provincia import Provincia
-from manejadorprovincias import ManejadorProvincias
+from manejadorProvincias import ManejadorProvincias
 
 
 class ObjectEncoder(object):

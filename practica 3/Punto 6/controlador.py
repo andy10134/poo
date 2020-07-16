@@ -1,4 +1,4 @@
-from manejadorprovincias import ManejadorProvincias
+from manejadorProvincias import ManejadorProvincias
 from view import ProvinciaView
 from provinciaForm import NewProvincia
 from repositorio import RespositorioProvincias
