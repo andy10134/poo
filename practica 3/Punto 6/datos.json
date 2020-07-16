@@ -18,6 +18,15 @@
                 "habitantes": "911,506",
                 "departamentos": "27"
             }
+        },
+        {
+            "__class__": "Provincia",
+            "__atributos__": {
+                "nombre": "Mendoza",
+                "capital": "Mendoza",
+                "habitantes": "1,500,000",
+                "departamentos": "18"
+            }
         }
     ]
 }
