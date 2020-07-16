@@ -6,7 +6,7 @@ class conexion():
 
     def __init__(self):
         super().__init__()
-        self.__api_id = 'ace20b49fb38a51829a45560cbf2311f'
+        self.__api_id = '07f6e71380983b29d427359168ee7b84'
 
     
     def getClima(self, city):
