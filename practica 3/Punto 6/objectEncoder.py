@@ -34,7 +34,7 @@ class ObjectEncoder(object):
             class_name = d['__class__']
             class_ = eval(class_name)
             if(class_name == 'ManejadorProvincias'):
-                provincias = d['provincia']
+                provincias = d['provincias']
                 dProvincias = provincias[0]
                 manejador = class_()
                 for i in range(len(provincias)):

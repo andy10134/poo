@@ -23,8 +23,6 @@ class ProvinciaView(tk.Tk):
         #vincula la vista con el controlador
         self.btn_new.config(command=ctrl.crearProvincia)
         self.list.bind_doble_click(ctrl.seleccionarProvincia)
-        self.form.bind_save(ctrl.modificarProvincia)
-        self.form.bind_delete(ctrl.borrarProvincia)
     
     def agregarProvincia(self, provincia):
         self.list.insertar(provincia)
