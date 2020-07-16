@@ -51,7 +51,7 @@ class NewProvincia(tk.Toplevel):
         super().__init__(parent)
         self.provincia = None
         self.form = ProvinciaForm(self)
-        form.fields = ("Nombre", "Capital", "Cantidad de Habitantes", "Cantidad de departamentos/partidos")
+        self.form.fields = ("Nombre", "Capital", "Cantidad de Habitantes", "Cantidad de departamentos/partidos")
         self.btn_add = tk.Button(self, text="Confirmar",
         command=self.confirmar)
         self.form.pack(padx=10, pady=10)

@@ -21,7 +21,7 @@ class Provincia():
     def getNombre(self):
         return self.__nombre
     
-    def getCapìtal(self):
+    def getCapital(self):
         return self.__capital
     
     def getHabitantes(self):

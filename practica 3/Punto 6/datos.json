@@ -1,6 +1,6 @@
 {
     "__class__": "ManejadorProvincias",
-    "pacientes": [
+    "provincias": [
         {
             "__class__": "Provincia",
             "__atributos__": {
