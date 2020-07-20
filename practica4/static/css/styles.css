@@ -1,3 +1,20 @@
-body{
-    background-color: red;
+h2.volanta{
+    margin-top: 9rem;
+}
+
+/*HEADER*/
+#header-marzo{
+    display: block;
+    margin-top: 86px;
+    width: 100%;
+    height: 700px;
+    background: url("../img/header.jpg") no-repeat center top;
+    background-size: auto;
+    background-size: 1920px;
+    color: white;
+}
+
+/*links*/
+a{
+    transition: all 1s;
 }

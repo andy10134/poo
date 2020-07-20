@@ -1,0 +1,1586 @@
+/**************************************************************************************
+Defaults 
+***************************************************************************************/
+html {
+	overflow-x:hidden;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	background:white;
+	overflow-x:hidden;
+	
+	color:#191919;
+	font-family: 'Lato', sans-serif;
+	font-size: 17px;
+	-webkit-font-smoothing: antialiased;
+}
+
+a, button	{
+	cursor:pointer;
+	/*text-decoration:none;
+	transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;*/
+}
+a:hover, a:focus, button:focus{
+	text-decoration: none;
+	outline:none;
+}
+a:hover{
+	text-decoration: none;
+}
+p, li{}
+p{
+	display:block;
+	margin: 0 0 15px 0;
+	color:#555;
+}
+p.parrafo-chico{
+	font-size: 14px;
+}
+p a{
+    color: #007bff;
+}
+
+hr{
+	margin-bottom:30px;
+	border-color:#eee;
+}
+
+h1, h2, h3, h4, h5, h6{
+	display:block;
+	margin-bottom: 30px;
+	
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	letter-spacing:-0.05em;
+}
+h1 span, h2 span, h3 span, h4 span, h5 span, h6 span{
+	color:#ed145a;
+}
+
+h1	{
+	font-size: 40px;
+	line-height:44px;
+}
+h2	{
+	font-size: 30px;
+}
+h3	{
+	margin-bottom: 15px;
+	font-size: 15px;
+	letter-spacing:0;
+}
+
+.volanta{
+	color:#999999;
+	font-size: 10px;
+	letter-spacing:2px;
+	text-transform:uppercase;
+}
+.copete{
+	color:#777;
+	font-size: 14px !important;
+}
+.f24{
+	font-size: 24px;
+}
+
+figure{
+	margin:0 !important;
+}
+
+input, select.custom-select{
+	font-size: 14px !important;
+}
+
+input.form-control::-webkit-input-placeholder,
+textarea.form-control::-webkit-input-placeholder,
+textarea.form-control,
+select.custom-select {
+	color:#1c1c1c;
+	text-shadow: 0;
+	font-size: 14px;
+}
+
+button{
+	border:none;
+}
+
+/**************************************************************************************
+Bootstrap Overwrites
+***************************************************************************************/
+.dropdown:hover>.dropdown-menu {
+	display: block;
+}
+.alert{
+	font-size: 14px;
+}
+
+/**************************************************************************************
+Custom Classes
+***************************************************************************************/
+/* Start of "Micro clearfix" */
+.cf { zoom: 1; }
+.cf:before,
+.cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
+/* End of "Micro clearfix" */
+
+.pr{
+	position:relative;
+}
+.bl{
+	display:block;
+	width: 100%;
+}
+
+.nopadding {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.npl	{
+	margin-top: 0 !important;
+	margin-bottom: 15px !important;
+    padding-left: 0 !important;
+}
+.npr	{
+	margin-top: 0 !important;
+	margin-bottom: 15px !important;
+    padding-right: 0 !important;
+}
+.noleft	{
+	padding-left: 0 !important;
+}
+.noright	{
+	padding-right: 0 !important;
+}
+.no-vert{
+	margin-top:0;
+	margin-bottom:0;
+	padding-top:0;
+	padding-bottom:0;
+}
+
+.full-height, .half-height{
+	position: relative;
+}
+
+.vs{
+	margin-top: 30px;
+}
+.vs2{
+	margin-top: 60px;
+}
+.vs3{
+	margin-top: 90px;
+}
+.vs4{
+	margin-top: 120px;
+}
+.vs5{
+	margin-top: 150px;
+}
+
+.col5{
+	float: left;
+	display:block;
+	padding-right: 15px;
+	padding-left: 15px;
+	width: 20%;
+}
+
+.imgfull	{
+	width: 100%;
+	min-width: 100%;
+	max-width: 100%;
+}
+.half{
+	width: 50%;
+}
+.imgbordershadow	{
+	box-shadow:0px 0px 10px 0px rgba(50, 50, 50, 0.125);
+}
+.nobo{
+	border:none !important;
+}
+.borde{
+    border: 1px solid #ced4da;	
+}
+
+.limit{
+	display:block;
+	width: 100%;
+	overflow:hidden;
+}
+.grow { transition: all .5s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+.table-responsive-wrapper{
+	display:block;
+	width: 100%;
+	overflow-x:none;
+}
+
+/*h3.divisor{
+	background:url(../_img/divisor.jpg) repeat-x bottom;
+	background-size: 1px;
+	font-size: 20px;
+	line-height:15px;
+}*/
+
+/**************************************************************************************
+Index
+***************************************************************************************/
+.espacio{
+	padding:7em 0;
+}
+.espaciomin{
+	padding:3.5em 0;
+}
+
+#que.espacio{
+	padding:7em 0 0 0;
+}
+#tabs.espacio{
+	padding:2.5em 0 3.5em 0;
+}
+#prueba.espacio{
+	padding:3.5em 0;
+}
+
+#demo h6{
+	margin-top: 75px;
+}
+#demo a.link{
+	display:block;
+	margin-bottom: 90px !important;
+}
+
+.gradiente{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ed135a+0,ff4280+100 */
+	background: #ed135a; /* Old browsers */
+	background: -moz-linear-gradient(left, #ed135a 0%, #ff4280 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #ed135a 0%,#ff4280 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #ed135a 0%,#ff4280 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed135a', endColorstr='#ff4280',GradientType=1 ); /* IE6-9 */
+}
+.gradientegris{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e9eff5+100 */
+	background: #ffffff; /* Old browsers */
+	background: -moz-linear-gradient(top, #ffffff 0%, #e9eff5 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #ffffff 0%,#e9eff5 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #ffffff 0%,#e9eff5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e9eff5',GradientType=0 ); /* IE6-9 */
+}
+.gris{
+	background:#f2f2f2;
+}
+.grisclaro{
+	background:#f8f8f8;
+}
+
+.boton{
+	display:inline-block;
+	padding:11px 40px;
+
+	border-radius:5px;
+	
+	color:white !important;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: bolder;
+	letter-spacing:-0.0125em;
+}
+.boton:hover{
+	background:blue;
+}
+a.botonblanco{
+	background:white;
+	color:black !important;
+}
+a.botonblanco img{
+	float: right;
+}
+a.botonblanco:hover{
+	color:white !important;
+}
+.botonnegro{
+	background:#222;
+	color:white !important;
+	cursor: pointer;
+}
+.btnpromocion{
+	display:block;
+	padding:3em 0;
+	background:blue;
+	
+	color:white !important;
+	font-size: 26px;
+	font-weight: bolder;
+}
+.btnpromocion:hover{
+	background:black;
+}
+.btnpromocion span{
+	color:#62ffee;
+}
+.btnpromocion em{
+	display:block;
+	padding:0 6em;
+	font-style:normal;
+	font-size: 19px;
+}
+.botonazul{
+	background:darkblue;
+	color:white !important;
+}
+.botonazul img{
+	float: right;
+}
+.botonazul:hover{
+	background:blue;
+}
+
+ul.lista{
+	margin:0;
+	padding:0;
+}
+ul.lista li{
+	display:block;
+	padding:0 0 10px 2em;
+	background:url(../_img/flecha.png) no-repeat 0 10px;
+	background-size: 11px;
+	list-style:none;
+}
+
+.link{
+	color:blue !important;
+	font-size: 12px;
+	font-weight: bolder;
+	letter-spacing:1px;
+	text-transform:uppercase;
+}
+.link:hover{
+	color:#ed145a !important;
+}
+.linkblanco{
+	color:rgba(255,255,255,0.75);
+	text-decoration: underline;
+}
+.linkblanco:hover{
+	color:rgba(255,255,255,1);
+	text-decoration: underline;
+}
+
+a.enlace{
+	color:#2291db !important;
+	font-size: 12px;
+	font-weight: bold !important;
+}
+a.enlace:hover{
+	text-decoration: underline !important;
+}
+
+.txtazul{
+	color:#00a2ff;
+}
+.txtmagenta{
+	color:#fe417f;
+}
+
+#inicio-contigo h2{
+	font-size: 36px;
+}
+#inicio-contigo p{
+	font-size: 18px;
+}
+
+.bx-wrapper {
+	margin-bottom: 0 !important;
+    -moz-box-shadow:none !important;
+    -webkit-box-shadow:none !important;
+    box-shadow:none !important;
+    border:none !important;
+    background: #fff;
+}
+#inicio-porque h3{
+	display:block;
+	margin:0;
+	color:#ee135b;
+	letter-spacing:-0.05em;
+	font-size: 30px;
+}
+a.tipo{
+	display:block;
+	background:white;
+	border-radius:5px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.0t25);
+}
+a.tipo:hover{
+	background:white;
+	box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.15);
+}
+a.tipo span{
+	display:block;
+	padding:2.5rem 0;
+	color:#5174d1;
+	font-size: 18px;
+	font-weight: 700;
+	line-height:18px;
+	text-align: center;
+}
+a.tipo:hover span{
+	text-decoration: underline;
+}
+#inicio-ventas.espacio{
+	padding-top:0;
+}
+
+#inicio-soporte .mc-field-group{
+	display:block;
+	margin-bottom: 0.75rem;
+}
+#inicio-soporte .mc-field-group label{
+	display:inline-block;
+	width: 100px;
+}
+#inicio-soporte input[type="text"],
+#inicio-soporte input[type="email"]{
+	height: 40px;
+	width: 75%;
+	border-radius:5px;
+	border:solid 1px #ddd;
+	box-shadow:none;
+	text-indent: 10px;
+}
+#inicio-soporte input#mc-embedded-subscribe{
+	border:none !important;
+	cursor: pointer;
+}
+
+#inicio-pedidos{
+	min-height: 850px;
+	background:#f8f8f8 url(../_img/_inicio/pedidos.png) no-repeat center bottom;
+	background-size: 1920px;
+}
+
+/**************************************************************************************
+Header
+***************************************************************************************/
+#header{
+	position:fixed !important;
+	top:0;
+	left:0;
+	
+	width: 100%;
+	padding:15px 0;
+	
+	background:#191919;
+}
+
+#header .navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,1);
+}
+#header a.nav-link{
+	display:inline-block;
+	margin-left:75px;
+	padding:6px 0px;
+	
+	color:white !important;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: bolder;
+	letter-spacing:-0.0125em;
+}
+#header a.nav-link:hover{
+	color:#bce4ff !important;
+}
+#header a.nav-btn{
+	display:inline-block;
+	padding:6px 15px;
+	border-radius:5px;
+}
+#header a.nav-btn:hover{
+	background:blue !important;
+	color:white !important;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 1rem 0;
+    margin:0;
+    background-color: #111;
+    background-clip: padding-box;
+    border: 0px solid rgba(0,0,0,.15);
+    border-radius:0rem;
+}
+.dropdown-menu a{
+	color:white;
+	font-size: 0.92em;
+}
+
+#mobile-comenzar{
+	display:none;
+}
+
+
+
+#tabs .nav-pills{
+	margin-bottom: 75px;
+}
+#tabs a.nav-link{
+	margin-right: 1em;
+	padding: .4rem 1.2rem;
+	
+	font-size: 11px;
+	font-weight: bolder;
+	letter-spacing:1px;
+	text-transform:uppercase;
+}
+#tabs .nav-pills .nav-link, 
+#tabs .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #222;
+}
+#tabs .nav-pills .nav-link.active{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ed135a+0,ff4280+100 */
+	background: #ed135a; /* Old browsers */
+	background: -moz-linear-gradient(left, #ed135a 0%, #ff4280 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #ed135a 0%,#ff4280 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #ed135a 0%,#ff4280 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed135a', endColorstr='#ff4280',GradientType=1 ); /* IE6-9 */
+}
+#tabs section{
+	display:block;
+	padding:5em 0em 0 3em;
+}
+#tabs section h6{
+	color:#bbb;
+	font-size: 10px;
+	letter-spacing:0.15em;
+	text-transform:uppercase;
+}
+#tabs p{
+	color:#222;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	font-weight: 700;
+	letter-spacing:-0.025em;
+	line-height:36px;
+}
+
+.modulos .carousel-indicators {
+    position: static;
+    right: 0;
+    bottom: 10px;
+    left: 0;
+    z-index: 15;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-left: 0;
+    margin-right: 15%;
+    margin-left: 15%;
+	margin-bottom: 75px;
+	
+    list-style: none;
+}
+.modulos .carousel-indicators li {
+    position: relative;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: auto;
+    height: auto;
+    margin-right: 3px;
+    margin-left: 3px;
+	padding: .5rem 1.2rem;
+	
+	background-color:black;
+	border-radius:7px;
+    
+    color:white;
+	font-size: 11px;
+	font-weight: bolder;
+	letter-spacing:1px;
+	text-indent:0;
+	text-transform:uppercase;
+}
+.modulos .carousel-indicators li.active {
+    background-color:#ed135a;
+}
+.modulos .carousel-caption {
+    position: static;
+    right: 15%;
+    bottom: 20px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+.modulos section{
+	display:block;
+	padding:5em 0em 0 3em;
+}
+.modulos section h6{
+	color:#bbb;
+	font-size: 10px;
+	letter-spacing:0.15em;
+	text-transform:uppercase;
+}
+.modulos p{
+	color:#222;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	font-weight: 700;
+	letter-spacing:-0.025em;
+	line-height:36px;
+}
+
+
+#footer{
+	background:#191919;
+}
+#footer h6{
+	margin-bottom: 15px;
+	color:#6a8eac;
+	font-size: 15px;
+}
+#footer section{
+	display:block;
+	padding:0 0 0 2em;
+}
+#footer nav a{
+	display:block;
+	padding:7px 0;
+	color:white;
+	font-size: 14px;
+}
+#footer nav a:hover{
+	color:#ed145a;
+}
+.footerbadges a{
+	display:block;
+	margin-top:27px;
+}	
+.footerbadges a:first-child{
+	margin:-5px 0 0 0;
+}
+
+a#whatsapp{
+	z-index: 2;
+	position: fixed;
+	bottom:30px;
+	left:30px;
+	padding:0.8rem 1rem 1rem 1rem;
+	background:#25d366;
+	border-radius:30px;
+	box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.2);
+}
+a#whatsapp:hover{
+	box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.3);
+}
+a#whatsapp img{
+	width: 24px;
+}
+
+#whatsapp-ventana{
+	z-index: 2;
+	position: fixed;
+	bottom:98px;
+	left:30px;
+	
+	display:none;
+	width: 450px;
+}
+#whatsapp-ventana.whatsapp-visible{
+	display:block;
+}
+
+#whatsapp-header{
+	float: left;
+	display:block;
+	width: 100%;
+	padding:1rem;
+	
+	background:#075e54;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+}
+
+img#whatsapp-perfil{
+	float: left;
+	border-radius:64px;
+}
+#whatsapp-status{
+	float: left;
+	display:block;
+	margin-top: 10px;
+	margin-left: .75rem;
+	
+	color:white;
+	font-weight: bold;
+}
+#whatsapp-status p{
+	margin-bottom: 0;
+	color:white;
+}
+#whatsapp-status span{
+	display:block;
+	float: left;
+	margin:4px 2px 0 0;
+	height: 8px;
+	width: 8px;
+	
+	background:#25d366;
+	border-radius:10px;
+}
+#whatsapp-status em{
+	display:block;
+	float: left;
+	margin-left: 3px;
+	font-size: .7rem;
+	font-style:normal;
+	font-weight:lighter;
+}
+
+#whatsapp-body{
+	float: left;
+	display:block;
+	width: 100%;
+	padding:1rem;
+	
+	background:url(../_img/whatsapp-ventana.png);
+	background-size: 450px;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+}
+#whatsapp-body p.burbuja{
+	position: relative;
+	display:block;
+	padding:10px 15px;
+	background:white;
+	border-radius:5px;
+}
+#whatsapp-body p.burbuja img{
+	position: absolute;
+	top:14px;
+	left:-7px;
+}
+
+#whatsapp-escribe{
+	display:block;
+	width: 100%;
+	background:white;
+}
+#whatsapp-escribe span{
+	display:block;
+	padding:15px 15px;
+	
+	font-size: 13px;
+	font-weight: bold;
+		
+	animation-name: parpadeo;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+
+	-webkit-animation-name:parpadeo;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+}
+@-moz-keyframes parpadeo{
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+ 	100% { opacity: 1.0; }
+}
+@-webkit-keyframes parpadeo {
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+@keyframes parpadeo {
+	0% { opacity: 1.0; }
+	50% { opacity: 0.0; }
+	100% { opacity: 1.0; }
+}
+
+
+
+/**************************************************************************************
+Comenzar
+***************************************************************************************/
+#hero h1{
+	font-size: 36px;
+}
+
+body.comenzar #hero{
+	height: 772px;
+	background:url(../_img/comenzar1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+body.comenzar #hero h1{
+	margin:175px 0 10px 0;
+}
+
+body.comenzar .mc-field-group label{
+	color:white;
+}
+body.comenzar #mc_embed_signup form {
+    padding:0;
+}
+#mc_embed_signup .mc-field-group {
+    width: 100% !important;
+    padding-bottom: 5px !important;
+    min-height: 50px;
+}
+body.comenzar #mc_embed_signup input {
+    border:none !important;
+    border-radius:none !important;
+}
+body.comenzar #mc-embedded-subscribe {
+    margin:0;
+}
+.botonwindows{
+	display:inline-block;
+	margin-top: 15px !important;
+	padding:15px 60px 15px 40px;
+	
+	background: #ed135a url(../_img/i-windows.png) no-repeat 90% 20px;
+	background-size: 16px;
+	border-radius:5px;
+	cursor:pointer;
+	
+	color:white !important;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-weight: bolder;
+	letter-spacing:-0.0125em;
+}
+.botonwindows:hover{
+	background: blue url(../_img/i-windows.png) no-repeat 90% 20px;
+	background-size: 16px;
+}
+
+.lateral{
+	margin-top: 45px;
+}
+.lateral p{
+	color:#777;
+	font-size: 15px;
+	line-height:21px;
+}
+
+body.comenzar #que{
+	padding-bottom:150px;
+}
+
+#otras h4{
+	margin-bottom:5px;
+}
+#otras p{
+	line-height:15px;
+}
+a.botonbadge{
+	display:block;
+	height: 56px;
+	
+	background:black url(../_img/badge-google-play-bn.png) no-repeat 95% 9px;
+	background-size: 139px;
+	border-radius:5px;
+	
+	color:white !important;
+	font-size: 10px;
+	font-weight: bolder;
+	letter-spacing:1px;
+	line-height:56px;
+	text-indent: 24px;
+	text-transform:uppercase;
+}
+a.botonbadge:hover{
+	color:#ed145a !important;
+}
+
+
+
+/**************************************************************************************
+Mypopapp / Acceder / Comenzar
+***************************************************************************************/
+#acceder{
+	padding:180px 0 45px 0;
+	
+	background:url(../_img/bg-acceder.jpg) no-repeat center 87px;
+	background-size: 1920px;
+}
+body.acceder #header{
+	background:#1b2126;
+}
+#login{
+	padding:150px 0;
+}
+#login h2{
+	font-size: 26px;
+}
+.divisor-vertical{
+	background:url(../_img/_gracias/pasos.jpg) repeat-y 26px 0;
+	background-size: 1px;
+}
+.divisor-vertical span{
+	display:block;
+	margin-top: 30px;
+	padding:15px 0;
+	
+	background:white;
+	text-align: center;
+}
+.flagstrap{
+	z-index: 1021;
+}
+.flagstrap span{
+	font-size: 14px;
+}
+.flagstrap button{
+	border: 1px solid #ced4da;
+	min-height: 48px;
+	width: 100%;
+}
+.flagstrap .dropdown-menu {
+	padding:15px;
+	background-color: white;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+}
+.custom-select{
+	min-height: 48px;
+}
+
+/**************************************************************************************
+Hero
+***************************************************************************************/
+.hero{
+	margin-top:86px;
+	background:#191919;
+	overflow:hidden;
+}
+.hero hgroup{
+	display:block;
+	margin-top: 180px;
+}
+.hero h1{
+	color:white;
+	font-size: 38px;
+}
+.hero p{
+	display:block;
+	color:rgba(255,255,255,0.9);
+	font-size: 17px;
+}
+.hero p span{
+	display:block;
+}
+.hero h6.volanta{
+	color:rgba(255,255,255,0.66);
+}
+
+.herosmall{
+	height: 314px;
+}
+.hero hgroup{
+	margin-top: 90px;
+}
+
+#herocar{
+	background:url(../_img/car1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#heroref{
+	height: 725px;
+	background:url(../_img/ref1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#heropre{
+	height: 725px;
+	background:url(../_img/pre1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#herosopo{
+	height: 725px;
+	background:url(../_img/sopo1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#herobar{
+	height: 725px;
+	background:url(../_img/bar1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#herocafe{
+	height: 725px;
+	background:url(../_img/cafe1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#herofastfood{
+	height: 725px;
+	background:url(../_img/fastfood1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#heropub{
+	height: 725px;
+	background:url(../_img/pub1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#herorestaurant{
+	height: 725px;
+	background:url(../_img/restaurant1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+
+#herores{
+	height: 500px;
+	background:url(../_img/res1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#herorefcli{
+	height: 500px;
+	background:url(../_img/refcli1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#herorefami{
+	height: 500px;
+	background:url(../_img/refami1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+#herorefinf{
+	height: 500px;
+	background:url(../_img/refinf1920high.jpg) no-repeat center top;
+	background-size: 1920px;
+}
+
+/**************************************************************************************
+Características
+***************************************************************************************/
+#car-texto h6{
+	margin-top: 80px;
+}
+#car-listado section{
+	display:block;
+	padding:20px 40px 0 0;
+}
+#car-listado p{
+	color:#777;
+	font-size: 16px;
+}
+#testimoniales{
+	background:white;
+	border-bottom:solid 1px #f4f4f4;
+}
+#testimoniales a{
+	display:block;
+	position: relative;
+}
+#testimoniales a span{
+	position: absolute;
+	top:0;
+	left:0;
+	display:none;
+	width: 100%;
+	height: 100%;
+	background:rgba(0,128,255,0.5);
+}
+#testimoniales a:hover span{
+	display:block;
+}
+
+
+/**************************************************************************************
+Referidos
+***************************************************************************************/
+#reftype{
+	background: #f6f6f4;
+}
+#reftype.espacio{
+	padding:0 0 7em 0;
+}
+	
+#reftype section{
+	display:block;
+	margin-top: -216px;
+	padding:55px;
+	
+	background:white;
+	border-radius:5px;
+	
+	text-align: center;
+}
+#reftype img{
+	display:block;
+	margin:0 auto;
+}
+#reftype h3{
+	display:block;
+	margin:45px 0 30px 0;
+	
+	color:#363443;
+	font-size: 24px;
+}
+#reftype h3 span{
+	display:block;
+	color:grey !important;
+	font-size: 16px;
+	text-decoration: line-through;
+}
+
+#reftype h4{
+	display:block;
+	margin-top:45px;
+	
+	color:#363443;
+	font-size: 20px;
+}
+#reftype p{
+	color:#777;
+	font-size: 16px;
+}
+#reftype ul.lista li{
+	color:#777;
+	font-size: 16px;
+	text-align: left;
+}
+#reftype ul.lista li strong{
+	color:black;
+}
+
+/**************************************************************************************
+Resellers
+***************************************************************************************/
+#restxt hr{
+	display:block;
+	margin:75px 0;
+}
+#restxt form hr{
+	display:block;
+	margin:45px 0;
+}
+
+.bgbeige{
+	background:#fbf7ec;
+}
+.formpop{
+	display:block;
+	margin-top: -195px;
+	padding:70px;
+	border-radius:5px;
+}
+.formpop label{
+	font-size: 14px;
+}
+
+.volantapie{
+	margin-top: 360px;
+}
+.funciona p{
+	font-size: 15px;
+}
+
+/**************************************************************************************
+Soporte
+***************************************************************************************/
+#soporte{
+	background:#f6f6f4;
+}
+.soportedestacados a{
+	display:block;
+	margin-top: -200px;
+	padding:40px;
+	
+	background:white;
+	border-radius:10px;
+	box-shadow:none;
+	
+	color:#a3a3a3 !important;
+	text-align: center;
+}
+.soportedestacados a:hover{
+	box-shadow:0px 0px 30px 0px rgba(50, 50, 50, 0.125);
+}
+.soportedestacados a img,
+.soportedestacados a strong{
+	margin:0 auto;
+	display:block;
+}
+.soportedestacados a img{
+	margin-bottom: 40px;
+}
+.soportedestacados a strong{
+	margin-bottom: 5px;
+	color:black;
+	font-size: 18px;
+}
+
+.soporteWhatsApp{
+	display:block;
+	padding:45px;
+	
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#33cc66+0,1ea64b+100 */
+	background: #33cc66; /* Old browsers */
+	background: -moz-linear-gradient(top, #33cc66 0%, #1ea64b 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #33cc66 0%,#1ea64b 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #33cc66 0%,#1ea64b 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33cc66', endColorstr='#1ea64b',GradientType=0 ); /* IE6-9 */
+	
+	border-radius:10px;
+	box-shadow:none;
+	
+	color:white !important;
+	text-align: center;
+}
+.soporteWhatsApp:hover{
+	box-shadow:0px 0px 30px 0px rgba(50, 50, 50, 0.25);
+}
+.soporteWhatsApp span{
+	display:block;
+	margin:30px 0 5px 0;
+	
+	font-size: 18px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+.soporteWhatsApp strong{
+	display:block;
+	margin-top: 15px;
+	
+	font-size: 28px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	letter-spacing:-1px;
+}
+
+
+/**************************************************************************************
+Soluciones
+***************************************************************************************/
+.barbg{
+	min-height: 766px;
+	background:url(../_img/barbg.jpg) no-repeat center bottom;
+	background-size: 360px;
+}
+.cafebg{
+	background:url(../_img/cafebg.jpg) no-repeat center -90px;
+	background-size: 1920px;
+}
+.fastfoodbg{
+	min-height: 766px;
+	background:url(../_img/fastfoodbg.jpg) no-repeat center bottom;
+	background-size: 1920px;
+}
+.pubbg{
+	min-height: 766px;
+	background:url(../_img/pubbg.jpg) no-repeat center bottom;
+	background-size: 1920px;
+}
+.bggris{
+	background:#f6f6f4;
+}
+
+.interfaz{
+	margin:6rem 0 0rem 0;
+	
+	border:solid 20px black;
+	
+	-webkit-border-top-left-radius: 15px;
+	-webkit-border-top-right-radius: 15px;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-topright: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.125);
+}
+.logos-clientes img{
+	padding:0 2rem;
+}
+
+.resaltado{
+	display:inline-block;
+	padding:0 5px;
+	background:white;
+	color:black;
+}
+.resaltadomarron{
+	background:#b19f8c;
+	color:white;
+}
+.resaltadoazul{
+	padding: 0 0.25rem;
+	background:#007bff;
+	color:white;
+}
+	
+.soluciones-foto{
+	position: relative;
+	display:block;
+	width: 100%;
+	height: 700px;
+}
+.soluciones-foto p{
+	position: absolute;
+	bottom:0;
+	display:block;
+	width: 100%;
+	padding:0 0 1rem 0;
+	text-align: center;
+	color:white;
+	font-size: 12px;
+}
+
+#foto-restaurante{
+	background:url(../_img/_restaurante/foto.jpg) no-repeat center top;
+	background-size: cover;
+}
+#foto-bar{
+	background:url(../_img/_bar/foto.jpg) no-repeat center top;
+	background-size: cover;
+}
+#foto-cafeteria{
+	background:url(../_img/_cafeteria/foto.jpg) no-repeat center top;
+	background-size: cover;
+}
+#foto-fastfood{
+	background:url(../_img/_fastfood/foto.jpg) no-repeat center top;
+	background-size: cover;
+}
+#foto-cerveceria{
+	background:url(../_img/_cerveceria/foto.jpg) no-repeat center top;
+	background-size: cover;
+}
+#foto-delivery{
+	background:url(../_img/_delivery/foto.jpg) no-repeat center top;
+	background-size: cover;
+}
+#foto-darkkitchen{
+	background:url(../_img/_darkkitchen/foto.jpg) no-repeat center top;
+	background-size: cover;
+}
+
+.soluciones-caracteristicas section{
+	display:block;
+	padding-top:3rem;
+}
+
+.soluciones-integraciones{
+	overflow:hidden !important;
+}
+.soluciones-integraciones.espacio{
+	padding-bottom: 0 !important;
+}
+.soluciones-integraciones h2{
+	margin-top: 180px;
+}
+.soluciones-integraciones p a{
+	display:block;
+	font-size: 14px;
+}
+.soluciones-integraciones p a:hover{
+	text-decoration: underline !important;
+}
+img.soluciones-integraciones-device{
+	display:block;
+	border:solid 20px black;
+	
+	-webkit-border-top-left-radius: 15px;
+	-webkit-border-top-right-radius: 15px;
+	-moz-border-radius-topleft: 15px;
+	-moz-border-radius-topright: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.125);
+}
+.integraciones-logos{
+	display:block;
+	margin-top: 0rem;
+}
+.integraciones-logos img{
+	margin:1.5rem 0;
+	width: 75%;
+}
+.integraciones-logos-margen{
+	margin-top: 12rem !important;
+}
+
+.grilla h3{
+	margin-top: 15px;
+	font-size: 15px;
+	letter-spacing:-0.025em;
+	text-transform:uppercase;
+}
+.grilla p{
+	display:block;
+	margin-bottom:3em;
+	color:#777;
+	font-size:16px;
+}
+
+/**************************************************************************************
+Precios
+***************************************************************************************/
+.bg-facel{
+	background:url(../_img/bg-facel.png) repeat-y center top;
+	background-size: 1110px;
+}
+.bg-facel img{
+	display:block;
+	margin:60px 0px 60px 140px !important;
+}
+
+/**************************************************************************************
+Gracias
+***************************************************************************************/
+#graciasbody .navbar-toggler{
+	display:none;
+}
+.gracias{
+	padding:90px 0;
+}
+.pasos{
+	background:url(../_img/_gracias/pasos.jpg) repeat-y 16px 0;
+	background-size: 1px;
+}
+.pasos p {
+	display:block;
+	background:white;
+}
+.pasos p span{
+	margin:0;
+	padding:0;
+	display:inline-block;
+	height: 33px;
+	width: 33px;
+	
+	background:url(../_img/_gracias/paso.png) no-repeat;
+	background-size: 33px;
+	
+	color:white;
+	font-size: 12px;
+	font-weight: 700;
+	line-height:33px;
+	text-align: center;
+}
+.pasos p span.pasoverde{
+	background:green;
+}
+.pasos p strong{
+	display:inline-block;
+	margin-left: 10px;
+	color:black;
+	font-size: 12px;
+}
+
+/**************************************************************************************
+Foodtech
+***************************************************************************************/
+#foodtech{
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ef5649+0,f7b52e+100 */
+	background: #ef5649; /* Old browsers */
+	background: -moz-linear-gradient(left,  #ef5649 0%, #f7b52e 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left,  #ef5649 0%,#f7b52e 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,  #ef5649 0%,#f7b52e 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef5649', endColorstr='#f7b52e',GradientType=1 ); /* IE6-9 */
+}
+.clock{
+	padding:1.5rem 0 3rem 3rem;
+}
+.flip-clock-wrapper .flip{
+	box-shadow:0 2px 5px rgba(0, 0, 0, 0.0) !important;
+}
+.flip-clock-wrapper a {
+    color: white !important;
+}
+
+/**************************************************************************************
+Pedidos Online
+***************************************************************************************/
+.pedidosheader{
+	display:block;
+	width: 100%;
+	height: 814px;
+	
+	background:url(../pedidosonline/header.jpg) center top;
+	background-size: 1920px;
+}
+
+#reveal-elements{
+	padding-top:250px;
+	text-align: center;
+}
+
+.digit {
+		opacity: 0;
+		-webkit-transform: translateX(-400px);
+			 -moz-transform: translateX(-400px);
+				-ms-transform: translateX(-400px);
+				 -o-transform: translateX(-400px);
+						transform: translateX(-400px);
+		-webkit-transition: all 0.6s ease-out;
+			 -moz-transition: all 0.6s ease-out;
+				-ms-transition: all 0.6s ease-out;
+				 -o-transition: all 0.6s ease-out;
+						transition: all 0.6s ease-out;
+}
+	.digit.visible {
+		opacity: 1;
+		-webkit-transform: none;
+			 -moz-transform: none;
+				-ms-transform: none;
+				 -o-transform: none;
+						transform: none;
+	}
+	.digit:nth-child(2) {
+		margin-top: 50px;
+	}
+	.digit:nth-child(3) {
+		margin-top: 50px;
+	}
+	.digit:nth-child(4) {
+		margin-top: 50px;
+	}
+	.digit:nth-child(5) {
+		margin-top: 50px;
+	}
+
+
+ul.lista-iconos-azules{
+	display:block;
+	margin:0;
+	padding:0;
+	width: 100%;
+	list-style:none;
+	text-align: left;
+}
+ul.lista-iconos-azules li{
+	display:inline-block;
+	padding:1rem 0;
+	width: 49%;
+}
+ul.lista-iconos-azules li img{
+	display:inline-block;
+}
+ul.lista-iconos-azules li span{
+	display:inline-block;
+	padding:0 0 0 2rem;
+}
+.pedidos .pasos p{
+	background:none;
+}
