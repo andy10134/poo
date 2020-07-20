@@ -3,8 +3,9 @@ from flask import Flask,render_template, request
 app = Flask(__name__)
 
 @app.route('/')
-def bienvenida():
-    return render_template('inicio.html')
+def login():
+    titulo = "AppPop" 
+    return render_template('inicio.html', titulo=titulo)
 
 @app.route('/mensaje/saludo')
 def saludo():
