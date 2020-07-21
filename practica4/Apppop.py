@@ -11,7 +11,7 @@ def index():
 
 @app.route('/login')
 def login():
-    titulo = "Login" 
+    titulo = "AppPop Login" 
     return render_template('login.html', titulo=titulo)
 
 
