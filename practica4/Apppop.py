@@ -28,10 +28,10 @@ def handledata():
         else:
             return render_template('login.html', titulo=titulo)
 
-# @app.route('/registrarpedido')
-# def registrarPedido():
-#     titulo = "AppPop Registrar Pedido" 
-#     return render_template('registroP.html', titulo=titulo)
+@app.route('/registrarpedido')
+def registrarPedido():
+    titulo = "AppPop Registrar Pedido" 
+    return render_template('registroP.html', titulo=titulo)
 
 if __name__ == '__main__':
     app.run(debug=True)
