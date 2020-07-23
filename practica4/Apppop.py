@@ -4,6 +4,8 @@ from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
+from models import Pedido, Usuario, Item, Producto
+
 @app.route('/')
 def index():
     titulo = "AppPop" 
