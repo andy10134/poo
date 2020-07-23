@@ -260,12 +260,12 @@ Index
 
 .gradiente{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ed135a+0,ff4280+100 */
-	background: #ed135a; /* Old browsers */
-	background: -moz-linear-gradient(left, #ed135a 0%, #ff4280 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(left, #ed135a 0%,#ff4280 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to right, #ed135a 0%,#ff4280 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ed135a', endColorstr='#ff4280',GradientType=1 ); /* IE6-9 */
+	/*background: #ed135a; /* Old browsers */
+	/*background: -moz-linear-gradient(left, #ed135a 0%, #ff4280 100%); /* FF3.6-15 */
+	/*background: -webkit-linear-gradient(left, #ed135a 0%,#ff4280 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right,#2fb191 0%, #2fb191 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
+
 .gradientegris{
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e9eff5+100 */
 	background: #ffffff; /* Old browsers */
