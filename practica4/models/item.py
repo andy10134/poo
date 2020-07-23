@@ -13,7 +13,17 @@ class Item():
         self.__estado = estado
         self.__producto = producto
 
-    def getNumero():
+    def getNumero(self):
         return self.__numItem
     
-    def get
+    def getPrecio(self):
+        return self.__precio
+    
+    def getEstado(self):
+        return self.__estado
+    
+    def getProducto(self):
+        return self.__producto
+    
+    def setEstado(self, estado):
+        self.__estado = estado
