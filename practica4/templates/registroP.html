@@ -1,0 +1,38 @@
+{% extends "base_template.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <label for="mesa">Ingrese mesa</label>
+            <select id="mesa" class="form-control form-control-lg">
+                <option value="">1</option>
+                <option value="">2</option>
+                <option value="">3</option>
+                <option value="">4</option>
+                <option value="">5</option>
+                <option value="">6</option>
+                <option value="">7</option>
+                <option value="">8</option>
+                <option value="">9</option>
+                <option value="">10</option>
+            </select>
+            <label for="observacion">Especificaciones del pedido</label>
+            <textarea name="observacion" id="observacion" cols="30" rows="10"></textarea>
+            <a  class="boton gradiente" id="confirmar" style="width: 50%;">Confirmar pedido</a></div>
+        </div>
+        <div class="col-6">
+            <h3>Carta</h3>
+            <ul class="list-group">
+                {% for producto in productos %}
+                <li class="list-group-item">
+                    {{producto.nombre}}
+                    <span class="badge badge-primary badge-pill">{{producto.precio}}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
