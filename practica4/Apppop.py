@@ -14,7 +14,7 @@ from models import ItemsPedidos, Pedidos, Productos, Usuarios
 @app.route('/')
 def index():
     titulo = "AppPop" 
-    return render_template('index.html', titulo=titulo)
+    return render_template('index.html', titulo=titulo, dni=escape(session['dni']), tipo=escape(session['tipo']))
 #Fin Inicio
 
 #Login
