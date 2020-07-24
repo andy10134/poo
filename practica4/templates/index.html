@@ -1,5 +1,6 @@
 {% extends "base_template.html" %}
 {% block content %}
+
 <div id="header-marzo">
     <div class="container">
         <div class="row">
@@ -8,12 +9,29 @@
                     Apppop software de gestion
                 </h2>
                 <h1>
+                    {% if tipo == 'Mozo' %}
+                    Aqui comienza la gastronomia smart
+                    Comienza a crear pedidos para el chef!
+                    {% else %}
                     La apliación web de gestión
                     que permite un manejo
                     mas eficiente de pedidos
                     para tu restaurante
+                    {% endif %}
                 </h1>
-                <a href="/login" class="mt-3 boton gradiente">Iniciar Sesión</a>
+                <a href=
+                {% if tipo == 'Mozo' %}
+                    "{{ url_for('registrarPedido') }}"
+                {% else %}
+                "/login"
+                {% endif %}
+                class="mt-3 boton gradiente">
+                    {% if tipo == 'Mozo' %}
+                    Generar Pedidos
+                    {% else %}
+                    Iniciar Sesión
+                    {% endif %}
+                </a>
             </div>
         </div>
     </div>

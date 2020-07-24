@@ -26,12 +26,23 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <span class="navbar-nav mr-auto"></span>
                 <ul class="navbar-nav">
+                    {% if tipo and dni %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Bienvenido otra vez {{ tipo }} ({{ dni }})</a>
+                    </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="/mypopapp/">MyApppop</a>
                     </li>
+                    {% if dni %}
+                    <li class="nav-item">
+                        <a class="nav-link nav-btn gradiente" href="/login">Log out</a>
+                    </li>
+                    {% else %}
                     <li class="nav-item">
                         <a class="nav-link nav-btn gradiente" href="/login">Logeate</a>
                     </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -70,8 +81,8 @@
                         </div>
                 
                 <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-12 text-right">
-                    <a href="https://popapp.io/">
-                        <img src=" {{ url_for('static', filename='img/logo-apppop-footer.png') }}"  alt="Popapp. Gastronomía Modo Smart." width="145">
+                    <a href="/">
+                        <img src=" {{ url_for('static', filename='img/logo-apppop-footer.png') }}"  alt="Apppop" width="145">
                     </a>
                 </div>
                 <div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-12">
