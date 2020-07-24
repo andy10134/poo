@@ -58,6 +58,12 @@ def logout():
     return redirect(url_for('index'))
 
 #Registrar Pedido
+@app.route('/registrarpedido')
+def registrarPedido():
+    productos = Productos.query.all()
+    titulo = "Registrar Pedido" 
+    return render_template('registro_pedidos_mozo.html', titulo=titulo, productos=productos)
+    
 @app.route('/registrarpedido', methods = ['POST'])
 def registrarPedido():
     productos = Productos.query.all()
