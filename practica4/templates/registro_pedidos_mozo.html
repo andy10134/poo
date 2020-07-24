@@ -20,7 +20,7 @@
                 </select>
                 <div class="justify-content-center align-self-center w-100">
                     <h1 style="text-align: center;">Listado</h1>
-                    <ul class="list-group-flush" style="overflow-y: scroll; display: block;">
+                    <ul class="list-group-flush order-list" style="overflow-y: scroll; display: block;">
                         <li class="list-group-item">
                             -
                             <span class="badge badge-success badge-pill float-right">$$$</span>
@@ -49,12 +49,19 @@
                 <div class="justify-content-center align-self-center w-100">
                    <h1 style="text-align: center;">Carta</h1>
                     <ul class="list-group-flush">
+                        {% if productos %}
                         {% for producto in productos %}
-                        <li class="list-group-item">
+                        <li class="list-group-item product-item">
                             {{producto.nombre}}
+                            <span class="d-none"> {{ producto.numProducto }} </span>
                             <span class="badge badge-success badge-pill float-right">$ {{producto.preciounitario}}</span>
                         </li>
                         {% endfor %}
+                        {% else %}
+                        <li class="list-group-item">
+                            <h1>No se han encontrado productos</h1>
+                        </li>
+                        {% endif %}
                     </ul> 
                 </div>
             </div>
