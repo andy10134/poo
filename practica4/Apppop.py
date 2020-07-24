@@ -32,7 +32,6 @@ def handledata():
     if request.method == 'POST' :
         if(request.form['dni'] and request.form['password']):
             usuario = Usuarios.query.filter_by(dni=request.form['dni']).first()
-            print(usuario)
             if(type(usuario) is not None):
                 passver = PasswordVer(request.form['password'])
                 if(passver.validarPassword(usuario.clave)):
@@ -50,8 +49,9 @@ def handledata():
 #Registrar Pedido
 @app.route('/registrarpedido')
 def registrarPedido():
+    productos = Productos.query.all()
     titulo = "Registrar Pedido" 
-    return render_template('registroP.html', titulo=titulo)
+    return render_template('registro_pedidos_mozo.html', titulo=titulo, productos=productos)
 #Fin Registrar Pedido
 
 #Base de datos

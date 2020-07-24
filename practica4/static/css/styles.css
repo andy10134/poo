@@ -28,3 +28,16 @@ h2.volanta{
 a{
     transition: all 1s;
 }
+
+.row{
+    height: 100%;
+}
+
+.badge-success{
+    background-color: #2fb191 !important;
+}
+
+svg{
+    position: absolute;
+    bottom: 0px;
+}
