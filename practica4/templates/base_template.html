@@ -36,7 +36,7 @@
                     </li>
                     {% if dni %}
                     <li class="nav-item">
-                        <a class="nav-link nav-btn gradiente" href="/login">Log out</a>
+                        <a class="nav-link nav-btn gradiente" href="{{ url_for('logout') }}">Log out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
