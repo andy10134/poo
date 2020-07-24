@@ -46,6 +46,14 @@ def handledata():
             return redirect(url_for('login'))
 #Fin Login
 
+#Log out
+@app.route('/logout')
+def logout():
+    session.pop('dni')
+    session.pop('tipo')
+
+    return redirect(url_for('index'))
+
 #Registrar Pedido
 @app.route('/registrarpedido')
 def registrarPedido():
