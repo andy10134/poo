@@ -63,9 +63,9 @@ def registrarPedido():
     productos = Productos.query.all()
     titulo = "Registrar Pedido" 
     return render_template('registro_pedidos_mozo.html', titulo=titulo, productos=productos)
-    
+
 @app.route('/registrarpedido', methods = ['POST'])
-def registrarPedido():
+def handlePedido():
     productos = Productos.query.all()
     titulo = "Registrar Pedido" 
     return render_template('registro_pedidos_mozo.html', titulo=titulo, productos=productos)
