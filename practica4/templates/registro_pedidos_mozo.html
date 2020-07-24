@@ -4,45 +4,47 @@
 <div id="registro">
     <div class="container" style=" margin-top: 86px; height: 100%;">
         <div class="row position-relative">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex">
-                <label for="mesa" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 position-absolute" style="top: 85px; right: 330px;">Ingrese mesa</label>
-                <select id="mesa" class="form-control form-control-sm col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 position-absolute" style="top: 85px; right: 100px;">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                </select>
-                <div class="justify-content-center align-self-center w-100">
-                    <h1 style="text-align: center;">Listado</h1>
-                    <ul class="list-group-flush order-list" style="overflow-y: scroll; display: block;">
-                        <li class="list-group-item">
-                            -
-                            <span class="badge badge-success badge-pill float-right">$$$</span>
-                        </li>
-                        <li class="list-group-item">
-                            -
-                            <span class="badge badge-success badge-pill float-right">$$$</span>
-                        </li>
-                        <li class="list-group-item">
-                            -
-                            <span class="badge badge-success badge-pill float-right">$$$</span>
-                        </li>
-                        <li class="list-group-item">
-                            -
-                            <span class="badge badge-success badge-pill float-right">$$$</span>
-                        </li>
-                        
-                    </ul> 
-                </div>
-                <label for="observacion" class="position-absolute" style="bottom:85px; right: 330px;">Especificaciones del pedido</label>
-                <textarea name="observacion" id="observacion" cols="20" rows="1" class="position-absolute" style="bottom:88px; right: 100px;"></textarea>
-                <a class="position-absolute boton gradiente" id="confirmar" style="bottom:10px; right: 200px;">Confirmar pedido</a>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 ">
+                <form class="d-flex" style="height: 100%;" action="{{ url_for('registrarPedido') }}" method="POST">
+                    <label for="mesa" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 position-absolute" style="top: 85px; right: 330px;">Ingrese mesa</label>
+                    <select id="mesa" class="form-control form-control-sm col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 position-absolute" style="top: 85px; right: 100px;">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <div class="justify-content-center align-self-center w-100">
+                        <h1 style="text-align: center;">Orden</h1>
+                        <ul class="list-group-flush order-list" style="overflow-y: scroll; display: block;">
+                            <li class="list-group-item">
+                                -
+                                <span class="badge badge-success badge-pill float-right">$$$</span>
+                            </li>
+                            <li class="list-group-item">
+                                -
+                                <span class="badge badge-success badge-pill float-right">$$$</span>
+                            </li>
+                            <li class="list-group-item">
+                                -
+                                <span class="badge badge-success badge-pill float-right">$$$</span>
+                            </li>
+                            <li class="list-group-item">
+                                -
+                                <span class="badge badge-success badge-pill float-right">$$$</span>
+                            </li>
+                            
+                        </ul> 
+                    </div>
+                    <label for="observacion" class="position-absolute" style="bottom:85px; right: 330px;">Especificaciones del pedido</label>
+                    <input type="text" name="observacion" id="observacion" class="position-absolute col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4" style="bottom:90px; right: 100px;"></input>
+                    <a class="position-absolute boton gradiente" id="confirmar" style="bottom:10px; right: 200px;">Confirmar pedido</a>
+                </form>
             </div>
 
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 d-flex">

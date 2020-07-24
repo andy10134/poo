@@ -58,7 +58,7 @@ def logout():
     return redirect(url_for('index'))
 
 #Registrar Pedido
-@app.route('/registrarpedido')
+@app.route('/registrarpedido', methods = ['POST'])
 def registrarPedido():
     productos = Productos.query.all()
     titulo = "Registrar Pedido" 
