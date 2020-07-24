@@ -13,8 +13,11 @@ from models import ItemsPedidos, Pedidos, Productos, Usuarios
 #Inicio
 @app.route('/')
 def index():
-    titulo = "AppPop" 
-    return render_template('index.html', titulo=titulo, dni=escape(session['dni']), tipo=escape(session['tipo']))
+    titulo = "AppPop"
+    if 'dni' in session and 'tipo' in session :
+        return render_template('index.html', titulo=titulo, dni=escape(session['dni']), tipo=escape(session['tipo']))
+    else:
+        return render_template('index.html', titulo=titulo)
 #Fin Inicio
 
 #Login
