@@ -1,4 +1,5 @@
-from flask import Flask,render_template, request
+from flask import Flask,render_template, request, flash, redirect, url_for, session, escape
+from passver import PasswordVer
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -20,19 +21,30 @@ def index():
 @app.route('/login')
 def login():
     titulo = "AppPop Login" 
-    return render_template('login.html', titulo=titulo)
+    if 'dni' in session :
+        return redirect(url_for('index'))
+    else:
+        return render_template('login.html', titulo=titulo)
 
 @app.route('/login', methods = ['POST'])
 def handledata():
     titulo = "AppPop Login" 
     if request.method == 'POST' :
         if(request.form['dni'] and request.form['password']):
-            dni = request.form['dni']
-            password = request.form['password']
-
-            return render_template('index.html', titulo=titulo)    
+            usuario = Usuarios.query.filter_by(dni=request.form['dni']).first()
+            print(usuario)
+            if(type(usuario) is not None):
+                passver = PasswordVer(request.form['password'])
+                if(passver.validarPassword(usuario.clave)):
+                    session["dni"] = usuario.dni
+                    session["tipo"] = usuario.tipo
+                    return redirect(url_for('index'))
+            
+            flash('Verifica tus credenciales de acceso, DNI o contrasenia invalidos')
+            return redirect(url_for('login'))
         else:
-            return render_template('login.html', titulo=titulo)
+            flash('Verifica tus credenciales de acceso, DNI o contrasenia invalidos')
+            return redirect(url_for('login'))
 #Fin Login
 
 #Registrar Pedido

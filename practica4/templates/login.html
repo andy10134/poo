@@ -6,6 +6,15 @@
             <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-12">
                 <div class="row" id="comenzar1" style="padding:150px 0 ;">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ message }}
+                                        </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
                         <form action="{{ url_for('handledata') }}" method="POST">
                             <div class="form-group">
                                 <label >
