@@ -29,8 +29,17 @@ a{
     transition: all 1s;
 }
 
+/*Pedidos Realizar*/
 .row{
     height: 100%;
+}
+
+.order-list{
+    height: 190px;
+}
+
+.product-item{
+    cursor: pointer;
 }
 
 .badge-success{
