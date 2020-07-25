@@ -1,9 +1,8 @@
 $(document).ready(function () {
     $('.product-item').click(function (e) { 
 
-        if($('.order-list:last-child').hasClass('product-item')){
-            $('.order-list:last-child').remove();
-        }
+        $('.null-item').fadeOut();
+
         $(this).clone().appendTo('.order-list');
 
         
