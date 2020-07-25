@@ -42,11 +42,13 @@ def handledata():
                     session["tipo"] = usuario.tipo
                     return redirect(url_for('index'))
             
-            flash('Verifica tus credenciales de acceso, DNI o contrasenia invalidos')
+            flash('Verifica tus credenciales de acceso, DNI o contraseña inválidos')
             return redirect(url_for('login'))
         else:
-            flash('Verifica tus credenciales de acceso, DNI o contrasenia invalidos')
+            flash('Verifica tus credenciales de acceso, DNI o contraseña inválidos')
             return redirect(url_for('login'))
+    else:
+        return redirect(url_for("index"))
 #Fin Login
 
 #Log out
@@ -60,15 +62,37 @@ def logout():
 #Registrar Pedido
 @app.route('/registrarpedido')
 def registrarPedido():
-    productos = Productos.query.all()
-    titulo = "Registrar Pedido" 
-    return render_template('registro_pedidos_mozo.html', titulo=titulo, productos=productos)
+    if "dni" in session and "tipo" in session:
+        if escape(session['tipo']) == "Mozo":
+            productos = Productos.query.all()
+            titulo = "Registrar Pedido" 
+            return render_template('registro_pedidos_mozo.html', titulo=titulo, productos=productos, dni=escape(session['dni']), tipo=escape(session['tipo']))
+        elif escape(session['tipo']) == "Cocinero" :
+            pass
+        else :
+            return redirect("logout")
+    else:
+        flash("Tip: Deberías Iniciar Sesión antes de realizar pedidos ;)")
+        return redirect(url_for("login"))
+
 
 @app.route('/registrarpedido', methods = ['POST'])
 def handlePedido():
-    if request.method == 'POST' :
-        flash('Registro exitoso.')
-        return redirect(url_for('registrarPedido'))
+    if "dni" in session and "tipo" in session:
+        if escape(session['tipo']) == "Mozo":
+            if request.method == 'POST' :
+                flash('Registro exitoso.')
+                return redirect(url_for('registrarPedido'))
+            else:
+                flash('Algo no ha salido bien. Reintenta el pedido.')
+                return redirect(url_for('registrarPedido'))
+        elif escape(session['tipo']) == "Cocinero" :
+            pass
+        else :
+            return redirect("logout")
+    else:
+        flash("Tip: Deberías Iniciar Sesión antes de realizar pedidos ;)")
+        return redirect(url_for("login"))
 
 #Fin Registrar Pedido
 
