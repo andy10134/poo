@@ -66,9 +66,10 @@ def registrarPedido():
 
 @app.route('/registrarpedido', methods = ['POST'])
 def handlePedido():
-    productos = Productos.query.all()
-    titulo = "Registrar Pedido" 
-    return render_template('registro_pedidos_mozo.html', titulo=titulo, productos=productos)
+    if request.method == 'POST' :
+        flash('Registro exitoso.')
+        return redirect(url_for('registrarPedido'))
+
 #Fin Registrar Pedido
 
 #Base de datos
