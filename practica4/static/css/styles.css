@@ -45,3 +45,7 @@ a{
 .badge-success{
     background-color: #2fb191 !important;
 }
+
+.listapedidos{
+    height: 300px;
+}
