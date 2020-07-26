@@ -9,7 +9,7 @@ class Usuarios(db.Model):
     tipo = db.Column(db.String(100), nullable=False)
 
 class Pedidos(db.Model):
-    numPedido = db.Column(db.Integer, primary_key=True, nullable=False)
+    numPedido = db.Column(db.Integer, primary_key=True)
     fecha = db.Column(db.DateTime, nullable=False)
     total = db.Column(db.Float, nullable=False)
     cobrado = db.Column(db.Boolean, nullable=False)
@@ -18,13 +18,14 @@ class Pedidos(db.Model):
     dnimozo = db.Column(db.Integer, db.ForeignKey('usuarios.dni'))
 
 class ItemsPedidos(db.Model):
-    numItem = db.Column(db.Integer, primary_key=True, nullable=False)
-    numPedido = db.Column(db.Integer, db.ForeignKey('pedidos.numpedido'))
-    numProducto = db.Column(db.Integer, db.ForeignKey('productos.numproducto'))
+    __tablename__= 'ItemsPedidos'
+    numItem = db.Column(db.Integer, primary_key=True)
+    numPedido = db.Column(db.Integer, db.ForeignKey('pedidos.numPedido'))
+    numProducto = db.Column(db.Integer, db.ForeignKey('productos.numProducto'))
     precio = db.Column(db.Float, nullable=False)
     estado = db.Column(db.String(100), nullable=False)
 
 class Productos(db.Model):
-    numProducto = db.Column(db.Integer, primary_key=True, nullable=False)
+    numProducto = db.Column(db.Integer, primary_key=True)
     nombre = db.Column(db.String(100), nullable=False)
     preciounitario = db.Column(db.Float, nullable=False)
