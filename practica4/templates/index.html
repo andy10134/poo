@@ -4,11 +4,11 @@
 <div id="header-marzo">
     <div class="container">
         <div class="row">
-            <div class="col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 wow fadeInDown">
-                <h2 class="volanta text-white">
+            <div class="col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12">
+                <h2 class="volanta text-white  wow fadeInDown">
                     Apppop software de gestion
                 </h2>
-                <h1>
+                <h1 class=" wow fadeInDown">
                     {% if tipo == 'Mozo' %}
                     Aquí comienza la gastronomía smart
                     Comenzá a crear pedidos para el chef!
@@ -30,7 +30,7 @@
                 {% else %}
                 "/login"
                 {% endif %}
-                class="mt-3 boton gradiente animate__fadeInDown">
+                class="mt-3 boton gradiente wow fadeInDown">
                     {% if tipo == 'Mozo' %}
                     Nuevo Pedido
                     {% elif tipo == 'Cocinero' %}
