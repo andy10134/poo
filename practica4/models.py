@@ -18,6 +18,7 @@ class Pedidos(db.Model):
     dnimozo = db.Column(db.Integer, db.ForeignKey('usuarios.dni'))
 
 class ItemsPedidos(db.Model):
+    __tablename__= 'ItemsPedidos'
     numItem = db.Column(db.Integer, primary_key=True, nullable=False)
     numPedido = db.Column(db.Integer, db.ForeignKey('pedidos.numpedido'))
     numProducto = db.Column(db.Integer, db.ForeignKey('productos.numproducto'))

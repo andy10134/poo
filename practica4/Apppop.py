@@ -118,27 +118,14 @@ def verPedidos():
         if escape(session['tipo']) == "Mozo":
             titulo = "Pedidos Vigentes" 
             pedidos = Pedidos.query.all()
+            items = ItemsPedidos.query.all()
             fecha = datetime.now().date()
-            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']))
+            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, items = items,fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']))
         elif escape(session['tipo']) == "Cocinero" :
             return redirect(url_for("index"))
         else :
             return redirect(url_for("logout"))
 
-#Listar Pedidos Mozo
-@app.route('/listarpedidosmozo')
-def listarpedidosmozo():
-    if "dni" in session and "tipo" in session:
-        if escape(session['tipo']) == "Mozo":
-            titulo = "Pedidos Vigentes" 
-            pedidos = Pedidos.query.all()
-            fecha = datetime.now().date()
-            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']))
-        elif escape(session['tipo']) == "Cocinero" :
-            return redirect(url_for("index"))
-        else :
-            return redirect(url_for("logout"))
-#Fin listar pedidos
 
 #Base de datos
 @app.route('/prueba')
