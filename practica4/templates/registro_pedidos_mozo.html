@@ -33,7 +33,7 @@
                             <h1 style="text-align: center;"> <span class="material-icons">
                                 room_service
                                 </span>
-                                Orden</h1>
+                                Orden - Total : $ <span id="final-price">-</span> </h1>
                             <ul class="list-group-flush order-list" style="overflow-y: scroll; display: block;">
                                 <li class="list-group-item null-item">
                                     -
@@ -51,7 +51,7 @@
                         </div>
                         <label for="observacion" class="position-absolute" style="bottom:85px; right: 330px;">Especificaciones del pedido</label>
                         <input type="text" name="items" id="items-number" class="d-none">
-                        <input type="text" name="total" id="total" class="d-none">
+                        <input type="number" name="total" id="total" class="d-none">
                         <input type="text" name="observacion" id="observacion" class="position-absolute col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4" style="bottom:90px; right: 100px;"></input>
                         <button type="submit" class="boton gradiente position-absolute" id="confirmar" style="bottom:10px; margin-left:auto; margin-right:auto; left:0; right:0;">Confirmar pedido</button>
                     </form>
@@ -68,7 +68,7 @@
                         <li class="list-group-item product-item">
                             {{producto.nombre}}
                             <span class="d-none"> {{ producto.numProducto }} </span>
-                            <span class="badge badge-success badge-pill float-right">$ {{producto.preciounitario}}</span>
+                            <span class="badge badge-success badge-pill float-right price">$ <span class="price">{{producto.preciounitario}}</span></span>
                         </li>
                         {% endfor %}
                         {% else %}

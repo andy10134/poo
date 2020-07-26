@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('#items-number').val("");    
+    $('#total').val("");   
 
     $('.product-item').click(function (e) { 
 
@@ -15,13 +16,17 @@ $(document).ready(function () {
             $('#items-number').val(itemNuevo);
         }
 
-        var total = $('#total').val();
-        var precio = $(this).children('.badge-success').text();
-
+        var total = parseInt($('#total').val());
+        var precio = parseInt($(this).children('.badge-success').children('.price').text());
+        
         if( $('#total').val() != "" ){
             $('#total').val( total + precio);
         } else{
             $('#total').val(precio);
+            $('#final-price').text("");
         }
+
+        $('#final-price').text($('#total').val());
+       
     });
 });
