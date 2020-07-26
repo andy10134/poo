@@ -84,16 +84,15 @@ def handlePedido():
             if request.method == 'POST' :
                 items_pedidos = request.form['items']
                 items_pedidos = items_pedidos.split(',')
-                nuevo_pedido = Pedidos(fecha= datetime.now().date(), total= request.form['total'], cobrado= False, observacion=request.form['observacion'], mesa=request.form['mesa'], dnimozo=escape(session['dni']))
+                nuevo_pedido = Pedidos(fecha= datetime.now().date(), total= float(request.form['total']), cobrado= False, observacion=request.form['observacion'], mesa=int(request.form['mesa']), dnimozo=int(escape(session['dni'])))
                 db.session.add(nuevo_pedido)
+                db.session.commit()
                 for item in items_pedidos:
-                    print(int(item))
-                    producto = Productos.query.filter_by(numProducto= int(item))
+                    producto = Productos.query.filter_by( numProducto="{}".format(int(item))).first()
                     if producto is None:
                         flash('Error al cargar los items.')
                         return redirect(url_for('registrarPedido'))
                     else:
-                        print(producto)
                         nuevo_item = ItemsPedidos(numPedido= nuevo_pedido.numPedido, numProducto= item, precio= producto.preciounitario, estado= 'Pendiente')
                         db.session.add(nuevo_item)
                 db.session.commit()
