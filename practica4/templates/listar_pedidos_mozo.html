@@ -18,15 +18,21 @@
                     <h1 style="text-align: center;">Pedidos Vigentes</h1>
                     <ul class="list-group-flush listapedidos" style="overflow-y: scroll; display: block;">
                     {% if pedidos %}
-                        {% for pedido in pedidos %}
+                        {% for pedido in pedidos %} 
+                            {% if pedido.cobrado == 0 and pedido.fecha == fecha %}
                                 <li class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="d-flex w-100 justify-content-between">
+                                    <div class="d-flex w-100 justify-content-between" style="height: 33px;">
                                         <h5 class="mb-1"> Pedido {{ pedido.numPedido }} </h5>
                                         <h5 class="text-muted"> Mesa {{ pedido.mesa }}</h5>
                                     </div>
-                                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                                    {% for item in items %}
+                                        {% if item.numPedido == pedido.numPedido %}
+                                            <p class="mb-1"> {{ item.precio }} </p>
+                                        {% endif %}
+                                    {%  endfor %}
                                     <small class="text-muted">Mozo {{ pedido.dnimozo }}</small>
                                 </li>
+                            {% endif %}
                         {% endfor %}
                     {% else %}
                         <li class="list-group-item">

@@ -118,8 +118,9 @@ def verPedidos():
             titulo = "Pedidos Vigentes" 
             pedidos = Pedidos.query.all()
             items = ItemsPedidos.query.all()
+            productos = Productos.query.all()
             fecha = datetime.now().date()
-            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, items = items,fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']))
+            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, productos = productos,items = items,fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']))
         elif escape(session['tipo']) == "Cocinero" :
             return redirect(url_for("index"))
         else :
