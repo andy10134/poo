@@ -12,6 +12,9 @@
                     {% if tipo == 'Mozo' %}
                     Aquí comienza la gastronomía smart
                     Comenzá a crear pedidos para el chef!
+                    {% elif tipo == 'Cocinero' %}
+                    Aquí comienza la gastronomía smart
+                    Verificá que no tengas pedidos pendientes!
                     {% else %}
                     La apliación web de gestión
                     que permite un manejo
@@ -22,12 +25,16 @@
                 <a href=
                 {% if tipo == 'Mozo' %}
                     "{{ url_for('registrarPedido') }}"
+                {% if tipo == 'Mozo' %}
+                    "{{ url_for('verPedidos') }}"                
                 {% else %}
                 "/login"
                 {% endif %}
                 class="mt-3 boton gradiente">
                     {% if tipo == 'Mozo' %}
                     Nuevo Pedido
+                    {% elif tipo == 'Cocinero' %}
+                    Ver Pedidos
                     {% else %}
                     Iniciar Sesión
                     {% endif %}

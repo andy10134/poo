@@ -76,7 +76,7 @@ def registrarPedido():
         return redirect(url_for("login"))
 
 
-@app.route('/registrarpedido', methods = ['POST'])
+@app.route('/registraredido', methods = ['POST'])
 def handlePedido():
     if "dni" in session and "tipo" in session:
         if escape(session['tipo']) == "Mozo":
@@ -93,8 +93,12 @@ def handlePedido():
     else:
         flash("Tip: Deberías Iniciar Sesión antes de realizar pedidos ;)")
         return redirect(url_for("login"))
-
 #Fin Registrar Pedido
+
+#Ver pedidos
+@app.route('/pedidos', methods = ['POST'])
+def verPedidos():
+    return render_template()
 
 #Base de datos
 @app.route('/prueba')

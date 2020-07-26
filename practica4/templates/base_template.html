@@ -27,21 +27,26 @@
                 <span class="navbar-nav mr-auto"></span>
                 <ul class="navbar-nav">
                     {% if tipo and dni %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Bienvenido otra vez {{ tipo }} ({{ dni }})</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('index') }}">Bienvenido otra vez {{ tipo }} ({{ dni }})</a>
+                        </li>
+                        {% if tipo == "Mozo" %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url_for('registrarPedido') }}">Registrar Pedido</a>
+                            </li>
+                        {% endif %}
                     {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="/mypopapp/">MyApppop</a>
                     </li>
-                    {% if dni %}
-                    <li class="nav-item">
-                        <a class="nav-link nav-btn gradiente" href="{{ url_for('logout') }}">Log out</a>
-                    </li>
+                    {% if tipo and dni %}
+                        <li class="nav-item">
+                            <a class="nav-link nav-btn gradiente" href="{{ url_for('logout') }}">Log out</a>
+                        </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link nav-btn gradiente" href="/login">Logeate</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-btn gradiente" href="/login">Logeate</a>
+                        </li>
                     {% endif %}
                 </ul>
             </div>
