@@ -87,11 +87,13 @@ def handlePedido():
                 nuevo_pedido = Pedidos(fecha= datetime.now().date(), total= request.form['total'], cobrado= False, observacion=request.form['observacion'], mesa=request.form['mesa'], dnimozo=escape(session['dni']))
                 db.session.add(nuevo_pedido)
                 for item in items_pedidos:
-                    producto = Productos.query.filter_by(numProducto= item).first()
-                    if type(producto) is None:
+                    print(int(item))
+                    producto = Productos.query.filter_by(numProducto= int(item))
+                    if producto is None:
                         flash('Error al cargar los items.')
                         return redirect(url_for('registrarPedido'))
                     else:
+                        print(producto)
                         nuevo_item = ItemsPedidos(numPedido= nuevo_pedido.numPedido, numProducto= item, precio= producto.preciounitario, estado= 'Pendiente')
                         db.session.add(nuevo_item)
                 db.session.commit()
