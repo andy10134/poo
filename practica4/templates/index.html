@@ -4,7 +4,7 @@
 <div id="header-marzo">
     <div class="container">
         <div class="row">
-            <div class="col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12">
+            <div class="col-xl-5 col-lg-5 col-md-8 col-sm-12 col-12 wow fadeInDown">
                 <h2 class="volanta text-white">
                     Apppop software de gestion
                 </h2>
@@ -25,12 +25,12 @@
                 <a href=
                 {% if tipo == 'Mozo' %}
                     "{{ url_for('registrarPedido') }}"
-                {% if tipo == 'Mozo' %}
+                {% elif tipo == 'Cocinero' %}
                     "{{ url_for('verPedidos') }}"                
                 {% else %}
                 "/login"
                 {% endif %}
-                class="mt-3 boton gradiente">
+                class="mt-3 boton gradiente animate__fadeInDown">
                     {% if tipo == 'Mozo' %}
                     Nuevo Pedido
                     {% elif tipo == 'Cocinero' %}
