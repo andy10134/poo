@@ -14,5 +14,14 @@ $(document).ready(function () {
         } else{
             $('#items-number').val(itemNuevo);
         }
+
+        var total = $('#total').val();
+        var precio = $(this).children('.badge-success').text();
+
+        if( $('#total').val() != "" ){
+            $('#total').val( total + precio);
+        } else{
+            $('#total').val(precio);
+        }
     });
 });

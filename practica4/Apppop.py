@@ -1,6 +1,7 @@
 from flask import Flask,render_template, request, flash, redirect, url_for, session, escape
 from passver import PasswordVer
 from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 
 app = Flask(__name__)
@@ -81,6 +82,18 @@ def handlePedido():
     if "dni" in session and "tipo" in session:
         if escape(session['tipo']) == "Mozo":
             if request.method == 'POST' :
+                #items = request.form['items']
+                #items_pedidos = items.split(',')
+                #nuevo_pedido = Pedidos(fecha= datetime.now().date(), total= request.form['total'], cobrado=False, observacion=request.form['observacion'], mesa=request.form['mesa'], dni=escape(session['dni']))
+                #db.session.add(nuevo_pedido)
+                #for item in items_pedidos:
+                #    producto = Productos.query.filter_by(numProducto= item).first()
+                #    if producto is None:
+                #        flash('Error al cargar los items.')
+                #    else:
+                #        nuevo_item = ItemsPedidos(numPedido= nuevo_pedido.numPedido, numProducto= item, precio= producto.preciounitario, estado= 'Pendiente')
+                #        db.session.add(nuevo_item)
+                #db.session.commit()
                 flash('Registro exitoso.')
                 return redirect(url_for('registrarPedido'))
             else:
@@ -95,6 +108,20 @@ def handlePedido():
         return redirect(url_for("login"))
 
 #Fin Registrar Pedido
+
+#Listar Pedidos Mozo
+@app.route('/listarpedidosmozo')
+def listarpedidosmozo():
+    if "dni" in session and "tipo" in session:
+        if escape(session['tipo']) == "Mozo":
+            pedidos = Pedidos.query.all()
+            titulo = "Pedidos Vigentes" 
+            fecha = datetime.now().date()
+            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']))
+        elif escape(session['tipo']) == "Cocinero" :
+            pass
+        else :
+            return redirect("logout")
 
 #Base de datos
 @app.route('/prueba')
