@@ -84,11 +84,11 @@ def handlePedido():
             if request.method == 'POST' :
                 items_pedidos = request.form['items']
                 items_pedidos = items_pedidos.split(',')
-                nuevo_pedido = Pedidos(fecha= datetime.now().date(), total= request.form['total'], cobrado=False, observacion=request.form['observacion'], mesa=request.form['mesa'], dni=escape(session['dni']))
+                nuevo_pedido = Pedidos(fecha= datetime.now().date(), total= request.form['total'], cobrado= False, observacion=request.form['observacion'], mesa=request.form['mesa'], dnimozo=escape(session['dni']))
                 db.session.add(nuevo_pedido)
                 for item in items_pedidos:
                     producto = Productos.query.filter_by(numProducto= item).first()
-                    if producto is None:
+                    if type(producto) is None:
                         flash('Error al cargar los items.')
                         return redirect(url_for('registrarPedido'))
                     else:
@@ -100,6 +100,8 @@ def handlePedido():
             else:
                 flash('Algo no ha salido bien. Reintenta el pedido.')
                 return redirect(url_for('registrarPedido'))
+        elif escape(session['tipo']) == "Cocinero" :
+            pass
         else :
             return redirect("logout")
     else:
@@ -121,6 +123,20 @@ def verPedidos():
         else :
             return redirect(url_for("logout"))
 
+#Listar Pedidos Mozo
+@app.route('/listarpedidosmozo')
+def listarpedidosmozo():
+    if "dni" in session and "tipo" in session:
+        if escape(session['tipo']) == "Mozo":
+            titulo = "Pedidos Vigentes" 
+            pedidos = Pedidos.query.all()
+            fecha = datetime.now().date()
+            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']))
+        elif escape(session['tipo']) == "Cocinero" :
+            return redirect(url_for("index"))
+        else :
+            return redirect(url_for("logout"))
+#Fin listar pedidos
 
 #Base de datos
 @app.route('/prueba')
