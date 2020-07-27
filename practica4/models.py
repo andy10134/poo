@@ -10,7 +10,7 @@ class Usuarios(db.Model):
 
 class Pedidos(db.Model):
     numPedido = db.Column(db.Integer, primary_key=True)
-    fecha = db.Column(db.DateTime, nullable=False)
+    fecha = db.Column(db.Date, nullable=False)
     total = db.Column(db.Float, nullable=False)
     cobrado = db.Column(db.Boolean, nullable=False)
     observacion = db.Column(db.Text)

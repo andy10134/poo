@@ -1,7 +1,7 @@
 from flask import Flask,render_template, request, flash, redirect, url_for, session, escape
 from passver import PasswordVer
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+import datetime
 
 
 app = Flask(__name__)
@@ -84,7 +84,7 @@ def handlePedido():
             if request.method == 'POST' :
                 items_pedidos = request.form['items']
                 items_pedidos = items_pedidos.split(',')
-                nuevo_pedido = Pedidos(fecha= datetime.now().date(), total= float(request.form['total']), cobrado= False, observacion=request.form['observacion'], mesa=int(request.form['mesa']), dnimozo=int(escape(session['dni'])))
+                nuevo_pedido = Pedidos(fecha= datetime.date.today(), total= float(request.form['total']), cobrado= False, observacion=request.form['observacion'], mesa=int(request.form['mesa']), dnimozo=int(escape(session['dni'])))
                 db.session.add(nuevo_pedido)
                 db.session.commit()
                 for item in items_pedidos:
@@ -119,7 +119,7 @@ def verPedidos():
             pedidos = Pedidos.query.all()
             items = ItemsPedidos.query.all()
             productos = Productos.query.all()
-            fecha = datetime.now().date()
+            fecha = datetime.date.today()
             return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, productos = productos,items = items,fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']))
         elif escape(session['tipo']) == "Cocinero" :
             return redirect(url_for("index"))

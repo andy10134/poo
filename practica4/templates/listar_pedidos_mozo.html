@@ -27,7 +27,8 @@
                                     </div>
                                     {% for item in items %}
                                         {% if item.numPedido == pedido.numPedido %}
-                                            <p class="mb-1"> {{ item.precio }} </p>
+                                            {% set producto = productos['{{ item.numProducto }}'] %}
+                                            <p class="mb-1"> {{ producto.nombre }} </p>
                                         {% endif %}
                                     {%  endfor %}
                                     <small class="text-muted">Mozo {{ pedido.dnimozo }}</small>
