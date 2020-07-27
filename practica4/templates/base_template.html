@@ -39,7 +39,11 @@
                                 <a class="nav-link" href="{{ url_for('registrarPedido') }}">Registrar Pedido</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url_for('verPedidos') }}">Pedidos <small><span class="badge badge-danger gradiente" style="font-size: 15px;">1</span> </small></a>
+                                <a class="nav-link" href="{{ url_for('verPedidos') }}">Pedidos 
+                                    {% if pendientes|int != 0 %}
+                                    <small><span class="badge badge-danger gradiente" style="font-size: 15px;">{{ pendientes }}</span> </small>
+                                    {% endif %}
+                                </a>
                             </li>
                         {% endif %}
                         <li class="nav-item">

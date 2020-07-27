@@ -1,6 +1,7 @@
 from flask import Flask,render_template, request, flash, redirect, url_for, session, escape
 from passver import PasswordVer
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import distinct
 import datetime
 
 
@@ -10,13 +11,21 @@ app.config.from_pyfile('config.py')
 from models import db
 from models import ItemsPedidos, Pedidos, Productos, Usuarios
 
+@app.before_request
+def before_request():
+    if 'dni' in session and 'tipo' in session :
+        if escape(session['tipo']) == "Mozo" :
+            pendientes = db.session.query(distinct(ItemsPedidos.numPedido)).join(Pedidos).filter(ItemsPedidos.estado=="Pendiente").count()
+            print(pendientes)
+            session['pendientes'] = pendientes
+
 
 #Inicio
 @app.route('/')
 def index():
     titulo = "AppPop"
     if 'dni' in session and 'tipo' in session :
-        return render_template('index.html', titulo=titulo, dni=escape(session['dni']), tipo=escape(session['tipo']))
+        return render_template('index.html', titulo=titulo, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
     else:
         return render_template('index.html', titulo=titulo)
 #Fin Inicio
@@ -57,6 +66,7 @@ def handledata():
 def logout():
     session.pop('dni')
     session.pop('tipo')
+    session.pop('pendientes')
 
     return redirect(url_for('index'))
 
@@ -67,7 +77,7 @@ def registrarPedido():
         if escape(session['tipo']) == "Mozo":
             productos = Productos.query.all()
             titulo = "Registrar Pedido" 
-            return render_template('registro_pedidos_mozo.html', titulo=titulo, productos=productos, dni=escape(session['dni']), tipo=escape(session['tipo']))
+            return render_template('registro_pedidos_mozo.html', titulo=titulo, productos=productos, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
         elif escape(session['tipo']) == "Cocinero" :
             pass
         else :
@@ -120,7 +130,7 @@ def verPedidos():
             items = ItemsPedidos.query.all()
             productos = Productos.query.all()
             fecha = datetime.date.today()
-            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, productos = productos,items = items,fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']))
+            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, productos = productos,items = items,fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
         elif escape(session['tipo']) == "Cocinero" :
             return redirect(url_for("index"))
         else :
