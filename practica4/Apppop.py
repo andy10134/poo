@@ -14,10 +14,9 @@ from models import ItemsPedidos, Pedidos, Productos, Usuarios
 @app.before_request
 def before_request():
     if 'dni' in session and 'tipo' in session :
-        if escape(session['tipo']) == "Mozo" :
-            pendientes = db.session.query(distinct(ItemsPedidos.numPedido)).join(Pedidos).filter(ItemsPedidos.estado=="Pendiente").count()
-            print(pendientes)
-            session['pendientes'] = pendientes
+        pendientes = db.session.query(distinct(ItemsPedidos.numPedido)).join(Pedidos).filter(ItemsPedidos.estado=="Pendiente").count()
+        print(pendientes)
+        session['pendientes'] = pendientes
 #Fin Before
 
 #Inicio
@@ -122,15 +121,20 @@ def handlePedido():
 @app.route('/pedidos')
 def verPedidos():
     if "dni" in session and "tipo" in session:
+        titulo = "Pedidos Vigentes" 
         if escape(session['tipo']) == "Mozo":
-            titulo = "Pedidos Vigentes" 
             pedidos = Pedidos.query.all()
             items = ItemsPedidos.query.all()
             productos = Productos.query.all()
             fecha = datetime.date.today()
             return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, productos = productos,items = items,fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
         elif escape(session['tipo']) == "Cocinero" :
-            return redirect(url_for("index"))
+            #pedidos = Pedidos.query.all()
+            #items = ItemsPedidos.query.all()
+            #productos = Productos.query.all()
+            #fecha = datetime.date.today()
+            
+            return render_template("listar_pedidos_cocinero.html", titulo=titulo, pedidos=pedidos, productos = productos,items = items, fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
         else :
             return redirect(url_for("logout"))
 #Fin Ver pedidos

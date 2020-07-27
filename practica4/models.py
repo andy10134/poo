@@ -1,5 +1,6 @@
 from __main__ import app
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import relationship
 
 db = SQLAlchemy(app)
 
@@ -7,6 +8,7 @@ class Usuarios(db.Model):
     dni = db.Column(db.Integer, primary_key=True, nullable=False)
     clave = db.Column(db.String(100), nullable=False)
     tipo = db.Column(db.String(100), nullable=False)
+    pedidos = relationship("Pedidos")
 
 class Pedidos(db.Model):
     numPedido = db.Column(db.Integer, primary_key=True)
@@ -16,6 +18,7 @@ class Pedidos(db.Model):
     observacion = db.Column(db.Text)
     mesa = db.Column(db.Integer, nullable=False)
     dnimozo = db.Column(db.Integer, db.ForeignKey('usuarios.dni'))
+    items = relationship("ItemsPedidos")
 
 class ItemsPedidos(db.Model):
     __tablename__= 'ItemsPedidos'
@@ -24,6 +27,7 @@ class ItemsPedidos(db.Model):
     numProducto = db.Column(db.Integer, db.ForeignKey('productos.numProducto'))
     precio = db.Column(db.Float, nullable=False)
     estado = db.Column(db.String(100), nullable=False)
+    producto = relationship("Productos")
 
 class Productos(db.Model):
     numProducto = db.Column(db.Integer, primary_key=True)
