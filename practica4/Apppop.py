@@ -4,13 +4,13 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import distinct
 import datetime
 
-
 app = Flask(__name__)
 app.config.from_pyfile('config.py')
 
 from models import db
 from models import ItemsPedidos, Pedidos, Productos, Usuarios
 
+#Before
 @app.before_request
 def before_request():
     if 'dni' in session and 'tipo' in session :
@@ -18,7 +18,7 @@ def before_request():
             pendientes = db.session.query(distinct(ItemsPedidos.numPedido)).join(Pedidos).filter(ItemsPedidos.estado=="Pendiente").count()
             print(pendientes)
             session['pendientes'] = pendientes
-
+#Fin Before
 
 #Inicio
 @app.route('/')
@@ -51,7 +51,6 @@ def handledata():
                     session["dni"] = usuario.dni
                     session["tipo"] = usuario.tipo
                     return redirect(url_for('index'))
-            
             flash('Verifica tus credenciales de acceso, DNI o contraseña inválidos')
             return redirect(url_for('login'))
         else:
@@ -67,8 +66,8 @@ def logout():
     session.pop('dni')
     session.pop('tipo')
     session.pop('pendientes')
-
     return redirect(url_for('index'))
+#Fin Log out
 
 #Registrar Pedido
 @app.route('/registrarpedido')
@@ -85,7 +84,6 @@ def registrarPedido():
     else:
         flash("Tip: Deberías Iniciar Sesión antes de realizar pedidos ;)")
         return redirect(url_for("login"))
-
 
 @app.route('/registraredido', methods = ['POST'])
 def handlePedido():
@@ -135,14 +133,7 @@ def verPedidos():
             return redirect(url_for("index"))
         else :
             return redirect(url_for("logout"))
-
-
-#Base de datos
-@app.route('/prueba')
-def prueba():
-    usuarios = Usuarios.query.all()
-    print(usuarios)
-    return render_template("usuarios.html", usuarios=usuarios)
+#Fin Ver pedidos
 
 if __name__ == '__main__':
     app.run(debug=True)
