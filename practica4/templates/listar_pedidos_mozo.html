@@ -22,7 +22,7 @@
                     {% if pedidos %}
                         {% for pedido in pedidos %} 
                             {% if pedido.cobrado == 0 and pedido.fecha == fecha %}
-                                <li class="list-group-item list-group-item-action flex-column align-items-start">
+                                <a href="{{ url_for('cobrarpedido', pedido = pedido.numPedido ) }}" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between" style="height: 33px;">
                                         <h5 class="mb-1"> Pedido {{ pedido.numPedido }} </h5>
                                         <h5 class="text-muted"> Mesa {{ pedido.mesa }}</h5>
@@ -33,7 +33,7 @@
                                         {% endif %}
                                     {%  endfor %}
                                     <small class="text-muted">Mozo {{ pedido.dnimozo }}</small>
-                                </li>
+                                </a>
                             {% endif %}
                         {% endfor %}
                     {% else %}

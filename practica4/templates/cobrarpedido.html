@@ -1,0 +1,40 @@
+{% extends "base_template.html" %}
+{% block content %}
+
+<div id="cobrarpedido" style="padding:0;">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 d-flex">
+                <div class="justify-content-center align-self-center w-100">
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ message }}
+                                    </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <h1 style="text-align: center;"><span class="material-icons" style="font-size: 35px;">
+                        monetization_on
+                        </span> Cobrar Pedido {{ pedido.numPedido }}</h1>
+                    <h2 style="text-align: center;">Total ${{ pedido.total }}</h2>
+                    {% for item in items %}
+                        {% if item.numPedido == pedido.numPedido %}
+                            <h3 style="text-align: center;"> {{ productos[item.numProducto|int - 1].nombre }} - <span>${{ productos[item.numProducto|int - 1].preciounitario }}</span> </h3>
+                        {% endif %}
+                    {%  endfor %}
+                </div>
+            </div>
+            <div  class="col-xl-5 col-lg-5 col-md-12 d-none d-md-block" style="padding:86px 0 ; z-index: -1; filter: brightness(78%);">
+                <div  class="d-lg-none">
+                    <div  class="mt-4">&nbsp;</div>
+                </div>
+                <figure  class="mt-0"><img  alt="" class="imgfull"
+                        src=" {{ url_for('static', filename='img/cobro.jpg') }}"></figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
