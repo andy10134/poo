@@ -51,6 +51,10 @@ a{
     background-color: #2fb191 !important;
 }
 
+.aling-icon{
+    vertical-align: text-bottom;
+}
+
 .listapedidos{
     height: 300px;
 }
