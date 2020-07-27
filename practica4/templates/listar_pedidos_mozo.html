@@ -27,10 +27,8 @@
                                         <h5 class="mb-1"> Pedido {{ pedido.numPedido }} </h5>
                                         <h5 class="text-muted"> Mesa {{ pedido.mesa }}</h5>
                                     </div>
-                                    {% for item in items %}
-                                        {% if item.numPedido == pedido.numPedido %}
-                                            <p class="mb-1"> {{ productos[item.numProducto|int - 1].nombre }}</p>
-                                        {% endif %}
+                                    {% for item in pedido.items %}
+                                            <p class="mb-1"> {{ item.producto.nombre }}</p>
                                     {%  endfor %}
                                     <small class="text-muted">Mozo {{ pedido.dnimozo }}</small>
                                 </a>

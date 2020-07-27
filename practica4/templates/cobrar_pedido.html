@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 d-flex">
-                <div class="justify-content-center align-self-center w-100">
+                <div class="justify-content-center w-100" style="padding-top: 150px;">
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for message in messages %}
@@ -19,11 +19,12 @@
                         monetization_on
                         </span> Cobrar Pedido {{ pedido.numPedido }}</h1>
                     <h2 style="text-align: center;">Total ${{ pedido.total }}</h2>
-                    {% for item in items %}
-                        {% if item.numPedido == pedido.numPedido %}
-                            <h3 style="text-align: center;"> {{ productos[item.numProducto|int - 1].nombre }} - <span>${{ productos[item.numProducto|int - 1].preciounitario }}</span> </h3>
-                        {% endif %}
-                    {%  endfor %}
+                    <div style="overflow-y: scroll; display: block; height: 150px; text-align: center;">
+                        {% for item in pedido.items %}
+                            <h3 style="font-size: 20px;">{{ item.producto.nombre }} - <span>${{ item.producto.preciounitario }}</span></h3>
+                        {%  endfor %}
+                    </div> 
+                    <button type="submit" class="boton gradiente position-absolute" id="confirmar" style="bottom:200px; margin-left:auto; margin-right:auto; left:0; right:0;">Confirmar cobro</button>
                 </div>
             </div>
             <div  class="col-xl-5 col-lg-5 col-md-12 d-none d-md-block" style="padding:86px 0 ; z-index: -1; filter: brightness(78%);">

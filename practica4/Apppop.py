@@ -124,17 +124,13 @@ def verPedidos():
         titulo = "Pedidos Vigentes" 
         if escape(session['tipo']) == "Mozo":
             pedidos = Pedidos.query.all()
-            items = ItemsPedidos.query.all()
-            productos = Productos.query.all()
             fecha = datetime.date.today()
-            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, productos = productos,items = items,fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
+            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
         elif escape(session['tipo']) == "Cocinero" :
             #pedidos = Pedidos.query.all()
-            #items = ItemsPedidos.query.all()
-            #productos = Productos.query.all()
             #fecha = datetime.date.today()
             
-            return render_template("listar_pedidos_cocinero.html", titulo=titulo, pedidos=pedidos, productos = productos,items = items, fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
+            return render_template("listar_pedidos_cocinero.html", titulo=titulo, pedidos=pedidos, fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
         else :
             return redirect(url_for("logout"))
 #Fin Ver pedidos
@@ -146,13 +142,11 @@ def cobrarpedido(pedido):
         if escape(session['tipo']) == "Mozo":
             titulo = "Cobrar pedido"
             pedido_a_cobrar = Pedidos.query.filter_by(numPedido=pedido).first()
-            items = ItemsPedidos.query.all()
-            productos = Productos.query.all()
             if pedido_a_cobrar is None:
                 flash('Error al cargar el pedido.')
                 return redirect(url_for('verPedidos'))
             else:
-                return render_template('cobrarpedido.html', titulo=titulo, pedido=pedido_a_cobrar, productos = productos, items=items,dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
+                return render_template('cobrar_pedido.html', titulo=titulo, pedido=pedido_a_cobrar, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
         elif escape(session['tipo']) == "Cocinero" :
             return redirect(url_for("index"))
         else :
