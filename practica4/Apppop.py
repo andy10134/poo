@@ -139,5 +139,25 @@ def verPedidos():
             return redirect(url_for("logout"))
 #Fin Ver pedidos
 
+#Ver pedidos
+@app.route('/cobrarpedido/<int:pedido>')
+def cobrarpedido(pedido):
+    if "dni" in session and "tipo" in session:
+        if escape(session['tipo']) == "Mozo":
+            titulo = "Cobrar pedido"
+            pedido_a_cobrar = Pedidos.query.filter_by(numPedido=pedido).first()
+            items = ItemsPedidos.query.all()
+            productos = Productos.query.all()
+            if pedido_a_cobrar is None:
+                flash('Error al cargar el pedido.')
+                return redirect(url_for('verPedidos'))
+            else:
+                return render_template('cobrarpedido.html', titulo=titulo, pedido=pedido_a_cobrar, productos = productos, items=items,dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
+        elif escape(session['tipo']) == "Cocinero" :
+            return redirect(url_for("index"))
+        else :
+            return redirect(url_for("logout"))
+
+
 if __name__ == '__main__':
     app.run(debug=True)
