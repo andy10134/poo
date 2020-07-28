@@ -4,49 +4,77 @@
 <div id="listarpedidos" style="padding:0;">
     <div class="container">
         <div class="row">
-            <div  class="col-xl-5 col-lg-5 col-md-12 d-none d-md-block" style="padding:86px 0 ; z-index: -1; filter: brightness(78%);">
-                <div  class="d-lg-none">
-                    <div  class="mt-4">&nbsp;</div>
+            <div class="col-xl-5 col-lg-5 col-md-12 d-none d-md-block"
+                style="padding:86px 0 ; z-index: -1; filter: brightness(78%);">
+                <div class="d-lg-none">
+                    <div class="mt-4">&nbsp;</div>
                 </div>
-                <figure  class="mt-0"><img  alt="" class="imgfull"
+                <figure class="mt-0"><img alt="" class="imgfull"
                         src=" {{ url_for('static', filename='img/cocinero.jpg') }}"></figure>
             </div>
             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 d-flex">
                 <div class="justify-content-center align-self-center w-100">
                     {% with messages = get_flashed_messages() %}
-                        {% if messages %}
-                            {% for message in messages %}
-                                    <div class="alert alert-danger" role="alert">
-                                        {{ message }}
-                                    </div>
-                            {% endfor %}
-                        {% endif %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
                     {% endwith %}
                     <h1 style="text-align: center;"><span class="material-icons" style="font-size: 35px;">
-                        local_mall
+                            local_mall
                         </span> Pedidos Pendientes</h1>
                     <ul class="list-group-flush listapedidos" style="overflow-y: scroll; display: block;">
-                    {% if pedidos %}
-                        {% for pedido in pedidos %} 
-                                <li class="list-group-item list-group-item-action flex-column align-items-start">
-                                    <div class="d-flex w-100 justify-content-between" style="height: 33px;">
-                                        <h5 class="mb-1"> Pedido {{ pedido.numPedido }} </h5>
-                                        <h5 class="text-muted"> Mesa {{ pedido.mesa }}</h5>
-                                    </div>
-                                    {% for item in pedido.items %}
-                                            <p class="mb-1 pedido-{{ item.estado }} "> {{ item.producto.nombre }}</p>
-                                    {%  endfor %}
-                                    <small class="text-muted">Mozo {{ pedido.dnimozo }}</small>
-                                </li>
+                        {% if pedidos %}
+                        {% for pedido in pedidos %}
+                        <li class="list-group-item list-group-item-action flex-column align-items-start pendiente-item"
+                            data-toggle="modal" data-target="#Modal">
+                            <div class="d-flex w-100 justify-content-between pedido" style="height: 33px;">
+                                <h5 class="mb-1" class="titulo-pedido"> Pedido {{ pedido.numPedido }} </h5>
+                                <h5 class="text-muted"> Mesa {{ pedido.mesa }}</h5>
+                            </div>
+                            {% for item in pedido.items %}
+                            <p class="mb-1 pedido-{{ item.estado }} "> {{ item.producto.nombre }}</p>
+                            {%  endfor %}
+                            
+                            {% if pedido.observacion != "" %}<small class="text-muted">Observacíon: {{ pedido.observacion }}</small> <br>{% endif %}
+
+                            <small class="text-muted">Mozo {{ pedido.dnimozo }}</small>
+                        </li>
                         {% endfor %}
-                    {% else %}
+                        {% else %}
                         <li class="list-group-item">
-                            <h1 style="text-align: center; font-size: 30px;">No se han encontrado pedidos pendientes <span style="font-size: 30px;" class="material-icons">
-                                whatshot
+                            <h1 style="text-align: center; font-size: 30px;">No se han encontrado pedidos pendientes
+                                <span style="font-size: 30px;" class="material-icons">
+                                    whatshot
                                 </span></h1>
                         </li>
-                    {% endif %}
+                        {% endif %}
                     </ul>
+                    <!-- Modal -->
+                    <div class="modal fade" id="Modal" tabindex="-1" role="dialog"
+                        aria-labelledby="ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="tituloModal"></h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <span class="d-none">Aux</span>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-dismiss="modal" style="color: #fff; font-family: 'Montserrat', sans-serif; background-color: #ed145a;">Cancelar</button>
+                                    <button type="button" class="btn gradiente" style="color: #fff; font-family: 'Montserrat', sans-serif;">Guardar Cambios</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

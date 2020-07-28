@@ -20,8 +20,8 @@
                         </span> Pedidos Vigentes</h1>
                     
                     {% if pedidos %}
+                    <ul class="list-group-flush listapedidos" style="overflow-y: scroll; display: block;"> 
                         {% for pedido in pedidos %}
-                            <ul class="list-group-flush listapedidos" style="overflow-y: scroll; display: block;"> 
                                 <a href="{{ url_for('cobrarpedido', pedido = pedido.numPedido ) }}" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between" style="height: 33px;">
                                         <h5 class="mb-1"> Pedido {{ pedido.numPedido }} </h5>
@@ -32,12 +32,10 @@
                                     {%  endfor %}
                                     <small class="text-muted">Mozo {{ pedido.dnimozo }}</small>
                                 </a>
-                            </ul>
-                        {% endfor %}
+                                {% endfor %}
+                    </ul>
                     {% else %}
-                            <h1 style="text-align: center; font-size: 30px;">No se han encontrado pedidos pendientes <span class="material-icons" style="font-size: 30px;">
-                                list_alt
-                                </span></h1>
+                            <h1 style="text-align: center; font-size: 30px;">No se han encontrado <br> pedidos pendientes <span>:(</span></h1>
                     {% endif %}
                 </div>
             </div>
