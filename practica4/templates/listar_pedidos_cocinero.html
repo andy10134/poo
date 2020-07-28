@@ -17,7 +17,7 @@
                     {% with messages = get_flashed_messages() %}
                     {% if messages %}
                     {% for message in messages %}
-                    <div class="alert alert-danger" role="alert">
+                    <div class="alert alert-success" style="margin-top: -75px; text-align: center;" role="alert">
                         {{ message }}
                     </div>
                     {% endfor %}
@@ -36,7 +36,7 @@
                                 <h5 class="text-muted"> Mesa {{ pedido.mesa }}</h5>
                             </div>
                             {% for item in pedido.items %}
-                            <p class="mb-1 pedido-{{ item.estado }} "> {{ item.producto.nombre }}</p>
+                            <p class="mb-1 pedido-{{ item.estado }} "> {{ item.producto.nombre }}<span class="d-none id-item">{{ item.numItem}}</span></p>
                             {%  endfor %}
                             
                             {% if pedido.observacion != "" %}<small class="text-muted">Observacíon: {{ pedido.observacion }}</small> <br>{% endif %}
@@ -59,19 +59,25 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="tituloModal"></h5>
+                                    <div class="d-flex w-100 justify-content-between pedido" style="height: 33px;">
+                                        <h5 class="mb-1" id="tituloModal">Pedido</h5>
+                                        <h5 class="text-muted" id="tituloMesa">Mesa</h5>
+                                    </div>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
+                            <form action="{{url_for("handleverPedidos")}}" method="post" id="estado-form">
                                 <div class="modal-body">
                                     <span class="d-none">Aux</span>
                                 </div>
+                                    <input type="text" class="d-none">
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
                                         data-dismiss="modal" style="color: #fff; font-family: 'Montserrat', sans-serif; background-color: #ed145a;">Cancelar</button>
-                                    <button type="button" class="btn gradiente" style="color: #fff; font-family: 'Montserrat', sans-serif;">Guardar Cambios</button>
+                                    <button type="submit" class="btn gradiente" style="color: #fff; font-family: 'Montserrat', sans-serif;">Guardar Cambios</button>
                                 </div>
+                            </form>
                             </div>
                         </div>
                     </div>

@@ -16,7 +16,6 @@ from models import ItemsPedidos, Pedidos, Productos, Usuarios
 def before_request():
     if 'dni' in session and 'tipo' in session :
         pendientes = db.session.query(distinct(ItemsPedidos.numPedido)).join(Pedidos).filter(ItemsPedidos.estado=="Pendiente").count()
-        print(pendientes)
         session['pendientes'] = pendientes
 #Fin Before
 
@@ -138,15 +137,15 @@ def verPedidos():
         return redirect(url_for("login"))
 
 @app.route('/pedidos', methods = ['POST'])
-def handleverPedidos(items):
+def handleverPedidos():
     if "dni" in session and "tipo" in session:
         titulo = "Pedidos Vigentes" 
         if escape(session['tipo']) == "Mozo":
             return redirect(url_for("verPedidos"))
         elif escape(session['tipo']) == "Cocinero" :
             if request.method == 'POST' :
-                items_pedidos = request.form['items']
-                items_pedidos = items_pedidos.split(',')
+                items_pedidos = request.form.getlist('id-items')
+                print(items_pedidos)
                 for item in items_pedidos:
                     item_listo= ItemsPedidos.query.filter_by(numItem= item).first()
                     item_listo.estado = 'Listo'
