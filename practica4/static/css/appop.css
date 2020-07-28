@@ -294,7 +294,7 @@ Index
 	letter-spacing:-0.0125em;
 }
 .boton:hover{
-	background:blue;
+	background:#028B69;
 }
 a.botonblanco{
 	background:white;
@@ -314,7 +314,7 @@ a.botonblanco:hover{
 .btnpromocion{
 	display:block;
 	padding:3em 0;
-	background:blue;
+	background: #028B69;
 	
 	color:white !important;
 	font-size: 26px;
@@ -333,14 +333,14 @@ a.botonblanco:hover{
 	font-size: 19px;
 }
 .botonazul{
-	background:darkblue;
+	background: #028B69;
 	color:white !important;
 }
 .botonazul img{
 	float: right;
 }
 .botonazul:hover{
-	background:blue;
+	background:#028B69;
 }
 
 ul.lista{
@@ -356,7 +356,7 @@ ul.lista li{
 }
 
 .link{
-	color:blue !important;
+	color:#028B69 !important;
 	font-size: 12px;
 	font-weight: bolder;
 	letter-spacing:1px;
@@ -503,7 +503,7 @@ Header
 	border-radius:5px;
 }
 #header a.nav-btn:hover{
-	background:blue !important;
+	background:#028B69 !important;
 	color:white !important;
 }
 
