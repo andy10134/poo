@@ -15,19 +15,19 @@
                             {% endfor %}
                         {% endif %}
                     {% endwith %}
-                    <form style="height: 100%;" action="{{ url_for('handlecobrarpedido', pedido = pedido.numPedido) }}" method="POST">
+                    <form class="d-flex flex-column" style="height: 100%; " action="{{ url_for('handlecobrarpedido', pedido = pedido.numPedido) }}" method="POST">
                         <h1 style="text-align: center;"><span class="material-icons" style="font-size: 35px;">
                         monetization_on
                         </span> Cobrar Pedido {{ pedido.numPedido }}</h1>
                         <h2 style="text-align: center;">Total ${{ pedido.total }}</h2>
-                        <div style="height: 120px; text-align: center;">
+                        <div style=" text-align: center;">
                             {% for item in pedido.items %}
                                 <h3 style="font-size: 20px; ">{{ item.producto.nombre }} - <span>${{ item.producto.preciounitario }}</span></h3>
                             {%  endfor %}
                         </div> 
+                        <button type="submit" class="boton gradiente align-self-center" id="confirmar" >Confirmar cobro</button>
                     </form>
-                </div>
-                <a type="submit" class="boton gradiente align-self-center" id="confirmar" >Confirmar cobro</a>
+                </div> 
             </div>
             <div  class="col-xl-5 col-lg-5 col-md-12 d-none d-md-block" style="padding:86px 0 ; z-index: -1; filter: brightness(78%);">
                 <div  class="d-lg-none">

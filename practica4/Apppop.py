@@ -124,9 +124,9 @@ def verPedidos():
     if "dni" in session and "tipo" in session:
         titulo = "Pedidos Vigentes" 
         if escape(session['tipo']) == "Mozo":
-            pedidos = Pedidos.query.all()
             fecha = datetime.date.today()
-            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
+            pedidos = Pedidos.query.filter_by(fecha= fecha, cobrado= 0).all()
+            return render_template('listar_pedidos_mozo.html', titulo=titulo, pedidos=pedidos, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
         elif escape(session['tipo']) == "Cocinero" :
             #pedidos = Pedidos.query.all()
             pendientes = db.session.query(Pedidos).join(ItemsPedidos).filter(ItemsPedidos.estado=="Pendiente").all()
