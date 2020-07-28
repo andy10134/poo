@@ -4,28 +4,30 @@
 <div id="cobrarpedido" style="padding:0;">
     <div class="container">
         <div class="row">
-            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 d-flex">
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 d-flex flex-column">
                 <div class="justify-content-center w-100" style="padding-top: 150px;">
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for message in messages %}
-                                    <div class="alert alert-danger" role="alert">
+                                    <div class="alert alert-success" role="alert">
                                         {{ message }}
                                     </div>
                             {% endfor %}
                         {% endif %}
                     {% endwith %}
-                    <h1 style="text-align: center;"><span class="material-icons" style="font-size: 35px;">
+                    <form class="d-flex flex-column" style="height: 100%; " action="{{ url_for('handlecobrarpedido', pedido = pedido.numPedido) }}" method="POST">
+                        <h1 style="text-align: center;"><span class="material-icons" style="font-size: 35px;">
                         monetization_on
                         </span> Cobrar Pedido {{ pedido.numPedido }}</h1>
-                    <h2 style="text-align: center;">Total ${{ pedido.total }}</h2>
-                    <div style="overflow-y: scroll; display: block; height: 150px; text-align: center;">
-                        {% for item in pedido.items %}
-                            <h3 style="font-size: 20px;">{{ item.producto.nombre }} - <span>${{ item.producto.preciounitario }}</span></h3>
-                        {%  endfor %}
-                    </div> 
-                    <button type="submit" class="boton gradiente position-absolute" id="confirmar" style="bottom:200px; margin-left:auto; margin-right:auto; left:0; right:0;">Confirmar cobro</button>
-                </div>
+                        <h2 style="text-align: center;">Total ${{ pedido.total }}</h2>
+                        <div style=" text-align: center;">
+                            {% for item in pedido.items %}
+                                <h3 style="font-size: 20px; ">{{ item.producto.nombre }} - <span>${{ item.producto.preciounitario }}</span></h3>
+                            {%  endfor %}
+                        </div> 
+                        <button type="submit" class="boton gradiente align-self-center" id="confirmar" >Confirmar cobro</button>
+                    </form>
+                </div> 
             </div>
             <div  class="col-xl-5 col-lg-5 col-md-12 d-none d-md-block" style="padding:86px 0 ; z-index: -1; filter: brightness(78%);">
                 <div  class="d-lg-none">

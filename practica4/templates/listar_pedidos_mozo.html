@@ -9,7 +9,7 @@
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for message in messages %}
-                                    <div class="alert alert-danger" role="alert">
+                                    <div class="alert alert-success" role="alert" style="text-align: center;">
                                         {{ message }}
                                     </div>
                             {% endfor %}
@@ -18,10 +18,10 @@
                     <h1 style="text-align: center;"><span class="material-icons" style="font-size: 35px;">
                         local_mall
                         </span> Pedidos Vigentes</h1>
-                    <ul class="list-group-flush listapedidos" style="overflow-y: scroll; display: block;">
+                    
                     {% if pedidos %}
-                        {% for pedido in pedidos %} 
-                            {% if pedido.cobrado == 0 and pedido.fecha == fecha %}
+                        {% for pedido in pedidos %}
+                            <ul class="list-group-flush listapedidos" style="overflow-y: scroll; display: block;"> 
                                 <a href="{{ url_for('cobrarpedido', pedido = pedido.numPedido ) }}" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between" style="height: 33px;">
                                         <h5 class="mb-1"> Pedido {{ pedido.numPedido }} </h5>
@@ -32,14 +32,13 @@
                                     {%  endfor %}
                                     <small class="text-muted">Mozo {{ pedido.dnimozo }}</small>
                                 </a>
-                            {% endif %}
+                            </ul>
                         {% endfor %}
                     {% else %}
-                        <li class="list-group-item">
-                            <h1>No se han encontrado pedidos</h1>
-                        </li>
+                            <h1 style="text-align: center; font-size: 30px;">No se han encontrado pedidos pendientes <span class="material-icons" style="font-size: 30px;">
+                                list_alt
+                                </span></h1>
                     {% endif %}
-                    </ul>
                 </div>
             </div>
             <div  class="col-xl-5 col-lg-5 col-md-12 d-none d-md-block" style="padding:86px 0 ; z-index: -1; filter: brightness(78%);">
