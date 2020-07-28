@@ -63,3 +63,13 @@ a{
 .listapedidos{
     height: 300px;
 }
+
+.pedido-Listo{
+    color: #2fb191;
+    font-weight: bold;
+}
+
+.pedido-Pendiente{
+    color: #ed145a;
+    font-weight: bold;
+}
