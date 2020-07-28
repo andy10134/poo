@@ -9,7 +9,7 @@
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for message in messages %}
-                                    <div class="alert alert-danger" role="alert">
+                                    <div class="alert alert-success" role="alert" style="text-align: center;">
                                         {{ message }}
                                     </div>
                             {% endfor %}
@@ -36,7 +36,9 @@
                         {% endfor %}
                     {% else %}
                         <li class="list-group-item">
-                            <h1>No se han encontrado pedidos</h1>
+                            <h1 style="text-align: center; font-size: 30px;">No se han encontrado pedidos pendientes <span style="font-size: 30px;" class="material-icons">
+                                whatshot
+                                </span></h1>
                         </li>
                     {% endif %}
                     </ul>

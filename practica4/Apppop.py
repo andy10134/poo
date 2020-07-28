@@ -2,6 +2,7 @@ from flask import Flask,render_template, request, flash, redirect, url_for, sess
 from passver import PasswordVer
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import distinct
+from sqlalchemy import update
 import datetime
 
 app = Flask(__name__)
@@ -135,7 +136,7 @@ def verPedidos():
             return redirect(url_for("logout"))
 #Fin Ver pedidos
 
-#Ver pedidos
+#Cobrar pedido
 @app.route('/cobrarpedido/<int:pedido>')
 def cobrarpedido(pedido):
     if "dni" in session and "tipo" in session:
@@ -152,6 +153,23 @@ def cobrarpedido(pedido):
         else :
             return redirect(url_for("logout"))
 
+@app.route('/cobrarpedido/<int:pedido>', methods = ['POST'])
+def handlecobrarpedido(pedido):
+    if "dni" in session and "tipo" in session:
+        if escape(session['tipo']) == "Mozo":
+            if request.method == 'POST' :
+                pedido_a_cobrar = Pedidos.query.filter_by(numPedido=pedido).first()
+                pedido_a_cobrar.cobrado = True
+                db.session.commit()
+                flash('Cobro exitoso.')
+                return redirect(url_for("verPedidos"))
+        elif escape(session['tipo']) == "Cocinero" :
+            pass
+        else :
+            return redirect("logout")
+    else:
+        return redirect(url_for("login"))
+#Fin Cobrar Pedido
 
 if __name__ == '__main__':
     app.run(debug=True)
