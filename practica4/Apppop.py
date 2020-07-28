@@ -134,6 +134,30 @@ def verPedidos():
             return render_template("listar_pedidos_cocinero.html", titulo=titulo, pedidos=pendientes, fecha= fecha, dni=escape(session['dni']), tipo=escape(session['tipo']), pendientes=escape(session['pendientes']))
         else :
             return redirect(url_for("logout"))
+    else :
+        return redirect(url_for("login"))
+
+@app.route('/pedidos', methods = ['POST'])
+def handleverPedidos(items):
+    if "dni" in session and "tipo" in session:
+        titulo = "Pedidos Vigentes" 
+        if escape(session['tipo']) == "Mozo":
+            return redirect(url_for("verPedidos"))
+        elif escape(session['tipo']) == "Cocinero" :
+            if request.method == 'POST' :
+                items_pedidos = request.form['items']
+                items_pedidos = items_pedidos.split(',')
+                for item in items_pedidos:
+                    item_listo= ItemsPedidos.query.filter_by(numItem= item).first()
+                    item_listo.estado = 'Listo'
+                db.session.commit()
+                flash('Cambio exitoso.')
+                return redirect(url_for("verPedidos"))
+        else :
+            return redirect(url_for("logout"))
+    else :
+        return redirect(url_for("login"))
+
 #Fin Ver pedidos
 
 #Cobrar pedido
@@ -152,6 +176,8 @@ def cobrarpedido(pedido):
             return redirect(url_for("index"))
         else :
             return redirect(url_for("logout"))
+    else :
+        return redirect(url_for("login"))
 
 @app.route('/cobrarpedido/<int:pedido>', methods = ['POST'])
 def handlecobrarpedido(pedido):
