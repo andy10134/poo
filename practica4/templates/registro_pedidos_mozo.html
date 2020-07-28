@@ -6,7 +6,7 @@
         <!--Formulario de Pedido-->
             <div class="row position-relative">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 ">
-                    <form class="d-flex" style="height: 100%;" action="{{ url_for('handlePedido') }}" method="POST">
+                    <form class="d-flex animated fadeInDown" style="height: 100%;" action="{{ url_for('handlePedido') }}" method="POST">
                         {% with messages = get_flashed_messages() %}
                                 {% if messages %}
                                     {% for message in messages %}
@@ -16,7 +16,7 @@
                                     {% endfor %}
                                 {% endif %}
                             {% endwith %}
-                        <label for="mesa" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 position-absolute" style="top: 85px; right: 330px;">Ingrese mesa</label>
+                        <label for="mesa" class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3 position-absolute " style="top: 85px; right: 330px;">Ingrese mesa</label>
                         <select id="mesa" class="form-control form-control-sm col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 position-absolute" style="top: 85px; right: 100px;" required name="mesa">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -59,10 +59,10 @@
             <!--Fin de Formulario de Pedido-->    
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 d-flex">
                 <div class="justify-content-center align-self-center w-100">
-                   <h1 style="text-align: center;"> <span class="material-icons" style="font-size: 30px;">
+                   <h1 class="animated fadeInDown" style="text-align: center;"> <span class="material-icons" style="font-size: 30px;">
                     restaurant_menu
                     </span> Carta</h1>
-                    <ul class="list-group-flush">
+                    <ul class="list-group-flush animated fadeInDown">
                         {% if productos %}
                         {% for producto in productos %}
                         <li class="list-group-item product-item">

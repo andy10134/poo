@@ -23,10 +23,10 @@
                     {% endfor %}
                     {% endif %}
                     {% endwith %}
-                    <h1 style="text-align: center;"><span class="material-icons" style="font-size: 35px;">
+                    <h1 class="animated fadeInDown" style="text-align: center;"><span class="material-icons" style="font-size: 35px;">
                             local_mall
                         </span> Pedidos Pendientes</h1>
-                    <ul class="list-group-flush listapedidos" style="overflow-y: scroll; display: block;">
+                    <ul class="list-group-flush listapedidos animated fadeInDown" style="overflow-y: scroll; display: block;">
                         {% if pedidos %}
                         {% for pedido in pedidos %}
                         <li class="list-group-item list-group-item-action flex-column align-items-start pendiente-item"

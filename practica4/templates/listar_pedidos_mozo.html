@@ -15,12 +15,12 @@
                             {% endfor %}
                         {% endif %}
                     {% endwith %}
-                    <h1 style="text-align: center;"><span class="material-icons" style="font-size: 35px;">
+                    <h1 class="animated fadeInDown" style="text-align: center;"><span class="material-icons" style="font-size: 35px;">
                         local_mall
                         </span> Pedidos Vigentes</h1>
                     
                     {% if pedidos %}
-                    <ul class="list-group-flush listapedidos" style="overflow-y: scroll; display: block;"> 
+                    <ul class="list-group-flush listapedidos animated fadeInDown" style="overflow-y: scroll; display: block;"> 
                         {% for pedido in pedidos %}
                                 <a href="{{ url_for('cobrarpedido', pedido = pedido.numPedido ) }}" class="list-group-item list-group-item-action flex-column align-items-start">
                                     <div class="d-flex w-100 justify-content-between" style="height: 33px;">
