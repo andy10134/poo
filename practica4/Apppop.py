@@ -145,7 +145,6 @@ def handleverPedidos():
         elif escape(session['tipo']) == "Cocinero" :
             if request.method == 'POST' :
                 items_pedidos = request.form.getlist('id-items')
-                print(items_pedidos)
                 for item in items_pedidos:
                     item_listo= ItemsPedidos.query.filter_by(numItem= item).first()
                     item_listo.estado = 'Listo'
