@@ -2,7 +2,6 @@ from flask import Flask,render_template, request, flash, redirect, url_for, sess
 from passver import PasswordVer
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import distinct
-from sqlalchemy import update
 import datetime
 
 app = Flask(__name__)
